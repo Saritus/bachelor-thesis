@@ -60,9 +60,21 @@ DATA_URL = 'http://deeplearning.net/data/mnist/mnist.pkl.gz'
 #DATA_FILENAME = "satellite1.png_50_50_4_4_5.pkl"
 PATCHSIZE = 11
 
-savedir = "split_valid_test_3"
+savedir = "split_valid_test_1"
 if not os.path.exists(savedir):
     os.makedirs(savedir)
+
+
+def split_rgb(x):
+    rgb = []
+    for elem in x:
+        pic = []
+        pic.extend([elem[0::3].reshape(PATCHSIZE, PATCHSIZE)])
+        pic.extend([elem[1::3].reshape(PATCHSIZE, PATCHSIZE)])
+        pic.extend([elem[2::3].reshape(PATCHSIZE, PATCHSIZE)])
+        rgb.extend([pic])
+    rgb = numpy.array(rgb, dtype=numpy.int8)
+    return rgb
 
 
 def load_data(file_train, file_test):
@@ -71,28 +83,39 @@ def load_data(file_train, file_test):
         data = pickle_load(f)
 
     x_test, y_test = data[0]
+
+    x_test_rgb = split_rgb(x_test)
+
     x_test = x_test.reshape((-1, 1, PATCHSIZE, PATCHSIZE, 3))
 
     with open(file_train, 'rb') as f:
         data = pickle_load(f)
+
+
 
     x_train, y_train = data[0]
 
     x_train = numpy.array(x_train, dtype=numpy.float32)
     y_train = numpy.array(y_train, dtype=numpy.int8)
 
+    x_train_rgb = split_rgb(x_train)
+
     x_train = x_train.reshape((-1, 1, PATCHSIZE, PATCHSIZE, 3))
 
     x_valid = x_train
     y_valid = y_train
+    x_valid_rgb = x_train_rgb
 
     return dict(
         x_train=x_train,
         y_train=y_train,
+        x_train_rgb=x_train_rgb,
         x_valid=x_valid,
         y_valid=y_valid,
+        x_valid_rgb=x_valid_rgb,
         x_test=x_test,
         y_test=y_test,
+        x_test_rgb=x_test_rgb,
         num_examples_train=x_train.shape[0],
         input_dim=x_train.shape[1],
         output_dim=len(data[1]),
@@ -147,39 +170,39 @@ def create_cnn():
                 #('conv2d2', layers.Conv2DLayer),
                 #('maxpool2', layers.MaxPool2DLayer),
                 #('dropout1', layers.DropoutLayer),
-                #('dense', layers.DenseLayer),
+                ('dense', layers.DenseLayer),
                 #('dropout2', layers.DropoutLayer),
                 ('output', layers.DenseLayer),
                 ],
         # input layer
-        input_shape=(None, 1, PATCHSIZE, PATCHSIZE),
+        input_shape=(None, 3, PATCHSIZE, PATCHSIZE),
         # layer conv2d1
-        conv2d1_num_filters=256,
-        conv2d1_filter_size=(9, 9),
+        conv2d1_num_filters=1024,
+        conv2d1_filter_size=5,
         conv2d1_nonlinearity=lasagne.nonlinearities.rectify,
-        conv2d1_W=lasagne.init.GlorotUniform(),  
+        conv2d1_W=lasagne.init.GlorotUniform(),
         # layer maxpool1
         #maxpool1_pool_size=(2, 2),
         # layer conv2d2
-        #conv2d2_num_filters=64,
-        #conv2d2_filter_size=(5, 5),
+        #conv2d2_num_filters=512,
+        #conv2d2_filter_size=(3, 3),
         #conv2d2_nonlinearity=lasagne.nonlinearities.rectify,
         # layer maxpool2
         #maxpool2_pool_size=(2, 2),
-        # dropout1
+        # dropout17
         #dropout1_p=0.1,    
         # dense
-        #dense_num_units=256,
+        dense_num_units=5000,
         #dense_nonlinearity=lasagne.nonlinearities.rectify,
         # dropout2
         #dropout2_p=0.1,    
         # output
         output_nonlinearity=lasagne.nonlinearities.softmax,
-        output_num_units=data['output_dim']+1,
+        output_num_units=data['output_dim'],
         # optimization method params
         update=nesterov_momentum,
-        update_learning_rate=0.01,
-        update_momentum=0.9,
+        update_learning_rate=0.001,
+        update_momentum=0.95,
         max_epochs=1,
         verbose=1
     )
@@ -238,7 +261,7 @@ def create_ae():
     )
     return ae
 
-net1 = create_mlp()
+net1 = create_cnn()
 
 
 def predict(pdata, width, height, filename):
@@ -390,14 +413,22 @@ def main():
     #imshow(data['y_train'].reshape(148, 143))
     #show()
 
-    shuffle_data()
+    imshow(data['x_train_rgb'][0][0], interpolation='nearest', cmap='gray')
+    #show()
+    imshow(data['x_train_rgb'][0][1], interpolation='nearest', cmap='gray')
+    #show()
+    imshow(data['x_train_rgb'][0][1], interpolation='nearest', cmap='gray')
+    #show()
+
+    #shuffle_data()
     for x in range(1, 1000):
         # Train the network
-        net1.fit(data['x_train'], data['y_train'])
-        validpred = predict(data['x_valid'], 148, 143, savedir+'/valid'+str(x).zfill(3)+'.png')
-        testpred = predict(data['x_test'], 148, 143, savedir+'/test'+str(x).zfill(3)+'.png')
-        write_to_file(savedir + "/valid.txt", array_to_string(calculate_prediction_result(data['x_valid'], data['y_valid'])))
-        write_to_file(savedir + "/test.txt", array_to_string(calculate_prediction_result(data['x_test'], data['y_test'])))
+        net1.fit(data['x_train_rgb'], data['y_train'])
+        validpred = predict(data['x_valid_rgb'], 148, 143, savedir+'/valid'+str(x).zfill(3)+'.png')
+        testpred = predict(data['x_test_rgb'], 148, 143, savedir+'/test'+str(x).zfill(3)+'.png')
+        #write_to_file(savedir + "/valid.txt", array_to_string(calculate_prediction_result(data['x_valid_rgb'], data['y_valid'])))
+        #write_to_file(savedir + "/test.txt", array_to_string(calculate_prediction_result(data['x_test_rgb'], data['y_test'])))
+
         #imshow(predict(308, 296, savedir+'/'+str(x).zfill(2)+'.png'))
         #show()
         #restrict_conv_layer()

@@ -5,7 +5,7 @@ import glob, os
 import numpy
 import sys
 #import theano
-import cPickle
+import pickle
 import time
 
 def createDir(foldername):
@@ -21,9 +21,9 @@ inputImageY='roadmap2.png'
 outputDir=createDir('walls_py')
 width=50
 height=50
-step_width=4
-step_height=4
-innerstep=5
+step_width=2
+step_height=2
+innerstep=1
 
 from numpngw import write_png
 def save_png(array, filename):
@@ -68,10 +68,6 @@ imageY = imageY.reshape(
     3
 )
 
-save_png(imageX, 'imX.png')
-save_png(imageY, 'imY.png')
-
-
 im_width, im_height = imX.size
 print ("width = " + str(im_width) + " _ height = " + str(im_height))
 
@@ -90,12 +86,12 @@ def get_color_code(pixel):
     return len(color_table)-1
 
 def create_pkl_file(set_x, set_y, filename=inputImageX+'.pkl'):
-    train_set_x = numpy.array(set_x)
-    train_set_y = numpy.array(set_y)
+    train_set_x = numpy.array(set_x, dtype='uint8')
+    train_set_y = numpy.array(set_y, dtype='uint8')
     train_set = train_set_x, train_set_y
     data_set = [train_set, numpy.array(color_table, dtype='uint8')]
     f = open(filename, 'wb')
-    cPickle.dump(data_set, f, protocol=cPickle.HIGHEST_PROTOCOL)
+    pickle.dump(data_set, f, protocol=pickle.HIGHEST_PROTOCOL)
     f.close()
 
 print (im_width-width)/step_width + 1  # first image dimension (vertical)
@@ -121,7 +117,7 @@ for x in range(0, im_width, step_width):
         set_x.append(localMapX.flatten())
         #show_image(localMapX, width+1, height+1)
     print str(x)+' - ' + str(time.time() - start_time)
-create_pkl_file(set_x, set_y, inputImageX + '_50_50_4_4_5.pkl')
+create_pkl_file(set_x, set_y, inputImageX + '_50_50_1_1_1.pkl')
 
 from pylab import imshow, show, cm
 def label_to_color(array, color_table):
