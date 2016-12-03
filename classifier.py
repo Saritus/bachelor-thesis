@@ -60,7 +60,7 @@ DATA_URL = 'http://deeplearning.net/data/mnist/mnist.pkl.gz'
 #DATA_FILENAME = "satellite1.png_50_50_4_4_5.pkl"
 PATCHSIZE = 11
 
-savedir = "split_valid_test_2"
+savedir = "split_valid_test_3"
 if not os.path.exists(savedir):
     os.makedirs(savedir)
 
@@ -84,7 +84,7 @@ def load_data(file_train, file_test):
     x_train = x_train.reshape((-1, 1, PATCHSIZE, PATCHSIZE, 3))
 
     x_valid = x_train
-    y_valid = x_train
+    y_valid = y_train
 
     return dict(
         x_train=x_train,
@@ -242,14 +242,7 @@ net1 = create_mlp()
 
 
 def predict(pdata, width, height, filename):
-    start_time = time.time()
-    # Try the network on new data
-    #print len(data['x_test'])
     prediction = net1.predict(pdata)
-    #for X in data['x_test']:
-    #predict.extend(net1.predict([X])[0])
-    #for i in range(len(data['x_test'])):
-    #    prediction.extend(net1.predict([data['x_test'][i]]))
 
     imagearray = label_to_color(prediction, data['color_table'])
 
@@ -260,9 +253,7 @@ def predict(pdata, width, height, filename):
     )
     image = Image.fromarray(imagearray).transpose(Image.ROTATE_90).transpose(Image.FLIP_TOP_BOTTOM)
     image.save(filename, 'png')
-    #print "predict time: " + str(time.time()-start_time)
-    return image
-
+    return prediction
 
 def save_denselayer(layername, filetype="tif", width=110, height=110):
     layer0_values = layers.get_all_param_values(net1.layers_[layername])
@@ -330,6 +321,19 @@ def restrict_layer(layername, minimum=None, maximum=None):
     layers.set_all_param_values(net1.layers_[layername], layer_values)
 
 
+def write_to_file(filename, string):
+    f = open(filename, 'a')
+    f.write(string + '\n') # python will convert \n to os.linesep
+    f.close() # you can omit in most cases as the destructor will call it
+
+
+def array_to_string(array):
+    string = ""
+    for elem in array:
+        string += str(elem)+'\t'
+    return string
+
+
 def shuffle_data():
     # Randomize new order
     length = len(data['x_train'])
@@ -346,6 +350,21 @@ def shuffle_data():
     data_y = numpy.asarray(data_y)
     data['y_train'] = data_y
 
+
+def calculate_prediction_result(xdata, ydata):
+    prediction = net1.predict(xdata)
+
+    right = numpy.zeros(data['output_dim'])
+    overall = numpy.zeros(data['output_dim'])
+    for i in range(len(ydata)):
+        if ydata[i]==prediction[i]:
+            right[[ydata[i]]]+=1
+        overall[[ydata[i]]]+=1
+
+    relative = numpy.zeros(len(overall))
+    for i in range(len(relative)):
+        relative[i]=right[i] / overall[i]
+    return relative
 
 def main():
 
@@ -375,8 +394,10 @@ def main():
     for x in range(1, 1000):
         # Train the network
         net1.fit(data['x_train'], data['y_train'])
-        predict(data['x_valid'], 148, 143, savedir+'/valid'+str(x).zfill(3)+'.png')
-        predict(data['x_test'], 148, 143, savedir+'/test'+str(x).zfill(3)+'.png')
+        validpred = predict(data['x_valid'], 148, 143, savedir+'/valid'+str(x).zfill(3)+'.png')
+        testpred = predict(data['x_test'], 148, 143, savedir+'/test'+str(x).zfill(3)+'.png')
+        write_to_file(savedir + "/valid.txt", array_to_string(calculate_prediction_result(data['x_valid'], data['y_valid'])))
+        write_to_file(savedir + "/test.txt", array_to_string(calculate_prediction_result(data['x_test'], data['y_test'])))
         #imshow(predict(308, 296, savedir+'/'+str(x).zfill(2)+'.png'))
         #show()
         #restrict_conv_layer()
