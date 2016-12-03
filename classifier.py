@@ -57,32 +57,25 @@ def label_to_color(array, color_table):
     return imagearray
 
 DATA_URL = 'http://deeplearning.net/data/mnist/mnist.pkl.gz'
-DATA_FILENAME = "satellite2.png_50_50_4_4_5.pkl"
+#DATA_FILENAME = "satellite1.png_50_50_4_4_5.pkl"
 PATCHSIZE = 11
 
-savedir = "satellite2.png_50_50_4_4_5"
+savedir = "split_valid_test"
 if not os.path.exists(savedir):
     os.makedirs(savedir)
 
 
-def _load_dataGZ(url=DATA_URL, filename=DATA_FILENAME):
-    """Load data from `url` and store the result in `filename`."""
-    if not os.path.exists(filename):
-        print("Downloading MNIST dataset")
-        urlretrieve(url, filename)
-
-    with gzip.open(filename, 'rb') as f:
-        return pickle_load(f)
-
-
-def _load_data(filename=DATA_FILENAME):
-    with open(filename, 'rb') as f:
-        return pickle_load(f)
-
-
-def load_data():
+def load_data(file_train, file_test):
     """Get data with labels, split into training, validation and test set."""
-    data = _load_data()
+    with open(file_test, 'rb') as f:
+        data = pickle_load(f)
+
+    x_test, y_test = data[0]
+    x_test = x_test.reshape((-1, 1, PATCHSIZE, PATCHSIZE, 3))
+
+    with open(file_train, 'rb') as f:
+        data = pickle_load(f)
+
     x_train, y_train = data[0]
 
     x_train = numpy.array(x_train, dtype=numpy.float32)
@@ -92,9 +85,6 @@ def load_data():
 
     x_valid = x_train
     y_valid = x_train
-
-    x_test = x_train
-    y_test = x_train
 
     return dict(
         x_train=x_train,
@@ -109,7 +99,7 @@ def load_data():
         color_table=data[1]
     )
 
-data = load_data()
+data = load_data("satellite1.png_50_50_4_4_5.pkl", "satellite2.png_50_50_4_4_5.pkl")
 
 
 def create_mlp():
@@ -251,11 +241,11 @@ def create_ae():
 net1 = create_mlp()
 
 
-def predict(width, height, filename):
+def predict(pdata, width, height, filename):
     start_time = time.time()
     # Try the network on new data
     #print len(data['x_test'])
-    prediction = net1.predict(data['x_test'])
+    prediction = net1.predict(pdata)
     #for X in data['x_test']:
     #predict.extend(net1.predict([X])[0])
     #for i in range(len(data['x_test'])):
@@ -308,7 +298,7 @@ def save_score(filename):
         filept.write(str(net1.score(data['x_train'], data['y_train'])) + "\n")
 
 
-def confusion_matrix():
+def confusion_matrix(xtest, ytest):
     preds = net1.predict(data['x_test'])
     colorm = sklearn.metrics.confusion_matrix(data['y_test'], preds)
     plt.matshow(colorm)
@@ -382,16 +372,18 @@ def main():
     #show()
 
     shuffle_data()
-    for prints in range(0, 10):
-        for x in range(0, 100):
-            # Train the network
-            net1.fit(data['x_train'], data['y_train'])
-            predict(148, 143, savedir+'/'+str(x).zfill(2)+'.png')
-            #imshow(predict(308, 296, savedir+'/'+str(x).zfill(2)+'.png'))
-            #show()
-            #restrict_conv_layer()
-            #restrict_layer("encode_layer", 0.01)
-            #restrict_layer(2, 0)
+    for x in range(1, 1000):
+        # Train the network
+        net1.fit(data['x_train'], data['y_train'])
+        predict(data['x_valid'], 148, 143, savedir+'/valid'+str(x).zfill(3)+'.png')
+        predict(data['x_test'], 148, 143, savedir+'/test'+str(x).zfill(3)+'.png')
+        #imshow(predict(308, 296, savedir+'/'+str(x).zfill(2)+'.png'))
+        #show()
+        #restrict_conv_layer()
+        #restrict_layer("encode_layer", 0.01)
+        #restrict_layer(2, 0)
+        #if x%10==0:
+        #    confusion_matrix()
 
 
         #show_conv2dlayer('conv2d1', '9x9')
