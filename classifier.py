@@ -60,7 +60,7 @@ DATA_URL = 'http://deeplearning.net/data/mnist/mnist.pkl.gz'
 #DATA_FILENAME = "satellite1.png_50_50_4_4_5.pkl"
 PATCHSIZE = 11
 
-savedir = "split_valid_test"
+savedir = "split_valid_test_2"
 if not os.path.exists(savedir):
     os.makedirs(savedir)
 
@@ -108,7 +108,7 @@ def create_mlp():
             #('reshape', FlattenLayer),
             ('hidden1', DenseLayer),
             #('dropout1',layers.DropoutLayer), 
-            #('hidden2', DenseLayer),
+            ('hidden2', DenseLayer),
             #('dropout2',layers.DropoutLayer), 
             #('hidden3', DenseLayer),
             ('output', DenseLayer),
@@ -118,8 +118,8 @@ def create_mlp():
         input_shape=(None, 1, PATCHSIZE, PATCHSIZE, 3),
         #reshape_shape=(([0], 11*11)),outdim
         #reshape_outdim=1,
-        hidden1_num_units=20000,  # number of units in 'hidden' layer
-        #hidden2_num_units=5000,  # number of units in 'hidden' layer
+        hidden1_num_units=5000,  # number of units in 'hidden' layer
+        hidden2_num_units=5000,  # number of units in 'hidden' layer
         #hidden3_num_units=2601,  # number of units in 'hidden' layer
 
         #dropout1_p=0.15,
@@ -130,7 +130,7 @@ def create_mlp():
 
         # optimization method:
         update=adam,
-        update_learning_rate=0.005,
+        update_learning_rate=0.001,
         #update_momentum=0.9,
 
         max_epochs=1,
