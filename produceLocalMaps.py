@@ -15,15 +15,15 @@ def createDir(foldername):
     return foldername
 
 # set global variables
-inputImageX='satellite1.png'
+inputImageX='satellite2.png'
 #inputImageX='roadmap.png'
-inputImageY='roadmap1.png'
+inputImageY='roadmap2.png'
 outputDir=createDir('walls_py')
 width=50
 height=50
 step_width=4
 step_height=4
-innerstep=1
+innerstep=5
 
 from numpngw import write_png
 def save_png(array, filename):
@@ -121,7 +121,7 @@ for x in range(0, im_width, step_width):
         set_x.append(localMapX.flatten())
         #show_image(localMapX, width+1, height+1)
     print str(x)+' - ' + str(time.time() - start_time)
-create_pkl_file(set_x, set_y, '50_50_4_4_1.pkl')
+create_pkl_file(set_x, set_y, inputImageX + '_50_50_4_4_5.pkl')
 
 from pylab import imshow, show, cm
 def label_to_color(array, color_table):

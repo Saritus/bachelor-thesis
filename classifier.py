@@ -57,10 +57,10 @@ def label_to_color(array, color_table):
     return imagearray
 
 DATA_URL = 'http://deeplearning.net/data/mnist/mnist.pkl.gz'
-DATA_FILENAME = "50_50_4_4_1.pkl"
-PATCHSIZE = 51
+DATA_FILENAME = "satellite2.png_50_50_4_4_5.pkl"
+PATCHSIZE = 11
 
-savedir = "50_50_4_4_1"
+savedir = "satellite2.png_50_50_4_4_5"
 if not os.path.exists(savedir):
     os.makedirs(savedir)
 
@@ -90,12 +90,17 @@ def load_data():
 
     x_train = x_train.reshape((-1, 1, PATCHSIZE, PATCHSIZE, 3))
 
+    x_valid = x_train
+    y_valid = x_train
+
     x_test = x_train
     y_test = x_train
 
     return dict(
         x_train=x_train,
         y_train=y_train,
+        x_valid=x_valid,
+        y_valid=y_valid,
         x_test=x_test,
         y_test=y_test,
         num_examples_train=x_train.shape[0],
@@ -123,8 +128,8 @@ def create_mlp():
         input_shape=(None, 1, PATCHSIZE, PATCHSIZE, 3),
         #reshape_shape=(([0], 11*11)),outdim
         #reshape_outdim=1,
-        hidden1_num_units=10000,  # number of units in 'hidden' layer
-        #hidden2_num_units=50,  # number of units in 'hidden' layer
+        hidden1_num_units=20000,  # number of units in 'hidden' layer
+        #hidden2_num_units=5000,  # number of units in 'hidden' layer
         #hidden3_num_units=2601,  # number of units in 'hidden' layer
 
         #dropout1_p=0.15,
@@ -135,10 +140,10 @@ def create_mlp():
 
         # optimization method:
         update=adam,
-        update_learning_rate=0.1,
+        update_learning_rate=0.005,
         #update_momentum=0.9,
 
-        max_epochs=10,
+        max_epochs=1,
         verbose=1,
     )
     return net
@@ -250,11 +255,11 @@ def predict(width, height, filename):
     start_time = time.time()
     # Try the network on new data
     #print len(data['x_test'])
-    prediction = []
+    prediction = net1.predict(data['x_test'])
     #for X in data['x_test']:
     #predict.extend(net1.predict([X])[0])
-    for i in range(len(data['x_test'])):
-        prediction.extend(net1.predict([data['x_test'][i]]))
+    #for i in range(len(data['x_test'])):
+    #    prediction.extend(net1.predict([data['x_test'][i]]))
 
     imagearray = label_to_color(prediction, data['color_table'])
 
@@ -265,7 +270,7 @@ def predict(width, height, filename):
     )
     image = Image.fromarray(imagearray).transpose(Image.ROTATE_90).transpose(Image.FLIP_TOP_BOTTOM)
     image.save(filename, 'png')
-    print "predict time: " + str(time.time()-start_time)
+    #print "predict time: " + str(time.time()-start_time)
     return image
 
 
@@ -359,13 +364,29 @@ def main():
     #for img in range(0, 10):
     #    show_image(data['x_train'][img])
 
+    zero=0
+    one=0
+    two=0
+    for y in data['y_train']:
+        if y==0:
+            zero+=1
+        elif y==1:
+            one+=1
+        elif y==2:
+            two+=1
+        else:
+            print 'Error'
+    print zero, one, two
 
+    #imshow(data['y_train'].reshape(148, 143))
+    #show()
+
+    shuffle_data()
     for prints in range(0, 10):
         for x in range(0, 100):
-            #shuffle_data()
             # Train the network
             net1.fit(data['x_train'], data['y_train'])
-            predict(308, 296, savedir+'/'+str(x).zfill(2)+'.png')
+            predict(148, 143, savedir+'/'+str(x).zfill(2)+'.png')
             #imshow(predict(308, 296, savedir+'/'+str(x).zfill(2)+'.png'))
             #show()
             #restrict_conv_layer()
