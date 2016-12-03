@@ -1,0 +1,420 @@
+import lasagne
+from lasagne import layers
+from lasagne.updates import nesterov_momentum
+from lasagne.updates import adam
+
+from lasagne.layers import DenseLayer
+from lasagne.layers import InputLayer
+from lasagne.layers import ReshapeLayer
+from lasagne.nonlinearities import softmax
+
+from nolearn.lasagne import NeuralNet
+from nolearn.lasagne.visualize import plot_conv_weights
+
+import sklearn.metrics
+
+import sys
+import os
+import gzip
+import pickle
+import numpy
+import math
+import time
+import matplotlib.pyplot as plt
+
+from pylab import imshow, show, cm, imsave
+from PIL import Image
+
+from urllib import urlretrieve
+
+
+def pickle_load(f):
+    return pickle.load(f)
+
+
+def sigmoid(x):
+    return 1 / (1 + math.exp(-x))
+
+
+def show_image(x, width=11, height=11):
+    #nx = numpy.array(x, dtype=numpy.uint8).reshape(width, height, 3)
+    nx = numpy.array(x).reshape(width, height, 3)
+    image = Image.fromarray(nx)
+    imshow(image, interpolation='nearest')
+    show()
+
+
+from numpngw import write_png
+def save_png(array, filename):
+    write_png(filename, numpy.swapaxes(array, 0, 1))
+
+
+def label_to_color(array, color_table):
+    imagearray = []
+    for i in range(len(array)):
+        imagearray.append(color_table[array[i]])
+    imagearray = numpy.array(imagearray, dtype='uint8')
+    return imagearray
+
+DATA_URL = 'http://deeplearning.net/data/mnist/mnist.pkl.gz'
+DATA_FILENAME = "50_50_4_4_1.pkl"
+PATCHSIZE = 51
+
+savedir = "50_50_4_4_1"
+if not os.path.exists(savedir):
+    os.makedirs(savedir)
+
+
+def _load_dataGZ(url=DATA_URL, filename=DATA_FILENAME):
+    """Load data from `url` and store the result in `filename`."""
+    if not os.path.exists(filename):
+        print("Downloading MNIST dataset")
+        urlretrieve(url, filename)
+
+    with gzip.open(filename, 'rb') as f:
+        return pickle_load(f)
+
+
+def _load_data(filename=DATA_FILENAME):
+    with open(filename, 'rb') as f:
+        return pickle_load(f)
+
+
+def load_data():
+    """Get data with labels, split into training, validation and test set."""
+    data = _load_data()
+    x_train, y_train = data[0]
+
+    x_train = numpy.array(x_train, dtype=numpy.float32)
+    y_train = numpy.array(y_train, dtype=numpy.int8)
+
+    x_train = x_train.reshape((-1, 1, PATCHSIZE, PATCHSIZE, 3))
+
+    x_test = x_train
+    y_test = x_train
+
+    return dict(
+        x_train=x_train,
+        y_train=y_train,
+        x_test=x_test,
+        y_test=y_test,
+        num_examples_train=x_train.shape[0],
+        input_dim=x_train.shape[1],
+        output_dim=len(data[1]),
+        color_table=data[1]
+    )
+
+data = load_data()
+
+
+def create_mlp():
+    net = NeuralNet(
+        layers=[('input', InputLayer),
+            #('reshape', FlattenLayer),
+            ('hidden1', DenseLayer),
+            #('dropout1',layers.DropoutLayer), 
+            #('hidden2', DenseLayer),
+            #('dropout2',layers.DropoutLayer), 
+            #('hidden3', DenseLayer),
+            ('output', DenseLayer),
+        ],
+                
+        # layer parameters:
+        input_shape=(None, 1, PATCHSIZE, PATCHSIZE, 3),
+        #reshape_shape=(([0], 11*11)),outdim
+        #reshape_outdim=1,
+        hidden1_num_units=10000,  # number of units in 'hidden' layer
+        #hidden2_num_units=50,  # number of units in 'hidden' layer
+        #hidden3_num_units=2601,  # number of units in 'hidden' layer
+
+        #dropout1_p=0.15,
+        #dropout2_p=0.15,
+                
+        output_nonlinearity=softmax,
+        output_num_units=data['output_dim'],  # 10 target values for the digits 0, 1, 2, ..., 9
+
+        # optimization method:
+        update=adam,
+        update_learning_rate=0.1,
+        #update_momentum=0.9,
+
+        max_epochs=10,
+        verbose=1,
+    )
+    return net
+
+
+def create_cnn():
+    net = NeuralNet(
+        layers=[('input', layers.InputLayer),
+                ('conv2d1', layers.Conv2DLayer),
+                #('maxpool1', layers.MaxPool2DLayer),
+                #('conv2d2', layers.Conv2DLayer),
+                #('maxpool2', layers.MaxPool2DLayer),
+                #('dropout1', layers.DropoutLayer),
+                #('dense', layers.DenseLayer),
+                #('dropout2', layers.DropoutLayer),
+                ('output', layers.DenseLayer),
+                ],
+        # input layer
+        input_shape=(None, 1, PATCHSIZE, PATCHSIZE),
+        # layer conv2d1
+        conv2d1_num_filters=256,
+        conv2d1_filter_size=(9, 9),
+        conv2d1_nonlinearity=lasagne.nonlinearities.rectify,
+        conv2d1_W=lasagne.init.GlorotUniform(),  
+        # layer maxpool1
+        #maxpool1_pool_size=(2, 2),
+        # layer conv2d2
+        #conv2d2_num_filters=64,
+        #conv2d2_filter_size=(5, 5),
+        #conv2d2_nonlinearity=lasagne.nonlinearities.rectify,
+        # layer maxpool2
+        #maxpool2_pool_size=(2, 2),
+        # dropout1
+        #dropout1_p=0.1,    
+        # dense
+        #dense_num_units=256,
+        #dense_nonlinearity=lasagne.nonlinearities.rectify,
+        # dropout2
+        #dropout2_p=0.1,    
+        # output
+        output_nonlinearity=lasagne.nonlinearities.softmax,
+        output_num_units=data['output_dim']+1,
+        # optimization method params
+        update=nesterov_momentum,
+        update_learning_rate=0.01,
+        update_momentum=0.9,
+        max_epochs=1,
+        verbose=1
+    )
+    return net
+
+
+def create_ae():
+    conv_filters = 8
+    deconv_filters = 1
+    filter_sizes = 1
+    ae = NeuralNet(
+        layers=[
+            ('input', layers.InputLayer),
+            #('conv', layers.Conv2DLayer),
+            #('pool', layers.MaxPool2DLayer),
+            #('flatten', ReshapeLayer),  # output_dense
+            #('encode_layer', layers.DenseLayer),
+            ('hidden', layers.DenseLayer),  # output_dense
+            #('unflatten', ReshapeLayer),
+            #('unpool', Unpool2DLayer),
+            #('deconv', layers.Conv2DLayer),
+            ('output_layer', DenseLayer),
+        ],
+        input_shape=(None, 1, PATCHSIZE, PATCHSIZE),
+
+        #conv_num_filters=conv_filters,
+        #conv_filter_size = (filter_sizes, filter_sizes),
+        #conv_nonlinearity=None,
+
+        #pool_pool_size=(2, 2),
+
+        #flatten_shape=([0], -1), # not sure if necessary?
+
+        #encode_layer_num_units = 121,
+
+        #hidden_num_units = deconv_filters * (PATCHSIZE + filter_sizes - 1) ** 2 / 4,
+        hidden_num_units = 121,
+
+        #unflatten_shape=([0], deconv_filters, 11, 11 ),
+
+        #unpool_ds=(2, 2),
+
+        #deconv_num_filters = deconv_filters,
+        #deconv_filter_size = (filter_sizes, filter_sizes),
+        #deconv_nonlinearity=None,
+
+        #output_layer_shape =([0], 121),
+        output_layer_num_units = 121,
+
+        update_learning_rate = 0.01,
+        update_momentum = 0.975,
+        #batch_iterator_train=FlipBatchIterator(batch_size=128),
+        regression=True,
+        max_epochs= 1,
+        verbose=1,
+    )
+    return ae
+
+net1 = create_mlp()
+
+
+def predict(width, height, filename):
+    start_time = time.time()
+    # Try the network on new data
+    #print len(data['x_test'])
+    prediction = []
+    #for X in data['x_test']:
+    #predict.extend(net1.predict([X])[0])
+    for i in range(len(data['x_test'])):
+        prediction.extend(net1.predict([data['x_test'][i]]))
+
+    imagearray = label_to_color(prediction, data['color_table'])
+
+    imagearray = imagearray.reshape(
+        width,  # first image dimension (vertical)
+        height,  # second image dimension (horizontal)
+        3 # rgb
+    )
+    image = Image.fromarray(imagearray).transpose(Image.ROTATE_90).transpose(Image.FLIP_TOP_BOTTOM)
+    image.save(filename, 'png')
+    print "predict time: " + str(time.time()-start_time)
+    return image
+
+
+def save_denselayer(layername, filetype="tif", width=110, height=110):
+    layer0_values = layers.get_all_param_values(net1.layers_[layername])
+    for neuro in range(0, layer0_values[0].shape[1]):
+        layer0_1 = [layer0_values[0][i][neuro] for i in range(len(layer0_values[0]))]
+        if filetype != "tif":
+            layer0_1 = [i * 256 for i in layer0_1]
+        layer0_1 = numpy.asarray(layer0_1)
+        layer0_1 = layer0_1.reshape(
+            11,  # first image dimension (vertical)
+            11  # second image dimension (horizontal)
+        )
+        image = Image.fromarray(layer0_1)
+        if filetype == "tif":
+            image.resize((width, height), Image.NEAREST).save(savedir + "/" + layername + str(neuro).zfill(4) + '.tif', "TIFF")
+        elif filetype == "png":
+            image.convert('RGB').resize((width, height), Image.NEAREST).save(savedir + "/" + str(neuro).zfill(4) + '.png', "PNG")
+        else:
+            sys.stderr.write('Filetype is not supported')
+
+
+def show_conv2dlayer(layername, filename=None):
+    plot_conv_weights(net1.layers_[layername], figsize=(11, 11))
+    if filename:
+        plt.savefig(savedir+'/'+filename)
+        #plt.clf()
+    plt.show()
+
+
+def save_score(filename):
+    # Save score to file
+    with open(savedir + '/' + filename, 'a') as filept:
+        filept.write(str(net1.score(data['x_train'], data['y_train'])) + "\n")
+
+
+def confusion_matrix():
+    preds = net1.predict(data['x_test'])
+    colorm = sklearn.metrics.confusion_matrix(data['y_test'], preds)
+    plt.matshow(colorm)
+    plt.title('Confusion matrix')
+    plt.colorbar()
+    plt.ylabel('True label')
+    plt.xlabel('Predicted label')
+    plt.show()
+
+
+def show_output(layername):
+    instance = data['x_train'][260].reshape(1, 1, 11, 11)
+    pred = layers.get_output(net1.layers_[layername], instance, deterministic=False)
+    N = pred.shape[1]
+    #print pred[0][0].eval()
+    print N
+    #plt.bar(range(N), pred.ravel())
+    plt.show()
+
+
+def restrict_layer(layername, minimum=None, maximum=None):
+    layer_values = layers.get_all_param_values(net1.layers_[layername])
+    for to_neuron in range(0, layer_values[0].shape[0]):
+        if minimum:
+            layer_values[0][to_neuron][layer_values[0][to_neuron] < minimum] = minimum
+        if maximum:
+            layer_values[0][to_neuron][layer_values[0][to_neuron] > maximum] = maximum
+
+    layers.set_all_param_values(net1.layers_[layername], layer_values)
+
+
+def shuffle_data():
+    # Randomize new order
+    length = len(data['x_train'])
+    new_order = range(0, length)
+    numpy.random.shuffle(new_order)
+
+    # Shuffle x_train
+    data_x = [data['x_train'][i] for i in new_order]
+    data_x = numpy.asarray(data_x)
+    data['x_train'] = data_x
+
+    # Shuffle y_train
+    data_y = [data['y_train'][i] for i in new_order]
+    data_y = numpy.asarray(data_y)
+    data['y_train'] = data_y
+
+
+def main():
+
+    print("Got %i testing datasets." % len(data['x_train']))
+
+    #for img in range(0, 10):
+    #    show_image(data['x_train'][img])
+
+
+    for prints in range(0, 10):
+        for x in range(0, 100):
+            #shuffle_data()
+            # Train the network
+            net1.fit(data['x_train'], data['y_train'])
+            predict(308, 296, savedir+'/'+str(x).zfill(2)+'.png')
+            #imshow(predict(308, 296, savedir+'/'+str(x).zfill(2)+'.png'))
+            #show()
+            #restrict_conv_layer()
+            #restrict_layer("encode_layer", 0.01)
+            #restrict_layer(2, 0)
+
+
+        #show_conv2dlayer('conv2d1', '9x9')
+
+    #save_denselayer('encode_layer')
+    #save_denselayer('hidden')
+
+    '''
+    for i in range(1, 12770):
+        result = net1.predict([data['x_test'][i]])
+        #print str(i) + " - " + str(result.max())
+        if result.max() > 0.2:
+            print i
+            #print result.shape
+            print result
+            imagearray = numpy.array([value * 256 for value in result])
+            show_image(data['x_test'][i])
+            show_image(imagearray)
+            #show_image(data['x_ae'][i])
+    '''
+
+    '''
+    #imshow(image, cmap=cm.gray)
+    #show()
+    #image.save("epochs" + str(net1.max_epochs).zfill(4) + "_hidden_" + str(net1.hidden1_num_units).zfill(4) +'_'+str(net1.hidden2_num_units).zfill(4)+'_'+str(net1.hidden3_num_units).zfill(4)+ '.png',"PNG")
+
+    image.save(savedir + "/epoch" +str(x * net1.max_epochs).zfill(4) + '.png',"PNG")
+    #print savedir + "/epoch" +str(x * net1.max_epochs).zfill(4) + '.png saved'
+    '''
+
+    # print net1
+    # print net1.score(data['x_train'], data['y_train'])
+    # numpy.set_printoptions(threshold=numpy.inf)
+
+
+def restrict_conv_layer():
+    layer_values = layers.get_all_param_values(net1.layers_['conv2d1'])
+
+    for to_neuron in range(0, layer_values[0].shape[0]):
+        #layer_values[0][to_neuron][ layer_values[0][to_neuron] < -1] = -1
+        layer_values[0][to_neuron][layer_values[0][to_neuron] > 0] = 0
+
+    layers.set_all_param_values(net1.layers_['conv2d1'], layer_values)
+
+
+if __name__ == '__main__':
+    main()
