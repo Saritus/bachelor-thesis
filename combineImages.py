@@ -2,6 +2,14 @@ from PIL import Image
 from pylab import imshow, show, cm, imsave
 
 def combine_images(images):
+    if(images[0].size[1] is not images[1].size[1]):
+        raise ValueError("Height of image 1 and 2 are different")
+    if(images[0].size[0] is not images[2].size[0]):
+        raise ValueError("Width of image 1 and 3 are different")
+    if(images[1].size[0] is not images[3].size[0]):
+        raise ValueError("Width of image 2 and 4 are different")
+    if(images[2].size[1] is not images[3].size[1]):
+        raise ValueError("Height of image 3 and 4 are different")
     width = images[0].size[0]
     height = images[0].size[1]
     output = Image.new("RGB", (width*2, height*2))
