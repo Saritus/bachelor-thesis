@@ -20,3 +20,5 @@ images.extend([Image.open("samples/4.png").convert('RGB')])
 output = combine_images(images)
 imshow(output)
 show()
+
+output.save("samples/output.png")
