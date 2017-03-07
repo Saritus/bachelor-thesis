@@ -2,11 +2,13 @@ from PIL import Image
 from pylab import imshow, show, cm, imsave
 
 def combine_images(images):
-    output = Image.new("RGB", (100, 100))
-    output.paste(images[0], (0,0,50,50))
-    output.paste(images[1], (50,0,100,50))
-    output.paste(images[2], (0,50,50,100))
-    output.paste(images[3], (50,50,100,100))
+    width = images[0].size[0]
+    height = images[0].size[1]
+    output = Image.new("RGB", (width*2, height*2))
+    output.paste(images[0], (0,0))
+    output.paste(images[1], (width,0))
+    output.paste(images[2], (0,height))
+    output.paste(images[3], (width, height))
     return output
 
 images = []
