@@ -6,8 +6,8 @@ with open('data/Gebaeude_Dresden.csv') as csvfile:
     
     for row in reader:
         
-        xcoords.extend([float(row['SP_GEOMETRY_Center'].replace(',','.'))])
-        ycoords.extend([float(row['X_Coordinate'].replace(',','.'))])
+        xcoords.extend([float(row['X_Coordinate'].replace(',','.'))])
+        ycoords.extend([float(row['Y_Coordinate'].replace(',','.'))])
 
 import matplotlib.pyplot as plt
 plt.plot(xcoords, ycoords, 'bo', markersize=0.5)
