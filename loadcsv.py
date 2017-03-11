@@ -13,5 +13,5 @@ with open('data/Gebaeude_Dresden.csv') as csvfile:
         flags.extend([float(row['Flag_Coordinates'])])
 
 import matplotlib.pyplot as plt
-plt.scatter(xcoords, ycoords, c=flags, s=0.5, cmap='jet')
+plt.scatter(xcoords, ycoords, c=zipcodes, s=0.5, cmap='jet')
 plt.show()
