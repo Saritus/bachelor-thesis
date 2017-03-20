@@ -57,3 +57,8 @@ print(X_test.shape[0], 'test samples')
 # convert class vectors to binary class matrices
 Y_train = np_utils.to_categorical(y_train, nb_classes)
 Y_test = np_utils.to_categorical(y_test, nb_classes)
+
+model.fit(X_train, Y_train,  		
+          batch_size=batch_size, 
+          epochs=nb_epoch, verbose=2,	
+          validation_data=(X_test, Y_test))
