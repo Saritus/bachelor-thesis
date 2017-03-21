@@ -30,6 +30,28 @@ def load_mnist():
 
 
 (X_train, Y_train), (X_test, Y_test) = load_mnist()
+def load_csv(filename):
+    import csv
+    with open(filename) as csvfile:
+        reader = csv.DictReader(csvfile, delimiter='\t')
+
+        table = []
+        for row in reader:
+            dictionary = [
+                float(row['X_Coordinate'].replace(',', '.')),  # 0 : X_Coordinate
+                float(row['Y_Coordinate'].replace(',', '.')),  # 1 : Y_Coordinate
+                int(row['ZipCode']),  # 2 : ZipCode
+                int(row['Flag_Coordinates'])  # 3 : Flag_Coordinates
+            ]
+            table.extend([dictionary])
+
+    X_train = (row[:2] for row in table)
+    Y_train = (row[2] for row in table)
+    X_test = (row[:2] for row in table)
+    Y_test = (row[2] for row in table)
+
+    return (X_train, Y_train), (X_test, Y_test)
+
 
 
 def create_net():
