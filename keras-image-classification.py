@@ -24,42 +24,49 @@ def load_data():
 
     return (X_train, Y_train), (X_test, Y_test)
 
+
 (X_train, Y_train), (X_test, Y_test) = load_data()
 
-from keras.models import Sequential
-from keras.layers import (Activation, Dropout, Flatten, Dense, Convolution2D, MaxPooling2D)
+
+def create_net():
+    from keras.models import Sequential
+    from keras.layers import (Activation, Dropout, Flatten, Dense, Convolution2D, MaxPooling2D)
+
+    # number of convolutional filters to use
+    nb_filters = 32
+    # size of pooling area for max pooling
+    nb_pool = 2
+    # convolution kernel size
+    nb_conv = 3
+
+    model = Sequential()
+
+    model.add(Convolution2D(nb_filters, (nb_conv, nb_conv), border_mode='same', input_shape=(X_train.shape[1:])))
+    model.add(Activation('relu'))
+    # model.add(Convolution2D(nb_filters, nb_conv, nb_conv))
+    # model.add(Activation('relu'))
+    # model.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
+    model.add(Dropout(0.25))
+
+    model.add(Flatten())
+    model.add(Dense(128))
+    model.add(Activation('relu'))
+    model.add(Dropout(0.5))
+    model.add(Dense(Y_train.shape[1]))
+    model.add(Activation('softmax'))
+
+    model.compile(loss='categorical_crossentropy',
+                  optimizer='adadelta',
+                  metrics=['accuracy'])
+
+    return model
+
+
+model = create_net()
 
 ## Some model and data processing constants
-
 batch_size = 128
 nb_epoch = 12
-
-# number of convolutional filters to use
-nb_filters = 32
-# size of pooling area for max pooling
-nb_pool = 2
-# convolution kernel size
-nb_conv = 3
-
-model = Sequential()
-
-model.add(Convolution2D(nb_filters, (nb_conv, nb_conv), border_mode='same', input_shape=(X_train.shape[1:])))
-model.add(Activation('relu'))
-# model.add(Convolution2D(nb_filters, nb_conv, nb_conv))
-# model.add(Activation('relu'))
-# model.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
-model.add(Dropout(0.25))
-
-model.add(Flatten())
-model.add(Dense(128))
-model.add(Activation('relu'))
-model.add(Dropout(0.5))
-model.add(Dense(Y_train.shape[1]))
-model.add(Activation('softmax'))
-
-model.compile(loss='categorical_crossentropy',
-              optimizer='adadelta',
-              metrics=['accuracy'])
 
 history = model.fit(X_train, Y_train,
                     batch_size=batch_size,
