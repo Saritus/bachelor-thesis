@@ -102,7 +102,7 @@ def create_net():
 
     model.compile(loss='mean_absolute_percentage_error',
                   optimizer='adam',
-                  metrics=[mean_pred])
+                  metrics=['mse','mae'])
 
     return model
 
@@ -117,7 +117,7 @@ history = model.fit(x=[X_train], y=[Y_train],
                     batch_size=batch_size,
                     epochs=nb_epoch, verbose=2,
                     shuffle=True,
-                    validation_split=0.0
+                    validation_split=0.01
                     # validation_data=(X_test, Y_test)
                     )
 
@@ -125,8 +125,8 @@ history = model.fit(x=[X_train], y=[Y_train],
 def show_acc():
     # ACC VS VAL_ACC
     import matplotlib.pyplot as plt
-    plt.plot(history.history['acc'])
-    plt.plot(history.history['val_acc'])
+    plt.plot(history.history['mean_absolute_error'])
+    plt.plot(history.history['val_mean_absolute_error'])
     plt.title('model accuracy ACC VS VAL_ACC')
     plt.ylabel('accuracy')
     plt.xlabel('epoch')
