@@ -40,20 +40,22 @@ def load_csv(filename):
         for row in reader:
             x = [
                 float(row['X_Coordinate'].replace(',', '.')),
-                float(row['Y_Coordinate'].replace(',', '.'))
+                float(row['Y_Coordinate'].replace(',', '.')),
+                float(hash(row['District'])) % 100,
+                float(hash(row['Street'])) % 100
             ]
             X_train.extend([x])
             y = [
-                int(row['ZipCode'])
+                int(row['ZipCode']) % 10
                 # int(row['Flag_Coordinates'])
             ]
             Y_train.extend([y])
 
     import numpy
-    X_train = numpy.asarray(X_train)
-    Y_train = numpy.asarray(Y_train)
-    X_test = numpy.array([])
-    Y_test = numpy.array([])
+    X_train = numpy.asarray(X_train, dtype=numpy.float32)
+    Y_train = numpy.asarray(Y_train, dtype=numpy.float32)
+    X_test = numpy.asarray(X_train, dtype=numpy.float32)
+    Y_test = numpy.asarray(Y_train, dtype=numpy.float32)
 
     return (X_train, Y_train), (X_test, Y_test)
 
