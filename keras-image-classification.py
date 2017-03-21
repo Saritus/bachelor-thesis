@@ -94,9 +94,15 @@ def create_net():
     model.add(Dense(Y_train.shape[1]))
     # model.add(Activation('softmax'))
 
+
+    def mean_pred(y_true, y_pred):
+        import keras.backend as K
+        import numpy
+        return K.mean(numpy.divide(y_true, y_pred))
+
     model.compile(loss='mean_absolute_percentage_error',
                   optimizer='adam',
-                  metrics=['accuracy'])
+                  metrics=[mean_pred])
 
     return model
 
