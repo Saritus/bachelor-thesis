@@ -68,7 +68,7 @@ model = create_net()
 batch_size = 128
 nb_epoch = 12
 
-history = model.fit(X_train, Y_train,
+history = model.fit(x=[X_train], y=[Y_train],
                     batch_size=batch_size,
                     epochs=nb_epoch, verbose=2,
                     validation_data=(X_test, Y_test))
