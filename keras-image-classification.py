@@ -38,6 +38,16 @@ def load_csv(filename):
         reader = csv.DictReader(csvfile, delimiter='\t')
 
         for row in reader:
+
+            # Download image from GoogleMaps API
+            import urllib
+            print row['House_ID']
+            filepath = "nwt-data/images/"+row['House_ID']+".jpg"
+            import os.path
+            if not os.path.exists(filepath):
+                urllib.urlretrieve(row['Image'], filepath)
+
+            # Fill input array
             x = [
                 float(row['X_Coordinate'].replace(',', '.')),
                 float(row['Y_Coordinate'].replace(',', '.')),
@@ -45,6 +55,8 @@ def load_csv(filename):
                 float(hash(row['Street'])) % 100
             ]
             X_train.extend([x])
+
+            # Fill output array
             y = [
                 int(row['ZipCode'])
                 # int(row['Flag_Coordinates'])
@@ -60,7 +72,7 @@ def load_csv(filename):
     return (X_train, Y_train), (X_test, Y_test)
 
 
-(X_train, Y_train), (X_test, Y_test) = load_csv("nwt-data/Gebaeude_Dresden.csv")
+(X_train, Y_train), (X_test, Y_test) = load_csv("nwt-data/Gebaeude_Dresden_images_few.csv")
 
 
 def create_net():
