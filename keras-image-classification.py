@@ -159,3 +159,14 @@ def show_prediction():
 
 show_prediction()
 
+
+def save_prediction(filename):
+    import cPickle as pickle
+    prediction = model.predict(X_train).flatten()
+
+    result = [X_train[:, 0], X_train[:, 1], prediction]
+
+    pickle.dump(result, open(filename, "wb"))
+
+
+save_prediction("result/prediction.pkl")
