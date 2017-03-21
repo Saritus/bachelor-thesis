@@ -46,7 +46,7 @@ def load_csv(filename):
             ]
             X_train.extend([x])
             y = [
-                int(row['ZipCode']) % 10
+                int(row['ZipCode'])
                 # int(row['Flag_Coordinates'])
             ]
             Y_train.extend([y])
@@ -94,7 +94,7 @@ def create_net():
     model.add(Dense(Y_train.shape[1]))
     # model.add(Activation('softmax'))
 
-    model.compile(loss='mean_squared_error',
+    model.compile(loss='mean_absolute_percentage_error',
                   optimizer='adam',
                   metrics=['accuracy'])
 
@@ -111,7 +111,7 @@ history = model.fit(x=[X_train], y=[Y_train],
                     batch_size=batch_size,
                     epochs=nb_epoch, verbose=2,
                     shuffle=True,
-                    validation_split=0.1
+                    validation_split=0.0
                     # validation_data=(X_test, Y_test)
                     )
 
