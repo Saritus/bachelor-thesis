@@ -1,4 +1,4 @@
-def load_data():
+def load_mnist():
     from keras.datasets import mnist
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
@@ -25,7 +25,7 @@ def load_data():
     return (X_train, Y_train), (X_test, Y_test)
 
 
-(X_train, Y_train), (X_test, Y_test) = load_data()
+(X_train, Y_train), (X_test, Y_test) = load_mnist()
 
 
 def create_net():
