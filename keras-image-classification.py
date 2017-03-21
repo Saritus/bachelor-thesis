@@ -144,3 +144,18 @@ def show_loss():
 
 
 show_loss()
+
+def show_prediction():
+    prediction = model.predict(X_train).flatten()
+    print X_train[:, 0]
+    print X_train[:, 1]
+    print prediction
+
+    import matplotlib.pyplot as plt
+    plt.scatter(X_train[:, 0], X_train[:, 1], c=prediction, s=0.5, cmap='Blues')
+    # plt.scatter(X_train[:, 0], X_train[:, 1], color='red', s=0.5, cmap='jet')
+    plt.show()
+
+
+show_prediction()
+
