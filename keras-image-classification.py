@@ -92,6 +92,7 @@ def create_net():
     model.add(Activation('relu'))
     # model.add(Dropout(0.5))
     model.add(Dense(Y_train.shape[1]))
+
     # model.add(Activation('softmax'))
 
 
@@ -102,7 +103,7 @@ def create_net():
 
     model.compile(loss='mean_absolute_percentage_error',
                   optimizer='adam',
-                  metrics=['mse','mae'])
+                  metrics=['mse', 'mae'])
 
     return model
 
@@ -110,8 +111,8 @@ def create_net():
 model = create_net()
 
 ## Some model and data processing constants
-batch_size = 128
-nb_epoch = 12
+batch_size = 512
+nb_epoch = 100
 
 history = model.fit(x=[X_train], y=[Y_train],
                     batch_size=batch_size,
@@ -123,6 +124,7 @@ history = model.fit(x=[X_train], y=[Y_train],
 
 
 def show_acc():
+    print history.history
     # ACC VS VAL_ACC
     import matplotlib.pyplot as plt
     plt.plot(history.history['mean_absolute_error'])
@@ -150,6 +152,7 @@ def show_loss():
 
 
 show_loss()
+
 
 def show_prediction():
     prediction = model.predict(X_train).flatten()
@@ -185,5 +188,6 @@ def show_prediction_from_file(filename):
     import matplotlib.pyplot as plt
     plt.scatter(x, y, c=prediction, s=0.5, cmap='jet')
     plt.show()
-    
+
+
 show_prediction_from_file("result/prediction.pkl")
