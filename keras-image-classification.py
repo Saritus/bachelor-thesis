@@ -170,7 +170,7 @@ def save_prediction(filename):
     import cPickle as pickle
     prediction = model.predict(X_train).flatten()
 
-    result = [X_train[:, 0], X_train[:, 1], prediction]
+    result = [X_train[:, 0], X_train[:, 1], Y_train, prediction]
 
     pickle.dump(result, open(filename, "wb"))
 
@@ -180,7 +180,7 @@ save_prediction("result/prediction.pkl")
 
 def show_prediction_from_file(filename):
     import cPickle as pickle
-    x, y, prediction = pickle.load(open(filename, "rb"))
+    x, y, t, prediction = pickle.load(open(filename, "rb"))
 
     import matplotlib.pyplot as plt
     plt.scatter(x, y, c=prediction, s=0.5, cmap='jet')
