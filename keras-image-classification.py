@@ -76,22 +76,26 @@ def create_net():
 
     model = Sequential()
 
-    model.add(Convolution2D(nb_filters, (nb_conv, nb_conv), padding='valid', input_shape=(X_train.shape[1:])))
-    model.add(Activation('relu'))
-    model.add(Convolution2D(nb_filters, (nb_conv, nb_conv)))
-    model.add(Activation('relu'))
-    model.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
-    model.add(Dropout(0.25))
+    print ("X_train", X_train.shape)
+    print ("Y_train", Y_train.shape)
 
-    model.add(Flatten())
-    model.add(Dense(128))
+    model.add(Dense(512, input_shape=(X_train.shape[1:])))
+    # model.add(Convolution2D(nb_filters, (nb_conv, nb_conv), padding='valid', input_shape=(X_train.shape[1:])))
     model.add(Activation('relu'))
-    model.add(Dropout(0.5))
+    # model.add(Convolution2D(nb_filters, (nb_conv, nb_conv)))
+    # model.add(Activation('relu'))
+    # model.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
+    # model.add(Dropout(0.25))
+
+    # model.add(Flatten())
+    model.add(Dense(512))
+    model.add(Activation('relu'))
+    # model.add(Dropout(0.5))
     model.add(Dense(Y_train.shape[1]))
-    model.add(Activation('softmax'))
+    # model.add(Activation('softmax'))
 
-    model.compile(loss='categorical_crossentropy',
-                  optimizer='adadelta',
+    model.compile(loss='mean_squared_error',
+                  optimizer='adam',
                   metrics=['accuracy'])
 
     return model
@@ -106,7 +110,10 @@ nb_epoch = 12
 history = model.fit(x=[X_train], y=[Y_train],
                     batch_size=batch_size,
                     epochs=nb_epoch, verbose=2,
-                    validation_data=(X_test, Y_test))
+                    shuffle=True,
+                    validation_split=0.1
+                    # validation_data=(X_test, Y_test)
+                    )
 
 
 def show_acc():
