@@ -32,6 +32,7 @@ def load_mnist():
 def load_csv(filename):
     X_train = []
     Y_train = []
+    X_images = []
 
     import csv
     with open(filename) as csvfile:
@@ -41,11 +42,14 @@ def load_csv(filename):
 
             # Download image from GoogleMaps API
             import urllib
-            print row['House_ID']
-            filepath = "nwt-data/images/"+row['House_ID']+".jpg"
+            filepath = "nwt-data/images/" + row['House_ID'] + ".jpg"
             import os.path
             if not os.path.exists(filepath):
                 urllib.urlretrieve(row['Image'], filepath)
+
+            from scipy import misc
+            img = misc.imread(filepath)
+            X_images.extend([img])
 
             # Fill input array
             x = [
@@ -66,18 +70,24 @@ def load_csv(filename):
     import numpy
     X_train = numpy.asarray(X_train, dtype=numpy.float32)
     Y_train = numpy.asarray(Y_train, dtype=numpy.float32)
+    X_images = numpy.asarray(X_images, dtype=numpy.float32)
     X_test = numpy.asarray(X_train, dtype=numpy.float32)
     Y_test = numpy.asarray(Y_train, dtype=numpy.float32)
 
-    return (X_train, Y_train), (X_test, Y_test)
+    print X_images.shape
+
+    return (X_train, Y_train, X_images), (X_test, Y_test)
 
 
-(X_train, Y_train), (X_test, Y_test) = load_csv("nwt-data/Gebaeude_Dresden_images_few.csv")
+(X_train, Y_train, X_images), (X_test, Y_test) = load_csv("nwt-data/Gebaeude_Dresden_images_few.csv")
 
 
 def create_net():
     from keras.models import Sequential
-    from keras.layers import (Activation, Dropout, Flatten, Dense, Convolution2D, MaxPooling2D)
+    from keras.layers import (Activation, Dropout, Flatten, Dense, Convolution2D, MaxPooling2D, Merge)
+
+    print ("X_train", X_train.shape)
+    print ("Y_train", Y_train.shape)
 
     # number of convolutional filters to use
     nb_filters = 32
@@ -86,32 +96,34 @@ def create_net():
     # convolution kernel size
     nb_conv = 3
 
+    # First define the image model
+    image_processor = Sequential()
+    print("X_images.shape", X_images.shape[1:])
+    image_processor.add(Convolution2D(nb_filters, (nb_conv, nb_conv), input_shape=X_images.shape[1:]))
+    image_processor.add(Activation('relu'))
+    # image_processor.add(Convolution2D(nb_filters, (nb_conv, nb_conv)))
+    # image_processor.add(Activation('relu'))
+
+    image_processor.add(Flatten())  # transform image to vector
+    image_output = 128
+    image_processor.add(Dense(image_output))
+    image_processor.add(Activation('relu'))
+
+    # Now we create the metadata model
+    metadata_processor = Sequential()
+    print("X_train.shape", X_train.shape[1:])
+    metadata_processor.add(Dense(32, input_shape=X_train.shape[1:]))
+    metadata_processor.add(Activation('relu'))
+    metadata_output = 32
+    metadata_processor.add(Dense(metadata_output))
+    metadata_processor.add(Activation('relu'))
+
+    # Now we concatenate the two features and add a few more layers on top
     model = Sequential()
-
-    print ("X_train", X_train.shape)
-    print ("Y_train", Y_train.shape)
-
-    model.add(Dense(512, input_shape=(X_train.shape[1:])))
-    # model.add(Convolution2D(nb_filters, (nb_conv, nb_conv), padding='valid', input_shape=(X_train.shape[1:])))
+    model.add(Merge([image_processor, metadata_processor], mode='concat'))  # Merge is your sensor fusion buddy
+    model.add(Dense(128, input_dim=image_output + metadata_output))
     model.add(Activation('relu'))
-    # model.add(Convolution2D(nb_filters, (nb_conv, nb_conv)))
-    # model.add(Activation('relu'))
-    # model.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
-    # model.add(Dropout(0.25))
-
-    # model.add(Flatten())
-    model.add(Dense(512))
-    model.add(Activation('relu'))
-    # model.add(Dropout(0.5))
     model.add(Dense(Y_train.shape[1]))
-
-    # model.add(Activation('softmax'))
-
-
-    def mean_pred(y_true, y_pred):
-        import keras.backend as K
-        import numpy
-        return K.mean(numpy.divide(y_true, y_pred))
 
     model.compile(loss='mean_absolute_percentage_error',
                   optimizer='adam',
@@ -123,14 +135,14 @@ def create_net():
 model = create_net()
 
 ## Some model and data processing constants
-batch_size = 512
-nb_epoch = 100
+batch_size = 64
+nb_epoch = 500
 
-history = model.fit(x=[X_train], y=[Y_train],
+history = model.fit(x=[X_images, X_train], y=Y_train,
                     batch_size=batch_size,
                     epochs=nb_epoch, verbose=2,
                     shuffle=True,
-                    validation_split=0.01
+                    validation_split=0.1
                     # validation_data=(X_test, Y_test)
                     )
 
@@ -167,7 +179,7 @@ show_loss()
 
 
 def show_prediction():
-    prediction = model.predict(X_train).flatten()
+    prediction = model.predict([X_images, X_train]).flatten()
     print X_train[:, 0]
     print X_train[:, 1]
     print prediction
@@ -183,7 +195,7 @@ show_prediction()
 
 def save_prediction(filename):
     import cPickle as pickle
-    prediction = model.predict(X_train).flatten()
+    prediction = model.predict([X_images, X_train]).flatten()
 
     result = [X_train[:, 0], X_train[:, 1], Y_train, prediction]
 
