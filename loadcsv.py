@@ -1,5 +1,5 @@
 import csv
-with open('data/Gebaeude_Dresden.csv') as csvfile:
+with open('nwt-data/Gebaeude_Dresden.csv') as csvfile:
     reader = csv.DictReader(csvfile, delimiter='\t')
     xcoords = []
     ycoords = []
