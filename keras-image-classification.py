@@ -1,6 +1,30 @@
-from keras.datasets import mnist
+def load_data():
+    from keras.datasets import mnist
+    (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
-(X_train, y_train), (X_test, y_test) = mnist.load_data()
+    from keras.utils import np_utils
+
+    # input image dimensions
+    img_rows, img_cols = 28, 28
+    nb_classes = 10
+
+    X_train = X_train.reshape(X_train.shape[0], 1, img_rows, img_cols)
+    X_test = X_test.reshape(X_test.shape[0], 1, img_rows, img_cols)
+    X_train = X_train.astype('float32')
+    X_test = X_test.astype('float32')
+    X_train /= 255
+    X_test /= 255
+    print('X_train shape:', X_train.shape)
+    print(X_train.shape[0], 'train samples')
+    print(X_test.shape[0], 'test samples')
+
+    # convert class vectors to binary class matrices
+    Y_train = np_utils.to_categorical(y_train, nb_classes)
+    Y_test = np_utils.to_categorical(y_test, nb_classes)
+
+    return (X_train, Y_train), (X_test, Y_test)
+
+(X_train, Y_train), (X_test, Y_test) = load_data()
 
 from keras.models import Sequential
 from keras.layers import (Activation, Dropout, Flatten, Dense, Convolution2D, MaxPooling2D)
@@ -8,11 +32,7 @@ from keras.layers import (Activation, Dropout, Flatten, Dense, Convolution2D, Ma
 ## Some model and data processing constants
 
 batch_size = 128
-nb_classes = 10
 nb_epoch = 12
-
-# input image dimensions
-img_rows, img_cols = 28, 28
 
 # number of convolutional filters to use
 nb_filters = 32
@@ -23,7 +43,7 @@ nb_conv = 3
 
 model = Sequential()
 
-model.add(Convolution2D(nb_filters, (nb_conv, nb_conv), border_mode='same', input_shape=(1, img_rows, img_cols)))
+model.add(Convolution2D(nb_filters, (nb_conv, nb_conv), border_mode='same', input_shape=(X_train.shape[1:])))
 model.add(Activation('relu'))
 # model.add(Convolution2D(nb_filters, nb_conv, nb_conv))
 # model.add(Activation('relu'))
@@ -34,28 +54,12 @@ model.add(Flatten())
 model.add(Dense(128))
 model.add(Activation('relu'))
 model.add(Dropout(0.5))
-model.add(Dense(nb_classes))
+model.add(Dense(Y_train.shape[1]))
 model.add(Activation('softmax'))
 
 model.compile(loss='categorical_crossentropy',
               optimizer='adadelta',
               metrics=['accuracy'])
-
-from keras.utils import np_utils
-
-X_train = X_train.reshape(X_train.shape[0], 1, img_rows, img_cols)
-X_test = X_test.reshape(X_test.shape[0], 1, img_rows, img_cols)
-X_train = X_train.astype('float32')
-X_test = X_test.astype('float32')
-X_train /= 255
-X_test /= 255
-print('X_train shape:', X_train.shape)
-print(X_train.shape[0], 'train samples')
-print(X_test.shape[0], 'test samples')
-
-# convert class vectors to binary class matrices
-Y_train = np_utils.to_categorical(y_train, nb_classes)
-Y_test = np_utils.to_categorical(y_test, nb_classes)
 
 history = model.fit(X_train, Y_train,
                     batch_size=batch_size,
