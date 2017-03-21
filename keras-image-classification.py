@@ -29,7 +29,6 @@ def load_mnist():
     return (X_train, Y_train), (X_test, Y_test)
 
 
-(X_train, Y_train), (X_test, Y_test) = load_mnist()
 def load_csv(filename):
     X_train = []
     Y_train = []
@@ -46,7 +45,7 @@ def load_csv(filename):
             X_train.extend([x])
             y = [
                 int(row['ZipCode'])
-                #int(row['Flag_Coordinates'])
+                # int(row['Flag_Coordinates'])
             ]
             Y_train.extend([y])
 
@@ -58,6 +57,8 @@ def load_csv(filename):
 
     return (X_train, Y_train), (X_test, Y_test)
 
+
+(X_train, Y_train), (X_test, Y_test) = load_csv("nwt-data/Gebaeude_Dresden.csv")
 
 
 def create_net():
