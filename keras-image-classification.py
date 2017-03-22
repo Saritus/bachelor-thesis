@@ -14,8 +14,6 @@ def load_mnist():
     X_test = X_test.astype('float32')
     X_train /= 255
     X_test /= 255
-    # X_train = X_train[:5000]
-    # X_test = X_test[:5000]
     print('X_train shape:', X_train.shape)
     print(X_train.shape[0], 'train samples')
     print(X_test.shape[0], 'test samples')
@@ -23,8 +21,6 @@ def load_mnist():
     # convert class vectors to binary class matrices
     Y_train = np_utils.to_categorical(y_train, nb_classes)
     Y_test = np_utils.to_categorical(y_test, nb_classes)
-    # Y_train = Y_train[:5000]
-    # Y_test = Y_test[:5000]
 
     return (X_train, Y_train), (X_test, Y_test)
 
@@ -158,7 +154,6 @@ history = model.fit(x=[X_images, X_train], y=Y_train,
 
 
 def show_acc():
-    print history.history
     # ACC VS VAL_ACC
     import matplotlib.pyplot as plt
     plt.plot(history.history['mean_absolute_error'])
@@ -190,13 +185,8 @@ show_loss()
 
 def show_prediction():
     prediction = model.predict([X_images, X_train]).flatten()
-    print X_train[:, 0]
-    print X_train[:, 1]
-    print prediction
-
     import matplotlib.pyplot as plt
     plt.scatter(X_train[:, 0], X_train[:, 1], c=prediction, s=0.5, cmap='Blues')
-    # plt.scatter(X_train[:, 0], X_train[:, 1], color='red', s=0.5, cmap='jet')
     plt.show()
 
 
@@ -223,5 +213,4 @@ def show_prediction_from_file(filename):
     plt.scatter(x, y, c=prediction, s=0.5, cmap='jet')
     plt.show()
 
-
-show_prediction_from_file("result/prediction.pkl")
+# show_prediction_from_file("result/prediction.pkl")
