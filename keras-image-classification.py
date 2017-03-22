@@ -107,8 +107,9 @@ def create_net():
     print("X_images.shape", X_images.shape[1:])
     image_processor.add(Convolution2D(nb_filters, (nb_conv, nb_conv), input_shape=X_images.shape[1:]))
     image_processor.add(Activation('relu'))
-    # image_processor.add(Convolution2D(nb_filters, (nb_conv, nb_conv)))
-    # image_processor.add(Activation('relu'))
+    image_processor.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
+    image_processor.add(Convolution2D(nb_filters, (nb_conv, nb_conv)))
+    image_processor.add(Activation('relu'))
 
     image_processor.add(Flatten())  # transform image to vector
     image_output = 128
@@ -123,6 +124,7 @@ def create_net():
     metadata_output = 32
     metadata_processor.add(Dense(metadata_output))
     metadata_processor.add(Activation('relu'))
+    metadata_processor.add(Dropout(0.1))
 
     # Now we concatenate the two features and add a few more layers on top
     model = Sequential()
