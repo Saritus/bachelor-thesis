@@ -43,9 +43,11 @@ def load_csv(filename):
 
         # Download image from GoogleMaps API
         import urllib
+
         urlpath = "http://maps.google.com/maps/api/staticmap?center="
         urlpath += row['Y_Coordinate'].replace(',', '.') + "," + row['X_Coordinate'].replace(',', '.')
         urlpath += "&zoom=16&size=100x100&maptype=satellite"
+        urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
         filepath = "nwt-data/images/" + row['House_ID'] + ".jpg"
         import os.path
         if not os.path.exists(filepath):
