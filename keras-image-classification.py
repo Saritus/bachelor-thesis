@@ -191,7 +191,7 @@ show_loss()
 def show_prediction():
     prediction = model.predict([X_images, X_train]).flatten()
     import matplotlib.pyplot as plt
-    plt.scatter(X_train[:, 0], X_train[:, 1], c=prediction, s=0.5, cmap='Blues')
+    plt.scatter(X_train[:, 0], X_train[:, 1], c=prediction, s=0.5, cmap='jet')
     plt.show()
 
 
