@@ -26,9 +26,10 @@ def load_mnist():
 
 
 def load_csv(filename):
-    X_train = []
+    X_meta = []
     Y_train = []
     X_images = []
+    Coordinates = []
 
     import csv
     csvfile = open(filename)
@@ -73,7 +74,7 @@ def load_csv(filename):
             float(hash(row['District'])) % 100,
             float(hash(row['Street'])) % 100
         ]
-        X_train.extend([x])
+        X_meta.extend([x])
 
         # Fill output array
         y = [
@@ -84,19 +85,17 @@ def load_csv(filename):
 
     import numpy
 
-    X_train = numpy.asarray(X_train, dtype=numpy.float32)
-    Y_train = numpy.asarray(Y_train, dtype=numpy.float32)
     Coordinates = numpy.asarray(Coordinates, dtype=numpy.float32)
+    X_meta = numpy.asarray(X_meta, dtype=numpy.float32)
     X_images = numpy.asarray(X_images, dtype=numpy.float32)
-    X_test = numpy.asarray(X_train, dtype=numpy.float32)
-    Y_test = numpy.asarray(Y_train, dtype=numpy.float32)
+    Y_train = numpy.asarray(Y_train, dtype=numpy.float32)
 
     print X_images.shape
 
-    return (X_train, Y_train, X_images), (X_test, Y_test)
+    return Coordinates, (X_meta, X_images, Y_train)
 
 
-(X_train, Y_train, X_images), (X_test, Y_test) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
+(Coordinates), (X_meta, X_images, Y_train) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
 
 
 def create_net():
