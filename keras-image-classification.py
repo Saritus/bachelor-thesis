@@ -117,12 +117,12 @@ def create_net():
     print("X_images.shape", X_images.shape[1:])
     image_processor.add(Convolution2D(nb_filters, (nb_conv, nb_conv), input_shape=X_images.shape[1:]))
     image_processor.add(Activation('relu'))
-    image_processor.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
+    # image_processor.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
     image_processor.add(Convolution2D(nb_filters, (nb_conv, nb_conv)))
     image_processor.add(Activation('relu'))
 
     image_processor.add(Flatten())  # transform image to vector
-    image_output = 128
+    image_output = 256
     image_processor.add(Dense(image_output))
     image_processor.add(Activation('relu'))
 
@@ -131,15 +131,17 @@ def create_net():
     print("X_train.shape", X_train.shape[1:])
     metadata_processor.add(Dense(64, input_shape=X_meta.shape[1:]))
     metadata_processor.add(Activation('relu'))
-    metadata_output = 32
+    metadata_output = 64
     metadata_processor.add(Dense(metadata_output))
     metadata_processor.add(Activation('relu'))
-    metadata_processor.add(Dropout(0.1))
+    # metadata_processor.add(Dropout(0.1))
 
     # Now we concatenate the two features and add a few more layers on top
     model = Sequential()
     model.add(Merge([image_processor, metadata_processor], mode='concat'))  # Merge is your sensor fusion buddy
     model.add(Dense(128, input_dim=image_output + metadata_output))
+    model.add(Activation('relu'))
+    model.add(Dense(64))
     model.add(Activation('relu'))
     model.add(Dense(Y_train.shape[1]))
 
