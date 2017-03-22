@@ -129,7 +129,7 @@ def create_net():
     # Now we create the metadata model
     metadata_processor = Sequential()
     print("X_train.shape", X_train.shape[1:])
-    metadata_processor.add(Dense(32, input_shape=X_train.shape[1:]))
+    metadata_processor.add(Dense(64, input_shape=X_meta.shape[1:]))
     metadata_processor.add(Activation('relu'))
     metadata_output = 32
     metadata_processor.add(Dense(metadata_output))
@@ -156,7 +156,7 @@ model = create_net()
 batch_size = 32
 nb_epoch = 5
 
-history = model.fit(x=[X_images, X_train], y=Y_train,
+history = model.fit(x=[X_images, X_meta], y=Y_train,
                     batch_size=batch_size,
                     epochs=nb_epoch, verbose=2,
                     shuffle=True,
@@ -196,9 +196,9 @@ show_loss()
 
 
 def show_prediction():
-    prediction = model.predict([X_images, X_train]).flatten()
+    prediction = model.predict([X_images, X_meta]).flatten()
     import matplotlib.pyplot as plt
-    plt.scatter(X_train[:, 0], X_train[:, 1], c=prediction, s=0.5, cmap='jet')
+    plt.scatter(Coordinates[:, 0], Coordinates[:, 1], c=prediction, s=0.5, cmap='jet')
     plt.show()
 
 
@@ -207,9 +207,9 @@ show_prediction()
 
 def save_prediction(filename):
     import cPickle as pickle
-    prediction = model.predict([X_images, X_train]).flatten()
+    prediction = model.predict([X_images, X_meta]).flatten()
 
-    result = [X_train[:, 0], X_train[:, 1], Y_train, prediction]
+    result = [Coordinates[:, 0], Coordinates[:, 1], Y_train, prediction]
 
     pickle.dump(result, open(filename, "wb"))
 
