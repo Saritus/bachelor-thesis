@@ -38,7 +38,12 @@ def load_csv(filename):
     with open(filename) as csvfile:
         reader = csv.DictReader(csvfile, delimiter='\t')
 
+        count = 0
         for row in reader:
+            if count > 289:
+                # break
+                pass
+            count += 1
 
             # Download image from GoogleMaps API
             import urllib
