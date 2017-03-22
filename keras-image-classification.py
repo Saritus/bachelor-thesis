@@ -86,7 +86,7 @@ def load_csv(filename):
     return (X_train, Y_train, X_images), (X_test, Y_test)
 
 
-(X_train, Y_train, X_images), (X_test, Y_test) = load_csv("nwt-data/Gebaeude_Dresden.csv")
+(X_train, Y_train, X_images), (X_test, Y_test) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
 
 
 def create_net():
