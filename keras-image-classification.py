@@ -102,9 +102,6 @@ def create_net():
     from keras.models import Sequential
     from keras.layers import (Activation, Dropout, Flatten, Dense, Convolution2D, MaxPooling2D, Merge)
 
-    print ("X_train", X_train.shape)
-    print ("Y_train", Y_train.shape)
-
     # number of convolutional filters to use
     nb_filters = 32
     # size of pooling area for max pooling
@@ -114,7 +111,6 @@ def create_net():
 
     # First define the image model
     image_processor = Sequential()
-    print("X_images.shape", X_images.shape[1:])
     image_processor.add(Convolution2D(nb_filters, (nb_conv, nb_conv), input_shape=X_images.shape[1:]))
     image_processor.add(Activation('relu'))
     # image_processor.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
@@ -128,7 +124,6 @@ def create_net():
 
     # Now we create the metadata model
     metadata_processor = Sequential()
-    print("X_train.shape", X_train.shape[1:])
     metadata_processor.add(Dense(64, input_shape=X_meta.shape[1:]))
     metadata_processor.add(Activation('relu'))
     metadata_output = 64
