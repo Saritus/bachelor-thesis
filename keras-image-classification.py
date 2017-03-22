@@ -31,49 +31,50 @@ def load_csv(filename):
     X_images = []
 
     import csv
-    with open(filename) as csvfile:
-        reader = csv.DictReader(csvfile, delimiter='\t')
+    csvfile = open(filename)
+    reader = csv.DictReader(csvfile, delimiter='\t')
 
-        count = 0
-        for row in reader:
-            if count > 289:
-                # break
-                pass
-            count += 1
+    count = 0
+    for row in reader:
+        if count > 289:
+            # break
+            pass
+        count += 1
 
-            # Download image from GoogleMaps API
-            import urllib
-            urlpath = "http://maps.google.com/maps/api/staticmap?center="
-            urlpath += row['Y_Coordinate'].replace(',', '.') + "," + row['X_Coordinate'].replace(',', '.')
-            urlpath += "&zoom=16&size=100x100&maptype=satellite"
-            filepath = "nwt-data/images/" + row['House_ID'] + ".jpg"
-            import os.path
-            if not os.path.exists(filepath):
-                # urllib.urlretrieve(urlpath, filepath)
-                continue
+        # Download image from GoogleMaps API
+        import urllib
+        urlpath = "http://maps.google.com/maps/api/staticmap?center="
+        urlpath += row['Y_Coordinate'].replace(',', '.') + "," + row['X_Coordinate'].replace(',', '.')
+        urlpath += "&zoom=16&size=100x100&maptype=satellite"
+        filepath = "nwt-data/images/" + row['House_ID'] + ".jpg"
+        import os.path
+        if not os.path.exists(filepath):
+            # urllib.urlretrieve(urlpath, filepath)
+            continue
 
-            # Fill image input array
-            from scipy import misc
-            img = misc.imread(filepath)
-            X_images.extend([img])
+        # Fill image input array
+        from scipy import misc
+        img = misc.imread(filepath)
+        X_images.extend([img])
 
-            # Fill metadata input array
-            x = [
-                float(row['X_Coordinate'].replace(',', '.')),
-                float(row['Y_Coordinate'].replace(',', '.')),
-                float(hash(row['District'])) % 100,
-                float(hash(row['Street'])) % 100
-            ]
-            X_train.extend([x])
+        # Fill metadata input array
+        x = [
+            float(row['X_Coordinate'].replace(',', '.')),
+            float(row['Y_Coordinate'].replace(',', '.')),
+            float(hash(row['District'])) % 100,
+            float(hash(row['Street'])) % 100
+        ]
+        X_train.extend([x])
 
-            # Fill output array
-            y = [
-                int(row['ZipCode'])
-                # int(row['Flag_Coordinates'])
-            ]
-            Y_train.extend([y])
+        # Fill output array
+        y = [
+            int(row['ZipCode'])
+            # int(row['Flag_Coordinates'])
+        ]
+        Y_train.extend([y])
 
     import numpy
+
     X_train = numpy.asarray(X_train, dtype=numpy.float32)
     Y_train = numpy.asarray(Y_train, dtype=numpy.float32)
     X_images = numpy.asarray(X_images, dtype=numpy.float32)
@@ -143,8 +144,8 @@ def create_net():
 model = create_net()
 
 ## Some model and data processing constants
-batch_size = 64
-nb_epoch = 500
+batch_size = 32
+nb_epoch = 5
 
 history = model.fit(x=[X_images, X_train], y=Y_train,
                     batch_size=batch_size,
