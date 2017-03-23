@@ -103,11 +103,11 @@ def create_net():
     from keras.layers import (Activation, Dropout, Flatten, Dense, Convolution2D, MaxPooling2D, Merge)
 
     # number of convolutional filters to use
-    nb_filters = 32
+    nb_filters = 8
     # size of pooling area for max pooling
     nb_pool = 2
     # convolution kernel size
-    nb_conv = 3
+    nb_conv = 5
 
     # First define the image model
     image_processor = Sequential()
@@ -150,14 +150,14 @@ def create_net():
 model = create_net()
 
 ## Some model and data processing constants
-batch_size = 32
-nb_epoch = 5
+batch_size = 256
+nb_epoch = 20
 
 history = model.fit(x=[X_images, X_meta], y=Y_train,
                     batch_size=batch_size,
                     epochs=nb_epoch, verbose=2,
                     shuffle=True,
-                    validation_split=0.1
+                    validation_split=0.0
                     # validation_data=(X_test, Y_test)
                     )
 
