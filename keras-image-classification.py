@@ -89,7 +89,11 @@ def load_csv(filename):
 
         # Fill image input array
         from scipy import misc
-        img = misc.imread(filepath)
+        try:
+            img = misc.imread(filepath)
+        except IOError:
+            download_image(filepath, row)
+            img = misc.imread(filepath)
         X_images.extend([img])
 
         # Fill coordinates array
