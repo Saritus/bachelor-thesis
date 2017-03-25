@@ -19,6 +19,17 @@ def ensure_dir(file_path):
         os.makedirs(directory)
 
 
+def download_image(filepath, row):
+    import urllib
+    urlpath = "http://maps.google.com/maps/api/staticmap?center="
+    urlpath += row['Y_Coordinate'].replace(',', '.') + "," + row['X_Coordinate'].replace(',', '.')
+    urlpath += "&zoom=16&size=130x130&maptype=satellite"
+    urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
+    urllib.urlretrieve(urlpath, filepath)
+    image = center_crop_image(filepath, 100, 100)
+    image.save(filepath)
+
+
 def load_mnist():
     from keras.datasets import mnist
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
