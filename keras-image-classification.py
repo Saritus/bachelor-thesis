@@ -24,10 +24,10 @@ def download_image(filepath, row):
     from PIL import Image
     urlpath = "http://maps.google.com/maps/api/staticmap?center="
     urlpath += row['Y_Coordinate'].replace(',', '.') + "," + row['X_Coordinate'].replace(',', '.')
-    urlpath += "&zoom=16&size=130x130&maptype=satellite"
+    urlpath += "&zoom=18&size=442x442&maptype=satellite"
     urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
     urllib.urlretrieve(urlpath, filepath)
-    image = center_crop_image(filepath, 100, 100)
+    image = center_crop_image(filepath, 400, 400)
     image = image.resize((100, 100), Image.ANTIALIAS)
     image.save(filepath)
 
