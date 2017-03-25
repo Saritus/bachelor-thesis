@@ -12,6 +12,13 @@ def center_crop_image(path, new_width, new_height):
     return im.crop((left, top, right, bottom))
 
 
+def ensure_dir(file_path):
+    import os
+    directory = os.path.dirname(file_path)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+
 def load_mnist():
     from keras.datasets import mnist
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
