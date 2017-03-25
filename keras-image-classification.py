@@ -81,11 +81,13 @@ def load_csv(filename):
         urlpath += row['Y_Coordinate'].replace(',', '.') + "," + row['X_Coordinate'].replace(',', '.')
         urlpath += "&zoom=16&size=100x100&maptype=satellite"
         urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
-        filepath = "nwt-data/images/" + row['House_ID'] + ".jpg"
         import os.path
         if not os.path.exists(filepath):
             # urllib.urlretrieve(urlpath, filepath)
             continue
+        house_id = int(row['House_ID'])
+        filepath = "nwt-data/images/" + str(house_id % 10) + "/" + str(house_id) + ".jpg"
+        ensure_dir(filepath)
 
         # Fill image input array
         from scipy import misc
