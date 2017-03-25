@@ -76,9 +76,8 @@ def load_csv(filename):
             pass
         count += 1
 
-        # Download image from GoogleMaps API
         house_id = int(row['House_ID'])
-        filepath = "nwt-data/images/" + str(house_id % 10) + "/" + str(house_id) + ".jpg"
+        filepath = "nwt-data/images/" + str(house_id) + ".jpg"
         ensure_dir(filepath)
 
         # Fill image input array
@@ -86,7 +85,9 @@ def load_csv(filename):
         try:
             img = misc.imread(filepath)
         except IOError:
+            # Download image from GoogleMaps API
             download_image(filepath, row)
+            print count
             img = misc.imread(filepath)
         X_images.extend([img])
 
