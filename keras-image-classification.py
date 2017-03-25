@@ -133,30 +133,34 @@ def create_net():
     from keras.layers import (Activation, Dropout, Flatten, Dense, Convolution2D, MaxPooling2D, Merge)
 
     # number of convolutional filters to use
-    nb_filters = 8
+    nb_filters = 16
     # size of pooling area for max pooling
     nb_pool = 2
     # convolution kernel size
-    nb_conv = 5
+    nb_conv = 3
 
     # First define the image model
     image_processor = Sequential()
     image_processor.add(Convolution2D(nb_filters, (nb_conv, nb_conv), input_shape=X_images.shape[1:]))
     image_processor.add(Activation('relu'))
-    # image_processor.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
+    image_processor.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
+    image_processor.add(Convolution2D(nb_filters, (nb_conv, nb_conv)))
+    image_processor.add(Activation('relu'))
+    image_processor.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
     image_processor.add(Convolution2D(nb_filters, (nb_conv, nb_conv)))
     image_processor.add(Activation('relu'))
 
     image_processor.add(Flatten())  # transform image to vector
-    image_output = 256
+    image_output = 512
     image_processor.add(Dense(image_output))
     image_processor.add(Activation('relu'))
 
     # Now we create the metadata model
     metadata_processor = Sequential()
     metadata_processor.add(Dense(64, input_shape=X_meta.shape[1:]))
+    metadata_processor.add(Dense(4, input_shape=X_meta.shape[1:]))
     metadata_processor.add(Activation('relu'))
-    metadata_output = 64
+    metadata_output = 4
     metadata_processor.add(Dense(metadata_output))
     metadata_processor.add(Activation('relu'))
     # metadata_processor.add(Dropout(0.1))
@@ -164,15 +168,15 @@ def create_net():
     # Now we concatenate the two features and add a few more layers on top
     model = Sequential()
     model.add(Merge([image_processor, metadata_processor], mode='concat'))  # Merge is your sensor fusion buddy
-    model.add(Dense(128, input_dim=image_output + metadata_output))
+    model.add(Dense(256, input_dim=image_output + metadata_output))
     model.add(Activation('relu'))
-    model.add(Dense(64))
+    model.add(Dense(256))
     model.add(Activation('relu'))
     model.add(Dense(Y_train.shape[1]))
 
-    model.compile(loss='mean_absolute_percentage_error',
+    model.compile(loss='mean_squared_error',
                   optimizer='adam',
-                  metrics=['mse', 'mae'])
+                  metrics=['mae'])
 
     return model
 
@@ -180,16 +184,14 @@ def create_net():
 model = create_net()
 
 ## Some model and data processing constants
-batch_size = 256
-nb_epoch = 20
+batch_size = 64
+nb_epoch = 100
 
 history = model.fit(x=[X_images, X_meta], y=Y_train,
                     batch_size=batch_size,
                     epochs=nb_epoch, verbose=2,
                     shuffle=True,
-                    validation_split=0.0
-                    # validation_data=(X_test, Y_test)
-                    )
+                    validation_split=0.05)
 
 
 def show_acc():
