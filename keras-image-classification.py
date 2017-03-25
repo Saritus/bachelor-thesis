@@ -21,12 +21,14 @@ def ensure_dir(file_path):
 
 def download_image(filepath, row):
     import urllib
+    from PIL import Image
     urlpath = "http://maps.google.com/maps/api/staticmap?center="
     urlpath += row['Y_Coordinate'].replace(',', '.') + "," + row['X_Coordinate'].replace(',', '.')
     urlpath += "&zoom=16&size=130x130&maptype=satellite"
     urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
     urllib.urlretrieve(urlpath, filepath)
     image = center_crop_image(filepath, 100, 100)
+    image = image.resize((100, 100), Image.ANTIALIAS)
     image.save(filepath)
 
 
