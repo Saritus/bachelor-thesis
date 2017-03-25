@@ -99,17 +99,17 @@ def load_csv(filename):
 
         # Fill metadata input array
         x = [
-            float(row['X_Coordinate'].replace(',', '.')),
-            float(row['Y_Coordinate'].replace(',', '.')),
+            # float(row['X_Coordinate'].replace(',', '.')),
+            # float(row['Y_Coordinate'].replace(',', '.')),
             float(hash(row['District'])) % 100,
-            float(hash(row['Street'])) % 100
+            float(hash(row['Street'])) % 100,
+            # float(row['ZipCode']),
         ]
         X_meta.extend([x])
 
         # Fill output array
         y = [
-            int(row['ZipCode'])
-            # int(row['Flag_Coordinates'])
+            float(row['ZipCode']),
         ]
         Y_train.extend([y])
 
