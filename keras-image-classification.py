@@ -274,5 +274,14 @@ def load_weights(filename):
     # TODO: load weights of net from file
     return
 
+
 # TODO: load all images from google maps api
-# TODO: use main function (refactor code)
+
+
+def main():
+    # TODO: use main function (refactor code)
+    return
+
+
+if __name__ == "__main__":
+    main()
