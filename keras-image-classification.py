@@ -120,8 +120,8 @@ def load_csv(filename):
     X_images = numpy.asarray(X_images, dtype=numpy.float32)
     Y_train = numpy.asarray(Y_train, dtype=numpy.float32)
 
-    print ("X_images.shape", Y_train.shape)
-    print ("Y_train.shape", X_images.shape)
+    print ("X_images.shape", X_images.shape)
+    print ("Y_train.shape", Y_train.shape)
 
     return Coordinates, (X_meta, X_images, Y_train)
 
