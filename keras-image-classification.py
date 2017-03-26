@@ -186,10 +186,9 @@ batch_size = 128
 nb_epoch = 100
 
 history = model.fit(x=[X_images, X_meta], y=Y_train,
-                    batch_size=batch_size,
-                    epochs=nb_epoch, verbose=2,
-                    shuffle=True,
-                    validation_split=0.05)
+                    batch_size=batch_size, epochs=nb_epoch,
+                    verbose=2, shuffle=True,
+                    validation_split=0.1)
 
 
 def show_acc():
