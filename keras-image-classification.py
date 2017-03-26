@@ -71,7 +71,7 @@ def load_csv(filename):
 
     count = 0
     for row in reader:
-        if count > 289:
+        if count > 3000:
             break
         count += 1
 
