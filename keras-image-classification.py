@@ -174,7 +174,7 @@ def create_net():
 
     model.compile(loss='mean_squared_error',
                   optimizer='adam',
-                  metrics=['mae'])
+                  metrics=['accuracy'])
 
     return model
 
@@ -194,8 +194,8 @@ history = model.fit(x=[X_images, X_meta], y=Y_train,
 def show_acc():
     # ACC VS VAL_ACC
     import matplotlib.pyplot as plt
-    plt.plot(history.history['mean_absolute_error'])
-    plt.plot(history.history['val_mean_absolute_error'])
+    plt.plot(history.history['acc'])
+    plt.plot(history.history['val_acc'])
     plt.title('model accuracy ACC VS VAL_ACC')
     plt.ylabel('accuracy')
     plt.xlabel('epoch')
