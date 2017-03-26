@@ -156,26 +156,21 @@ def create_net():
 
     image_processor.add(Flatten())  # transform image to vector
     image_output = 1024
-    image_processor.add(Dense(image_output))
-    image_processor.add(Activation('relu'))
+    image_processor.add(Dense(image_output, activation='relu'))
 
     # Now we create the metadata model
     metadata_processor = Sequential()
-    metadata_processor.add(Dense(4, input_shape=X_meta.shape[1:]))
-    metadata_processor.add(Activation('relu'))
     metadata_output = 4
-    metadata_processor.add(Dense(metadata_output))
-    metadata_processor.add(Activation('relu'))
+    metadata_processor.add(Dense(256, activation='relu', input_shape=X_meta.shape[1:]))
+    metadata_processor.add(Dense(metadata_output, activation='relu'))
     # metadata_processor.add(Dropout(0.1))
 
     # Now we concatenate the two features and add a few more layers on top
     model = Sequential()
     model.add(Merge([image_processor, metadata_processor], mode='concat'))  # Merge is your sensor fusion buddy
-    model.add(Dense(1024, input_dim=image_output + metadata_output))
-    model.add(Activation('relu'))
-    model.add(Dense(1024))
-    model.add(Activation('relu'))
     model.add(Dense(Y_train.shape[1]))
+    model.add(Dense(256, activation='relu', input_dim=image_output + metadata_output))
+    model.add(Dense(256, activation='relu'))
 
     model.compile(loss='mean_squared_error',
                   optimizer='adam',
