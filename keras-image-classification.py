@@ -255,9 +255,24 @@ def show_prediction_from_file(filename):
 # show_prediction_from_file("result/prediction.pkl")
 
 
-# TODO: save model of net in file
-# TODO: load model of net from file
-# TODO: save weights of net in file
-# TODO: load weights of net from file
+def save_model(model, filename):
+    # TODO: save model of net in file
+    return
+
+
+def load_model(filename):
+    # TODO: load model of net from file
+    return
+
+
+def save_weigths(model, filename):
+    # TODO: save weights of net in file
+    return
+
+
+def load_weights(filename):
+    # TODO: load weights of net from file
+    return
+
 # TODO: load all images from google maps api
 # TODO: use main function (refactor code)
