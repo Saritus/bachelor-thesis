@@ -258,3 +258,11 @@ def show_prediction_from_file(filename):
     plt.show()
 
 # show_prediction_from_file("result/prediction.pkl")
+
+
+# TODO: save model of net in file
+# TODO: load model of net from file
+# TODO: save weights of net in file
+# TODO: load weights of net from file
+# TODO: load all images from google maps api
+# TODO: use main function (refactor code)
