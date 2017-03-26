@@ -72,8 +72,7 @@ def load_csv(filename):
     count = 0
     for row in reader:
         if count > 289:
-            # break
-            pass
+            break
         count += 1
 
         filepath = "nwt-data/images/" + row['ZipCode'].zfill(5) + "/" + row['House_ID'] + ".jpg"
@@ -109,7 +108,7 @@ def load_csv(filename):
 
         # Fill output array
         y = [
-            float(row['ZipCode']),
+            int(row['ZipCode']),
         ]
         Y_train.extend([y])
 
@@ -161,17 +160,17 @@ def create_net():
 
     # Now we create the metadata model
     metadata_processor = Sequential()
-    metadata_output = 4
     metadata_processor.add(Dense(256, activation='relu', input_shape=X_meta.shape[1:]))
+    metadata_output = 256
     metadata_processor.add(Dense(metadata_output, activation='relu'))
     # metadata_processor.add(Dropout(0.1))
 
     # Now we concatenate the two features and add a few more layers on top
     model = Sequential()
     model.add(Merge([image_processor, metadata_processor], mode='concat'))  # Merge is your sensor fusion buddy
-    model.add(Dense(Y_train.shape[1]))
     model.add(Dense(256, activation='relu', input_dim=image_output + metadata_output))
     model.add(Dense(256, activation='relu'))
+    model.add(Dense(Y_train.shape[1]))
 
     model.compile(loss='mean_squared_error',
                   optimizer='adam',
@@ -241,7 +240,7 @@ def save_prediction(filename):
     pickle.dump(result, open(filename, "wb"))
 
 
-save_prediction("result/prediction.pkl")
+# save_prediction("result/prediction.pkl")
 
 
 def show_prediction_from_file(filename):
@@ -251,6 +250,7 @@ def show_prediction_from_file(filename):
     import matplotlib.pyplot as plt
     plt.scatter(x, y, c=prediction, s=0.5, cmap='jet')
     plt.show()
+
 
 # show_prediction_from_file("result/prediction.pkl")
 
