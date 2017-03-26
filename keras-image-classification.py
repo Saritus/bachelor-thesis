@@ -76,8 +76,7 @@ def load_csv(filename):
             pass
         count += 1
 
-        house_id = int(row['House_ID'])
-        filepath = "nwt-data/images/" + str(house_id) + ".jpg"
+        filepath = "nwt-data/images/" + row['ZipCode'].zfill(5) + "/" + row['House_ID'] + ".jpg"
         ensure_dir(filepath)
 
         # Fill image input array
