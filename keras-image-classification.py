@@ -227,27 +227,6 @@ def show_prediction_from_file(filename):
     plt.show()
 
 
-def save_model(model, filename):
-    # TODO: save model of net in file
-    return
-
-
-def load_model(filename):
-    # TODO: load model of net from file
-    return
-
-
-def save_weigths(model, filename):
-    ensure_dir(filename)
-    model.save_weights(filename)
-    return
-
-
-def load_weights(filename):
-    # TODO: load weights of net from file
-    return
-
-
 # TODO: load all images from google maps api
 
 
@@ -255,6 +234,7 @@ def main():
     (Coordinates), (X_train, Y_train) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
 
     model = create_net(X_train, Y_train)
+    model.load_weights('weights/first_try.h5')
 
     ## Some model and data processing constants
     batch_size = 128
@@ -266,7 +246,7 @@ def main():
                         validation_split=0.1)
 
     # save weights of net
-    save_weigths(model, "weights/first_try.h5")
+    model.save_weights("weights/first_try.h5")
 
     show_acc(history)
     show_loss(history)
