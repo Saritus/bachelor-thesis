@@ -251,8 +251,6 @@ def load_weights(filename):
 
 
 def main():
-    # TODO: use main function (refactor code)
-
     (Coordinates), (X_train, Y_train) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
 
     model = create_net(X_train, Y_train)
