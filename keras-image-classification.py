@@ -238,7 +238,8 @@ def load_model(filename):
 
 
 def save_weigths(model, filename):
-    # TODO: save weights of net in file
+    ensure_dir(filename)
+    model.save_weights(filename)
     return
 
 
@@ -265,7 +266,7 @@ def main():
                         validation_split=0.1)
 
     # save weights of net
-    model.save_weights('weights/first_try.h5')
+    save_weigths(model, "weights/first_try.h5")
 
     show_acc(history)
     show_loss(history)
