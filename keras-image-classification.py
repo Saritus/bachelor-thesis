@@ -264,6 +264,9 @@ def main():
                         verbose=2, shuffle=True,
                         validation_split=0.1)
 
+    # save weights of net
+    model.save_weights('weights/first_try.h5')
+
     show_acc(history)
     show_loss(history)
     show_prediction(model, X_train, Coordinates)
