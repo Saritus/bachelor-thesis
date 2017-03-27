@@ -177,7 +177,7 @@ def create_net(X_meta, X_images, Y_train):
     return model
 
 
-def show_acc():
+def show_acc(history):
     # ACC VS VAL_ACC
     import matplotlib.pyplot as plt
     plt.plot(history.history['acc'])
@@ -265,7 +265,7 @@ def main():
                         verbose=2, shuffle=True,
                         validation_split=0.1)
 
-    show_acc()
+    show_acc(history)
     show_loss()
     show_prediction()
     # save_prediction("result/prediction.pkl")
