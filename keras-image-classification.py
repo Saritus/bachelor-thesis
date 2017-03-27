@@ -208,11 +208,11 @@ def show_prediction(model, X_meta, X_images, Coordinates):
     plt.show()
 
 
-def save_prediction(filename):
+def save_prediction(model, X_meta, X_images, Coordinates, filename):
     import cPickle as pickle
     prediction = model.predict([X_images, X_meta]).flatten()
 
-    result = [Coordinates[:, 0], Coordinates[:, 1], Y_train, prediction]
+    result = [Coordinates[:, 0], Coordinates[:, 1], prediction]
 
     pickle.dump(result, open(filename, "wb"))
 
@@ -268,7 +268,7 @@ def main():
     show_acc(history)
     show_loss(history)
     show_prediction(model, X_meta, X_images, Coordinates)
-    # save_prediction("result/prediction.pkl")
+    save_prediction(model, X_meta, X_images, Coordinates, "result/prediction_test.pkl")
     # show_prediction_from_file("result/prediction.pkl")
 
     return
