@@ -201,7 +201,7 @@ def show_loss(history):
     plt.show()
 
 
-def show_prediction():
+def show_prediction(model, X_meta, X_images, Coordinates):
     prediction = model.predict([X_images, X_meta]).flatten()
     import matplotlib.pyplot as plt
     plt.scatter(Coordinates[:, 0], Coordinates[:, 1], c=prediction, s=0.5, cmap='jet')
@@ -267,7 +267,7 @@ def main():
 
     show_acc(history)
     show_loss(history)
-    show_prediction()
+    show_prediction(model, X_meta, X_images, Coordinates)
     # save_prediction("result/prediction.pkl")
     # show_prediction_from_file("result/prediction.pkl")
 
