@@ -189,7 +189,7 @@ def show_acc(history):
     plt.show()
 
 
-def show_loss():
+def show_loss(history):
     # LOSS VS VAL_LOSS
     import matplotlib.pyplot as plt
     plt.plot(history.history['loss'])
@@ -266,7 +266,7 @@ def main():
                         validation_split=0.1)
 
     show_acc(history)
-    show_loss()
+    show_loss(history)
     show_prediction()
     # save_prediction("result/prediction.pkl")
     # show_prediction_from_file("result/prediction.pkl")
