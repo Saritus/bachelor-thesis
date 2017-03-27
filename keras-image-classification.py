@@ -125,9 +125,6 @@ def load_csv(filename):
     return Coordinates, (X_meta, X_images, Y_train)
 
 
-(Coordinates), (X_meta, X_images, Y_train) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
-
-
 def create_net():
     from keras.models import Sequential
     from keras.layers import (Activation, Dropout, Flatten, Dense, Convolution2D, MaxPooling2D, Merge, ZeroPadding2D)
@@ -180,18 +177,6 @@ def create_net():
     return model
 
 
-model = create_net()
-
-## Some model and data processing constants
-batch_size = 128
-nb_epoch = 100
-
-history = model.fit(x=[X_images, X_meta], y=Y_train,
-                    batch_size=batch_size, epochs=nb_epoch,
-                    verbose=2, shuffle=True,
-                    validation_split=0.1)
-
-
 def show_acc():
     # ACC VS VAL_ACC
     import matplotlib.pyplot as plt
@@ -202,9 +187,6 @@ def show_acc():
     plt.xlabel('epoch')
     plt.legend(['train', 'test'], loc='upper left')
     plt.show()
-
-
-show_acc()
 
 
 def show_loss():
@@ -219,17 +201,11 @@ def show_loss():
     plt.show()
 
 
-show_loss()
-
-
 def show_prediction():
     prediction = model.predict([X_images, X_meta]).flatten()
     import matplotlib.pyplot as plt
     plt.scatter(Coordinates[:, 0], Coordinates[:, 1], c=prediction, s=0.5, cmap='jet')
     plt.show()
-
-
-show_prediction()
 
 
 def save_prediction(filename):
@@ -241,9 +217,6 @@ def save_prediction(filename):
     pickle.dump(result, open(filename, "wb"))
 
 
-# save_prediction("result/prediction.pkl")
-
-
 def show_prediction_from_file(filename):
     import cPickle as pickle
     x, y, t, prediction = pickle.load(open(filename, "rb"))
@@ -251,9 +224,6 @@ def show_prediction_from_file(filename):
     import matplotlib.pyplot as plt
     plt.scatter(x, y, c=prediction, s=0.5, cmap='jet')
     plt.show()
-
-
-# show_prediction_from_file("result/prediction.pkl")
 
 
 def save_model(model, filename):
@@ -281,6 +251,26 @@ def load_weights(filename):
 
 def main():
     # TODO: use main function (refactor code)
+
+    (Coordinates), (X_meta, X_images, Y_train) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
+
+    model = create_net()
+
+    ## Some model and data processing constants
+    batch_size = 128
+    nb_epoch = 5
+
+    history = model.fit(x=[X_images, X_meta], y=Y_train,
+                        batch_size=batch_size, epochs=nb_epoch,
+                        verbose=2, shuffle=True,
+                        validation_split=0.1)
+
+    show_acc()
+    show_loss()
+    show_prediction()
+    # save_prediction("result/prediction.pkl")
+    # show_prediction_from_file("result/prediction.pkl")
+
     return
 
 
