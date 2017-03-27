@@ -118,24 +118,25 @@ def load_csv(filename):
     X_meta = numpy.asarray(X_meta, dtype=numpy.float32)
     X_images = numpy.asarray(X_images, dtype=numpy.float32)
     Y_train = numpy.asarray(Y_train, dtype=numpy.float32)
+    X_train = [X_images, X_meta]
 
     print ("X_images.shape", X_images.shape)
     print ("Y_train.shape", Y_train.shape)
 
-    return Coordinates, (X_meta, X_images, Y_train)
+    return Coordinates, (X_train, Y_train)
 
 
-def create_net(X_meta, X_images, Y_train):
+def create_net(X_train, Y_train):
     from keras.models import Sequential
     from keras.layers import (Activation, Dropout, Flatten, Dense, Convolution2D, MaxPooling2D, Merge, ZeroPadding2D)
 
     # First define the image model
     image_processor = Sequential()
 
-    image_processor.add(ZeroPadding2D((1, 1), input_shape=X_images.shape[1:]))
-    image_processor.add(Convolution2D(64, (3, 3), activation='relu'))
+    image_processor.add(ZeroPadding2D((1, 1), input_shape=X_train[0].shape[1:]))
+    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
     image_processor.add(ZeroPadding2D((1, 1)))
-    image_processor.add(Convolution2D(64, (3, 3), activation='relu'))
+    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
     image_processor.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
 
     image_processor.add(ZeroPadding2D((1, 1)))
@@ -157,7 +158,7 @@ def create_net(X_meta, X_images, Y_train):
 
     # Now we create the metadata model
     metadata_processor = Sequential()
-    metadata_processor.add(Dense(256, activation='relu', input_shape=X_meta.shape[1:]))
+    metadata_processor.add(Dense(256, activation='relu', input_shape=X_train[1].shape[1:]))
     metadata_output = 256
     metadata_processor.add(Dense(metadata_output, activation='relu'))
     # metadata_processor.add(Dropout(0.1))
@@ -201,16 +202,16 @@ def show_loss(history):
     plt.show()
 
 
-def show_prediction(model, X_meta, X_images, Coordinates):
-    prediction = model.predict([X_images, X_meta]).flatten()
+def show_prediction(model, X_train, Coordinates):
+    prediction = model.predict(X_train).flatten()
     import matplotlib.pyplot as plt
     plt.scatter(Coordinates[:, 0], Coordinates[:, 1], c=prediction, s=0.5, cmap='jet')
     plt.show()
 
 
-def save_prediction(model, X_meta, X_images, Coordinates, filename):
+def save_prediction(model, X_train, Coordinates, filename):
     import cPickle as pickle
-    prediction = model.predict([X_images, X_meta]).flatten()
+    prediction = model.predict(X_train).flatten()
 
     result = [Coordinates[:, 0], Coordinates[:, 1], prediction]
 
@@ -252,23 +253,23 @@ def load_weights(filename):
 def main():
     # TODO: use main function (refactor code)
 
-    (Coordinates), (X_meta, X_images, Y_train) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
+    (Coordinates), (X_train, Y_train) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
 
-    model = create_net(X_meta, X_images, Y_train)
+    model = create_net(X_train, Y_train)
 
     ## Some model and data processing constants
     batch_size = 128
     nb_epoch = 5
 
-    history = model.fit(x=[X_images, X_meta], y=Y_train,
+    history = model.fit(x=X_train, y=Y_train,
                         batch_size=batch_size, epochs=nb_epoch,
                         verbose=2, shuffle=True,
                         validation_split=0.1)
 
     show_acc(history)
     show_loss(history)
-    show_prediction(model, X_meta, X_images, Coordinates)
-    save_prediction(model, X_meta, X_images, Coordinates, "result/prediction_test.pkl")
+    show_prediction(model, X_train, Coordinates)
+    save_prediction(model, X_train, Coordinates, "result/prediction_test.pkl")
     show_prediction_from_file("result/prediction_test.pkl")
 
     return
