@@ -125,7 +125,7 @@ def load_csv(filename):
     return Coordinates, (X_meta, X_images, Y_train)
 
 
-def create_net():
+def create_net(X_meta, X_images, Y_train):
     from keras.models import Sequential
     from keras.layers import (Activation, Dropout, Flatten, Dense, Convolution2D, MaxPooling2D, Merge, ZeroPadding2D)
 
@@ -254,7 +254,7 @@ def main():
 
     (Coordinates), (X_meta, X_images, Y_train) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
 
-    model = create_net()
+    model = create_net(X_meta, X_images, Y_train)
 
     ## Some model and data processing constants
     batch_size = 128
