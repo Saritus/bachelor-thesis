@@ -219,7 +219,7 @@ def save_prediction(model, X_meta, X_images, Coordinates, filename):
 
 def show_prediction_from_file(filename):
     import cPickle as pickle
-    x, y, t, prediction = pickle.load(open(filename, "rb"))
+    x, y, prediction = pickle.load(open(filename, "rb"))
 
     import matplotlib.pyplot as plt
     plt.scatter(x, y, c=prediction, s=0.5, cmap='jet')
@@ -269,7 +269,7 @@ def main():
     show_loss(history)
     show_prediction(model, X_meta, X_images, Coordinates)
     save_prediction(model, X_meta, X_images, Coordinates, "result/prediction_test.pkl")
-    # show_prediction_from_file("result/prediction.pkl")
+    show_prediction_from_file("result/prediction_test.pkl")
 
     return
 
