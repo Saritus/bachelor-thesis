@@ -235,10 +235,12 @@ def save_model(model, file_architecture, file_weights):
 
     # save json string in file
     import json
+    ensure_dir(file_architecture)
     with open(file_architecture, 'w') as outfile:
         json.dump(json_string, outfile)
 
     # save weights of model in file
+    ensure_dir(file_weights)
     model.save_weights(file_weights)
     return
 
