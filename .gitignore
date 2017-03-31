@@ -2,3 +2,5 @@
 *.pkl
 *.png
 *.jpg
+*.h5
+*.json

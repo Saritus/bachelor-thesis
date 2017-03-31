@@ -227,33 +227,46 @@ def show_prediction_from_file(filename):
     plt.show()
 
 
-def save_model(model, filename):
-    # TODO: save model of net in file
-    return
-
-
-def load_model(filename):
-    # TODO: load model of net from file
-    return
-
-
-def save_weigths(model, filename):
-    # TODO: save weights of net in file
-    return
-
-
-def load_weights(filename):
-    # TODO: load weights of net from file
-    return
-
-
 # TODO: load all images from google maps api
+
+def save_model(model, file_architecture, file_weights=None):
+    # convert model to json string
+    json_string = model.to_json()
+
+    # save json string in file
+    import json
+    ensure_dir(file_architecture)
+    with open(file_architecture, 'w') as outfile:
+        json.dump(json_string, outfile)
+
+    # save weights of model in file
+    if file_weights:
+        ensure_dir(file_weights)
+        model.save_weights(file_weights)
+
+
+def load_model(file_architecture, file_weights=None):
+    # load json string from file
+    import json
+    with open(file_architecture) as data_file:
+        json_string = json.load(data_file)
+
+    # model reconstruction from json string
+    from keras.models import model_from_json
+    model = model_from_json(json_string)
+
+    # load weights from file
+    if file_weights:
+        model.load_weights(file_weights)
+
+    return model
 
 
 def main():
     (Coordinates), (X_train, Y_train) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
 
     model = create_net(X_train, Y_train)
+    model = load_model("models/first_try.json", "models/first_try.h5")
 
     ## Some model and data processing constants
     batch_size = 128
@@ -263,6 +276,9 @@ def main():
                         batch_size=batch_size, epochs=nb_epoch,
                         verbose=2, shuffle=True,
                         validation_split=0.1)
+
+    # save weights of net
+    save_model(model, "models/first_try.json", "models/first_try.h5")
 
     show_acc(history)
     show_loss(history)
