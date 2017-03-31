@@ -245,7 +245,7 @@ def save_model(model, file_architecture, file_weights=None):
         model.save_weights(file_weights)
 
 
-def load_model(file_architecture, file_weights):
+def load_model(file_architecture, file_weights=None):
     # load json string from file
     import json
     with open(file_architecture) as data_file:
@@ -256,7 +256,8 @@ def load_model(file_architecture, file_weights):
     model = model_from_json(json_string)
 
     # load weights from file
-    model.load_weights(file_weights)
+    if file_weights:
+        model.load_weights(file_weights)
 
     return model
 
