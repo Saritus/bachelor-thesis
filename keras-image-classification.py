@@ -229,7 +229,7 @@ def show_prediction_from_file(filename):
 
 # TODO: load all images from google maps api
 
-def save_model(model, file_architecture, file_weights):
+def save_model(model, file_architecture, file_weights=None):
     # convert model to json string
     json_string = model.to_json()
 
@@ -240,9 +240,9 @@ def save_model(model, file_architecture, file_weights):
         json.dump(json_string, outfile)
 
     # save weights of model in file
-    ensure_dir(file_weights)
-    model.save_weights(file_weights)
-    return
+    if file_weights:
+        ensure_dir(file_weights)
+        model.save_weights(file_weights)
 
 
 def load_model(file_architecture, file_weights):
