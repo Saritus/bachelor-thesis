@@ -266,7 +266,7 @@ def main():
     (Coordinates), (X_train, Y_train) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
 
     model = create_net(X_train, Y_train)
-    model.load_weights('weights/first_try.h5')
+    model = load_model("models/first_try.json", "models/first_try.h5")
 
     ## Some model and data processing constants
     batch_size = 128
@@ -278,7 +278,7 @@ def main():
                         validation_split=0.1)
 
     # save weights of net
-    model.save_weights("weights/first_try.h5")
+    save_model(model, "models/first_try.json", "models/first_try.h5")
 
     show_acc(history)
     show_loss(history)
