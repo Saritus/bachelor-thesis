@@ -243,6 +243,22 @@ def save_model(model, file_architecture, file_weights):
     return
 
 
+def load_model(file_architecture, file_weights):
+    # load json string from file
+    import json
+    with open(file_architecture) as data_file:
+        json_string = json.load(data_file)
+
+    # model reconstruction from json string
+    from keras.models import model_from_json
+    model = model_from_json(json_string)
+
+    # load weights from file
+    model.load_weights(file_weights)
+
+    return model
+
+
 def main():
     (Coordinates), (X_train, Y_train) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
 
