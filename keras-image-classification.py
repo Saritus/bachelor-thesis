@@ -229,6 +229,19 @@ def show_prediction_from_file(filename):
 
 # TODO: load all images from google maps api
 
+def save_model(model, file_architecture, file_weights):
+    # convert model to json string
+    json_string = model.to_json()
+
+    # save json string in file
+    import json
+    with open(file_architecture, 'w') as outfile:
+        json.dump(json_string, outfile)
+
+    # save weights of model in file
+    model.save_weights(file_weights)
+    return
+
 
 def main():
     (Coordinates), (X_train, Y_train) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
