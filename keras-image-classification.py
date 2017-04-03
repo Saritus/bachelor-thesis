@@ -255,6 +255,8 @@ def load_model(file_architecture, file_weights=None):
     from keras.models import model_from_json
     model = model_from_json(json_string)
 
+    model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mae'])
+
     # load weights from file
     if file_weights:
         model.load_weights(file_weights)
