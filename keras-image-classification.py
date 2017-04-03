@@ -12,11 +12,12 @@ def center_crop_image(path, new_width, new_height):
     return im.crop((left, top, right, bottom))
 
 
-def ensure_dir(file_path):
+def ensure_dir(filepath):
     import os
-    directory = os.path.dirname(file_path)
+    directory = os.path.dirname(filepath)
     if not os.path.exists(directory):
         os.makedirs(directory)
+    return filepath
 
 
 def download_image(filepath, row):
@@ -171,9 +172,7 @@ def create_net(X_train, Y_train):
     model.add(Dense(256, activation='relu'))
     model.add(Dense(Y_train.shape[1]))
 
-    model.compile(loss='mean_squared_error',
-                  optimizer='adam',
-                  metrics=['accuracy'])
+    model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mae'])
 
     return model
 
@@ -274,20 +273,19 @@ def main():
     batch_size = 128
     nb_epoch = 5
 
-    history = model.fit(x=X_train, y=Y_train,
-                        batch_size=batch_size, epochs=nb_epoch,
-                        verbose=2, shuffle=True,
-                        validation_split=0.1)
+    history = model.fit(x=X_train, y=Y_train, batch_size=batch_size, epochs=nb_epoch,
+                        verbose=2, shuffle=True, validation_split=0.1)
+
     # TODO: add a callback for fit function (link: https://keras.io/callbacks/#create-a-callback)
 
     # save weights of net
     save_model(model, "models/first_try.json", "models/first_try.h5")
 
-    show_acc(history)
+    # show_acc(history)
     show_loss(history)
     show_prediction(model, X_train, Coordinates)
-    save_prediction(model, X_train, Coordinates, "result/prediction_test.pkl")
-    show_prediction_from_file("result/prediction_test.pkl")
+    # save_prediction(model, X_train, Coordinates, "result/prediction_test.pkl")
+    # show_prediction_from_file("result/prediction_test.pkl")
 
     return
 
