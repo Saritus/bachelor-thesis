@@ -278,6 +278,7 @@ def main():
                         batch_size=batch_size, epochs=nb_epoch,
                         verbose=2, shuffle=True,
                         validation_split=0.1)
+    # TODO: add a callback for fit function (link: https://keras.io/callbacks/#create-a-callback)
 
     # save weights of net
     save_model(model, "models/first_try.json", "models/first_try.h5")
