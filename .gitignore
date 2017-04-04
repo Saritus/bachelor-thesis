@@ -1,6 +1,9 @@
 # IntelliJ config folder
 .idea/
 
+# Fullmap splitting folder (old)
+fullmap_splitting/
+
 # NWT files
 nwt-data/
 
