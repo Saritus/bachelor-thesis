@@ -72,7 +72,7 @@ def load_csv(filename):
 
     count = 0
     for row in reader:
-        if count > 5000:
+        if count > 10000:
             break
         count += 1
 
@@ -135,9 +135,9 @@ def create_net(X_train, Y_train):
     image_processor = Sequential()
 
     image_processor.add(ZeroPadding2D((1, 1), input_shape=X_train[0].shape[1:]))
-    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
+    image_processor.add(Convolution2D(32, (3, 3), activation='relu'))
     image_processor.add(ZeroPadding2D((1, 1)))
-    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
+    image_processor.add(Convolution2D(32, (3, 3), activation='relu'))
     image_processor.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
 
     image_processor.add(ZeroPadding2D((1, 1)))
@@ -267,11 +267,11 @@ def main():
     (Coordinates), (X_train, Y_train) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
 
     model = create_net(X_train, Y_train)
-    model = load_model("models/first_try.json", "models/first_try.h5")
+    # model = load_model("models/first_try.json", "models/first_try.h5")
 
     ## Some model and data processing constants
     batch_size = 128
-    nb_epoch = 5
+    nb_epoch = 50
 
     history = model.fit(x=X_train, y=Y_train, batch_size=batch_size, epochs=nb_epoch,
                         verbose=2, shuffle=True, validation_split=0.1)
