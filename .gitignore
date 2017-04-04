@@ -1,7 +1,14 @@
+# IntelliJ config folder
 .idea/
+
+# Fullmap splitting folder (old)
+fullmap_splitting/
+
+# NWT files
+nwt-data/
+
+# Special file extensions
 *.pkl
-*.png
-*.jpg
 *.h5
 *.json
 *.lyx~
