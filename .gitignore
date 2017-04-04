@@ -11,3 +11,4 @@ nwt-data/
 *.pkl
 *.h5
 *.json
+*.lyx~
