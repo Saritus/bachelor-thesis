@@ -1,4 +1,10 @@
+# IntelliJ config folder
 .idea/
+
+# NWT files
+nwt-data/
+
+# Special file extensions
 *.pkl
 *.png
 *.jpg
