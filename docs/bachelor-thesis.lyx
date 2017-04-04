@@ -25,9 +25,10 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -97,6 +98,78 @@ Abstact - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
  At vero eos et accusam et justo duo dolores et ea rebum.
  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
  sit amet.
+\end_layout
+
+\begin_layout Section
+Grundlage
+\end_layout
+
+\begin_layout Standard
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+ eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+ voluptua.
+ At vero eos et accusam et justo duo dolores et ea rebum.
+ Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+ sit amet.
+ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+ eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+ voluptua.
+ At vero eos et accusam et justo duo dolores et ea rebum.
+ Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+ sit amet.
+ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+ eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+ voluptua.
+ At vero eos et accusam et justo duo dolores et ea rebum.
+ Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+ sit amet.
+ 
+\end_layout
+
+\begin_layout Standard
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+ consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
+ accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+ augue duis dolore te feugait nulla facilisi.
+ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+ nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+ 
+\end_layout
+
+\begin_layout Section
+Platzhalter
+\end_layout
+
+\begin_layout Standard
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+ eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+ voluptua.
+ At vero eos et accusam et justo duo dolores et ea rebum.
+ Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+ sit amet.
+ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+ eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+ voluptua.
+ At vero eos et accusam et justo duo dolores et ea rebum.
+ Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+ sit amet.
+ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+ eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+ voluptua.
+ At vero eos et accusam et justo duo dolores et ea rebum.
+ Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+ sit amet.
+ 
+\end_layout
+
+\begin_layout Standard
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+ consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
+ accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+ augue duis dolore te feugait nulla facilisi.
+ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+ nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+ 
 \end_layout
 
 \end_body
