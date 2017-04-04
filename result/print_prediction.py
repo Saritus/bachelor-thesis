@@ -8,4 +8,4 @@ def show_prediction_from_file(filename):
     plt.scatter(x, y, c=prediction, s=0.5, cmap='jet')
     plt.show()
     
-show_prediction_from_file("prediction.pkl")
+show_prediction_from_file("prediction_zip.pkl")
