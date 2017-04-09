@@ -22,6 +22,13 @@ def show_loss(history):
     plt.show()
 
 
+def show_prediction(model, X_train, Coordinates):
+    prediction = model.predict(X_train).flatten()
+    import matplotlib.pyplot as plt
+    plt.scatter(Coordinates[:, 0], Coordinates[:, 1], c=prediction, s=0.5, cmap='jet')
+    plt.show()
+
+
 def main():
     return
 

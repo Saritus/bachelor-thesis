@@ -1,6 +1,6 @@
 from functions import center_crop_image, ensure_dir, download_image
 from loadcsv import load_csv
-from visualize import show_acc, show_loss
+from visualize import show_acc, show_loss, show_prediction
 
 
 def load_mnist():
@@ -78,13 +78,6 @@ def create_net(X_train, Y_train):
     model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mae'])
 
     return model
-
-
-def show_prediction(model, X_train, Coordinates):
-    prediction = model.predict(X_train).flatten()
-    import matplotlib.pyplot as plt
-    plt.scatter(Coordinates[:, 0], Coordinates[:, 1], c=prediction, s=0.5, cmap='jet')
-    plt.show()
 
 
 def save_prediction(model, X_train, Coordinates, filename):
