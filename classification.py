@@ -1,6 +1,6 @@
 from functions import center_crop_image, ensure_dir, download_image
 from loadcsv import load_csv
-from visualize import show_acc
+from visualize import show_acc, show_loss
 
 
 def load_mnist():
@@ -78,18 +78,6 @@ def create_net(X_train, Y_train):
     model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mae'])
 
     return model
-
-
-def show_loss(history):
-    # LOSS VS VAL_LOSS
-    import matplotlib.pyplot as plt
-    plt.plot(history.history['loss'])
-    plt.plot(history.history['val_loss'])
-    plt.title('model loss LOSS vs VAL_LOSS')
-    plt.ylabel('loss')
-    plt.xlabel('epoch')
-    plt.legend(['train', 'test'], loc='upper left')
-    plt.show()
 
 
 def show_prediction(model, X_train, Coordinates):
