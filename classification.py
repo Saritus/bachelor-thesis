@@ -1,6 +1,6 @@
 from functions import center_crop_image, ensure_dir, download_image
 from loadcsv import load_csv
-from visualize import show_acc, show_loss, show_prediction, save_prediction
+from visualize import show_acc, show_loss, show_prediction, save_prediction, show_prediction_from_file
 
 
 def load_mnist():
@@ -78,15 +78,6 @@ def create_net(X_train, Y_train):
     model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mae'])
 
     return model
-
-
-def show_prediction_from_file(filename):
-    import cPickle as pickle
-    x, y, prediction = pickle.load(open(filename, "rb"))
-
-    import matplotlib.pyplot as plt
-    plt.scatter(x, y, c=prediction, s=0.5, cmap='jet')
-    plt.show()
 
 
 # TODO: load all images from google maps api
