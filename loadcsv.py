@@ -17,3 +17,7 @@ import matplotlib.pyplot as plt
 
 plt.scatter(xcoords, ycoords, c=zipcodes, s=0.5, cmap='jet')
 plt.show()
+
+
+def main():
+    pass
