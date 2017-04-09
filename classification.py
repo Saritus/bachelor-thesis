@@ -1,5 +1,6 @@
 from functions import center_crop_image, ensure_dir, download_image
 from loadcsv import load_csv
+from visualize import show_acc
 
 
 def load_mnist():
@@ -77,18 +78,6 @@ def create_net(X_train, Y_train):
     model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mae'])
 
     return model
-
-
-def show_acc(history):
-    # ACC VS VAL_ACC
-    import matplotlib.pyplot as plt
-    plt.plot(history.history['acc'])
-    plt.plot(history.history['val_acc'])
-    plt.title('model accuracy ACC VS VAL_ACC')
-    plt.ylabel('accuracy')
-    plt.xlabel('epoch')
-    plt.legend(['train', 'test'], loc='upper left')
-    plt.show()
 
 
 def show_loss(history):
