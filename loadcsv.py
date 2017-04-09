@@ -84,10 +84,8 @@ def main():
             zipcodes.extend([float(hash(row['ZipCode'])) % 17])
             flags.extend([float(row['Flag_Coordinates'])])
 
-    import matplotlib.pyplot as plt
-
-    plt.scatter(xcoords, ycoords, c=zipcodes, s=0.5, cmap='jet')
-    plt.show()
+    from visualize import point_plot
+    point_plot(xcoords, ycoords, zipcodes)
 
 
 if __name__ == "__main__":
