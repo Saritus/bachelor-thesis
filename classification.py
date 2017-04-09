@@ -1,12 +1,4 @@
-from functions import center_crop_image
-
-
-def ensure_dir(filepath):
-    import os
-    directory = os.path.dirname(filepath)
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-    return filepath
+from functions import center_crop_image, ensure_dir
 
 
 def download_image(filepath, row):

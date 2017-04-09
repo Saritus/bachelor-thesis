@@ -12,6 +12,14 @@ def center_crop_image(path, new_width, new_height):
     return im.crop((left, top, right, bottom))
 
 
+def ensure_dir(filepath):
+    import os
+    directory = os.path.dirname(filepath)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    return filepath
+
+
 def main():
     return
 
