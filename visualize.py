@@ -29,6 +29,15 @@ def show_prediction(model, X_train, Coordinates):
     plt.show()
 
 
+def save_prediction(model, X_train, Coordinates, filename):
+    import cPickle as pickle
+    prediction = model.predict(X_train).flatten()
+
+    result = [Coordinates[:, 0], Coordinates[:, 1], prediction]
+
+    pickle.dump(result, open(filename, "wb"))
+
+
 def main():
     return
 
