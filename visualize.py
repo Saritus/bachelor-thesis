@@ -24,9 +24,7 @@ def show_loss(history):
 
 def show_prediction(model, X_train, Coordinates):
     prediction = model.predict(X_train).flatten()
-    import matplotlib.pyplot as plt
-    plt.scatter(Coordinates[:, 0], Coordinates[:, 1], c=prediction, s=0.5, cmap='jet')
-    plt.show()
+    point_plot(Coordinates[:, 0], Coordinates[:, 1], prediction)
 
 
 def save_prediction(model, X_train, Coordinates, filename):
@@ -41,10 +39,7 @@ def save_prediction(model, X_train, Coordinates, filename):
 def show_prediction_from_file(filename):
     import cPickle as pickle
     x, y, prediction = pickle.load(open(filename, "rb"))
-
-    import matplotlib.pyplot as plt
-    plt.scatter(x, y, c=prediction, s=0.5, cmap='jet')
-    plt.show()
+    point_plot(x, y, prediction)
 
 
 def point_plot(x_array, y_array, color_array):
