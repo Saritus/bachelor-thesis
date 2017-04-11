@@ -1,36 +1,6 @@
-def center_crop_image(path, new_width, new_height):
-    from PIL import Image
-
-    im = Image.open(path).convert('RGB')
-    width, height = im.size  # Get dimensions
-
-    left = (width - new_width) / 2
-    top = (height - new_height) / 2
-    right = (width + new_width) / 2
-    bottom = (height + new_height) / 2
-
-    return im.crop((left, top, right, bottom))
-
-
-def ensure_dir(filepath):
-    import os
-    directory = os.path.dirname(filepath)
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-    return filepath
-
-
-def download_image(filepath, row):
-    import urllib
-    from PIL import Image
-    urlpath = "http://maps.google.com/maps/api/staticmap?center="
-    urlpath += row['Y_Coordinate'].replace(',', '.') + "," + row['X_Coordinate'].replace(',', '.')
-    urlpath += "&zoom=18&size=442x442&maptype=satellite"
-    urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
-    urllib.urlretrieve(urlpath, filepath)
-    image = center_crop_image(filepath, 400, 400)
-    image = image.resize((100, 100), Image.ANTIALIAS)
-    image.save(filepath)
+from functions import center_crop_image, ensure_dir, download_image
+from loadcsv import load_csv
+from visualize import show_acc, show_loss, show_prediction, save_prediction, show_prediction_from_file
 
 
 def load_mnist():
@@ -58,73 +28,6 @@ def load_mnist():
     Y_test = np_utils.to_categorical(y_test, nb_classes)
 
     return (X_train, Y_train), (X_test, Y_test)
-
-
-def load_csv(filename):
-    X_meta = []
-    Y_train = []
-    X_images = []
-    Coordinates = []
-
-    import csv
-    csvfile = open(filename)
-    reader = csv.DictReader(csvfile, delimiter='\t')
-
-    count = 0
-    for row in reader:
-        if count > 10000:
-            break
-        count += 1
-
-        filepath = "nwt-data/images/" + row['ZipCode'].zfill(5) + "/" + row['House_ID'] + ".jpg"
-        ensure_dir(filepath)
-
-        # Fill image input array
-        from scipy import misc
-        try:
-            img = misc.imread(filepath)
-        except IOError:
-            # Download image from GoogleMaps API
-            download_image(filepath, row)
-            print count
-            img = misc.imread(filepath)
-        X_images.extend([img])
-
-        # Fill coordinates array
-        coordinate = [
-            float(row['X_Coordinate'].replace(',', '.')),
-            float(row['Y_Coordinate'].replace(',', '.')),
-        ]
-        Coordinates.extend([coordinate])
-
-        # Fill metadata input array
-        x = [
-            # float(row['X_Coordinate'].replace(',', '.')),
-            # float(row['Y_Coordinate'].replace(',', '.')),
-            float(hash(row['District'])) % 100,
-            float(hash(row['Street'])) % 100,
-            # float(row['ZipCode']),
-        ]
-        X_meta.extend([x])
-
-        # Fill output array
-        y = [
-            int(row['ZipCode']),
-        ]
-        Y_train.extend([y])
-
-    import numpy
-
-    Coordinates = numpy.asarray(Coordinates, dtype=numpy.float32)
-    X_meta = numpy.asarray(X_meta, dtype=numpy.float32)
-    X_images = numpy.asarray(X_images, dtype=numpy.float32)
-    Y_train = numpy.asarray(Y_train, dtype=numpy.float32)
-    X_train = [X_images, X_meta]
-
-    print ("X_images.shape", X_images.shape)
-    print ("Y_train.shape", Y_train.shape)
-
-    return Coordinates, (X_train, Y_train)
 
 
 def create_net(X_train, Y_train):
@@ -175,55 +78,6 @@ def create_net(X_train, Y_train):
     model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mae'])
 
     return model
-
-
-def show_acc(history):
-    # ACC VS VAL_ACC
-    import matplotlib.pyplot as plt
-    plt.plot(history.history['acc'])
-    plt.plot(history.history['val_acc'])
-    plt.title('model accuracy ACC VS VAL_ACC')
-    plt.ylabel('accuracy')
-    plt.xlabel('epoch')
-    plt.legend(['train', 'test'], loc='upper left')
-    plt.show()
-
-
-def show_loss(history):
-    # LOSS VS VAL_LOSS
-    import matplotlib.pyplot as plt
-    plt.plot(history.history['loss'])
-    plt.plot(history.history['val_loss'])
-    plt.title('model loss LOSS vs VAL_LOSS')
-    plt.ylabel('loss')
-    plt.xlabel('epoch')
-    plt.legend(['train', 'test'], loc='upper left')
-    plt.show()
-
-
-def show_prediction(model, X_train, Coordinates):
-    prediction = model.predict(X_train).flatten()
-    import matplotlib.pyplot as plt
-    plt.scatter(Coordinates[:, 0], Coordinates[:, 1], c=prediction, s=0.5, cmap='jet')
-    plt.show()
-
-
-def save_prediction(model, X_train, Coordinates, filename):
-    import cPickle as pickle
-    prediction = model.predict(X_train).flatten()
-
-    result = [Coordinates[:, 0], Coordinates[:, 1], prediction]
-
-    pickle.dump(result, open(filename, "wb"))
-
-
-def show_prediction_from_file(filename):
-    import cPickle as pickle
-    x, y, prediction = pickle.load(open(filename, "rb"))
-
-    import matplotlib.pyplot as plt
-    plt.scatter(x, y, c=prediction, s=0.5, cmap='jet')
-    plt.show()
 
 
 # TODO: load all images from google maps api
@@ -293,4 +147,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# TODO: move functions to seperate python files
+    # TODO: move functions to seperate python files
