@@ -12,3 +12,4 @@ nwt-data/
 *.h5
 *.json
 *.lyx~
+*.pyc
