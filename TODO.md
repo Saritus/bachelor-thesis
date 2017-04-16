@@ -1,113 +1,113 @@
-# Solaranlage:
+- [ ] Solaranlage:
 
-- [ ] Vorhanden
-- [ ] Nicht vorhanden
+  - Vorhanden
+  - Nicht vorhanden
 
-# Dachfläche (also die Größe)
+- [ ] Dachfläche (also die Größe)
 
-# Dachart (Beschreibung der Typen siehe Wikipedia)
+- [ ] Dachart (Beschreibung der Typen siehe Wikipedia)
 
-- [ ] Flachdach
-- [ ] Pultdach
-- [ ] Schleppdach
-- [ ] Sheddach
-- [ ] Sattel-/Giebeldach
-- [ ] Schmetterlingsdach
-- [ ] Grabendach
-- [ ] Dach mit Monitor
-- [ ] Walmdach
-- [ ] Schopfwalm-/Krüppelwalmdach
-- [ ] Zeltdach
-- [ ] Fußwalmdach
-- [ ] Mansarddach
-- [ ] Spitztonnendach
-- [ ] Tonnendach
-- [ ] Bogendach
-- [ ] Rhombendach
-- [ ] Faltdach
-- [ ] Welsche Haube
-- [ ] Pagodendach
-- [ ] Kegeldach
-- [ ] Helm
-- [ ] Zwiebelhelm
-- [ ] Laternendach
+  - Flachdach
+  - Pultdach
+  - Schleppdach
+  - Sheddach
+  - Sattel-/Giebeldach
+  - Schmetterlingsdach
+  - Grabendach
+  - Dach mit Monitor
+  - Walmdach
+  - Schopfwalm-/Krüppelwalmdach
+  - Zeltdach
+  - Fußwalmdach
+  - Mansarddach
+  - Spitztonnendach
+  - Tonnendach
+  - Bogendach
+  - Rhombendach
+  - Faltdach
+  - Welsche Haube
+  - Pagodendach
+  - Kegeldach
+  - Helm
+  - Zwiebelhelm
+  - Laternendach
 
-# Neigung des Daches
+- [ ] Neigung des Daches
 
-# Farbe des Daches
+- [ ] Farbe des Daches
 
-# Eignung für Solaranlage
+- [ ] Eignung für Solaranlage
 
-# Dachterrasse
+- [ ] Dachterrasse
 
-# Balkon
+- [ ] Balkon
 
-# Grundstücksfläche (also die Größe)
+- [ ] Grundstücksfläche (also die Größe)
 
-# Garten
+- [ ] Garten
 
-- [ ] Vorhanden
-- [ ] Nicht vorhanden
+  - Vorhanden
+  - Nicht vorhanden
 
-# Gartenfläche (also die Größe)
+- [ ] Gartenfläche (also die Größe)
 
-# Pool im Garten
+- [ ] Pool im Garten
 
-- [ ] Vorhanden
-- [ ] Nicht vorhanden
+  - Vorhanden
+  - Nicht vorhanden
 
-# Spielzeug im Garten (z.B. Schaukel, Trampolin, Klettergerüst)
+- [ ] Spielzeug im Garten (z.B. Schaukel, Trampolin, Klettergerüst)
 
-- [ ] Vorhanden
-- [ ] Nicht vorhanden
+  - Vorhanden
+  - Nicht vorhanden
 
-# Teich im Garten
+- [ ] Teich im Garten
 
-- [ ] Vorhanden
-- [ ] Nicht vorhanden
+  - Vorhanden
+  - Nicht vorhanden
 
-# Autostellplatz:
+- [ ] Autostellplatz:
 
-- [ ] Garage
-- [ ] Carport
-- [ ] Stellplatz
-- [ ] Gemeinschaftsparkplatz
-- [ ] Keine Parkmöglichkeit
+  - Garage
+  - Carport
+  - Stellplatz
+  - Gemeinschaftsparkplatz
+  - Keine Parkmöglichkeit
 
-# Anzahl Stellplätze
+- [ ] Anzahl Stellplätze
 
-# Abgrenzungen:
+- [ ] Abgrenzungen:
 
-- [ ] Zaun
-- [ ] Mauer
-- [ ] Hecke
+  - Zaun
+  - Mauer
+  - Hecke
 
-# Gebäudetyp:
+- [ ] Gebäudetyp:
 
-- [ ] freistehendes Gebäude
-- [ ] Ein- bis Zweiparteienhaus mit Nachbarn (Anrainer)
-- [ ] klassische Doppelhaushälfte
-- [ ] Reihenhaus
-- [ ] freistehendes Mehrparteienhaus
-- [ ] Mehrparteienhaus mit Nachbarn (Anrainer)
-- [ ] Hochhaus
-- [ ] Sonderform (z.B. Kirche)
-- [ ] Gewerbe
+  - freistehendes Gebäude
+  - Ein- bis Zweiparteienhaus mit Nachbarn (Anrainer)
+  - klassische Doppelhaushälfte
+  - Reihenhaus
+  - freistehendes Mehrparteienhaus
+  - Mehrparteienhaus mit Nachbarn (Anrainer)
+  - Hochhaus
+  - Sonderform (z.B. Kirche)
+  - Gewerbe
 
-# Siedlungsblocktyp:
+- [ ] Siedlungsblocktyp:
 
-- [ ] Wohngebiet
-- [ ] Mischgebiet
-- [ ] Gewerbegebiet
+  - Wohngebiet
+  - Mischgebiet
+  - Gewerbegebiet
 
-# Sportplatz in der Nähe
+- [ ] Sportplatz in der Nähe
 
-# Park in der Nähe
+- [ ] Park in der Nähe
 
-# Wald in der Nähe
+- [ ] Wald in der Nähe
 
-# See in der Nähe
+- [ ] See in der Nähe
 
-# Fluss in der Nähe
+- [ ] Fluss in der Nähe
 
-# Autobahn in der Nähe
+- [ ] Autobahn in der Nähe
