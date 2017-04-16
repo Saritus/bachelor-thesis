@@ -85,7 +85,7 @@
 # Gebäudetyp:
 
 - [ ] freistehendes Gebäude
-- [ ] Ein- [ ] bis Zweiparteienhaus mit Nachbarn (Anrainer)
+- [ ] Ein- bis Zweiparteienhaus mit Nachbarn (Anrainer)
 - [ ] klassische Doppelhaushälfte
 - [ ] Reihenhaus
 - [ ] freistehendes Mehrparteienhaus
