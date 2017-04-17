@@ -42,9 +42,12 @@ def show_prediction_from_file(filename):
     point_plot(x, y, prediction)
 
 
-def point_plot(x_array, y_array, color_array):
+def point_plot(x_array, y_array, color_array=None):
     import matplotlib.pyplot as plt
-    plt.scatter(x_array, y_array, c=color_array, s=0.5, cmap='jet')
+    if color_array:
+        plt.scatter(x_array, y_array, c=color_array, s=0.5, cmap='jet')
+    else:
+        plt.scatter(x_array, y_array, s=0.5)
     plt.show()
 
 
