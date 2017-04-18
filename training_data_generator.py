@@ -19,10 +19,10 @@ class App:
         self.image = ImageTk.PhotoImage(self.pilImage)
         self.imagesprite = self.canvas.create_image(299, 299, image=self.image)
 
-        self.button = Button(frame, text="QUIT", command=quit, width=10)
+        self.button = Button(frame, text="YES", command=quit, width=10)
         self.button.pack(side=LEFT)
-        self.slogan = Button(frame, text="Hello", command=self.write_slogan, width=10)
-        self.slogan.pack(side=LEFT)
+        self.slogan = Button(frame, text="NO", command=self.write_slogan, width=10)
+        self.slogan.pack(side=RIGHT)
 
     def write_slogan(self):
         print("Tkinter is easy to use!")
