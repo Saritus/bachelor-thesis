@@ -42,7 +42,6 @@ def download_image(filepath, row):
     urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
     urllib.urlretrieve(urlpath, filepath)
     image = center_crop_image(filepath, 598, 598)
-    image = image.resize((300, 300), Image.ANTIALIAS)
     # TODO: reduce size of images on demand, not right after download
     image.save(filepath)
     # TODO: make switch between satellite map and bird eyes view
