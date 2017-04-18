@@ -1,4 +1,4 @@
-from functions import center_crop_image, ensure_dir, download_image
+from functions import center_crop_image, ensure_dir, download_image, load_image
 
 
 def load_csv(filename):
@@ -21,14 +21,13 @@ def load_csv(filename):
         ensure_dir(filepath)
 
         # Fill image input array
-        from scipy import misc
         try:
-            img = misc.imread(filepath)
+            img = load_image(filepath, 300, 300)
         except IOError:
             # Download image from GoogleMaps API
             download_image(filepath, row)
             print count
-            img = misc.imread(filepath)
+            img = load_image(filepath, 300, 300)
         X_images.extend([img])
 
         # Fill coordinates array
