@@ -32,7 +32,7 @@ def download_image(filepath, row):
     # TODO: download 640x640 images
     urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
     urllib.urlretrieve(urlpath, filepath)
-    image = image.resize((100, 100), Image.ANTIALIAS)
+    image = image.resize((300, 300), Image.ANTIALIAS)
     image = center_crop_image(filepath, 598, 598)
     # TODO: reduce size of images on demand, not right after download
     image.save(filepath)
