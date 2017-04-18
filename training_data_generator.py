@@ -55,12 +55,14 @@ class App:
         self.button_no.pack(side=RIGHT)
 
     def yes(self):
-        print("YES")
-        self.change_image("nwt-data/google-images/01067/100000182.jpg")
+        row = self.csvreader.next()
+        filepath = "nwt-data/google-images/" + row['ZipCode'].zfill(5) + "/" + row['House_ID'] + ".jpg"
+        self.change_image(filepath)
 
     def no(self):
-        print("NO")
-        self.change_image("nwt-data/google-images/01067/100000291.jpg")
+        row = self.csvreader.next()
+        filepath = "nwt-data/google-images/" + row['ZipCode'].zfill(5) + "/" + row['House_ID'] + ".jpg"
+        self.change_image(filepath)
 
     def change_image(self, filepath):
         self.pilImage = Image.open(filepath)
