@@ -29,6 +29,7 @@ class csvWriter:
 
 from Tkinter import *
 from PIL import Image, ImageTk
+from functions import download_image
 
 
 class App:
@@ -55,19 +56,28 @@ class App:
         self.button_no.pack(side=RIGHT)
 
     def yes(self):
-        row = self.csvreader.next()
-        filepath = "nwt-data/google-images/" + row['ZipCode'].zfill(5) + "/" + row['House_ID'] + ".jpg"
-        self.change_image(filepath)
+        self.show_next_image()
 
     def no(self):
-        row = self.csvreader.next()
-        filepath = "nwt-data/google-images/" + row['ZipCode'].zfill(5) + "/" + row['House_ID'] + ".jpg"
-        self.change_image(filepath)
+        self.show_next_image()
 
     def change_image(self, filepath):
         self.pilImage = Image.open(filepath)
         self.image = ImageTk.PhotoImage(self.pilImage)
         self.canvas.itemconfig(self.imagesprite, image=self.image)
+        return self.imagesprite
+
+    def show_next_image(self):
+        row = self.csvreader.next()
+        filepath = "nwt-data/google-images/" + row['ZipCode'].zfill(5) + "/" + row['House_ID'] + ".jpg"
+        img = None
+        while img is None:
+            try:
+                # Change image
+                img = self.change_image(filepath)
+            except IOError:
+                # Download image from GoogleMaps API
+                download_image(filepath, row)
 
 
 root = Tk()
