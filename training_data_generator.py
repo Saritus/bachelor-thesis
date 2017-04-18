@@ -60,10 +60,14 @@ class App:
         self.button_no.pack(side=RIGHT)
 
     def yes(self):
+        self.row['Solar'] = 1
+        self.csvwriter.writerow(self.row)
         self.row = self.csvreader.next()
         self.show_next_image()
 
     def no(self):
+        self.row['Solar'] = 0
+        self.csvwriter.writerow(self.row)
         self.row = self.csvreader.next()
         self.show_next_image()
 
