@@ -30,7 +30,6 @@ def load_csv(filename):
                 # Download image from GoogleMaps API
                 download_image(filepath, row)
                 print count
-                img = load_image(filepath, (100, 100))
         X_images.extend([img])
 
         # Fill coordinates array
