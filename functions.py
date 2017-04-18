@@ -20,10 +20,10 @@ def ensure_dir(filepath):
     return filepath
 
 
-def load_image(filepath, width, height):
+def load_image(filepath, size):
     from PIL import Image
     image = Image.open(filepath).convert('RGB')
-    image = image.resize((width, height), Image.ANTIALIAS)
+    image = image.resize(size, Image.ANTIALIAS)
 
     from scipy.misc import fromimage
     return fromimage(image)
