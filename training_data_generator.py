@@ -6,7 +6,7 @@ reader = csv.DictReader(csvfile, delimiter='\t')
 class csvReader:
     def __init__(self, filename):
         self.csvfile = open(filename)
-        self.reader = csv.DictReader(self.csvfile)
+        self.reader = csv.DictReader(self.csvfile, delimiter='\t')
 
     def next(self):
         row = self.reader.next()
