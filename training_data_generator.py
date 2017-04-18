@@ -15,8 +15,9 @@ class csvReader:
 
 class csvWriter:
     def __init__(self, filename):
-        self.csvfile = open(filename)
-        self.writer = csv.DictWriter(self.csvfile)
+        fieldnames = ['first_name', 'last_name']
+        self.csvfile = open(filename, 'w')
+        self.writer = csv.DictWriter(self.csvfile, fieldnames=fieldnames, delimiter='\t')
         self.writer.writeheader()
 
     def writerow(self, row):
