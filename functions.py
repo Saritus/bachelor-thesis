@@ -21,6 +21,7 @@ def ensure_dir(filepath):
 
 
 def download_image(filepath, row):
+    # TODO: replace row with x and y
     # TODO: make switch between google staticmaps and bing maps possible
     import urllib
     from PIL import Image
@@ -35,6 +36,7 @@ def download_image(filepath, row):
     image = image.resize((100, 100), Image.ANTIALIAS)
     # TODO: reduce size of images on demand, not right after download
     image.save(filepath)
+    # TODO: make switch between satellite map and bird eyes view
 
 
 def main():
