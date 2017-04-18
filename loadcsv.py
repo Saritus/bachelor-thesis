@@ -21,13 +21,15 @@ def load_csv(filename):
         ensure_dir(filepath)
 
         # Fill image input array
-        try:
-            img = load_image(filepath, (100, 100))
-        except IOError:
-            # Download image from GoogleMaps API
-            download_image(filepath, row)
-            print count
-            img = load_image(filepath, (100, 100))
+        img = None
+        while img is None:
+            try:
+                # Load image from hard disk
+                img = load_image(filepath, (100, 100))
+            except IOError:
+                # Download image from GoogleMaps API
+                download_image(filepath, row)
+                print count
         X_images.extend([img])
 
         # Fill coordinates array
@@ -68,6 +70,8 @@ def load_csv(filename):
 
 
 def main():
+    (Coordinates), (X_train, Y_train) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
+
     import csv
 
     with open('nwt-data/Gebaeude_Dresden.csv') as csvfile:
