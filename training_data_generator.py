@@ -19,13 +19,16 @@ class App:
         self.image = ImageTk.PhotoImage(self.pilImage)
         self.imagesprite = self.canvas.create_image(299, 299, image=self.image)
 
-        self.button = Button(frame, text="YES", command=quit, width=10)
+        self.button = Button(frame, text="YES", command=self.yes, width=10)
         self.button.pack(side=LEFT)
-        self.slogan = Button(frame, text="NO", command=self.write_slogan, width=10)
+        self.slogan = Button(frame, text="NO", command=self.no, width=10)
         self.slogan.pack(side=RIGHT)
 
-    def write_slogan(self):
-        print("Tkinter is easy to use!")
+    def yes(self):
+        print("YES")
+
+    def no(self):
+        print("NO")
 
 
 root = Tk()
