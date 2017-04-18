@@ -46,10 +46,10 @@ class App:
         self.imagesprite = self.canvas.create_image(299, 299, image=self.image)
 
         # Buttons
-        self.button = Button(frame, text="YES", command=self.yes, width=10)
-        self.button.pack(side=LEFT)
-        self.slogan = Button(frame, text="NO", command=self.no, width=10)
-        self.slogan.pack(side=RIGHT)
+        self.button_yes = Button(frame, text="YES", command=self.yes, width=10)
+        self.button_yes.pack(side=LEFT)
+        self.button_no = Button(frame, text="NO", command=self.no, width=10)
+        self.button_no.pack(side=RIGHT)
 
         # CSV
         self.csvreader = csvReader('nwt-data/Gebaeude_Dresden.csv')
