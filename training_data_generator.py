@@ -51,6 +51,10 @@ class App:
         self.slogan = Button(frame, text="NO", command=self.no, width=10)
         self.slogan.pack(side=RIGHT)
 
+        # CSV
+        self.csvreader = csvReader('nwt-data/Gebaeude_Dresden.csv')
+        self.csvwriter = csvWriter('nwt-data/Output.csv')
+
     def yes(self):
         print("YES")
         self.change_image("nwt-data/google-images/01067/100000182.jpg")
