@@ -48,9 +48,8 @@ class App:
         # Image
         self.canvas = Canvas(root, width=598, height=598)
         self.canvas.pack(side=BOTTOM)
-        self.pilImage = Image.open("nwt-data/google-images/01067/100000010.jpg")
-        self.image = ImageTk.PhotoImage(self.pilImage)
-        self.imagesprite = self.canvas.create_image(299, 299, image=self.image)
+        self.imagesprite = self.canvas.create_image(299, 299)
+        self.show_next_image()
 
         # Buttons
         self.button_yes = Button(frame, text="YES", command=self.yes, width=10)
