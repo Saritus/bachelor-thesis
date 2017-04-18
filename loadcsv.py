@@ -1,4 +1,4 @@
-from functions import center_crop_image, ensure_dir, download_image
+from functions import center_crop_image, ensure_dir, download_image, load_image
 
 
 def load_csv(filename):
@@ -17,18 +17,17 @@ def load_csv(filename):
             break
         count += 1
 
-        filepath = "nwt-data/images/" + row['ZipCode'].zfill(5) + "/" + row['House_ID'] + ".jpg"
+        filepath = "nwt-data/google-images/" + row['ZipCode'].zfill(5) + "/" + row['House_ID'] + ".jpg"
         ensure_dir(filepath)
 
         # Fill image input array
-        from scipy import misc
         try:
-            img = misc.imread(filepath)
+            img = load_image(filepath, (100, 100))
         except IOError:
             # Download image from GoogleMaps API
             download_image(filepath, row)
             print count
-            img = misc.imread(filepath)
+            img = load_image(filepath, (100, 100))
         X_images.extend([img])
 
         # Fill coordinates array
