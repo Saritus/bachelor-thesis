@@ -40,6 +40,7 @@ def download_image(filepath, row):
     # TODO: use adresse instead of x,y-coordinates
     urlpath += "&zoom=19&size=640x640&maptype=satellite&format=png"
     urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
+    # TODO: use string formatting (https://docs.python.org/3/library/string.html#formatexamples)
     urllib.urlretrieve(urlpath, filepath)
     image = center_crop_image(filepath, 598, 598)
     image.save(filepath)
