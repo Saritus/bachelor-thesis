@@ -20,6 +20,15 @@ def ensure_dir(filepath):
     return filepath
 
 
+def load_image(filepath, width, height):
+    from PIL import Image
+    image = Image.open(filepath).convert('RGB')
+    image = image.resize((width, height), Image.ANTIALIAS)
+
+    from scipy.misc import fromimage
+    return fromimage(image)
+
+
 def download_image(filepath, row):
     # TODO: replace row with x and y
     # TODO: make switch between google staticmaps and bing maps possible
