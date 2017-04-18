@@ -19,9 +19,9 @@ class App:
         self.image = ImageTk.PhotoImage(self.pilImage)
         self.imagesprite = self.canvas.create_image(299, 299, image=self.image)
 
-        self.button = Button(frame, text="QUIT", command=quit)
+        self.button = Button(frame, text="QUIT", command=quit, width=10)
         self.button.pack(side=LEFT)
-        self.slogan = Button(frame, text="Hello", command=self.write_slogan)
+        self.slogan = Button(frame, text="Hello", command=self.write_slogan, width=10)
         self.slogan.pack(side=LEFT)
 
     def write_slogan(self):
