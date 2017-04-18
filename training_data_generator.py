@@ -30,6 +30,11 @@ class App:
     def no(self):
         print("NO")
 
+    def change_image(self, filepath):
+        self.pilImage = Image.open(filepath)
+        self.image = ImageTk.PhotoImage(self.pilImage)
+        self.canvas.itemconfig(self.imagesprite, image=self.image)
+
 
 root = Tk()
 app = App(root)
