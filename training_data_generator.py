@@ -37,6 +37,10 @@ class App:
         frame = Frame(master)
         frame.pack()
 
+        # CSV
+        self.csvreader = csvReader('nwt-data/Gebaeude_Dresden_shuffle.csv')
+        self.csvwriter = csvWriter('nwt-data/Output.csv')
+
         # Image
         self.canvas = Canvas(root, width=598, height=598)
         self.canvas.pack(side=BOTTOM)
@@ -49,10 +53,6 @@ class App:
         self.button_yes.pack(side=LEFT)
         self.button_no = Button(frame, text="NO", command=self.no, width=10)
         self.button_no.pack(side=RIGHT)
-
-        # CSV
-        self.csvreader = csvReader('nwt-data/Gebaeude_Dresden.csv')
-        self.csvwriter = csvWriter('nwt-data/Output.csv')
 
     def yes(self):
         print("YES")
