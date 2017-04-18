@@ -16,8 +16,7 @@ class csvReader:
 
 
 class csvWriter:
-    def __init__(self, filename):
-        fieldnames = ['first_name', 'last_name']
+    def __init__(self, filename, fieldnames):
         self.csvfile = open(filename, 'w')
         self.writer = csv.DictWriter(self.csvfile, fieldnames=fieldnames, delimiter='\t')
         self.writer.writeheader()
@@ -43,7 +42,9 @@ class App:
 
         # CSV
         self.csvreader = csvReader('nwt-data/Gebaeude_Dresden_shuffle.csv')
-        self.csvwriter = csvWriter('nwt-data/Output.csv')
+        fieldnames = self.csvreader.fieldnames()
+        fieldnames.append('Solar')
+        self.csvwriter = csvWriter('nwt-data/Output.csv', fieldnames)
 
         # Image
         self.canvas = Canvas(root, width=598, height=598)
