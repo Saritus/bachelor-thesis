@@ -21,13 +21,15 @@ def load_csv(filename):
         ensure_dir(filepath)
 
         # Fill image input array
-        try:
-            img = load_image(filepath, (100, 100))
-        except IOError:
-            # Download image from GoogleMaps API
-            download_image(filepath, row)
-            print count
-            img = load_image(filepath, (100, 100))
+        img = None
+        while img is None:
+            try:
+                img = load_image(filepath, (100, 100))
+            except IOError:
+                # Download image from GoogleMaps API
+                download_image(filepath, row)
+                print count
+                img = load_image(filepath, (100, 100))
         X_images.extend([img])
 
         # Fill coordinates array
