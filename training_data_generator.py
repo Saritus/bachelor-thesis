@@ -3,6 +3,16 @@ import csv
 
 csvfile = open('nwt-data/Gebaeude_Dresden.csv')
 reader = csv.DictReader(csvfile, delimiter='\t')
+class csvReader:
+    def __init__(self, filename):
+        self.csvfile = open(filename)
+        self.reader = csv.DictReader(self.csvfile)
+
+    def next(self):
+        row = self.reader.next()
+        return row
+
+
 
 from Tkinter import *
 from PIL import Image, ImageTk
