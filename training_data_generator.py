@@ -11,6 +11,9 @@ class csvReader:
         row = self.reader.next()
         return row
 
+    def fieldnames(self):
+        return self.reader.fieldnames
+
 
 class csvWriter:
     def __init__(self, filename):
