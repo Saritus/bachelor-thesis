@@ -45,6 +45,7 @@ class App:
         fieldnames = self.csvreader.fieldnames()
         fieldnames.append('Solar')
         self.csvwriter = csvWriter('nwt-data/Output.csv', fieldnames)
+        self.row = self.csvreader.next()
 
         # Image
         self.canvas = Canvas(root, width=598, height=598)
@@ -59,9 +60,11 @@ class App:
         self.button_no.pack(side=RIGHT)
 
     def yes(self):
+        self.row = self.csvreader.next()
         self.show_next_image()
 
     def no(self):
+        self.row = self.csvreader.next()
         self.show_next_image()
 
     def change_image(self, filepath):
@@ -71,8 +74,7 @@ class App:
         return self.imagesprite
 
     def show_next_image(self):
-        row = self.csvreader.next()
-        filepath = "nwt-data/google-images/" + row['ZipCode'].zfill(5) + "/" + row['House_ID'] + ".jpg"
+        filepath = "nwt-data/google-images/" + self.row['ZipCode'].zfill(5) + "/" + self.row['House_ID'] + ".jpg"
         img = None
         while img is None:
             try:
@@ -80,7 +82,7 @@ class App:
                 img = self.change_image(filepath)
             except IOError:
                 # Download image from GoogleMaps API
-                download_image(filepath, row)
+                download_image(filepath, self.row)
 
 
 root = Tk()
