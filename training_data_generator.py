@@ -13,6 +13,19 @@ class csvReader:
         return row
 
 
+class csvWriter:
+    def __init__(self, filename):
+        self.csvfile = open(filename)
+        self.writer = csv.DictWriter(self.csvfile)
+        self.writer.writeheader()
+
+    def writerow(self, row):
+        self.writer.writerow(row)
+
+    def writerows(self, rows):
+        for row in rows:
+            self.writerow(row)
+
 
 from Tkinter import *
 from PIL import Image, ImageTk
