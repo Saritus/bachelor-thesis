@@ -28,12 +28,12 @@ def download_image(filepath, row):
     urlpath = "http://maps.google.com/maps/api/staticmap?center="
     urlpath += row['Y_Coordinate'].replace(',', '.') + "," + row['X_Coordinate'].replace(',', '.')
     # TODO: use adresse instead of x,y-coordinates
-    urlpath += "&zoom=18&size=442x442&maptype=satellite"
+    urlpath += "&zoom=18&size=640x640&maptype=satellite"
     # TODO: download 640x640 images
     urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
     urllib.urlretrieve(urlpath, filepath)
-    image = center_crop_image(filepath, 400, 400)
     image = image.resize((100, 100), Image.ANTIALIAS)
+    image = center_crop_image(filepath, 598, 598)
     # TODO: reduce size of images on demand, not right after download
     image.save(filepath)
     # TODO: make switch between satellite map and bird eyes view
