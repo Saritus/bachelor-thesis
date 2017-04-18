@@ -24,6 +24,7 @@ def load_csv(filename):
         img = None
         while img is None:
             try:
+                # Load image from hard disk
                 img = load_image(filepath, (100, 100))
             except IOError:
                 # Download image from GoogleMaps API
