@@ -69,7 +69,6 @@ def create_net(X_train, Y_train):
 
     # Now we concatenate the two features and add a few more layers on top
     model = Sequential()
-    # TODO: Use keras.layers.merge.concatenate layer
     model.add(Merge([image_processor, metadata_processor], mode='concat'))  # Merge is your sensor fusion buddy
     model.add(Dense(256, activation='relu', input_dim=image_output + metadata_output))
     model.add(Dense(256, activation='relu'))
@@ -79,8 +78,6 @@ def create_net(X_train, Y_train):
 
     return model
 
-
-# TODO: load all images from google maps api
 
 def save_model(model, file_architecture, file_weights=None):
     # convert model to json string
@@ -130,8 +127,6 @@ def main():
     history = model.fit(x=X_train, y=Y_train, batch_size=batch_size, epochs=nb_epoch,
                         verbose=2, shuffle=True, validation_split=0.1)
 
-    # TODO: add a callback for fit function (link: https://keras.io/callbacks/#create-a-callback)
-
     # save weights of net
     save_model(model, "models/first_try.json", "models/first_try.h5")
 
@@ -141,12 +136,8 @@ def main():
     # save_prediction(model, X_train, Coordinates, "result/prediction_test.pkl")
     # show_prediction_from_file("result/prediction_test.pkl")
 
-    # TODO: add function for csv output (combination of input and output)
-
     return
 
 
 if __name__ == "__main__":
     main()
-
-    # TODO: move functions to seperate python files (next: image.py)
