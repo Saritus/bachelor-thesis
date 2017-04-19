@@ -140,8 +140,6 @@ def main():
     # save_prediction(model, X_train, Coordinates, "result/prediction_test.pkl")
     # show_prediction_from_file("result/prediction_test.pkl")
 
-    # TODO: add function for csv output (combination of input and output)
-
     return
 
 
