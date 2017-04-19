@@ -143,5 +143,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    # TODO: move functions to seperate python files (next: image.py)
