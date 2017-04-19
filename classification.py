@@ -69,7 +69,6 @@ def create_net(X_train, Y_train):
 
     # Now we concatenate the two features and add a few more layers on top
     model = Sequential()
-    # TODO: Use keras.layers.merge.concatenate layer
     model.add(Merge([image_processor, metadata_processor], mode='concat'))  # Merge is your sensor fusion buddy
     model.add(Dense(256, activation='relu', input_dim=image_output + metadata_output))
     model.add(Dense(256, activation='relu'))
