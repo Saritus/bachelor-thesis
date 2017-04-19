@@ -31,7 +31,6 @@ def load_image(filepath, size=None):
 
 
 def download_image(filepath, row):
-    # TODO: replace row with x and y
     # TODO: make switch between google staticmaps and bing maps possible
     import urllib
     from PIL import Image
