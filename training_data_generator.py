@@ -89,6 +89,11 @@ class App:
                 download_image(filepath, self.row)
 
 
-root = Tk()
-app = App(root)
-root.mainloop()
+def main():
+    root = Tk()
+    app = App(root)
+    root.mainloop()
+
+
+if __name__ == "__main__":
+    main()
