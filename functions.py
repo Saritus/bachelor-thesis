@@ -31,7 +31,6 @@ def load_image(filepath, size=None):
 
 
 def download_image(filepath, row):
-    # TODO: make switch between google staticmaps and bing maps possible
     import urllib
     from PIL import Image
     urlpath = "http://maps.google.com/maps/api/staticmap?center="
