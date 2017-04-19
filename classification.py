@@ -79,8 +79,6 @@ def create_net(X_train, Y_train):
     return model
 
 
-# TODO: load all images from google maps api
-
 def save_model(model, file_architecture, file_weights=None):
     # convert model to json string
     json_string = model.to_json()
