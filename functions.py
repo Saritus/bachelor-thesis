@@ -41,7 +41,6 @@ def download_image(filepath, row):
     urllib.urlretrieve(urlpath, filepath)
     image = center_crop_image(filepath, 598, 598)
     image.save(filepath)
-    # TODO: make switch between satellite map and bird eyes view
 
 
 def main():
