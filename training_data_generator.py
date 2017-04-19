@@ -41,7 +41,6 @@ class App:
         frame.pack()
 
         # CSV
-        # TODO: Load existing csv and only append new lines
         self.csvreader = csvReader('nwt-data/Gebaeude_Dresden_shuffle.csv')
         fieldnames = self.csvreader.fieldnames()
         fieldnames.append('Solar')
