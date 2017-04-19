@@ -48,7 +48,7 @@ class App:
         self.row = self.csvreader.next()
 
         # Image
-        self.canvas = Canvas(root, width=598, height=598)
+        self.canvas = Canvas(master, width=598, height=598)
         self.canvas.pack(side=BOTTOM)
         self.imagesprite = self.canvas.create_image(299, 299)
         self.show_next_image()
