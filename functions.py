@@ -30,7 +30,7 @@ def load_image(filepath, size=None):
     return fromimage(image)
 
 
-def download_image(filepath, row, size=(640, 640), zoom=19):
+def download_image(filepath, row, size=(640, 640), zoom=19, maptype="satellite"):
     x = row['X_Coordinate'].replace(',', '.')
     y = row['Y_Coordinate'].replace(',', '.')
 
@@ -39,7 +39,7 @@ def download_image(filepath, row, size=(640, 640), zoom=19):
     urlpath += "?center=" + y + "," + x
     urlpath += "&size=" + size[0] + "x" + size[1]
     urlpath += "&zoom=" + zoom
-    urlpath += "&maptype=satellite"
+    urlpath += "&maptype=" + maptype
     urlpath += "&format=png"
     urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
 
