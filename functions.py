@@ -44,7 +44,7 @@ def download_image(filepath, row, size=(640, 640)):
     urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
 
     urllib.urlretrieve(urlpath, filepath)
-    image = center_crop_image(filepath, 598, 598)
+    image = center_crop_image(filepath, size[0] - 42, size[1] - 42)
     image.save(filepath)
 
 
