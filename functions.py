@@ -42,9 +42,10 @@ def download_image(filepath, row, size=(640, 640), zoom=19, maptype="satellite",
     urlpath += "&maptype=" + maptype
     urlpath += "&format=" + imageformat
     urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
-
     urllib.urlretrieve(urlpath, filepath)
-    image = center_crop_image(filepath, size[0] - 42, size[1] - 42)
+
+    cutoff = 44 if size[0] >= 181 else 32
+    image = center_crop_image(filepath, size[0] - cutoff, size[1] - cutoff)
     image.save(filepath)
 
 
