@@ -35,9 +35,12 @@ def download_image(filepath, row):
     y = row['Y_Coordinate'].replace(',', '.')
 
     import urllib
-    urlpath = "http://maps.google.com/maps/api/staticmap?center="
-    urlpath += y + "," + x
-    urlpath += "&zoom=19&size=640x640&maptype=satellite&format=png"
+    urlpath = "http://maps.google.com/maps/api/staticmap"
+    urlpath += "?center=" + y + "," + x
+    urlpath += "&zoom=19"
+    urlpath += "&size=640x640"
+    urlpath += "&maptype=satellite"
+    urlpath += "&format=png"
     urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
     urllib.urlretrieve(urlpath, filepath)
     image = center_crop_image(filepath, 598, 598)
