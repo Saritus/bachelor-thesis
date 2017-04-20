@@ -31,6 +31,7 @@ def load_image(filepath, size=None):
 
 
 def download_image(filepath, row, size=(640, 640), zoom=19, maptype="satellite", imageformat="png"):
+    ensure_dir(filepath)
     x = row['X_Coordinate'].replace(',', '.')
     y = row['Y_Coordinate'].replace(',', '.')
     adresse = "{}+{}+{}+{}".format(row['Street'], row['HouseNr'], row['ZipCode'].zfill(5), row['City'])
