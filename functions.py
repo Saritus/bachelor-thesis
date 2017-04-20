@@ -33,6 +33,7 @@ def load_image(filepath, size=None):
 def download_image(filepath, row, size=(640, 640), zoom=19, maptype="satellite", imageformat="png"):
     x = row['X_Coordinate'].replace(',', '.')
     y = row['Y_Coordinate'].replace(',', '.')
+    adresse = "{}+{}+{}+{}".format(row['Street'], row['HouseNr'], row['ZipCode'].zfill(5), row['City'])
     apikey = "AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
 
     import urllib
