@@ -33,6 +33,7 @@ def load_image(filepath, size=None):
 def download_image(filepath, row, size=(640, 640), zoom=19, maptype="satellite", imageformat="png"):
     x = row['X_Coordinate'].replace(',', '.')
     y = row['Y_Coordinate'].replace(',', '.')
+    apikey = "AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
 
     import urllib
     urlpath = "http://maps.google.com/maps/api/staticmap"
@@ -41,7 +42,7 @@ def download_image(filepath, row, size=(640, 640), zoom=19, maptype="satellite",
     urlpath += "&zoom={}".format(zoom)
     urlpath += "&maptype={}".format(maptype)
     urlpath += "&format={}".format(imageformat)
-    urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
+    urlpath += "&key={}".format(apikey)
     urllib.urlretrieve(urlpath, filepath)
 
     cutoff = 44 if size[0] >= 181 else 32
