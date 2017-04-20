@@ -15,6 +15,10 @@
 *.pyd   binary
 *.pyo   binary
 
+# Data files
+# ==========
+*.csv   text
+
 # Standard to msysgit
 # ===================
 *.doc   diff=astextplain
