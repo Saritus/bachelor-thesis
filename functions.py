@@ -32,7 +32,6 @@ def load_image(filepath, size=None):
 
 def download_image(filepath, row):
     import urllib
-    from PIL import Image
     urlpath = "http://maps.google.com/maps/api/staticmap?center="
     urlpath += row['Y_Coordinate'].replace(',', '.') + "," + row['X_Coordinate'].replace(',', '.')
     urlpath += "&zoom=19&size=640x640&maptype=satellite&format=png"
