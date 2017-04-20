@@ -31,9 +31,12 @@ def load_image(filepath, size=None):
 
 
 def download_image(filepath, row):
+    x = row['X_Coordinate'].replace(',', '.')
+    y = row['Y_Coordinate'].replace(',', '.')
+
     import urllib
     urlpath = "http://maps.google.com/maps/api/staticmap?center="
-    urlpath += row['Y_Coordinate'].replace(',', '.') + "," + row['X_Coordinate'].replace(',', '.')
+    urlpath += y + "," + x
     urlpath += "&zoom=19&size=640x640&maptype=satellite&format=png"
     urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
     urllib.urlretrieve(urlpath, filepath)
