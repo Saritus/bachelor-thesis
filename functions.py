@@ -40,7 +40,7 @@ def download_image(filepath, row, size=(640, 640), zoom=19, maptype="satellite",
     urlpath += "&size={}x{}".format(size[0], size[1])
     urlpath += "&zoom={}".format(zoom)
     urlpath += "&maptype={}".format(maptype)
-    urlpath += "&format=" + imageformat
+    urlpath += "&format={}".format(imageformat)
     urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
     urllib.urlretrieve(urlpath, filepath)
 
