@@ -37,8 +37,8 @@ def download_image(filepath, row):
     import urllib
     urlpath = "http://maps.google.com/maps/api/staticmap"
     urlpath += "?center=" + y + "," + x
-    urlpath += "&zoom=19"
     urlpath += "&size=640x640"
+    urlpath += "&zoom=19"
     urlpath += "&maptype=satellite"
     urlpath += "&format=png"
     urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
