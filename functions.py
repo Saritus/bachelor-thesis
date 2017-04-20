@@ -30,18 +30,19 @@ def load_image(filepath, size=None):
     return fromimage(image)
 
 
-def download_image(filepath, row):
+def download_image(filepath, row, size=(640, 640)):
     x = row['X_Coordinate'].replace(',', '.')
     y = row['Y_Coordinate'].replace(',', '.')
 
     import urllib
     urlpath = "http://maps.google.com/maps/api/staticmap"
     urlpath += "?center=" + y + "," + x
-    urlpath += "&size=640x640"
+    urlpath += "&size=" + size[0] + "x" + size[1]
     urlpath += "&zoom=19"
     urlpath += "&maptype=satellite"
     urlpath += "&format=png"
     urlpath += "&key=AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
+
     urllib.urlretrieve(urlpath, filepath)
     image = center_crop_image(filepath, 598, 598)
     image.save(filepath)
