@@ -16,6 +16,7 @@
 *.pyo   binary
 
 # Standard to msysgit
+# ===================
 *.doc   diff=astextplain
 *.DOC   diff=astextplain
 *.docx  diff=astextplain
