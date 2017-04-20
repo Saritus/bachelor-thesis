@@ -33,3 +33,7 @@
 *.PDF   diff=astextplain
 *.rtf   diff=astextplain
 *.RTF   diff=astextplain
+*.lyx   diff=astextplain
+*.LYX   diff=astextplain
+*.md    diff=astextplain
+*.MD    diff=astextplain
