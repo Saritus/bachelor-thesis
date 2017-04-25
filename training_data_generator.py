@@ -78,7 +78,7 @@ class App:
         return self.imagesprite
 
     def show_next_image(self):
-        filepath = "nwt-data/google-images/" + self.row['ZipCode'].zfill(5) + "/" + self.row['House_ID'] + ".jpg"
+        filepath = "images/google-xy/" + self.row['ZipCode'].zfill(5) + "/" + self.row['House_ID'] + ".jpg"
         img = None
         while img is None:
             try:

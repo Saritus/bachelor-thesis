@@ -17,7 +17,7 @@ def load_csv(filename):
             break
         count += 1
 
-        filepath = "nwt-data/google-images/" + row['ZipCode'].zfill(5) + "/" + row['House_ID'] + ".jpg"
+        filepath = "images/google-xy/" + row['ZipCode'].zfill(5) + "/" + row['House_ID'] + ".jpg"
         ensure_dir(filepath)
 
         # Fill image input array
