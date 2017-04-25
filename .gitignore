@@ -7,6 +7,9 @@ fullmap_splitting/
 # NWT files
 nwt-data/
 
+# Images
+images/
+
 # Special file extensions
 *.pkl
 *.h5
