@@ -48,9 +48,9 @@ class App:
         self.row = self.csvreader.next()
 
         # Image
-        self.canvas = Canvas(master, width=598, height=598)
+        self.canvas = Canvas(master, width=596, height=596)
         self.canvas.pack(side=BOTTOM)
-        self.imagesprite = self.canvas.create_image(299, 299)
+        self.imagesprite = self.canvas.create_image(298, 298)
         self.show_next_image()
 
         # Buttons
@@ -78,7 +78,8 @@ class App:
         return self.imagesprite
 
     def show_next_image(self):
-        filepath = "nwt-data/google-images/" + self.row['ZipCode'].zfill(5) + "/" + self.row['House_ID'] + ".jpg"
+        CENTERMODE = "xy"
+        filepath = "images/google-{}/{}/{}.jpg".format(CENTERMODE, self.row['ZipCode'].zfill(5), self.row['House_ID'])
         img = None
         while img is None:
             try:
@@ -86,7 +87,7 @@ class App:
                 img = self.change_image(filepath)
             except IOError:
                 # Download image from GoogleMaps API
-                download_image(filepath, self.row)
+                download_image(filepath, self.row, centermode=CENTERMODE)
 
 
 def main():
