@@ -31,7 +31,6 @@ def load_image(filepath, size=None):
 
 
 def combine_images(images, gridsize):
-    pass
     from PIL import Image
 
     width = images[0].width
@@ -41,6 +40,9 @@ def combine_images(images, gridsize):
     vertical = gridsize[1]  # height
 
     output = Image.new("RGB", (width * horizontal, height * vertical))
+
+    return output
+
 
 def download_image(filepath, row, size=(640, 640), zoom=20, maptype="satellite", imageformat="png", centermode="xy"):
     ensure_dir(filepath)
