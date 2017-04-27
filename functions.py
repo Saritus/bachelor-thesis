@@ -30,7 +30,7 @@ def load_image(filepath, size=None):
     return fromimage(image)
 
 
-def combine_images(images, size):
+def combine_images(images, gridsize):
     pass
 
 
