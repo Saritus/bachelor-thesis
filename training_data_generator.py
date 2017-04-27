@@ -79,6 +79,7 @@ class App:
 
     def show_next_image(self):
         filepath = "images/google-xy/" + self.row['ZipCode'].zfill(5) + "/" + self.row['House_ID'] + ".jpg"
+        CENTERMODE = "xy"
         img = None
         while img is None:
             try:
@@ -86,7 +87,7 @@ class App:
                 img = self.change_image(filepath)
             except IOError:
                 # Download image from GoogleMaps API
-                download_image(filepath, self.row)
+                download_image(filepath, self.row, centermode=CENTERMODE)
 
 
 def main():
