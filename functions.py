@@ -43,6 +43,8 @@ def download_image(filepath, row, size=(640, 640), zoom=20, maptype="satellite",
         urlpath += "?center={},{}".format(y, x)
     elif centermode == "address":  # Address
         urlpath += "?center={}".format(address)
+    else:
+        raise ValueError("Invalid centermode: {}. Use xy or address instead.".format(centermode))
     urlpath += "&size={}x{}".format(size[0], size[1])
     urlpath += "&zoom={}".format(zoom)
     urlpath += "&maptype={}".format(maptype)
