@@ -34,6 +34,8 @@ def combine_images(images, gridsize):
     pass
     from PIL import Image
 
+    width = images[0].width
+    height = images[0].height
 
 
 def download_image(filepath, row, size=(640, 640), zoom=20, maptype="satellite", imageformat="png", centermode="xy"):
