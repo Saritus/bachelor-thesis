@@ -36,14 +36,11 @@ def combine_images(images, gridsize):
     width = images[0].width
     height = images[0].height
 
-    horizontal = gridsize[0]  # width
-    vertical = gridsize[1]  # height
+    output = Image.new("RGB", (width * gridsize[0], height * gridsize[1]))
 
-    output = Image.new("RGB", (width * horizontal, height * vertical))
-
-    for y in range(0, vertical):
-        for x in range(0, horizontal):
-            output.paste(images[y * horizontal + x], (width * x, height * y))
+    for y in range(0, gridsize[1]):
+        for x in range(0, gridsize[0]):
+            output.paste(images[y * gridsize[0] + x], (width * x, height * y))
 
     return output
 
