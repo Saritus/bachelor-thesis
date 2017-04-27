@@ -78,8 +78,8 @@ class App:
         return self.imagesprite
 
     def show_next_image(self):
-        filepath = "images/google-xy/" + self.row['ZipCode'].zfill(5) + "/" + self.row['House_ID'] + ".jpg"
         CENTERMODE = "xy"
+        filepath = "images/google-xy/" + self.row['ZipCode'].zfill(5) + "/" + self.row['House_ID'] + ".jpg"
         img = None
         while img is None:
             try:
