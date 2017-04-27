@@ -37,6 +37,8 @@ def combine_images(images, gridsize):
     width = images[0].width
     height = images[0].height
 
+    horizontal = gridsize[0]  # width
+    vertical = gridsize[1]  # height
 
 def download_image(filepath, row, size=(640, 640), zoom=20, maptype="satellite", imageformat="png", centermode="xy"):
     ensure_dir(filepath)
