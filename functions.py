@@ -40,6 +40,8 @@ def combine_images(images, gridsize):
     horizontal = gridsize[0]  # width
     vertical = gridsize[1]  # height
 
+    output = Image.new("RGB", (width * horizontal, height * vertical))
+
 def download_image(filepath, row, size=(640, 640), zoom=20, maptype="satellite", imageformat="png", centermode="xy"):
     ensure_dir(filepath)
     x = row['X_Coordinate'].replace(',', '.')
