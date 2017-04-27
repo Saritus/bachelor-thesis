@@ -39,9 +39,9 @@ def download_image(filepath, row, size=(640, 640), zoom=20, maptype="satellite",
 
     import urllib
     urlpath = "http://maps.google.com/maps/api/staticmap"
-    if False:  # Latitude and Longitude
+    if centermode == "xy":  # Latitude and Longitude
         urlpath += "?center={},{}".format(y, x)
-    else:  # Address
+    elif centermode == "address":  # Address
         urlpath += "?center={}".format(address)
     urlpath += "&size={}x{}".format(size[0], size[1])
     urlpath += "&zoom={}".format(zoom)
