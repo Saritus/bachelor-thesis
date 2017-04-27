@@ -79,7 +79,7 @@ class App:
 
     def show_next_image(self):
         CENTERMODE = "xy"
-        filepath = "images/google-xy/" + self.row['ZipCode'].zfill(5) + "/" + self.row['House_ID'] + ".jpg"
+        filepath = "images/google-{}/{}/{}.jpg".format(CENTERMODE, self.row['ZipCode'].zfill(5), self.row['House_ID'])
         img = None
         while img is None:
             try:
