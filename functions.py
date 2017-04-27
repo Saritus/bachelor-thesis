@@ -32,6 +32,8 @@ def load_image(filepath, size=None):
 
 def combine_images(images, gridsize):
     pass
+    from PIL import Image
+
 
 
 def download_image(filepath, row, size=(640, 640), zoom=20, maptype="satellite", imageformat="png", centermode="xy"):
