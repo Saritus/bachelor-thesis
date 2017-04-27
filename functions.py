@@ -30,8 +30,12 @@ def load_image(filepath, size=None):
     return fromimage(image)
 
 
-def combine_images(images, gridsize):
+def combine_images(imagepaths, gridsize):
     from PIL import Image
+
+    images = []
+    for filepath in imagepaths:
+        images.extend([Image.open(filepath).convert('RGB')])
 
     width = images[0].width
     height = images[0].height
