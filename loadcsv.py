@@ -1,5 +1,5 @@
 from functions import ensure_dir
-from images import load_image, download_image, center_crop_image
+from images import load_image, download_image
 
 
 def load_csv(filename):
