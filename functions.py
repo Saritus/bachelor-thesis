@@ -20,22 +20,6 @@ def ensure_dir(filepath):
     return filepath
 
 
-def combine_images(imagepaths, gridsize):
-    from PIL import Image
-
-    images = []
-    for filepath in imagepaths:
-        images.extend([Image.open(filepath)])
-
-    output = Image.new("RGB", (images[0].width * gridsize[0], images[0].height * gridsize[1]))
-
-    for y in range(0, gridsize[1]):
-        for x in range(0, gridsize[0]):
-            output.paste(images[y * gridsize[0] + x], (images[0].width * x, images[0].height * y))
-
-    return output
-
-
 def download_image(filepath, row, size=(640, 640), zoom=20, maptype="satellite", imageformat="png", centermode="xy"):
     ensure_dir(filepath)
     x = row['X_Coordinate'].replace(',', '.')
