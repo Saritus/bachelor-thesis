@@ -31,7 +31,7 @@ class csvWriter:
 
 from Tkinter import *
 from PIL import Image, ImageTk
-from functions import download_image
+from images import download_image
 
 
 class App:
