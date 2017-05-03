@@ -35,7 +35,7 @@ def combine_images(imagepaths, gridsize):
 
     images = []
     for filepath in imagepaths:
-        images.extend([Image.open(filepath).convert('RGB')])
+        images.extend([Image.open(filepath)])
 
     output = Image.new("RGB", (images[0].width * gridsize[0], images[0].height * gridsize[1]))
 
