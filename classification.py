@@ -1,7 +1,6 @@
 from functions import ensure_dir
-from images import download_image, center_crop_image
 from loadcsv import load_csv
-from visualize import show_acc, show_loss, show_prediction, save_prediction, show_prediction_from_file
+from visualize import show_loss, show_prediction
 
 
 def load_mnist():
@@ -33,7 +32,7 @@ def load_mnist():
 
 def create_net(X_train, Y_train):
     from keras.models import Sequential
-    from keras.layers import (Activation, Dropout, Flatten, Dense, Convolution2D, MaxPooling2D, Merge, ZeroPadding2D)
+    from keras.layers import (Flatten, Dense, Convolution2D, MaxPooling2D, Merge, ZeroPadding2D)
 
     # First define the image model
     image_processor = Sequential()
