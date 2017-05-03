@@ -84,8 +84,13 @@ def main():
     imagepaths.extend(["images/samples/yellow.png"])
     imagepaths.extend(["images/samples/green.png"])
     imagepaths.extend(["images/samples/blue.png"])
+    imagepaths.extend(["images/samples/red.png"])
+    imagepaths.extend(["images/samples/yellow.png"])
+    imagepaths.extend(["images/samples/green.png"])
+    imagepaths.extend(["images/samples/blue.png"])
+    imagepaths.extend(["images/samples/green.png"])
 
-    output = combine_images(imagepaths, (2, 2))
+    output = combine_images(imagepaths, (3, 3))
 
     # Show the combined picture
     imshow(output)
