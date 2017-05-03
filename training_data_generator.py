@@ -60,13 +60,13 @@ class App:
         self.button_no.pack(side=RIGHT)
 
     def yes(self):
-        self.row['Solar'] = 1
-        self.csvwriter.writerow(self.row)
-        self.row = self.csvreader.next()
-        self.show_next_image()
+        self.result('Solar', 1)
 
     def no(self):
-        self.row['Solar'] = 0
+        self.result('Solar', 0)
+
+    def result(self, header, result):
+        self.row[header] = result
         self.csvwriter.writerow(self.row)
         self.row = self.csvreader.next()
         self.show_next_image()
@@ -92,7 +92,7 @@ class App:
 
 def main():
     root = Tk()
-    app = App(root)
+    App(root)
     root.mainloop()
 
 
