@@ -71,7 +71,7 @@ def load_csv(filename):
 
 
 def main():
-    (Coordinates), (X_train, Y_train) = load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
+    load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
 
     import csv
 
