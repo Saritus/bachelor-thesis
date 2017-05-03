@@ -1,4 +1,4 @@
-from functions import ensure_dir, center_crop_image
+from functions import ensure_dir
 
 
 def load_image(filepath, size=None):
@@ -52,3 +52,17 @@ def download_image(filepath, row, size=(640, 640), zoom=20, maptype="satellite",
     cutoff = 44 if size[0] >= 181 else 32
     image = center_crop_image(filepath, size[0] - cutoff, size[1] - cutoff)
     image.save(filepath)
+
+
+def center_crop_image(path, new_width, new_height):
+    from PIL import Image
+
+    im = Image.open(path).convert('RGB')
+    width, height = im.size  # Get dimensions
+
+    left = (width - new_width) / 2
+    top = (height - new_height) / 2
+    right = (width + new_width) / 2
+    bottom = (height + new_height) / 2
+
+    return im.crop((left, top, right, bottom))

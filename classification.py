@@ -1,5 +1,5 @@
 from functions import center_crop_image, ensure_dir
-from images import download_image
+from images import download_image, center_crop_image
 from loadcsv import load_csv
 from visualize import show_acc, show_loss, show_prediction, save_prediction, show_prediction_from_file
 
