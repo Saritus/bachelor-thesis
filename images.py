@@ -66,3 +66,11 @@ def center_crop_image(path, new_width, new_height):
     bottom = (height + new_height) / 2
 
     return im.crop((left, top, right, bottom))
+
+
+def main():
+    return
+
+
+if __name__ == "__main__":
+    main()
