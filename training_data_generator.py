@@ -92,7 +92,7 @@ class App:
 
 def main():
     root = Tk()
-    app = App(root)
+    App(root)
     root.mainloop()
 
 
