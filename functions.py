@@ -74,24 +74,6 @@ def download_image(filepath, row, size=(640, 640), zoom=20, maptype="satellite",
 
 
 def main():
-    from pylab import imshow, show
-
-    imagepaths = []
-    imagepaths.extend(["images/samples/red.png"])
-    imagepaths.extend(["images/samples/yellow.png"])
-    imagepaths.extend(["images/samples/green.png"])
-    imagepaths.extend(["images/samples/blue.png"])
-    imagepaths.extend(["images/samples/red.png"])
-    imagepaths.extend(["images/samples/yellow.png"])
-    imagepaths.extend(["images/samples/green.png"])
-    imagepaths.extend(["images/samples/blue.png"])
-    imagepaths.extend(["images/samples/green.png"])
-
-    output = combine_images(imagepaths, (3, 3))
-
-    # Show the combined picture
-    imshow(output)
-    show()
     return
 
 
