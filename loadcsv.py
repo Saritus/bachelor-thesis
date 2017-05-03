@@ -1,4 +1,5 @@
-from functions import center_crop_image, ensure_dir, download_image, load_image
+from functions import center_crop_image, ensure_dir, download_image
+from images import load_image
 
 
 def load_csv(filename):
