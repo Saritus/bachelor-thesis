@@ -76,6 +76,8 @@ class App:
         width, height = self.pilImage.size
 
         self.canvas.config(width=width, height=height)
+        self.imagesprite = self.canvas.create_image(width / 2, height / 2)
+
         self.image = ImageTk.PhotoImage(self.pilImage)
         self.canvas.itemconfig(self.imagesprite, image=self.image)
         return self.imagesprite
