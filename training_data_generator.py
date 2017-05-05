@@ -48,9 +48,8 @@ class App:
         self.row = self.csvreader.next()
 
         # Image
-        self.canvas = Canvas(master, width=596, height=596)
+        self.canvas = Canvas(master)
         self.canvas.pack(side=BOTTOM)
-        self.imagesprite = self.canvas.create_image(298, 298)
         self.show_next_image()
 
         # Buttons
@@ -72,8 +71,15 @@ class App:
         self.show_next_image()
 
     def change_image(self, filepath):
-        self.pilImage = Image.open(filepath)
-        self.image = ImageTk.PhotoImage(self.pilImage)
+        # Load image
+        pilImage = Image.open(filepath)
+
+        # Change canvas size
+        self.canvas.config(width=pilImage.width, height=pilImage.height)
+        self.imagesprite = self.canvas.create_image(pilImage.width / 2, pilImage.height / 2)
+
+        # Show image on canvas
+        self.image = ImageTk.PhotoImage(pilImage)
         self.canvas.itemconfig(self.imagesprite, image=self.image)
         return self.imagesprite
 
