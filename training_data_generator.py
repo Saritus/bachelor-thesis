@@ -73,11 +73,10 @@ class App:
     def change_image(self, filepath):
         # Load image
         pilImage = Image.open(filepath)
-        width, height = pilImage.size
 
         # Change canvas size
-        self.canvas.config(width=width, height=height)
-        self.imagesprite = self.canvas.create_image(width / 2, height / 2)
+        self.canvas.config(width=pilImage.width, height=pilImage.height)
+        self.imagesprite = self.canvas.create_image(pilImage.width / 2, pilImage.height / 2)
 
         # Show image on canvas
         self.image = ImageTk.PhotoImage(pilImage)
