@@ -1,4 +1,9 @@
 def convert_csv_to_sql(csvfile, sqlfile):
+    # Delete sql file if it already exists
+    import os
+    if os.path.exists(sqlfile):
+        os.remove(sqlfile)
+
     # Open sql connection
     import sqlite3
     conn = sqlite3.connect(sqlfile)
