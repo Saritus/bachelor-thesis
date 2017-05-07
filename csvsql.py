@@ -13,6 +13,10 @@ def convert_csv_to_sql(csvfile, sqlfile):
     headers = reader.next()
     c.execute("CREATE TABLE sqltable(" + str(headers)[1:-1] + ")")
 
+    # Create basic insert-query
+    query = 'INSERT INTO sqltable({0}) VALUES ({1})'
+    query = query.format(','.join(headers), ','.join('?' * len(headers)))
+
     return
 
 
