@@ -9,6 +9,10 @@ def convert_csv_to_sql(csvfile, sqlfile):
     csvfile = open(csvfile)
     reader = csv.reader(csvfile, delimiter='\t')
 
+    # Create table
+    headers = reader.next()
+    c.execute("CREATE TABLE sqltable(" + str(headers)[1:-1] + ")")
+
     return
 
 
