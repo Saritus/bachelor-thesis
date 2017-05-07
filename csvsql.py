@@ -1,4 +1,9 @@
 def convert_csv_to_sql(csvfile, sqlfile):
+    # Open sql connection
+    import sqlite3
+    conn = sqlite3.connect(sqlfile)
+    c = conn.cursor()
+
     return
 
 
