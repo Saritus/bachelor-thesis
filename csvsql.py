@@ -22,6 +22,9 @@ def convert_csv_to_sql(csvfile, sqlfile):
         # Insert a row of data
         c.execute(query, row)
 
+    # Save (commit) the changes
+    conn.commit()
+
     return
 
 
