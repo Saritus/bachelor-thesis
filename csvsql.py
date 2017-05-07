@@ -4,6 +4,11 @@ def convert_csv_to_sql(csvfile, sqlfile):
     conn = sqlite3.connect(sqlfile)
     c = conn.cursor()
 
+    # Open csv file
+    import csv
+    csvfile = open(csvfile)
+    reader = csv.reader(csvfile, delimiter='\t')
+
     return
 
 
