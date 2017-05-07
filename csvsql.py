@@ -27,6 +27,10 @@ def convert_csv_to_sql(csvfile, sqlfile):
         # Insert a row of data
         c.execute(query, row)
 
+    c.execute("SELECT * FROM sqltable ORDER BY House_ID")
+    for result in c.fetchall():
+        print result
+
     # Save (commit) the changes
     conn.commit()
 
