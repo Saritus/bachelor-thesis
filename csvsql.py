@@ -25,6 +25,9 @@ def convert_csv_to_sql(csvfile, sqlfile):
     # Save (commit) the changes
     conn.commit()
 
+    # Close the connection
+    conn.close()
+
     return
 
 
