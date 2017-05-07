@@ -17,6 +17,11 @@ def convert_csv_to_sql(csvfile, sqlfile):
     query = 'INSERT INTO sqltable({0}) VALUES ({1})'
     query = query.format(','.join(headers), ','.join('?' * len(headers)))
 
+    # For every row in csv
+    for row in reader:
+        # Insert a row of data
+        c.execute(query, row)
+
     return
 
 
