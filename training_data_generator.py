@@ -35,7 +35,7 @@ from images import download_image
 
 
 class App:
-    def __init__(self, master):
+    def __init__(self, master, header):
         # Frame
         frame = Frame(master)
         frame.pack()
@@ -53,6 +53,7 @@ class App:
         self.show_next_image()
 
         # OptionsMenu
+        self.header = header
         self.var = StringVar(master)
         self.var.set("one")  # default value
         self.menu = OptionMenu(frame, self.var, "one", "two", "three")
@@ -63,8 +64,7 @@ class App:
         self.accept.pack(side=LEFT)
 
     def accept(self):
-        header = 'Solar'
-        self.row[header] = self.var.get()
+        self.row[self.header] = self.var.get()
         self.csvwriter.writerow(self.row)
         self.row = self.csvreader.next()
         self.show_next_image()
@@ -97,7 +97,7 @@ class App:
 
 def main():
     root = Tk()
-    App(root)
+    App(root, 'Solar')
     root.mainloop()
 
 
