@@ -44,7 +44,7 @@ def get_column(database, column):
 
     # Get column
     c.execute("SELECT {} FROM sqltable".format(column))
-    result = [i[0] for i in c.fetchall()]
+    result = c.fetchall()
 
     # Save (commit) the changes
     conn.commit()
