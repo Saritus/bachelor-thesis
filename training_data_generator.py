@@ -35,7 +35,7 @@ from images import download_image
 
 
 class App:
-    def __init__(self, master, header):
+    def __init__(self, master, header, options):
         # Frame
         frame = Frame(master)
         frame.pack()
@@ -55,8 +55,8 @@ class App:
         # OptionsMenu
         self.header = header
         self.var = StringVar(master)
-        self.var.set("one")  # default value
-        self.menu = OptionMenu(frame, self.var, "one", "two", "three")
+        self.var.set(options[0])  # default value
+        self.menu = apply(OptionMenu, (frame, self.var) + tuple(options))
         self.menu.pack(side=RIGHT)
 
         # Buttons
@@ -97,7 +97,8 @@ class App:
 
 def main():
     root = Tk()
-    App(root, 'Solar')
+    options = ["Yes", "No"]
+    App(root, 'Solar', options)
     root.mainloop()
 
 
