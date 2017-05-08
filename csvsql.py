@@ -58,6 +58,9 @@ def get_column(database, column):
 def main():
     DATABASE = "nwt-data/Gebaeude_Dresden.db"
     convert_csv_to_sql("nwt-data/Gebaeude_Dresden_shuffle.csv", DATABASE)
+    streets = get_column(DATABASE, "Street")
+    for street in streets:
+        print street
     return
 
 
