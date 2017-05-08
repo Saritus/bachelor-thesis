@@ -63,10 +63,8 @@ class App:
         self.accept.pack(side=LEFT)
 
     def accept(self):
-        self.result('Solar', self.var.get())
-
-    def result(self, header, result):
-        self.row[header] = result
+        header = 'Solar'
+        self.row[header] = self.var.get()
         self.csvwriter.writerow(self.row)
         self.row = self.csvreader.next()
         self.show_next_image()
