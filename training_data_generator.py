@@ -59,14 +59,11 @@ class App:
         self.menu.pack(side=RIGHT)
 
         # Buttons
-        self.accept = Button(frame, text="Accept", command=self.yes, width=10)
+        self.accept = Button(frame, text="Accept", command=self.accept, width=10)
         self.accept.pack(side=LEFT)
 
-    def yes(self):
-        self.result('Solar', 1)
-
-    def no(self):
-        self.result('Solar', 0)
+    def accept(self):
+        self.result('Solar', self.var.get())
 
     def result(self, header, result):
         self.row[header] = result
