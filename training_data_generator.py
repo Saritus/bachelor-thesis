@@ -54,8 +54,8 @@ class App:
 
         # OptionsMenu
         variable = StringVar(master)
-        variable.set("one") # default value
-        menu = OptionMenu(master, variable, "one", "two", "three")
+        variable.set("one")  # default value
+        menu = OptionMenu(frame, variable, "one", "two", "three")
         menu.pack(side=RIGHT)
 
         # Buttons
