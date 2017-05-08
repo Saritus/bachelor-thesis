@@ -42,6 +42,10 @@ def get_column(database, column):
     conn = sqlite3.connect(database)
     c = conn.cursor()
 
+    # Get column
+    c.execute("SELECT {} FROM sqltable".format(column))
+    result = [i[0] for i in c.fetchall()]
+
     return
 
 
