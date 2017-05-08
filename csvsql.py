@@ -46,6 +46,12 @@ def get_column(database, column):
     c.execute("SELECT {} FROM sqltable".format(column))
     result = [i[0] for i in c.fetchall()]
 
+    # Save (commit) the changes
+    conn.commit()
+
+    # Close the connection
+    conn.close()
+
     return
 
 
