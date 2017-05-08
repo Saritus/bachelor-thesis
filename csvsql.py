@@ -40,6 +40,10 @@ def convert_csv_to_sql(csvfile, sqlfile):
     return
 
 
+def get_column(database, column):
+    return
+
+
 def main():
     convert_csv_to_sql("nwt-data/Gebaeude_Dresden_shuffle.csv", "nwt-data/Gebaeude_Dresden.db")
     return
