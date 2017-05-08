@@ -53,10 +53,10 @@ class App:
         self.show_next_image()
 
         # OptionsMenu
-        variable = StringVar(master)
-        variable.set("one")  # default value
-        menu = OptionMenu(frame, variable, "one", "two", "three")
-        menu.pack(side=RIGHT)
+        self.var = StringVar(master)
+        self.var.set("one")  # default value
+        self.menu = OptionMenu(frame, self.var, "one", "two", "three")
+        self.menu.pack(side=RIGHT)
 
         # Buttons
         self.accept = Button(frame, text="Accept", command=self.yes, width=10)
