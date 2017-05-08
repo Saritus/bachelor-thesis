@@ -43,7 +43,7 @@ def get_column(database, column):
     c = conn.cursor()
 
     # Get column
-    c.execute("SELECT {} FROM sqltable".format(column))
+    c.execute("SELECT {} FROM sqltable".format(column))  # SQL Injection
     result = c.fetchall()
 
     # Close the connection
