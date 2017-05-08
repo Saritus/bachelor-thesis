@@ -59,10 +59,8 @@ class App:
         menu.pack(side=RIGHT)
 
         # Buttons
-        self.button_yes = Button(frame, text="YES", command=self.yes, width=10)
-        self.button_yes.pack(side=LEFT)
-        self.button_no = Button(frame, text="NO", command=self.no, width=10)
-        self.button_no.pack(side=RIGHT)
+        self.accept = Button(frame, text="Accept", command=self.yes, width=10)
+        self.accept.pack(side=LEFT)
 
     def yes(self):
         self.result('Solar', 1)
