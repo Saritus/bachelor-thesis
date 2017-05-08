@@ -52,7 +52,7 @@ def get_column(database, column):
     # Close the connection
     conn.close()
 
-    return
+    return result
 
 
 def main():
