@@ -52,6 +52,12 @@ class App:
         self.canvas.pack(side=BOTTOM)
         self.show_next_image()
 
+        # OptionsMenu
+        variable = StringVar(master)
+        variable.set("one") # default value
+        menu = OptionMenu(master, variable, "one", "two", "three")
+        menu.pack(side=RIGHT)
+
         # Buttons
         self.button_yes = Button(frame, text="YES", command=self.yes, width=10)
         self.button_yes.pack(side=LEFT)
