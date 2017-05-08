@@ -35,7 +35,7 @@ from images import download_image
 
 
 class App:
-    def __init__(self, master):
+    def __init__(self, master, header, options):
         # Frame
         frame = Frame(master)
         frame.pack()
@@ -52,20 +52,19 @@ class App:
         self.canvas.pack(side=BOTTOM)
         self.show_next_image()
 
+        # OptionsMenu
+        self.header = header
+        self.var = StringVar(master)
+        self.var.set(options[0])  # default value
+        self.menu = apply(OptionMenu, (frame, self.var) + tuple(options))
+        self.menu.pack(side=RIGHT)
+
         # Buttons
-        self.button_yes = Button(frame, text="YES", command=self.yes, width=10)
-        self.button_yes.pack(side=LEFT)
-        self.button_no = Button(frame, text="NO", command=self.no, width=10)
-        self.button_no.pack(side=RIGHT)
+        self.accept = Button(frame, text="Accept", command=self.accept, width=10)
+        self.accept.pack(side=LEFT)
 
-    def yes(self):
-        self.result('Solar', 1)
-
-    def no(self):
-        self.result('Solar', 0)
-
-    def result(self, header, result):
-        self.row[header] = result
+    def accept(self):
+        self.row[self.header] = self.var.get()
         self.csvwriter.writerow(self.row)
         self.row = self.csvreader.next()
         self.show_next_image()
@@ -98,7 +97,8 @@ class App:
 
 def main():
     root = Tk()
-    App(root)
+    options = ["Yes", "No"]
+    App(root, 'Solar', options)
     root.mainloop()
 
 
