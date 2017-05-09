@@ -120,7 +120,11 @@ class App:
 
             # Array
             images = [TL, TC, TR, ML, MC, MR, BL, BC, BR]
-            
+
+            # Combine images
+            from images import combine_images
+            combined_image = combine_images(images, (3, 3))
+
             # Not implemented yet
             raise ValueError("Bing is not implemented yet")
 
