@@ -117,6 +117,9 @@ class App:
             BL = self.row['Bottom Left Path'] + '.png'
             BC = self.row['Bottom Center Path'] + '.png'
             BR = self.row['Bottom Right Path'] + '.png'
+
+            # Array
+            images = [TL, TC, TR, ML, MC, MR, BL, BC, BR]
             
             # Not implemented yet
             raise ValueError("Bing is not implemented yet")
