@@ -88,9 +88,19 @@ class App:
         # Change image
         self.change_image(img)
 
+    def get_image(self, api, centermode="xy"):
         if api == "google":
             filepath = "images/google-{}/{}/{}.jpg"
-            return filepath.format(centermode, self.row['ZipCode'].zfill(5), self.row['House_ID'])
+            filepath = filepath.format(centermode, self.row['ZipCode'].zfill(5), self.row['House_ID'])
+            pilImage = None
+            while pilImage is None:
+                try:
+                    # Open image from filepath
+                    pilImage = Image.open(filepath)
+                except IOError:
+                    # Download image from GoogleMaps API
+                    download_image(filepath, self.row, centermode=centermode)
+            return pilImage
         elif api == "bing":
             # Not implemented yet
             raise ValueError("Bing is not implemented yet")
