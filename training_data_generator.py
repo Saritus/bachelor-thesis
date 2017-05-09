@@ -125,8 +125,7 @@ class App:
             from images import combine_images
             combined_image = combine_images(images, (3, 3))
 
-            # Not implemented yet
-            raise ValueError("Bing is not implemented yet")
+            return combined_image
 
         # Unknown API
         else:
