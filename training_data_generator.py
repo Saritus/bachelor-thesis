@@ -89,6 +89,7 @@ class App:
         self.change_image(img)
 
     def get_image(self, api, centermode="xy"):
+        # Google Maps
         if api == "google":
             filepath = "images/google-{}/{}/{}.jpg"
             filepath = filepath.format(centermode, self.row['ZipCode'].zfill(5), self.row['House_ID'])
@@ -101,9 +102,13 @@ class App:
                     # Download image from GoogleMaps API
                     download_image(filepath, self.row, centermode=centermode)
             return pilImage
+
+        # Bing Maps
         elif api == "bing":
             # Not implemented yet
             raise ValueError("Bing is not implemented yet")
+
+        # Unknown API
         else:
             # Invalid API
             raise ValueError("Invalid api: {}. Use google or bing instead.".format(api))
