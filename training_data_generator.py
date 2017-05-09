@@ -94,6 +94,17 @@ class App:
                 # Download image from GoogleMaps API
                 download_image(filepath, self.row, centermode=CENTERMODE)
 
+    def get_filepath(self, api, centermode="xy"):
+        if api == "google":
+            filepath = "images/google-{}/{}/{}.jpg"
+            return filepath.format(centermode, self.row['ZipCode'].zfill(5), self.row['House_ID'])
+        elif api == "bing":
+            # Not implemented yet
+            raise ValueError("Bing is not implemented yet")
+        else:
+            # Invalid API
+            raise ValueError("Invalid api: {}. Use google or bing instead.".format(api))
+
 
 def main():
     root = Tk()
