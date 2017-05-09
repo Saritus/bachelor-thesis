@@ -82,18 +82,12 @@ class App:
         return self.imagesprite
 
     def show_next_image(self):
-        CENTERMODE = "xy"
-        filepath = self.get_filepath("google", CENTERMODE)
-        img = None
-        while img is None:
-            try:
-                # Change image
-                img = self.change_image(filepath)
-            except IOError:
-                # Download image from GoogleMaps API
-                download_image(filepath, self.row, centermode=CENTERMODE)
+        # Get image
+        img = self.get_image("bing")
 
-    def get_filepath(self, api, centermode="xy"):
+        # Change image
+        self.change_image(img)
+
         if api == "google":
             filepath = "images/google-{}/{}/{}.jpg"
             return filepath.format(centermode, self.row['ZipCode'].zfill(5), self.row['House_ID'])
