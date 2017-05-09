@@ -41,10 +41,12 @@ class App:
         frame.pack()
 
         # CSV
-        self.csvreader = csvReader('nwt-data/Gebaeude_Dresden_shuffle.csv')
+        # self.csvreader = csvReader('nwt-data/Gebaeude_Dresden_shuffle.csv')
+        self.csvreader = csvReader('images/infopunks_v2/data.csv', delimiter=',')
         fieldnames = self.csvreader.fieldnames()
         fieldnames.append('Solar')
-        self.csvwriter = csvWriter('nwt-data/Output.csv', fieldnames)
+        # self.csvwriter = csvWriter('nwt-data/Output.csv', fieldnames)
+        self.csvwriter = csvWriter('images/infopunks_v2/Output.csv', fieldnames, delimiter=',')
         self.row = self.csvreader.next()
 
         # Image
