@@ -105,6 +105,19 @@ class App:
 
         # Bing Maps
         elif api == "bing":
+            # Top
+            TL = self.row['Top Left Path'] + '.png'
+            TC = self.row['Top Center Path'] + '.png'
+            TR = self.row['Top Right Path'] + '.png'
+            # Middle
+            ML = self.row['Middle Left Path'] + '.png'
+            MC = self.row['Middle Center Path'] + '.png'
+            MR = self.row['Middle Right Path'] + '.png'
+            # Bottom
+            BL = self.row['Bottom Left Path'] + '.png'
+            BC = self.row['Bottom Center Path'] + '.png'
+            BR = self.row['Bottom Right Path'] + '.png'
+            
             # Not implemented yet
             raise ValueError("Bing is not implemented yet")
 
