@@ -106,17 +106,17 @@ class App:
         # Bing Maps
         elif api == "bing":
             # Top
-            TL = self.row['Top Left Path'] + '.png'
-            TC = self.row['Top Center Path'] + '.png'
-            TR = self.row['Top Right Path'] + '.png'
+            TL = 'images/infopunks_v2/' + self.row['Top Left Path'] + '.png'
+            TC = 'images/infopunks_v2/' + self.row['Top Center Path'] + '.png'
+            TR = 'images/infopunks_v2/' + self.row['Top Right Path'] + '.png'
             # Middle
-            ML = self.row['Middle Left Path'] + '.png'
-            MC = self.row['Middle Center Path'] + '.png'
-            MR = self.row['Middle Right Path'] + '.png'
+            ML = 'images/infopunks_v2/' + self.row['Middle Left Path'] + '.png'
+            MC = 'images/infopunks_v2/' + self.row['Middle Center Path'] + '.png'
+            MR = 'images/infopunks_v2/' + self.row['Middle Right Path'] + '.png'
             # Bottom
-            BL = self.row['Bottom Left Path'] + '.png'
-            BC = self.row['Bottom Center Path'] + '.png'
-            BR = self.row['Bottom Right Path'] + '.png'
+            BL = 'images/infopunks_v2/' + self.row['Bottom Left Path'] + '.png'
+            BC = 'images/infopunks_v2/' + self.row['Bottom Center Path'] + '.png'
+            BR = 'images/infopunks_v2/' + self.row['Bottom Right Path'] + '.png'
 
             # Array
             images = [TL, TC, TR, ML, MC, MR, BL, BC, BR]
