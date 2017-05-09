@@ -71,10 +71,7 @@ class App:
         self.row = self.csvreader.next()
         self.show_next_image()
 
-    def change_image(self, filepath):
-        # Load image
-        pilImage = Image.open(filepath)
-
+    def change_image(self, pilImage):
         # Change canvas size
         self.canvas.config(width=pilImage.width, height=pilImage.height)
         self.imagesprite = self.canvas.create_image(pilImage.width / 2, pilImage.height / 2)
