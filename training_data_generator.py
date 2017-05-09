@@ -92,7 +92,9 @@ class App:
         # Google Maps
         if api == "google":
             filepath = "images/google-{}/{}/{}.jpg"
-            filepath = filepath.format(centermode, self.row['ZipCode'].zfill(5), self.row['House_ID'])
+            address = "{}+{}+{}+{}".format(self.row['Street'], self.row['HouseNr'],
+                                           self.row['ZipCode'].zfill(5), self.row['City'])
+            filepath = filepath.format(centermode, self.row['ZipCode'].zfill(5), address)
             pilImage = None
             while pilImage is None:
                 try:
