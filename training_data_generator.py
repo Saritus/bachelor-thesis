@@ -3,9 +3,9 @@ import csv
 
 
 class csvReader:
-    def __init__(self, filename):
+    def __init__(self, filename, delimiter='\t'):
         self.csvfile = open(filename)
-        self.reader = csv.DictReader(self.csvfile, delimiter='\t')
+        self.reader = csv.DictReader(self.csvfile, delimiter=delimiter)
 
     def next(self):
         row = self.reader.next()
@@ -16,9 +16,9 @@ class csvReader:
 
 
 class csvWriter:
-    def __init__(self, filename, fieldnames):
+    def __init__(self, filename, fieldnames, delimiter='\t'):
         self.csvfile = open(filename, 'w')
-        self.writer = csv.DictWriter(self.csvfile, fieldnames=fieldnames, delimiter='\t')
+        self.writer = csv.DictWriter(self.csvfile, fieldnames=fieldnames, delimiter=delimiter)
         self.writer.writeheader()
 
     def writerow(self, row):
