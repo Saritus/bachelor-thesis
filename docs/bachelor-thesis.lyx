@@ -127,7 +127,7 @@ titlepage
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename images/htw-logo.png
+	filename img/htw-logo.png
 	lyxscale 25
 	height 1.5cm
 
