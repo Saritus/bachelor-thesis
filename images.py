@@ -68,7 +68,7 @@ def center_crop_image(path, new_width, new_height):
     return im.crop((left, top, right, bottom))
 
 
-def get_image(row, api, centermode="xy"):
+def get_image(row, api, centermode="address"):
     from PIL import Image
     # Google Maps
     if api == "google":
