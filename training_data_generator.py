@@ -66,7 +66,7 @@ class App:
         self.row[self.header] = self.var.get()
         self.csvwriter.writerow(self.row)
         self.row = self.csvreader.next()
-        self.show_next_image()
+        self.show_next_image("bing")
 
     def change_image(self, pilImage):
         # Change canvas size
@@ -78,7 +78,7 @@ class App:
         self.canvas.itemconfig(self.imagesprite, image=self.image)
         return self.imagesprite
 
-    def show_next_image(self):
+    def show_next_image(self, api, centermode="address"):
         # Get image
         from images import get_image
         img = get_image(self.row, "bing")
