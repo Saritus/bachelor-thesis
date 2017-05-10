@@ -659,6 +659,10 @@ LatexCommand tableofcontents
 \end_inset
 
 
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
