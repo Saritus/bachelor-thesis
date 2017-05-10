@@ -187,6 +187,8 @@ Hochschule für Technik und Wirtschaft Dresden
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size larger
 Fakultät Informatik/Mathematik
 \end_layout
 
@@ -621,11 +623,6 @@ today
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align left
 \begin_inset Newpage newpage
 \end_inset
 
