@@ -65,7 +65,7 @@ class App:
         # API
         self.api = StringVar(master)
         self.api.set("google")  # default value
-        self.menu = OptionMenu(master, self.api, "google", "bing", command=self.api_change)
+        self.menu = OptionMenu(master, self.api, "google-xy", "google-address", "bing", command=self.api_change)
         self.menu.pack(side=RIGHT)
 
     def accept(self):
