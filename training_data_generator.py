@@ -76,11 +76,14 @@ class App:
 
     def api_change(self, api):
         if api == "google-xy":
-            pass
+            self.api = "google"
+            self.centermode = "xy"
         elif api == "google-address":
-            pass
+            self.api = "google"
+            self.centermode = "address"
         elif api == "bing":
-            pass
+            self.api = "bing"
+            self.centermode = None
         else:
             # Should never happen
             raise ValueError("Invalid api selected")
