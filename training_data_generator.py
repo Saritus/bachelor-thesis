@@ -49,7 +49,7 @@ class App:
         # Image
         self.canvas = Canvas(master)
         self.canvas.pack(side=BOTTOM)
-        self.show_next_image()
+        self.show_next_image("bing")
 
         # OptionsMenu
         self.header = header
