@@ -68,6 +68,54 @@ def center_crop_image(path, new_width, new_height):
     return im.crop((left, top, right, bottom))
 
 
+def get_image(row, api, centermode="xy"):
+    from PIL import Image
+    # Google Maps
+    if api == "google":
+        filepath = "images/google-{}/{}/{}.jpg"
+        address = "{}+{}+{}+{}".format(row['Street'], row['HouseNr'],
+                                       row['ZipCode'].zfill(5), row['City'])
+        filepath = filepath.format(centermode, row['ZipCode'].zfill(5), address)
+        pilImage = None
+        while pilImage is None:
+            try:
+                # Open image from filepath
+                pilImage = Image.open(filepath)
+            except IOError:
+                # Download image from GoogleMaps API
+                download_image(filepath, row, centermode=centermode)
+        return pilImage
+
+    # Bing Maps
+    elif api == "bing":
+        # Top
+        TL = 'images/infopunks_v2/' + row['Top Left Path'] + '.png'
+        TC = 'images/infopunks_v2/' + row['Top Center Path'] + '.png'
+        TR = 'images/infopunks_v2/' + row['Top Right Path'] + '.png'
+        # Middle
+        ML = 'images/infopunks_v2/' + row['Middle Left Path'] + '.png'
+        MC = 'images/infopunks_v2/' + row['Middle Center Path'] + '.png'
+        MR = 'images/infopunks_v2/' + row['Middle Right Path'] + '.png'
+        # Bottom
+        BL = 'images/infopunks_v2/' + row['Bottom Left Path'] + '.png'
+        BC = 'images/infopunks_v2/' + row['Bottom Center Path'] + '.png'
+        BR = 'images/infopunks_v2/' + row['Bottom Right Path'] + '.png'
+
+        # Array
+        images = [TL, TC, TR, ML, MC, MR, BL, BC, BR]
+
+        # Combine images
+        from images import combine_images
+        combined_image = combine_images(images, (3, 3))
+
+        return combined_image
+
+    # Unknown API
+    else:
+        # Invalid API
+        raise ValueError("Invalid api: {}. Use google or bing instead.".format(api))
+
+
 def main():
     return
 
