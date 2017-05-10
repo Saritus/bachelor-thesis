@@ -47,8 +47,10 @@ class App:
         self.row = self.csvreader.next()
 
         # API
+        self.api = "google"
+        self.centermode = "xy"
         self.api_options = StringVar(master)
-        self.api_options.set("google")  # default value
+        self.api_options.set("google-xy")  # default value
         self.menu = OptionMenu(master, self.api_options, "google-xy", "google-address", "bing", command=self.api_change)
         self.menu.pack(side=RIGHT)
 
