@@ -52,7 +52,7 @@ class App:
         self.api_options = StringVar(master)
         self.api_options.set("google-xy")  # default value
         self.menu = OptionMenu(master, self.api_options, "google-xy", "google-address", "bing", command=self.api_change)
-        self.menu.pack(side=RIGHT)
+        self.menu.pack(side=TOP)
 
         # Image
         self.canvas = Canvas(master)
