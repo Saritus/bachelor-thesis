@@ -62,6 +62,12 @@ class App:
         self.accept = Button(frame, text="Accept", command=self.accept, width=10)
         self.accept.pack(side=LEFT)
 
+        # API
+        self.api = StringVar(master)
+        self.api.set("google")  # default value
+        self.menu = OptionMenu(master, self.api, "google", "bing")
+        self.menu.pack(side=RIGHT)
+
     def accept(self):
         self.row[self.header] = self.var.get()
         self.csvwriter.writerow(self.row)
