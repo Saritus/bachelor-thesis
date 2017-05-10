@@ -57,7 +57,7 @@ class App:
         # Image
         self.canvas = Canvas(master)
         self.canvas.pack(side=BOTTOM)
-        self.change_image("bing")
+        self.change_image()
 
         # OptionsMenu
         self.header = header
@@ -74,7 +74,7 @@ class App:
         self.row[self.header] = self.var.get()
         self.csvwriter.writerow(self.row)
         self.row = self.csvreader.next()
-        self.change_image("bing")
+        self.change_image()
 
     def api_change(self, api):
         if api == "google-xy":
@@ -89,11 +89,12 @@ class App:
         else:
             # Should never happen
             raise ValueError("Invalid api selected")
+        self.change_image()
 
-    def change_image(self, api, centermode="address"):
+    def change_image(self):
         # Get image
         from images import get_image
-        pilImage = get_image(self.row, api, centermode)
+        pilImage = get_image(self.row, self.api, self.centermode)
 
         # Change canvas size
         self.canvas.config(width=pilImage.width, height=pilImage.height)
