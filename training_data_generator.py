@@ -74,6 +74,9 @@ class App:
         self.row = self.csvreader.next()
         self.change_image("bing")
 
+    def api_change(self, api):
+        pass
+
     def change_image(self, api, centermode="address"):
         # Get image
         from images import get_image
