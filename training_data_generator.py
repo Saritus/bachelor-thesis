@@ -75,7 +75,15 @@ class App:
         self.change_image("bing")
 
     def api_change(self, api):
-        pass
+        if api == "google-xy":
+            pass
+        elif api == "google-address":
+            pass
+        elif api == "bing":
+            pass
+        else:
+            # Should never happen
+            raise ValueError("Invalid api selected")
 
     def change_image(self, api, centermode="address"):
         # Get image
