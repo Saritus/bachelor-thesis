@@ -68,6 +68,53 @@ def center_crop_image(path, new_width, new_height):
     return im.crop((left, top, right, bottom))
 
 
+def get_image(row, api, centermode="address"):
+    from PIL import Image
+    # Google Maps
+    if api == "google":
+        filepath = "images/google-{}/{}/{}.jpg"
+        address = "{}+{}+{}+{}".format(row['Street'], row['HouseNr'], row['ZipCode'].zfill(5), row['City'])
+        filepath = filepath.format(centermode, row['ZipCode'].zfill(5), address)
+        pilImage = None
+        while pilImage is None:
+            try:
+                # Open image from filepath
+                pilImage = Image.open(filepath)
+            except IOError:
+                # Download image from GoogleMaps API
+                download_image(filepath, row, centermode=centermode)
+        return pilImage
+
+    # Bing Maps
+    elif api == "bing":
+        basepath = 'images/infopunks_v2/{}.png'
+        # Top
+        TL = basepath.format(row['Top Left Path'])
+        TC = basepath.format(row['Top Center Path'])
+        TR = basepath.format(row['Top Right Path'])
+        # Middle
+        ML = basepath.format(row['Middle Left Path'])
+        MC = basepath.format(row['Middle Center Path'])
+        MR = basepath.format(row['Middle Right Path'])
+        # Bottom
+        BL = basepath.format(row['Bottom Left Path'])
+        BC = basepath.format(row['Bottom Center Path'])
+        BR = basepath.format(row['Bottom Right Path'])
+
+        # Array
+        images = [TL, TC, TR, ML, MC, MR, BL, BC, BR]
+
+        # Combine images
+        combined_image = combine_images(images, (3, 3))
+
+        return combined_image
+
+    # Unknown API
+    else:
+        # Invalid API
+        raise ValueError("Invalid api: {}. Use google or bing instead.".format(api))
+
+
 def main():
     return
 

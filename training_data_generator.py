@@ -3,9 +3,9 @@ import csv
 
 
 class csvReader:
-    def __init__(self, filename):
+    def __init__(self, filename, delimiter='\t'):
         self.csvfile = open(filename)
-        self.reader = csv.DictReader(self.csvfile, delimiter='\t')
+        self.reader = csv.DictReader(self.csvfile, delimiter=delimiter)
 
     def next(self):
         row = self.reader.next()
@@ -16,9 +16,9 @@ class csvReader:
 
 
 class csvWriter:
-    def __init__(self, filename, fieldnames):
+    def __init__(self, filename, fieldnames, delimiter='\t'):
         self.csvfile = open(filename, 'w')
-        self.writer = csv.DictWriter(self.csvfile, fieldnames=fieldnames, delimiter='\t')
+        self.writer = csv.DictWriter(self.csvfile, fieldnames=fieldnames, delimiter=delimiter)
         self.writer.writeheader()
 
     def writerow(self, row):
@@ -30,8 +30,7 @@ class csvWriter:
 
 
 from Tkinter import *
-from PIL import Image, ImageTk
-from images import download_image
+from PIL import ImageTk
 
 
 class App:
@@ -41,10 +40,10 @@ class App:
         frame.pack()
 
         # CSV
-        self.csvreader = csvReader('nwt-data/Gebaeude_Dresden_shuffle.csv')
+        self.csvreader = csvReader('images/infopunks_v2/data.csv', delimiter=',')
         fieldnames = self.csvreader.fieldnames()
         fieldnames.append('Solar')
-        self.csvwriter = csvWriter('nwt-data/Output.csv', fieldnames)
+        self.csvwriter = csvWriter('images/infopunks_v2/Output.csv', fieldnames, delimiter=',')
         self.row = self.csvreader.next()
 
         # Image
@@ -69,10 +68,7 @@ class App:
         self.row = self.csvreader.next()
         self.show_next_image()
 
-    def change_image(self, filepath):
-        # Load image
-        pilImage = Image.open(filepath)
-
+    def change_image(self, pilImage):
         # Change canvas size
         self.canvas.config(width=pilImage.width, height=pilImage.height)
         self.imagesprite = self.canvas.create_image(pilImage.width / 2, pilImage.height / 2)
@@ -83,16 +79,12 @@ class App:
         return self.imagesprite
 
     def show_next_image(self):
-        CENTERMODE = "xy"
-        filepath = "images/google-{}/{}/{}.jpg".format(CENTERMODE, self.row['ZipCode'].zfill(5), self.row['House_ID'])
-        img = None
-        while img is None:
-            try:
-                # Change image
-                img = self.change_image(filepath)
-            except IOError:
-                # Download image from GoogleMaps API
-                download_image(filepath, self.row, centermode=CENTERMODE)
+        # Get image
+        from images import get_image
+        img = get_image(self.row, "bing")
+
+        # Change image
+        self.change_image(img)
 
 
 def main():
