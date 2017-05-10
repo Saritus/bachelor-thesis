@@ -81,7 +81,7 @@ class App:
     def show_next_image(self, api, centermode="address"):
         # Get image
         from images import get_image
-        img = get_image(self.row, "bing")
+        img = get_image(self.row, api, centermode)
 
         # Change image
         self.change_image(img)
