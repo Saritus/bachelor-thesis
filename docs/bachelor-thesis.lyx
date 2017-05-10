@@ -677,7 +677,11 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Section
-Einleitung
+Einleitung und Motivation
+\end_layout
+
+\begin_layout Section
+Konkretisierung der Aufgabenstellung
 \end_layout
 
 \begin_layout Section
@@ -693,11 +697,11 @@ Bing Maps
 \end_layout
 
 \begin_layout Section
-Trainingsdaten
+Erzeugung der Trainingsdaten
 \end_layout
 
 \begin_layout Section
-Convolutional Neural Network
+Erstellen eines Convolutional Neural Network
 \end_layout
 
 \begin_layout Section
@@ -705,7 +709,7 @@ Ergebnisvisualisierung
 \end_layout
 
 \begin_layout Section
-Zusammenfassung
+Zusammenfassung und Ausblick
 \end_layout
 
 \end_body
