@@ -88,18 +88,19 @@ def get_image(row, api, centermode="address"):
 
     # Bing Maps
     elif api == "bing":
+        basepath = 'images/infopunks_v2/{}.png'
         # Top
-        TL = 'images/infopunks_v2/' + row['Top Left Path'] + '.png'
-        TC = 'images/infopunks_v2/' + row['Top Center Path'] + '.png'
-        TR = 'images/infopunks_v2/' + row['Top Right Path'] + '.png'
+        TL = basepath.format(row['Top Left Path'])
+        TC = basepath.format(row['Top Center Path'])
+        TR = basepath.format(row['Top Right Path'])
         # Middle
-        ML = 'images/infopunks_v2/' + row['Middle Left Path'] + '.png'
-        MC = 'images/infopunks_v2/' + row['Middle Center Path'] + '.png'
-        MR = 'images/infopunks_v2/' + row['Middle Right Path'] + '.png'
+        ML = basepath.format(row['Middle Left Path'])
+        MC = basepath.format(row['Middle Center Path'])
+        MR = basepath.format(row['Middle Right Path'])
         # Bottom
-        BL = 'images/infopunks_v2/' + row['Bottom Left Path'] + '.png'
-        BC = 'images/infopunks_v2/' + row['Bottom Center Path'] + '.png'
-        BR = 'images/infopunks_v2/' + row['Bottom Right Path'] + '.png'
+        BL = basepath.format(row['Bottom Left Path'])
+        BC = basepath.format(row['Bottom Center Path'])
+        BR = basepath.format(row['Bottom Right Path'])
 
         # Array
         images = [TL, TC, TR, ML, MC, MR, BL, BC, BR]
