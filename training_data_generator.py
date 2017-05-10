@@ -46,6 +46,12 @@ class App:
         self.csvwriter = csvWriter('images/infopunks_v2/Output.csv', fieldnames, delimiter=',')
         self.row = self.csvreader.next()
 
+        # API
+        self.api_options = StringVar(master)
+        self.api_options.set("google")  # default value
+        self.menu = OptionMenu(master, self.api_options, "google-xy", "google-address", "bing", command=self.api_change)
+        self.menu.pack(side=RIGHT)
+
         # Image
         self.canvas = Canvas(master)
         self.canvas.pack(side=BOTTOM)
@@ -61,12 +67,6 @@ class App:
         # Buttons
         self.accept = Button(frame, text="Accept", command=self.accept, width=10)
         self.accept.pack(side=LEFT)
-
-        # API
-        self.api_options = StringVar(master)
-        self.api_options.set("google")  # default value
-        self.menu = OptionMenu(master, self.api_options, "google-xy", "google-address", "bing", command=self.api_change)
-        self.menu.pack(side=RIGHT)
 
     def accept(self):
         self.row[self.header] = self.var.get()
