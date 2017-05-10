@@ -73,8 +73,7 @@ def get_image(row, api, centermode="address"):
     # Google Maps
     if api == "google":
         filepath = "images/google-{}/{}/{}.jpg"
-        address = "{}+{}+{}+{}".format(row['Street'], row['HouseNr'],
-                                       row['ZipCode'].zfill(5), row['City'])
+        address = "{}+{}+{}+{}".format(row['Street'], row['HouseNr'], row['ZipCode'].zfill(5), row['City'])
         filepath = filepath.format(centermode, row['ZipCode'].zfill(5), address)
         pilImage = None
         while pilImage is None:
@@ -106,7 +105,6 @@ def get_image(row, api, centermode="address"):
         images = [TL, TC, TR, ML, MC, MR, BL, BC, BR]
 
         # Combine images
-        from images import combine_images
         combined_image = combine_images(images, (3, 3))
 
         return combined_image
