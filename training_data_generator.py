@@ -49,7 +49,7 @@ class App:
         # Image
         self.canvas = Canvas(master)
         self.canvas.pack(side=BOTTOM)
-        self.show_next_image("bing")
+        self.change_image("bing")
 
         # OptionsMenu
         self.header = header
@@ -66,9 +66,13 @@ class App:
         self.row[self.header] = self.var.get()
         self.csvwriter.writerow(self.row)
         self.row = self.csvreader.next()
-        self.show_next_image("bing")
+        self.change_image("bing")
 
-    def change_image(self, pilImage):
+    def change_image(self, api, centermode="address"):
+        # Get image
+        from images import get_image
+        pilImage = get_image(self.row, api, centermode)
+
         # Change canvas size
         self.canvas.config(width=pilImage.width, height=pilImage.height)
         self.imagesprite = self.canvas.create_image(pilImage.width / 2, pilImage.height / 2)
@@ -77,14 +81,6 @@ class App:
         self.image = ImageTk.PhotoImage(pilImage)
         self.canvas.itemconfig(self.imagesprite, image=self.image)
         return self.imagesprite
-
-    def show_next_image(self, api, centermode="address"):
-        # Get image
-        from images import get_image
-        img = get_image(self.row, api, centermode)
-
-        # Change image
-        self.change_image(img)
 
 
 def main():
