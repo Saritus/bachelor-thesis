@@ -1,25 +1,9 @@
 # Load csv file
-import csv
-
-from csvhelper import csvReader
-
-
-class csvWriter:
-    def __init__(self, filename, fieldnames, delimiter='\t'):
-        self.csvfile = open(filename, 'w')
-        self.writer = csv.DictWriter(self.csvfile, fieldnames=fieldnames, delimiter=delimiter)
-        self.writer.writeheader()
-
-    def writerow(self, row):
-        self.writer.writerow(row)
-
-    def writerows(self, rows):
-        for row in rows:
-            self.writerow(row)
-
 
 from Tkinter import *
 from PIL import ImageTk
+
+from csvhelper import csvReader, csvWriter
 
 
 class App:
