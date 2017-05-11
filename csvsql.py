@@ -42,6 +42,11 @@ def convert_sql_to_csv(database, csvfile):
     if os.path.exists(csvfile):
         os.remove(csvfile)
 
+    # Open sql connection
+    import sqlite3
+    conn = sqlite3.connect(database)
+    c = conn.cursor()
+
 
 def get_column(database, column):
     # Open sql connection
