@@ -13,6 +13,7 @@ class csvReader:
         row = self.reader.next()
         return row
 
+    @property
     def fieldnames(self):
         return self.reader.fieldnames
 
