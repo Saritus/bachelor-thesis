@@ -37,7 +37,10 @@ def convert_csv_to_sql(csvfile, database):
 
 
 def convert_sql_to_csv(database, csvfile):
-    pass
+    # Delete csv file if it already exists
+    import os
+    if os.path.exists(csvfile):
+        os.remove(csvfile)
 
 
 def get_column(database, column):
