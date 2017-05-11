@@ -55,19 +55,15 @@ def load_csv(filename):
             break
         count += 1
 
-        filepath = "images/google-xy/" + row['ZipCode'].zfill(5) + "/" + row['House_ID'] + ".jpg"
-        ensure_dir(filepath)
+        # Load image
+        from images import get_image
+        image = get_image(row, "google")
 
-        # Fill image input array
-        img = None
-        while img is None:
-            try:
-                # Load image from hard disk
-                img = load_image(filepath, (100, 100))
-            except IOError:
-                # Download image from GoogleMaps API
-                download_image(filepath, row)
-                print count
+        # Convert image into numpy array
+        from scipy.misc import fromimage
+        img = fromimage(image)
+
+        # Add numpy array to images array
         X_images.extend([img])
 
         # Fill coordinates array
