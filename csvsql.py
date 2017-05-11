@@ -36,6 +36,10 @@ def convert_csv_to_sql(csvfile, database):
     return
 
 
+def convert_sql_to_csv(database, csvfile):
+    pass
+
+
 def get_column(database, column):
     # Open sql connection
     import sqlite3
