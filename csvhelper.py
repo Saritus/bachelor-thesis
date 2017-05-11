@@ -1,5 +1,20 @@
+import csv
+
 from functions import ensure_dir
 from images import load_image, download_image
+
+
+class csvReader:
+    def __init__(self, filename, delimiter='\t'):
+        self.csvfile = open(filename)
+        self.reader = csv.DictReader(self.csvfile, delimiter=delimiter)
+
+    def next(self):
+        row = self.reader.next()
+        return row
+
+    def fieldnames(self):
+        return self.reader.fieldnames
 
 
 def load_csv(filename):
