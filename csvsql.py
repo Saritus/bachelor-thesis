@@ -45,7 +45,12 @@ def convert_sql_to_csv(database, csvfile):
     # Open sql connection
     import sqlite3
     conn = sqlite3.connect(database)
+    conn.row_factory = sqlite3.Row
     c = conn.cursor()
+
+    # Get column names
+    c = conn.execute("SELECT * FROM sqltable")
+    fieldnames = c.fetchone().keys()
 
 
 def get_column(database, column):
