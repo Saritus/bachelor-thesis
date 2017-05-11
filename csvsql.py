@@ -49,7 +49,7 @@ def convert_sql_to_csv(database, csvfile):
     c = conn.cursor()
 
     # Get column names
-    c = conn.execute("SELECT * FROM sqltable")
+    c.execute("SELECT * FROM sqltable")
     fieldnames = c.fetchone().keys()
 
 
