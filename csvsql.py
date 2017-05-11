@@ -56,6 +56,13 @@ def convert_sql_to_csv(database, csvfile):
     from training_data_generator import csvWriter
     csvwriter = csvWriter(csvfile, fieldnames)
 
+    # Write rows
+    c.execute("SELECT * FROM sqltable")
+    table = c.fetchall()
+    for row in table:
+        dict_row = dict(zip(row.keys(), row))
+        csvwriter.writerow(dict_row)
+
 
 def get_column(database, column):
     # Open sql connection
