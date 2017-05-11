@@ -45,15 +45,10 @@ def load_csv(filename):
     X_images = []
     Coordinates = []
 
-    import csv
-    csvfile = open(filename)
-    reader = csv.DictReader(csvfile, delimiter='\t')
+    reader = csvReader(filename)
 
-    count = 0
-    for row in reader:
-        if count > 10000:
-            break
-        count += 1
+    for row in reader.table[:100]:
+        print row
 
         # Load image
         from images import get_image
