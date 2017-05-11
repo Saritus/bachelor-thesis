@@ -1,5 +1,5 @@
 from functions import ensure_dir
-from loadcsv import load_csv
+from csv import load_csv
 from visualize import show_acc, show_loss, show_prediction
 
 
