@@ -112,7 +112,9 @@ def main():
     reader = csvReader("nwt-data/Gebaeude_Dresden_shuffle.csv")
     table = reader.table
 
+    # Writer
     writer = csvWriter("nwt-data/Output.csv", reader.fieldnames)
+    writer.writerows(table)
 
     # load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
 
