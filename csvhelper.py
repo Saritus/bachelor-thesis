@@ -17,6 +17,7 @@ class csvReader:
     def fieldnames(self):
         return self.reader.fieldnames
 
+    @property
     def table(self):
         table = []
         for row in self.reader:
@@ -107,7 +108,10 @@ def load_csv(filename):
 
 
 def main():
+    # Reader
     reader = csvReader("nwt-data/Gebaeude_Dresden_shuffle.csv")
+    table = reader.table
+
     writer = csvWriter("nwt-data/Output.csv", reader.fieldnames)
 
     # load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
