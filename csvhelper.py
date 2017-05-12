@@ -13,6 +13,12 @@ class csvReader:
         row = self.reader.next()
         return row
 
+    def get_column(self, name):
+        column = []
+        for row in self.reader:
+            column.extend([row[name]])
+        return column
+
     @property
     def fieldnames(self):
         return self.reader.fieldnames
