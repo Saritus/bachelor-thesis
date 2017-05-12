@@ -1,8 +1,5 @@
 import csv
 
-from functions import ensure_dir
-from images import load_image, download_image
-
 
 class csvReader:
     def __init__(self, filename, delimiter='\t'):
