@@ -14,13 +14,6 @@ class csvReader:
     def fieldnames(self):
         return self.reader.fieldnames
 
-    @property
-    def table(self):
-        table = []
-        for row in self.reader:
-            table.extend([row])
-        return table
-
 
 class csvWriter:
     def __init__(self, filename, fieldnames, delimiter='\t'):
