@@ -5,9 +5,12 @@ class csvReader:
     def __init__(self, filename, delimiter='\t'):
         self.csvfile = open(filename)
         self.reader = csv.DictReader(self.csvfile, delimiter=delimiter)
+        self.__table()
+        self.__count = 0
 
     def next(self):
-        row = self.reader.next()
+        row = self.table[self.__count]
+        self.__count += 1
         return row
 
     @property
