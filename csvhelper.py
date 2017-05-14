@@ -99,10 +99,10 @@ def load_csv(filename):
 def main():
     # Reader
     reader = csvReader("nwt-data/Gebaeude_Dresden_shuffle.csv")
-    table = reader.table
+    fieldnames = reader.fieldnames
 
     # Writer
-    writer = csvWriter("nwt-data/Output.csv", reader.fieldnames)
+    writer = csvWriter("nwt-data/Output.csv", fieldnames)
     writer.writerows(table)
 
     # load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
