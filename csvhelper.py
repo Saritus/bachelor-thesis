@@ -101,6 +101,11 @@ def main():
     reader = csvReader("nwt-data/Gebaeude_Dresden_shuffle.csv")
     fieldnames = reader.fieldnames
 
+    fieldnames.extend(['test'])
+    table = []
+    for row in reader.table:
+        table.extend([row])
+
     # Writer
     writer = csvWriter("nwt-data/Output.csv", fieldnames)
     writer.writerows(table)
