@@ -110,7 +110,7 @@ def main():
     writer = csvWriter("nwt-data/Output.csv", fieldnames)
     writer.writerows(table)
 
-    # load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
+    load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
 
 
 if __name__ == "__main__":
