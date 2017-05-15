@@ -86,7 +86,7 @@ xleftmargin = 15pt}
 \paragraph_separation indent
 \paragraph_indentation default
 \quotes_language german
-\papercolumns 1
+\papercolumns 2
 \papersides 1
 \paperpagestyle default
 \tracking_changes false
@@ -107,7 +107,7 @@ status open
 
 
 \backslash
-titlepage
+begin{titlepage}
 \end_layout
 
 \end_inset
@@ -462,7 +462,7 @@ Medieninformatik
 \begin_inset Text
 
 \begin_layout Plain Layout
-Betreuer:
+Externer Betreuer:
 \end_layout
 
 \end_inset
@@ -542,8 +542,7 @@ New Web Technology GmbH
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.
- Gutachter:
+Betreuender Prüfer:
 \end_layout
 
 \end_inset
@@ -565,8 +564,7 @@ Prof.
 \begin_inset Text
 
 \begin_layout Plain Layout
-2.
- Gutachter:
+Zweitgutachter:
 \end_layout
 
 \end_inset
@@ -635,18 +633,6 @@ Abgabetermin:
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-today
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -658,6 +644,9 @@ today
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
@@ -695,6 +684,19 @@ Verzeichnis verwendeter Begriffe und deren Bedeutung (Glossar)
 
 \begin_layout Standard
 \begin_inset FloatList figure
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
 
 \end_inset
 
