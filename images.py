@@ -87,7 +87,7 @@ def get_image(row, api, centermode="address"):
 
     # Bing Maps
     elif api == "bing":
-        basepath = 'images/infopunks_v2/{}.png'
+        basepath = 'images/infopunks_v2/{}'
         # Top
         TL = basepath.format(row['Top Left Path'])
         TC = basepath.format(row['Top Center Path'])
