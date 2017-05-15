@@ -1,1 +1,1 @@
-# bachelor thesis title goes here
+# Merkmalserkennung von Gebäuden und Grundstücken in Satellitenbildern mittels Deeplearning
