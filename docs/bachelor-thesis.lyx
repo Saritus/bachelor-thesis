@@ -677,6 +677,14 @@ LatexCommand tableofcontents
 
 \end_layout
 
+\begin_layout Standard
+Verzeichnis verwendeter Abkürzungen
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Einleitung und Motivation
 \end_layout
