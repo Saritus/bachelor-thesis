@@ -716,11 +716,11 @@ Bildanalyse mittels Deeplearning
 \end_layout
 
 \begin_layout Itemize
-Datenanreicherung
+Marketing
 \end_layout
 
 \begin_layout Itemize
-Marketing
+Datenanreicherung
 \end_layout
 
 \begin_layout Section
@@ -751,6 +751,86 @@ logisch
 \end_deeper
 \begin_layout Itemize
 Programmiersprache: Python
+\end_layout
+
+\begin_layout Section
+Stand der Technik
+\end_layout
+
+\begin_layout Itemize
+CNN
+\end_layout
+
+\begin_layout Itemize
+Keras
+\end_layout
+
+\begin_layout Section
+Gesamtplan
+\end_layout
+
+\begin_layout Itemize
+Gesamtübersicht
+\end_layout
+
+\begin_layout Itemize
+Datenflussdiagramm
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CSV-Datei
+\end_layout
+
+\begin_layout Itemize
+Satellitenbilder
+\end_layout
+
+\begin_layout Itemize
+Network
+\end_layout
+
+\begin_layout Itemize
+Ergebnisse
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/datenfluss.PNG
+	lyxscale 50
+	width 80col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Datenfluss"
+
+\end_inset
+
+Datenflussdiagramm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -922,14 +1002,14 @@ Liste mit Adressen für bestimmtes Merkmal
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename img/point_plot.png
 	lyxscale 50
-	width 80text%
+	width 80col%
 
 \end_inset
 
