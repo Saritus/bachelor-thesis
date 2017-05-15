@@ -707,6 +707,10 @@ end{titlepage}
 
 \end_layout
 
+\begin_layout Abstract
+Inhalt der Arbeit
+\end_layout
+
 \begin_layout Section
 Einleitung und Motivation
 \end_layout
@@ -774,7 +778,13 @@ Gesamtübersicht
 \end_layout
 
 \begin_layout Itemize
-Datenflussdiagramm
+Datenflussdiagramm (siehe 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Datenfluss"
+
+\end_inset
+
 \end_layout
 
 \begin_deeper
@@ -799,7 +809,7 @@ Ergebnisse
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -946,7 +956,7 @@ SQLite
 
 \end_deeper
 \begin_layout Section
-Erstellen eines Convolutional Neural Network
+Erstellen eines Neuronalen Netzes
 \end_layout
 
 \begin_layout Itemize
@@ -980,7 +990,7 @@ Aufbau des Netzes
 \end_layout
 
 \begin_layout Section
-Ergebnisvisualisierung
+Ergebnisse
 \end_layout
 
 \begin_layout Itemize
@@ -1002,7 +1012,7 @@ Liste mit Adressen für bestimmtes Merkmal
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1037,7 +1047,7 @@ Point Plot Beispiel
 \end_layout
 
 \begin_layout Section
-Zusammenfassung und Ausblick
+Ausblick
 \end_layout
 
 \begin_layout Itemize
@@ -1046,6 +1056,9 @@ Verbesserung der API
 
 \begin_layout Itemize
 Anwendung zum Suchen bestimmter Merkmale
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
