@@ -710,6 +710,10 @@ Einleitung und Motivation
 \end_layout
 
 \begin_layout Itemize
+Datenanreicherung
+\end_layout
+
+\begin_layout Itemize
 Marketing
 \end_layout
 
@@ -719,6 +723,10 @@ Konkretisierung der Aufgabenstellung
 
 \begin_layout Itemize
 Vorgabe der Daten von NWT
+\end_layout
+
+\begin_layout Itemize
+Liste mit zu erkennenden Merkmalen
 \end_layout
 
 \begin_layout Itemize
@@ -793,6 +801,10 @@ Bing Maps
 Bereits heruntergeladen mit zugehöriger CSV-Datei
 \end_layout
 
+\begin_layout Itemize
+Tiles
+\end_layout
+
 \begin_layout Section
 Erzeugung der Trainingsdaten
 \end_layout
@@ -815,6 +827,14 @@ Nicht in Bild erkennbar
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+Separate Anwendung
+\end_layout
+
+\begin_layout Itemize
+Output: CSV-Datei
+\end_layout
+
 \begin_layout Section
 Erstellen eines Convolutional Neural Network
 \end_layout
@@ -839,6 +859,14 @@ Keras
 
 \begin_layout Itemize
 Merge Neural Networks - Splitten von Image und Meta Daten
+\end_layout
+
+\begin_layout Itemize
+Layer-Typen
+\end_layout
+
+\begin_layout Itemize
+Aufbau des Netzes
 \end_layout
 
 \begin_layout Section
@@ -892,6 +920,10 @@ Point Plot Beispiel
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+Liste mit Adressen für bestimmtes Merkmal
 \end_layout
 
 \begin_layout Section
