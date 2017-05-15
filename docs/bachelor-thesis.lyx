@@ -3,9 +3,34 @@
 \begin_document
 \begin_header
 \textclass article
+\begin_preamble
+%\usepackage{multicol}
+
+%Farben fuer Programmlisting
+\usepackage{listings,xcolor}
+\definecolor{pl_background}{rgb}{0.95,0.95,0.95}
+\definecolor{pl_comment}{rgb}{0.12, 0.38, 0.18 }
+\definecolor{pl_ifelse}{rgb}{0.74,0.74,.29}
+\definecolor{pl_keyword}{rgb}{0.37, 0.08, 0.25}
+\definecolor{pl_string}{rgb}{0.06, 0.10, 0.98}
+% Vordefiniertes Programmlisting
+\lstset{
+language = Java,
+basicstyle = \small\sffamily,
+backgroundcolor = \color{pl_background},
+stringstyle = \color{pl_string},
+keywordstyle = \color{pl_keyword}\bfseries,
+commentstyle = \color{pl_comment}\itshape,
+frame = lrbt,
+numbers = left,
+showstringspaces = false,
+breaklines = true,
+tabsize=4,
+xleftmargin = 15pt}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language ngerman
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -60,7 +85,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\quotes_language german
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -73,103 +98,884 @@
 
 \begin_body
 
-\begin_layout Title
-bachelor thesis title goes here
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+titlepage
 \end_layout
 
-\begin_layout Author
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell multirow="3" alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/htw-logo.png
+	lyxscale 25
+	height 1.5cm
+
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hochschule für Technik und Wirtschaft Dresden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size larger
+Fakultät Informatik/Mathematik
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\size huge
+Bachelorarbeit
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\size larger
+Thema:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\size larger
+Merkmalserkennung von Gebäuden und Grundstücken in Satellitenbildern mittels
+ Deeplearning
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\size larger
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="18" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vorgelegt von:
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 Sebastian Mischke
 \end_layout
 
-\begin_layout Date
-04.04.2017
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
-\begin_layout Abstract
-Abstact - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
- nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
- sed diam voluptua.
- At vero eos et accusam et justo duo dolores et ea rebum.
- Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
- sit amet.
- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
- eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
- voluptua.
- At vero eos et accusam et justo duo dolores et ea rebum.
- Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
- sit amet.
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dorfstraße 8, 01257 Dresden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+geb.
+ am 09.11.1995 in Dresden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bibliotheksnummer: 37612
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Studiengang:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medieninformatik
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Betreuer:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ann-Christin Storms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+New Web Technology GmbH
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.
+ Gutachter:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Prof.
+ Dr.
+ Marco Block-Berlitz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.
+ Gutachter:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+???
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Abgabetermin:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Verzeichnis verwendeter Abkürzungen
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Verzeichnis verwendeter Begriffe und deren Bedeutung (Glossar)
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-Grundlage
+Einleitung und Motivation
 \end_layout
 
-\begin_layout Standard
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
- eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
- voluptua.
- At vero eos et accusam et justo duo dolores et ea rebum.
- Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
- sit amet.
- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
- eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
- voluptua.
- At vero eos et accusam et justo duo dolores et ea rebum.
- Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
- sit amet.
- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
- eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
- voluptua.
- At vero eos et accusam et justo duo dolores et ea rebum.
- Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
- sit amet.
- 
+\begin_layout Itemize
+Bildanalyse mittels Deeplearning
 \end_layout
 
-\begin_layout Standard
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
- consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
- accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
- augue duis dolore te feugait nulla facilisi.
- Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
- nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
- 
+\begin_layout Itemize
+Datenanreicherung
+\end_layout
+
+\begin_layout Itemize
+Marketing
 \end_layout
 
 \begin_layout Section
-Platzhalter
+Konkretisierung der Aufgabenstellung
+\end_layout
+
+\begin_layout Itemize
+Vorgabe der Daten von NWT
+\end_layout
+
+\begin_layout Itemize
+Liste mit zu erkennenden Merkmalen
+\end_layout
+
+\begin_layout Itemize
+Entscheidung, welche Merkmale machbar sind
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+zeitlich
+\end_layout
+
+\begin_layout Itemize
+logisch
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Programmiersprache: Python
+\end_layout
+
+\begin_layout Section
+Satellitenbilder
+\end_layout
+
+\begin_layout Itemize
+Satellitenbilder / Flugzeugbilder
+\end_layout
+
+\begin_layout Itemize
+Haus / Grundstück
+\end_layout
+
+\begin_layout Itemize
+Probleme unterschiedlicher APIs
+\end_layout
+
+\begin_layout Itemize
+Unterschiedliche Centermodes
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+XY
+\end_layout
+
+\begin_layout Itemize
+Adresse
+\end_layout
+
+\begin_layout Itemize
+Tiles
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Google Static Maps API
+\end_layout
+
+\begin_layout Itemize
+Bilder werden auf Bedarf erzeugt und heruntergeladen
+\end_layout
+
+\begin_layout Itemize
+Unterschied zwischen XY und Adresse
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Bereits in Satellitenbilder-Block?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+API-Key und Limitierungen
+\end_layout
+
+\begin_layout Subsection
+Bing Maps
+\end_layout
+
+\begin_layout Itemize
+Bereits heruntergeladen mit zugehöriger CSV-Datei
+\end_layout
+
+\begin_layout Itemize
+Tiles
+\end_layout
+
+\begin_layout Section
+Erzeugung der Trainingsdaten
+\end_layout
+
+\begin_layout Itemize
+Probleme:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Aufwändig
+\end_layout
+
+\begin_layout Itemize
+Vorwissen notwendig
+\end_layout
+
+\begin_layout Itemize
+Nicht in Bild erkennbar
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Separate Anwendung
+\end_layout
+
+\begin_layout Itemize
+Output:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CSV-Datei
+\end_layout
+
+\begin_layout Itemize
+SQLite
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Erstellen eines Convolutional Neural Network
+\end_layout
+
+\begin_layout Itemize
+Funktionsweise eines CNN
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Notwendig?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Keras
+\end_layout
+
+\begin_layout Itemize
+Merge Neural Networks - Splitten von Image und Meta Daten
+\end_layout
+
+\begin_layout Itemize
+Layer-Typen
+\end_layout
+
+\begin_layout Itemize
+Aufbau des Netzes
+\end_layout
+
+\begin_layout Section
+Ergebnisvisualisierung
+\end_layout
+
+\begin_layout Itemize
+Plot Point (siehe 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Point-Plot-Beispiel"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Liste mit Adressen für bestimmtes Merkmal
 \end_layout
 
 \begin_layout Standard
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
- eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
- voluptua.
- At vero eos et accusam et justo duo dolores et ea rebum.
- Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
- sit amet.
- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
- eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
- voluptua.
- At vero eos et accusam et justo duo dolores et ea rebum.
- Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
- sit amet.
- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
- eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
- voluptua.
- At vero eos et accusam et justo duo dolores et ea rebum.
- Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
- sit amet.
- 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/point_plot.png
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Point-Plot-Beispiel"
+
+\end_inset
+
+Point Plot Beispiel
 \end_layout
 
-\begin_layout Standard
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
- consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
- accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
- augue duis dolore te feugait nulla facilisi.
- Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
- nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
- 
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Zusammenfassung und Ausblick
+\end_layout
+
+\begin_layout Itemize
+Verbesserung der API
+\end_layout
+
+\begin_layout Itemize
+Anwendung zum Suchen bestimmter Merkmale
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "IEEEfull"
+options "plain"
+
+\end_inset
+
+
 \end_layout
 
 \end_body

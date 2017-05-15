@@ -15,4 +15,5 @@ images/
 *.h5
 *.json
 *.lyx~
+*.lyx#
 *.pyc
