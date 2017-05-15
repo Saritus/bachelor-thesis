@@ -904,6 +904,18 @@ Verbesserung der API
 
 \begin_layout Itemize
 Anwendung zum Suchen bestimmter Merkmale
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "IEEEfull"
+options "plain"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
