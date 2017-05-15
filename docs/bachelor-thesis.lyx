@@ -710,6 +710,10 @@ Einleitung und Motivation
 \end_layout
 
 \begin_layout Itemize
+Bildanalyse mittels Deeplearning
+\end_layout
+
+\begin_layout Itemize
 Datenanreicherung
 \end_layout
 
@@ -729,6 +733,20 @@ Vorgabe der Daten von NWT
 Liste mit zu erkennenden Merkmalen
 \end_layout
 
+\begin_layout Itemize
+Entscheidung, welche Merkmale machbar sind
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+zeitlich
+\end_layout
+
+\begin_layout Itemize
+logisch
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 Programmiersprache: Python
 \end_layout
@@ -832,9 +850,19 @@ Separate Anwendung
 \end_layout
 
 \begin_layout Itemize
-Output: CSV-Datei
+Output:
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+CSV-Datei
+\end_layout
+
+\begin_layout Itemize
+SQLite
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Erstellen eines Convolutional Neural Network
 \end_layout
@@ -885,6 +913,10 @@ reference "fig:Point-Plot-Beispiel"
 \end_layout
 
 \begin_layout Itemize
+Liste mit Adressen für bestimmtes Merkmal
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -920,10 +952,6 @@ Point Plot Beispiel
 \end_inset
 
 
-\end_layout
-
-\begin_layout Itemize
-Liste mit Adressen für bestimmtes Merkmal
 \end_layout
 
 \begin_layout Section
