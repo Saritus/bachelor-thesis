@@ -772,7 +772,8 @@ Keras
 
 \begin_layout Section
 Gesamtplan
-\end_layout
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Itemize
 Gesamtübersicht
@@ -807,11 +808,34 @@ Ergebnisse
 \end_layout
 
 \end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das System zur Merkmalserkennung besteht aus drei Kernbausteinen.
+\end_layout
+
+\begin_layout Itemize
+Den Satellitenbildern, die als Informationsgrundlage und Input-Daten für
+ den Klassifizierer genutzt werden
+\end_layout
+
+\begin_layout Itemize
+Dem künstlichen neuronalen Netz, welches die Input-Daten analysiert und
+ klassifiziert
+\end_layout
+
+\begin_layout Itemize
+Der Trainingsvorgabe, welche zum Trainieren des Netzes benutzt wird.
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -917,6 +941,9 @@ API-Key und Limitierungen
 
 \begin_layout Subsubsection
 Bing Maps
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
@@ -938,8 +965,12 @@ Tiles
 \end_layout
 
 \begin_layout Subsection
-Erzeugung der Trainingsdaten
+Trainingsdaten
 \end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Itemize
 Probleme:
@@ -977,62 +1008,34 @@ SQLite
 \end_layout
 
 \end_deeper
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
-Erstellen eines Neuronalen Netzes
-\end_layout
-
-\begin_layout Itemize
-Funktionsweise eines CNN
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Notwendig?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Keras
-\end_layout
-
-\begin_layout Itemize
-Merge Neural Networks - Splitten von Image und Meta Daten
-\end_layout
-
-\begin_layout Itemize
-Layer-Typen
-\end_layout
-
-\begin_layout Itemize
-Aufbau des Netzes
-\end_layout
-
-\begin_layout Itemize
-Training (siehe 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "alg:Trainieren-des-Netzwerkes"
-
-\end_inset
-
-)
+Künstliches neuronales Netz
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
+Das neuronale Netz besteht es drei Teilen.
+ Einem CNN, welches die Satellitenbilder als Input-Daten bekommt und diese
+ auswertet, einem MLP, welches zusätzliche Metadaten des Gebäudes bzw.
+ Grundstückes als Input-Daten bekommt, und einem MLP, welches die Output-Daten
+ des CNN und des MLP als Input-Daten bekommt.
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
+ und die Ergebnisse mit der Trainingsvorlage verglichen.
+ Der sich daraus ergebende Genauigkeitswert, auch Accuracy genannt, wird
+ dann mit dem bisherigen Bestwert verglichen.
+ Sollte die neue Accuracy besser sein als der bisherige Spitzenwert, so
+ werden die Gewichte des Netzes gespeichert und der neue Bestwert wird sich
+ gemerkt.dadurch soll ein Overfitting des Netzes vermieden werden.
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
 inline false
 status open
@@ -1085,29 +1088,9 @@ def main():
 \end_inset
 
 
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "alg:Trainieren-des-Netzwerkes"
-
-\end_inset
-
-Trainieren des Netzwerkes
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
+\begin_layout Standard
 
 \end_layout
 
@@ -1173,7 +1156,7 @@ Point Plot Beispiel
 \end_layout
 
 \begin_layout Subsection
-Solaranlage
+Solaranlagen
 \end_layout
 
 \begin_layout Subsection
