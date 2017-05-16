@@ -677,6 +677,27 @@ Verzeichnis verwendeter Abkürzungen
 
 \begin_layout Standard
 Verzeichnis verwendeter Begriffe und deren Bedeutung (Glossar)
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "API"
+description "Eine Programmierschnittstelle, genauer Schnittstelle zur Anwendungsprogrammierung, häufig nur kurz API genannt (englisch application programming interface, wörtlich ‚Anwendungs­programmier­schnittstelle‘), ist ein Programmteil, der von einem Softwaresystem anderen Programmen zur Anbindung an das System zur Verfügung gestellt wird."
+
+\end_inset
+
+
 \begin_inset Newpage newpage
 \end_inset
 
@@ -716,6 +737,10 @@ Inhalt der Arbeit
 Einleitung und Motivation
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
 \begin_layout Itemize
 Bildanalyse mittels Deeplearning
 \end_layout
@@ -728,9 +753,18 @@ Marketing
 Datenanreicherung
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Konkretisierung der Aufgabenstellung
 \end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Itemize
 Vorgabe der Daten von NWT
@@ -758,8 +792,22 @@ logisch
 Programmiersprache: Python
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Stand der Technik
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+PlaNet - Photo Geolocation with Convolutional Neural Networks : https://arxiv.org
+/abs/1602.05314
 \end_layout
 
 \begin_layout Itemize
@@ -768,6 +816,11 @@ CNN
 
 \begin_layout Itemize
 Keras
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -815,6 +868,7 @@ Ergebnisse
 
 \begin_layout Standard
 Das System zur Merkmalserkennung besteht aus drei Kernbausteinen.
+ (s
 \end_layout
 
 \begin_layout Itemize
@@ -835,7 +889,7 @@ Der Trainingsvorgabe, welche zum Trainieren des Netzes benutzt wird.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -873,6 +927,10 @@ Datenflussdiagramm
 Satellitenbilder
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
 \begin_layout Itemize
 Satellitenbilder / Flugzeugbilder
 \end_layout
@@ -903,18 +961,26 @@ Tiles
 \end_layout
 
 \end_deeper
-\begin_layout Subsubsection
-Google Static Maps API
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Satellitenbilder bilden die Grundlage der Input-Daten für das Netz.
+ Da eine eigenständige Erzeugung einen viel zu hohen Aufwand bedeuten würde,
+ werden stattdessen Bilder verwendet, die mittels der Google Static Maps
+ API erzeugt wurden.
+ Dafür sind entweder die GPS-Koordinaten oder die Adresse des Grundstückes
+ notwendig.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-Kann vllt entfernt werden
-\end_layout
-
-\end_inset
-
-
+Google Static Maps API
 \end_layout
 
 \begin_layout Itemize
@@ -923,37 +989,14 @@ Bilder werden auf Bedarf erzeugt und heruntergeladen
 
 \begin_layout Itemize
 Unterschied zwischen XY und Adresse
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Bereits in Satellitenbilder-Block?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Itemize
 API-Key und Limitierungen
 \end_layout
 
-\begin_layout Subsubsection
-Bing Maps
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
 \begin_layout Plain Layout
-Kann vllt entfernt werden
-\end_layout
-
-\end_inset
-
-
+Bing Maps
 \end_layout
 
 \begin_layout Itemize
@@ -962,6 +1005,11 @@ Bereits heruntergeladen mit zugehöriger CSV-Datei
 
 \begin_layout Itemize
 Tiles
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1011,6 +1059,16 @@ SQLite
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Trainingsdaten geben dem Netz den gewünschten Output vor und werden dementsprech
+end zu dessem Training verwendet.
+\end_layout
+
+\begin_layout Standard
+Das Erzeugen der Trainingsdaten ist in der Regel ein aufwändiger Prozess
+ und stark vom gewünschten zu erkennenden Merkmal abhängig.
 \end_layout
 
 \begin_layout Subsection
@@ -1098,6 +1156,10 @@ def main():
 Experimente
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
 \begin_layout Itemize
 Plot Point (siehe 
 \begin_inset CommandInset ref
@@ -1111,6 +1173,11 @@ reference "fig:Point-Plot-Beispiel"
 
 \begin_layout Itemize
 Liste mit Adressen für bestimmtes Merkmal
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1171,12 +1238,21 @@ Ergebnisse
 Ausblick
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
 \begin_layout Itemize
 Verbesserung der API
 \end_layout
 
 \begin_layout Itemize
 Anwendung zum Suchen bestimmter Merkmale
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
