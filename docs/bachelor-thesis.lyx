@@ -845,7 +845,7 @@ Datenflussdiagramm
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Satellitenbilder
 \end_layout
 
@@ -879,8 +879,18 @@ Tiles
 \end_layout
 
 \end_deeper
-\begin_layout Subsection
+\begin_layout Subsubsection
 Google Static Maps API
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Kann vllt entfernt werden
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -905,8 +915,18 @@ Bereits in Satellitenbilder-Block?
 API-Key und Limitierungen
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Bing Maps
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Kann vllt entfernt werden
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -917,7 +937,7 @@ Bereits heruntergeladen mit zugehöriger CSV-Datei
 Tiles
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Erzeugung der Trainingsdaten
 \end_layout
 
@@ -957,7 +977,7 @@ SQLite
 \end_layout
 
 \end_deeper
-\begin_layout Section
+\begin_layout Subsection
 Erstellen eines Neuronalen Netzes
 \end_layout
 
@@ -994,7 +1014,7 @@ Aufbau des Netzes
 \begin_layout Itemize
 Training (siehe 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "alg:Trainieren-des-Netzwerkes"
 
 \end_inset
@@ -1092,7 +1112,7 @@ Trainieren des Netzwerkes
 \end_layout
 
 \begin_layout Section
-Ergebnisse
+Experimente
 \end_layout
 
 \begin_layout Itemize
@@ -1108,6 +1128,10 @@ reference "fig:Point-Plot-Beispiel"
 
 \begin_layout Itemize
 Liste mit Adressen für bestimmtes Merkmal
+\end_layout
+
+\begin_layout Subsection
+Postleitzahl
 \end_layout
 
 \begin_layout Standard
@@ -1146,6 +1170,18 @@ Point Plot Beispiel
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Solaranlage
+\end_layout
+
+\begin_layout Subsection
+Schulen
+\end_layout
+
+\begin_layout Section
+Ergebnisse
 \end_layout
 
 \begin_layout Section
