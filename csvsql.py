@@ -53,7 +53,7 @@ def convert_sql_to_csv(database, csvfile):
     fieldnames = c.fetchone().keys()
 
     # Create csvWriter
-    from training_data_generator import csvWriter
+    from csvhelper import csvWriter
     csvwriter = csvWriter(csvfile, fieldnames)
 
     # Write rows

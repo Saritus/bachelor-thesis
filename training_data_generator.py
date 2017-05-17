@@ -1,36 +1,9 @@
 # Load csv file
-import csv
-
-
-class csvReader:
-    def __init__(self, filename, delimiter='\t'):
-        self.csvfile = open(filename)
-        self.reader = csv.DictReader(self.csvfile, delimiter=delimiter)
-
-    def next(self):
-        row = self.reader.next()
-        return row
-
-    def fieldnames(self):
-        return self.reader.fieldnames
-
-
-class csvWriter:
-    def __init__(self, filename, fieldnames, delimiter='\t'):
-        self.csvfile = open(filename, 'w')
-        self.writer = csv.DictWriter(self.csvfile, fieldnames=fieldnames, delimiter=delimiter)
-        self.writer.writeheader()
-
-    def writerow(self, row):
-        self.writer.writerow(row)
-
-    def writerows(self, rows):
-        for row in rows:
-            self.writerow(row)
-
 
 from Tkinter import *
 from PIL import ImageTk
+
+from csvhelper import csvReader, csvWriter
 
 
 class App:
@@ -41,7 +14,7 @@ class App:
 
         # CSV
         self.csvreader = csvReader('images/infopunks_v2/data.csv', delimiter=',')
-        fieldnames = self.csvreader.fieldnames()
+        fieldnames = self.csvreader.fieldnames
         fieldnames.append('Solar')
         self.csvwriter = csvWriter('images/infopunks_v2/Output.csv', fieldnames, delimiter=',')
         self.row = self.csvreader.next()

@@ -1,5 +1,40 @@
-from functions import ensure_dir
-from images import load_image, download_image
+import csv
+
+
+class csvReader:
+    def __init__(self, filename, delimiter='\t'):
+        self.csvfile = open(filename)
+        self.reader = csv.DictReader(self.csvfile, delimiter=delimiter)
+        self.__table()
+        self.__count = 0
+
+    def next(self):
+        row = self.table[self.__count]
+        self.__count += 1
+        return row
+
+    @property
+    def fieldnames(self):
+        return self.reader.fieldnames
+
+    def __table(self):
+        self.table = []
+        for row in self.reader:
+            self.table.extend([row])
+
+
+class csvWriter:
+    def __init__(self, filename, fieldnames, delimiter='\t'):
+        self.csvfile = open(filename, 'w')
+        self.writer = csv.DictWriter(self.csvfile, fieldnames=fieldnames, delimiter=delimiter, lineterminator='\n')
+        self.writer.writeheader()
+
+    def writerow(self, row):
+        self.writer.writerow(row)
+
+    def writerows(self, rows):
+        for row in rows:
+            self.writerow(row)
 
 
 def load_csv(filename):
@@ -8,29 +43,18 @@ def load_csv(filename):
     X_images = []
     Coordinates = []
 
-    import csv
-    csvfile = open(filename)
-    reader = csv.DictReader(csvfile, delimiter='\t')
+    reader = csvReader(filename)
 
-    count = 0
-    for row in reader:
-        if count > 10000:
-            break
-        count += 1
+    for row in reader.table[:100]:
+        # Load image
+        from images import get_image
+        image = get_image(row, "google")
 
-        filepath = "images/google-xy/" + row['ZipCode'].zfill(5) + "/" + row['House_ID'] + ".jpg"
-        ensure_dir(filepath)
+        # Convert image into numpy array
+        from scipy.misc import fromimage
+        img = fromimage(image)
 
-        # Fill image input array
-        img = None
-        while img is None:
-            try:
-                # Load image from hard disk
-                img = load_image(filepath, (100, 100))
-            except IOError:
-                # Download image from GoogleMaps API
-                download_image(filepath, row)
-                print count
+        # Add numpy array to images array
         X_images.extend([img])
 
         # Fill coordinates array
@@ -71,25 +95,20 @@ def load_csv(filename):
 
 
 def main():
+    # Reader
+    reader = csvReader("nwt-data/Gebaeude_Dresden_shuffle.csv")
+    fieldnames = reader.fieldnames
+
+    fieldnames.extend(['test'])
+    table = []
+    for row in reader.table:
+        table.extend([row])
+
+    # Writer
+    writer = csvWriter("nwt-data/Output.csv", fieldnames)
+    writer.writerows(table)
+
     load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
-
-    import csv
-
-    with open('nwt-data/Gebaeude_Dresden.csv') as csvfile:
-        reader = csv.DictReader(csvfile, delimiter='\t')
-        xcoords = []
-        ycoords = []
-        zipcodes = []
-        flags = []
-
-        for row in reader:
-            xcoords.extend([float(row['X_Coordinate'].replace(',', '.'))])
-            ycoords.extend([float(row['Y_Coordinate'].replace(',', '.'))])
-            zipcodes.extend([float(hash(row['ZipCode'])) % 17])
-            flags.extend([float(row['Flag_Coordinates'])])
-
-    from visualize import point_plot
-    point_plot(xcoords, ycoords, zipcodes)
 
 
 if __name__ == "__main__":
