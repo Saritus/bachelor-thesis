@@ -49,6 +49,7 @@ xleftmargin = 15pt}
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement h
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -750,10 +751,6 @@ Verzeichnis verwendeter Abkürzungen
 \end_layout
 
 \begin_layout Standard
-Verzeichnis verwendeter Begriffe und deren Bedeutung (Glossar)
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset nomencl_print
 LatexCommand printnomenclature
 set_width "auto"
@@ -768,6 +765,14 @@ set_width "auto"
 LatexCommand nomenclature
 symbol "API"
 description "Eine Programmierschnittstelle, genauer Schnittstelle zur Anwendungsprogrammierung, häufig nur kurz API genannt (englisch application programming interface, wörtlich ‚Anwendungs­programmier­schnittstelle‘), ist ein Programmteil, der von einem Softwaresystem anderen Programmen zur Anbindung an das System zur Verfügung gestellt wird."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "MLP"
+description "A multilayer perceptron (MLP) is a feedforward artificial neural network model that maps sets of input data onto a set of appropriate outputs. An MLP consists of multiple layers of nodes in a directed graph, with each layer fully connected to the next one. Except for the input nodes, each node is a neuron (or processing element) with a nonlinear activation function. MLP utilizes a supervised learning technique called backpropagation for training the network. MLP is a modification of the standard linear perceptron and can distinguish data that is not linearly separable."
 
 \end_inset
 
@@ -899,6 +904,9 @@ Keras
 
 \begin_layout Section
 Gesamtplan
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
@@ -942,7 +950,14 @@ Ergebnisse
 
 \begin_layout Standard
 Das System zur Merkmalserkennung besteht aus drei Kernbausteinen.
- (s
+ (siehe 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Datenfluss"
+
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Itemize
@@ -1219,10 +1234,6 @@ def main():
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
