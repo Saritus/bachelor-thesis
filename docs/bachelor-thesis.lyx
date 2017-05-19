@@ -719,7 +719,7 @@ Abgabetermin:
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -835,6 +835,22 @@ Datenanreicherung
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes gld
+\end_inset
+
+Ein Bild sagt mehr als tausend Worte
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Doch gilt dies für alle Bilder? Und was sind das für Worte? Mit dem Aufkommen
+ von Deeplearning und der hochwertige Möglichkeiten der Bildanalyse eines
+ Convolutional Neural Networks ist die Wissenschaft der Feature-Detection
+ in den letzten Jahren weit vorangeschritten.
+ 
 \end_layout
 
 \begin_layout Section
