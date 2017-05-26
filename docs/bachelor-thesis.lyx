@@ -1174,6 +1174,9 @@ end zu dessem Training verwendet.
 \begin_layout Standard
 Das Erzeugen der Trainingsdaten ist in der Regel ein aufwändiger Prozess
  und stark vom gewünschten zu erkennenden Merkmal abhängig.
+ Neben der großen Menge an Trainingsdaten, die zum Trainieren eines Netzes
+ benötigt werden, sind manche Merkmale nicht leicht mit dem menschlichen
+ Auge zu erkennen.
 \end_layout
 
 \begin_layout Subsection
