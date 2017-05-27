@@ -10,6 +10,9 @@ nwt-data/
 # Images
 images/
 
+# Related work
+related work/
+
 # Special file extensions
 *.pkl
 *.h5
