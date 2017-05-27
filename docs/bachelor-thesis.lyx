@@ -897,6 +897,21 @@ Stand der Technik
 \end_layout
 
 \begin_layout Standard
+Im Projekt 
+\begin_inset Quotes gld
+\end_inset
+
+PlaNet - Photo Geolocation with Convolutional Neural Networks
+\begin_inset Quotes grd
+\end_inset
+
+ konnte bereits gezeigt werden, dass ein Convolutional Neural Network in
+ der Lage ist, den Aufnahmeort eines Fotos auf durchschnittlich 1200km genau
+ zu bestimmen.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
@@ -1078,6 +1093,7 @@ Die Satellitenbilder bilden die Grundlage der Input-Daten für das Netz.
  API erzeugt wurden.
  Dafür sind entweder die GPS-Koordinaten oder die Adresse des Grundstückes
  notwendig.
+ 
 \end_layout
 
 \begin_layout Standard
