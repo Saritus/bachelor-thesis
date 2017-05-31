@@ -1093,7 +1093,11 @@ Die Satellitenbilder bilden die Grundlage der Input-Daten für das Netz.
  API erzeugt wurden.
  Dafür sind entweder die GPS-Koordinaten oder die Adresse des Grundstückes
  notwendig.
- 
+\end_layout
+
+\begin_layout Standard
+Die Bilder werden lokal gespeichert und später zum Verarbeiten durch das
+ Netz in 2D-Arrays für den Rot-, Blau, und Grün-Channel umgewandelt.
 \end_layout
 
 \begin_layout Standard
