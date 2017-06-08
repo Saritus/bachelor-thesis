@@ -13,6 +13,9 @@ images/
 # Related work
 related work/
 
+# Forms
+forms/
+
 # Special file extensions
 *.pkl
 *.h5
