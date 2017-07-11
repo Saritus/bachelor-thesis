@@ -989,6 +989,15 @@ ConvNet
 Keras - theano
 \end_layout
 
+\begin_layout Standard
+Als Deeplearning Framework wurde Keras verwendet.
+ Es benötigt als Grundlage entweder TensorFlow, CNTK oder Theano.
+ Dadurch ist die Installation aufwändiger als bei Bibliotheken, die keine
+ zusätzlichen Voraussetzungen besitzen, jedoch erlaubt es aber auch die
+ Implementierung und damit die Vorteile von allen dreien zu benutzen.
+ 
+\end_layout
+
 \begin_layout Subsection
 matplotlib
 \begin_inset Note Note
