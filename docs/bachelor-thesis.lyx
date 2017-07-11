@@ -1012,6 +1012,27 @@ Useful?
 
 \end_layout
 
+\begin_layout Standard
+Nahezu alle Visualisierungen wurden mit matplotlib, einer Python Bibliothek
+ für graphische Darstellungen, gemacht.
+ Damit lassen sich nicht nur Grafiken erzeugen, direkt anzeigen oder abspeichern
+, sondern auch in anderen GUI-Bibliotheken wie GTK+, Qt, wxWidgets oder
+ Tk verwenden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+https://www.dataquest.io/blog/python-data-visualization-libraries/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Gesamtplan
 \end_layout
