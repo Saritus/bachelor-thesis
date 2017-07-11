@@ -939,6 +939,71 @@ Keras
 \end_layout
 
 \begin_layout Section
+Technik
+\end_layout
+
+\begin_layout Subsection
+Python
+\end_layout
+
+\begin_layout Standard
+Die verwendete Programmiersprache ist Python.
+\end_layout
+
+\begin_layout Standard
+Python besitzt viele Vorteile gegenüber anderen Programmiersprachen.
+ Es ist leicht zu lesen, wodurch man die Logik und den Ablauf eines Programmes
+ schneller erkennt.
+ Es ist unabhängig vom Betriebssystem.
+ Die große Anzahl an open-source Bibliotheken ermöglicht eine leichte Umsetzung
+ von nahezu jedem Programm.
+ Außerdem besitzt Python die größte Anzahl an Deeplearning-Bibliotheken,
+ und wird auch von großen Unternehmen und Einrichtungen in diesem Bereich
+ untersützt und vorangetrieben, wie TensorFlow von Google, CNTK von Microsoft
+ oder cuDNN von NVIDIA.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Quellen:
+\end_layout
+
+\begin_layout Plain Layout
+pros and cons of Python - http://www.infoworld.com/article/2887974/application-dev
+elopment/a-developer-s-guide-to-the-pro-s-and-con-s-of-python.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+ConvNet
+\end_layout
+
+\begin_layout Subsection
+Keras - theano
+\end_layout
+
+\begin_layout Subsection
+matplotlib
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Useful?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Gesamtplan
 \end_layout
 
