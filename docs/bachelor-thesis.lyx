@@ -1501,6 +1501,30 @@ Solaranlagen
 Schulen
 \end_layout
 
+\begin_layout Standard
+Das dritte Experiment wird die Klassifizierung von Häusern beinhalten.
+ Dafür soll ein Netz trainiert werden, welches zwischen Wohnhaus und Schule
+ unterscheiden kann.
+ Als Datengrundlage wird dafür eine Liste mit allen 204 Schulen in Dresden
+ sowie eine Liste mit zufällig ausgewählten 204 Wohnhäusern ebenfalls aus
+ dem Raum Dresden.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Dresden - ttps://www.dresden.de/de/leben/schulen/schulen-in-dresden.php
+\end_layout
+
+\begin_layout Plain Layout
+Sachsen - https://schuldatenbank.sachsen.de/index.php?id=2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Ergebnisse
 \end_layout
