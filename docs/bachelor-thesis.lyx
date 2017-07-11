@@ -959,8 +959,19 @@ Python besitzt viele Vorteile gegenüber anderen Programmiersprachen.
  von nahezu jedem Programm.
  Außerdem besitzt Python die größte Anzahl an Deeplearning-Bibliotheken,
  und wird auch von großen Unternehmen und Einrichtungen in diesem Bereich
- untersützt und vorangetrieben, wie TensorFlow von Google, CNTK von Microsoft
- oder cuDNN von NVIDIA.
+ untersützt und vorangetrieben, wie 
+\begin_inset Formula $\mathtt{TensorFlow}$
+\end_inset
+
+ von Google, 
+\begin_inset Formula $\mathtt{CNTK}$
+\end_inset
+
+ von Microsoft oder 
+\begin_inset Formula $\mathtt{cuDNN}$
+\end_inset
+
+ von NVIDIA.
 \end_layout
 
 \begin_layout Standard
@@ -991,7 +1002,19 @@ Keras - theano
 
 \begin_layout Standard
 Als Deeplearning Framework wurde Keras verwendet.
- Es benötigt als Grundlage entweder TensorFlow, CNTK oder Theano.
+ Es benötigt als Grundlage entweder 
+\begin_inset Formula $\mathtt{TensorFlow}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathtt{CNTK}$
+\end_inset
+
+ oder 
+\begin_inset Formula $\mathtt{Theano}$
+\end_inset
+
+.
  Dadurch ist die Installation aufwändiger als bei Bibliotheken, die keine
  zusätzlichen Voraussetzungen besitzen, jedoch erlaubt es aber auch die
  Implementierung und damit die Vorteile von allen dreien zu benutzen.
@@ -1016,8 +1039,23 @@ Useful?
 Nahezu alle Visualisierungen wurden mit matplotlib, einer Python Bibliothek
  für graphische Darstellungen, gemacht.
  Damit lassen sich nicht nur Grafiken erzeugen, direkt anzeigen oder abspeichern
-, sondern auch in anderen GUI-Bibliotheken wie GTK+, Qt, wxWidgets oder
- Tk verwenden.
+, sondern auch in anderen GUI-Bibliotheken wie 
+\begin_inset Formula $\mathtt{GTK+}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathtt{Qt}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathtt{wxWidgets}$
+\end_inset
+
+ oder 
+\begin_inset Formula $\mathtt{Tk}$
+\end_inset
+
+ verwenden.
 \end_layout
 
 \begin_layout Standard
