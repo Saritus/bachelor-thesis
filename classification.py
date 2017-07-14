@@ -36,42 +36,27 @@ def create_net(X_train, Y_train):
     from keras.layers import (Flatten, Dense, Convolution2D, MaxPooling2D, Merge, ZeroPadding2D)
 
     # First define the image model
-    image_processor = Sequential()
-
-    image_processor.add(ZeroPadding2D((1, 1), input_shape=X_train[0].shape[1:]))
-    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
-    image_processor.add(ZeroPadding2D((1, 1)))
-    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
-    image_processor.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
-
-    image_processor.add(ZeroPadding2D((1, 1)))
-    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
-    image_processor.add(ZeroPadding2D((1, 1)))
-    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
-    image_processor.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
-
-    image_processor.add(ZeroPadding2D((1, 1)))
-    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
-    image_processor.add(ZeroPadding2D((1, 1)))
-    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
-    image_processor.add(ZeroPadding2D((1, 1)))
-    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
-
-    image_processor.add(Flatten())  # transform image to vector
-    image_output = 512
-    image_processor.add(Dense(image_output, activation='relu'))
-
-    # Now we create the metadata model
-    metadata_processor = Sequential()
-    metadata_processor.add(Dense(256, activation='relu', input_shape=X_train[1].shape[1:]))
-    metadata_output = 256
-    metadata_processor.add(Dense(metadata_output, activation='relu'))
-    # metadata_processor.add(Dropout(0.1))
-
-    # Now we concatenate the two features and add a few more layers on top
     model = Sequential()
-    model.add(Merge([image_processor, metadata_processor], mode='concat'))  # Merge is your sensor fusion buddy
-    model.add(Dense(256, activation='relu', input_dim=image_output + metadata_output))
+
+    model.add(ZeroPadding2D((1, 1), input_shape=X_train[0].shape[1:]))
+    model.add(Convolution2D(8, (3, 3), activation='relu'))
+    model.add(ZeroPadding2D((1, 1)))
+    model.add(Convolution2D(8, (3, 3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
+
+    model.add(ZeroPadding2D((1, 1)))
+    model.add(Convolution2D(8, (3, 3), activation='relu'))
+    model.add(ZeroPadding2D((1, 1)))
+    model.add(Convolution2D(8, (3, 3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
+
+    model.add(ZeroPadding2D((1, 1)))
+    model.add(Convolution2D(8, (3, 3), activation='relu'))
+    model.add(ZeroPadding2D((1, 1)))
+    model.add(Convolution2D(8, (3, 3), activation='relu'))
+
+    model.add(Flatten())  # transform image to vector
+    model.add(Dense(512, activation='relu'))
     model.add(Dense(256, activation='relu'))
     model.add(Dense(Y_train.shape[1]))
 
