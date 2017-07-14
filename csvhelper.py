@@ -76,7 +76,7 @@ def load_csv(filename):
 
         # Fill output array
         y = [
-            int(row['ZipCode']),
+            (1 if row['Category'] == "Schule" else 0),
         ]
         Y_train.extend([y])
 
