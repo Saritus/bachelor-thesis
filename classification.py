@@ -75,7 +75,7 @@ def create_net(X_train, Y_train):
     model.add(Dense(256, activation='relu'))
     model.add(Dense(Y_train.shape[1]))
 
-    model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mae'])
+    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['binary_accuracy'])
 
     return model
 
@@ -106,7 +106,7 @@ def load_model(file_architecture, file_weights=None):
     from keras.models import model_from_json
     model = model_from_json(json_string)
 
-    model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mae'])
+    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['binary_accuracy'])
 
     # load weights from file
     if file_weights:
