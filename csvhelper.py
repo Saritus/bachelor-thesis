@@ -45,7 +45,7 @@ def load_csv(filename):
 
     reader = csvReader(filename)
 
-    for row in reader.table[:100]:
+    for row in reader.table:
         # Load image
         from images import get_image
         image = get_image(row, "google")
