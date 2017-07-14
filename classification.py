@@ -62,8 +62,8 @@ def create_net(X_train, Y_train):
     model.add(Convolution2D(8, (3, 3), activation='relu'))
 
     model.add(Flatten())  # transform image to vector
-    model.add(Dense(512, activation='relu'))
-    model.add(Dense(256, activation='relu'))
+    model.add(Dense(64, activation='relu'))
+    model.add(Dense(32, activation='relu'))
     model.add(Dense(Y_train.shape[1], activation='sigmoid'))
 
     import keras.optimizers
