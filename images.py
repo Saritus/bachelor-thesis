@@ -27,7 +27,7 @@ def combine_images(imagepaths, gridsize):
     return output
 
 
-def download_image(filepath, row, size=(640, 640), zoom=20, maptype="satellite", imageformat="png", centermode="xy"):
+def download_image(filepath, row, size=(640, 640), zoom=20, maptype="satellite", imageformat="png", centermode="address"):
     ensure_dir(filepath)
     x = row['X_Coordinate'].replace(',', '.')
     y = row['Y_Coordinate'].replace(',', '.')
