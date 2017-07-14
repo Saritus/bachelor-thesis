@@ -107,7 +107,7 @@ def main():
 
     import numpy
     avg = 0
-    while avg < 0.2 or avg > 0.8:
+    while avg < 0.3 or avg > 0.7:
         model = create_net(X_train, Y_train)
         # model = load_model("models/first_try.json", "models/first_try.h5")
 
