@@ -58,7 +58,7 @@ def create_net(X_train, Y_train):
     model.add(Flatten())  # transform image to vector
     model.add(Dense(512, activation='relu'))
     model.add(Dense(256, activation='relu'))
-    model.add(Dense(Y_train.shape[1]))
+    model.add(Dense(Y_train.shape[1], activation='sigmoid'))
 
     import keras.optimizers
     SGD = keras.optimizers.SGD(lr=0.00005, momentum=0.0, decay=0.0, nesterov=False)
