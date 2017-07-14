@@ -1,6 +1,7 @@
 from functions import ensure_dir
 from csvhelper import load_csv
 from visualize import show_acc, show_loss, show_prediction
+from keras.callbacks import ModelCheckpoint
 
 
 def load_mnist():
@@ -38,26 +39,26 @@ def create_net(X_train, Y_train):
     image_processor = Sequential()
 
     image_processor.add(ZeroPadding2D((1, 1), input_shape=X_train[0].shape[1:]))
-    image_processor.add(Convolution2D(32, (3, 3), activation='relu'))
+    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
     image_processor.add(ZeroPadding2D((1, 1)))
-    image_processor.add(Convolution2D(32, (3, 3), activation='relu'))
+    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
     image_processor.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
 
     image_processor.add(ZeroPadding2D((1, 1)))
-    image_processor.add(Convolution2D(64, (3, 3), activation='relu'))
+    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
     image_processor.add(ZeroPadding2D((1, 1)))
-    image_processor.add(Convolution2D(64, (3, 3), activation='relu'))
+    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
     image_processor.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
 
     image_processor.add(ZeroPadding2D((1, 1)))
-    image_processor.add(Convolution2D(64, (3, 3), activation='relu'))
+    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
     image_processor.add(ZeroPadding2D((1, 1)))
-    image_processor.add(Convolution2D(64, (3, 3), activation='relu'))
+    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
     image_processor.add(ZeroPadding2D((1, 1)))
-    image_processor.add(Convolution2D(64, (3, 3), activation='relu'))
+    image_processor.add(Convolution2D(8, (3, 3), activation='relu'))
 
     image_processor.add(Flatten())  # transform image to vector
-    image_output = 1024
+    image_output = 512
     image_processor.add(Dense(image_output, activation='relu'))
 
     # Now we create the metadata model
@@ -121,14 +122,15 @@ def main():
     # model = load_model("models/first_try.json", "models/first_try.h5")
 
     ## Some model and data processing constants
-    batch_size = 128
+    batch_size = 16
     nb_epoch = 50
 
+    checkpointer = ModelCheckpoint(filepath='models/weights.hdf5', verbose=1, save_best_only=True)
     history = model.fit(x=X_train, y=Y_train, batch_size=batch_size, epochs=nb_epoch,
-                        verbose=2, shuffle=True, validation_split=0.1)
+                        verbose=2, shuffle=True, validation_split=0.1, callbacks=[checkpointer])
 
     # save weights of net
-    save_model(model, "models/first_try.json", "models/first_try.h5")
+    # save_model(model, "models/first_try.json", "models/first_try.h5")
 
     # show_acc(history)
     show_loss(history)
