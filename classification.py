@@ -1,6 +1,7 @@
 from functions import ensure_dir
 from csvhelper import load_csv
 from visualize import show_acc, show_loss, show_prediction
+from keras.callbacks import ModelCheckpoint
 
 
 def load_mnist():
