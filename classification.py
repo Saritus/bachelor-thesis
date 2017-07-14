@@ -125,6 +125,7 @@ def main():
     batch_size = 16
     nb_epoch = 50
 
+    checkpointer = ModelCheckpoint(filepath='/models/weights.hdf5', verbose=1, save_best_only=True)
     history = model.fit(x=X_train, y=Y_train, batch_size=batch_size, epochs=nb_epoch,
                         verbose=2, shuffle=True, validation_split=0.1)
 
