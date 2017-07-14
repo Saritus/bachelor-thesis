@@ -86,7 +86,7 @@ def load_csv(filename):
     X_meta = numpy.asarray(X_meta, dtype=numpy.float32)
     X_images = numpy.asarray(X_images, dtype=numpy.float32)
     Y_train = numpy.asarray(Y_train, dtype=numpy.float32)
-    X_train = [X_images, X_meta]
+    X_train = [X_images]
 
     print ("X_images.shape", X_images.shape)
     print ("Y_train.shape", Y_train.shape)
