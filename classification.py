@@ -39,27 +39,21 @@ def create_net(X_train, Y_train):
     model = Sequential()
 
     model.add(ZeroPadding2D((1, 1), input_shape=X_train[0].shape[1:]))
-    model.add(Convolution2D(4, (3, 3), activation='relu'))
+    model.add(Convolution2D(8, (3, 3), activation='relu'))
     model.add(ZeroPadding2D((1, 1)))
-    model.add(Convolution2D(4, (3, 3), activation='relu'))
-    model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
+    model.add(Convolution2D(8, (3, 3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(4, 4), strides=(4, 4)))
 
     model.add(ZeroPadding2D((1, 1)))
-    model.add(Convolution2D(4, (3, 3), activation='relu'))
+    model.add(Convolution2D(8, (3, 3), activation='relu'))
     model.add(ZeroPadding2D((1, 1)))
-    model.add(Convolution2D(4, (3, 3), activation='relu'))
-    model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
+    model.add(Convolution2D(8, (3, 3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(4, 4), strides=(4, 4)))
 
     model.add(ZeroPadding2D((1, 1)))
-    model.add(Convolution2D(4, (3, 3), activation='relu'))
+    model.add(Convolution2D(8, (3, 3), activation='relu'))
     model.add(ZeroPadding2D((1, 1)))
-    model.add(Convolution2D(4, (3, 3), activation='relu'))
-    model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
-
-    model.add(ZeroPadding2D((1, 1)))
-    model.add(Convolution2D(4, (3, 3), activation='relu'))
-    model.add(ZeroPadding2D((1, 1)))
-    model.add(Convolution2D(4, (3, 3), activation='relu'))
+    model.add(Convolution2D(8, (3, 3), activation='relu'))
 
     model.add(Flatten())  # transform image to vector
     model.add(Dense(64, activation='relu'))
