@@ -59,8 +59,10 @@ def load_csv(filename):
 
         # Fill coordinates array
         coordinate = [
-            float(row['X_Coordinate'].replace(',', '.')),
-            float(row['Y_Coordinate'].replace(',', '.')),
+            (row['Street']),
+            (row['HouseNr']),
+            (row['ZipCode']),
+            (row['City'])
         ]
         Coordinates.extend([coordinate])
 
@@ -82,7 +84,7 @@ def load_csv(filename):
 
     import numpy
 
-    Coordinates = numpy.asarray(Coordinates, dtype=numpy.float32)
+    Coordinates = numpy.asarray(Coordinates, dtype=numpy.str)
     X_meta = numpy.asarray(X_meta, dtype=numpy.float32)
     X_images = numpy.asarray(X_images, dtype=numpy.float32)
     Y_train = numpy.asarray(Y_train, dtype=numpy.float32)
