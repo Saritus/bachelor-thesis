@@ -1516,8 +1516,17 @@ Das dritte Experiment wird die Klassifizierung von Häusern beinhalten.
  Dafür soll ein Netz trainiert werden, welches zwischen Wohnhaus und Schule
  unterscheiden kann.
  Als Datengrundlage wird hierfür eine Liste mit allen 204 Schulen in Dresden
- sowie 204 zufällig ausgewählte Wohnhäusern, ebenfalls aus dem Raum Dresden.
  
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SchulenDD"
+
+\end_inset
+
+, sowie 204 zufällig ausgewählte Wohnhäusern, ebenfalls aus dem Raum Dresden.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
