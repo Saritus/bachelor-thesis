@@ -1365,16 +1365,6 @@ Das neuronale Netz besteht es drei Teilen.
 \end_layout
 
 \begin_layout Standard
-Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
- und die Ergebnisse mit der Trainingsvorlage verglichen.
- Der sich daraus ergebende Genauigkeitswert, auch Accuracy genannt, wird
- dann mit dem bisherigen Bestwert verglichen.
- Sollte die neue Accuracy besser sein als der bisherige Spitzenwert, so
- werden die Gewichte des Netzes gespeichert und der neue Bestwert wird sich
- gemerkt.dadurch soll ein Overfitting des Netzes vermieden werden.
-\end_layout
-
-\begin_layout Standard
 \begin_inset listings
 inline false
 status open
@@ -1427,6 +1417,20 @@ def main():
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Training des Netzes
+\end_layout
+
+\begin_layout Standard
+Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
+ und die Ergebnisse mit der Trainingsvorlage verglichen.
+ Der sich daraus ergebende Genauigkeitswert, auch Accuracy genannt, wird
+ dann mit dem bisherigen Bestwert verglichen.
+ Sollte die neue Accuracy besser sein als der bisherige Spitzenwert, so
+ werden die Gewichte des Netzes gespeichert und der neue Bestwert wird sich
+ gemerkt.dadurch soll ein Overfitting des Netzes vermieden werden.
 \end_layout
 
 \begin_layout Section
