@@ -111,17 +111,8 @@ def load_model(file_architecture, file_weights=None):
 def main():
     (Coordinates), (X_train, Y_train) = load_csv("nwt-data/Staedte_Deutschland.csv")
 
-    import numpy
-    avg = 0
-    while avg < 0.3 or avg > 0.7:
-        model = create_net(X_train, Y_train)
-        # model = load_model("models/first_try.json", "models/first_try.h5")
-
-        prediction = model.predict(X_train)
-        print numpy.average(prediction)
-        avg = numpy.average(prediction)
-
-    print [round(nmb, 1) for nmb in prediction[:18].flatten()]
+    model = create_net(X_train, Y_train)
+    # model = load_model("models/first_try.json", "models/first_try.h5")
 
     ## Some model and data processing constants
     batch_size = 16
