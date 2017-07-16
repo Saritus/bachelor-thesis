@@ -27,7 +27,7 @@ def combine_images(imagepaths, gridsize):
     return output
 
 
-def download_image(filepath, row, size=(640, 640), zoom=20, maptype="satellite", imageformat="png", centermode="address"):
+def download_image(filepath, row, size=(640, 640), zoom=20, maptype="satellite", imageformat="png", centermode="xy"):
     ensure_dir(filepath)
     apikey = "AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
 
@@ -68,7 +68,7 @@ def center_crop_image(path, new_width, new_height):
     return im.crop((left, top, right, bottom))
 
 
-def get_image(row, api, centermode="address"):
+def get_image(row, api, centermode="xy"):
     from PIL import Image
     # Google Maps
     if api == "google":
