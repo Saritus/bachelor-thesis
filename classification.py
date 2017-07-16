@@ -81,8 +81,8 @@ def create_net(X_train, Y_train):
     model.add(Dense(Y_train.shape[1], activation='linear'))
 
     import keras.optimizers
-    SGD = keras.optimizers.SGD(lr=0.00005, momentum=0.0, decay=0.0, nesterov=False)
-    model.compile(loss='mean_absolute_error', optimizer=SGD, metrics=['mae'])
+    SGD = keras.optimizers.SGD(lr=0.0001, momentum=0.0, decay=0.0, nesterov=False)
+    model.compile(loss='mean_absolute_error', optimizer=SGD, metrics=['mse'])
 
     return model
 
