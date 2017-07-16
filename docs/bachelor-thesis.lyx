@@ -1480,6 +1480,21 @@ Training des Netzes
 \end_layout
 
 \begin_layout Standard
+Nachdem die Trainingsdaten geladen und das neuronale Netz erstellt wurden,
+ müssen die Gewichte des Netzes an das gewünschte Ziel angepasst werden.
+ Dies geschieht, indem ein Optimierer, in unserem Fall ein Stochastischer
+ Gradientenabstieg
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bottou2010large"
+
+\end_inset
+
+, in mehreren Epochen die Klassifizierung des Netzes an die Trainingsvorgabe
+ anpasst.
+\end_layout
+
+\begin_layout Standard
 Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
  und die Ergebnisse mit der Trainingsvorlage verglichen.
  Der sich daraus ergebende Genauigkeitswert wird dann mit dem bisherigen
@@ -1488,16 +1503,6 @@ Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
  so werden die Gewichte des Netzes gespeichert und der neue Bestwert wird
  sich gemerkt.
  Dadurch soll ein Overfitting des Netzes vermieden werden.
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand cite
-key "bottou2010large"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
