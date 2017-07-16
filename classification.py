@@ -127,11 +127,6 @@ def main():
     # save weights of net
     # save_model(model, "models/first_try.json", "models/first_try.h5")
 
-    # Predict
-    prediction = model.predict(X_train)
-    print [round(nmb, 1) for nmb in Y_train[:18].flatten()]
-    print [round(nmb, 1) for nmb in prediction[:18].flatten()]
-
     # show_acc(history)
     show_loss(history)
     show_prediction(model, X_train, Coordinates)
