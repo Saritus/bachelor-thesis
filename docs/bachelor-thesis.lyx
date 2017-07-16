@@ -1470,6 +1470,22 @@ Postleitzahl
 \end_layout
 
 \begin_layout Standard
+Im Gegensatz zu Längen- und Breitengrad, sind Postleitzahlen in Deutschland
+ nur bedingt geordnet.
+ Es gilt zwar das Prinzip, dass zwei zahlenmäßig nah beieinander liegende
+ Postleitzahlen sich häufig auch örtlich nah sind, jedoch ist diese Zuordnung
+ nicht konsistent.
+ Deswegen sollte es für ein Netz auch entsprechend schwerer sein, nur anhand
+ eines Satellitenbildes eines Hauses die Postleitzahlen von eben diesem
+ zu bestimmen.
+\end_layout
+
+\begin_layout Standard
+Die Trainingdaten bestehen aus ca.
+ 65000 Häusern in Dresden.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
