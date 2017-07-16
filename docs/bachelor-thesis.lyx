@@ -1404,6 +1404,23 @@ Das neuronale Netz besteht es drei Teilen.
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "simonyan2014very"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chollet2016building"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
 inline false
 status open
@@ -1473,6 +1490,16 @@ Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
  Dadurch soll ein Overfitting des Netzes vermieden werden.
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bottou2010large"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Experimente
 \end_layout
@@ -1516,6 +1543,17 @@ key "weyand2016planet"
  besteht der erste Versuch daraus, die GPS-Koordinaten, das heißt sowohl
  Längen-, als auch Breitengrad, eines Satellitenbildes zu bestimmen, ohne
  dafür zusätzliche Metadaten für das Bild zu besitzen.
+\end_layout
+
+\begin_layout Standard
+Die Trainingsdaten sind 6300 Städte und Orte in Deutschland.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "StaedteDE"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
