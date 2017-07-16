@@ -1446,7 +1446,7 @@ status collapsed
 Plot Point (siehe 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Point-Plot-Beispiel"
+reference "fig:pp_plz_dd"
 
 \end_inset
 
@@ -1519,11 +1519,11 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Point-Plot-Beispiel"
+name "fig:pp_plz_dd"
 
 \end_inset
 
-Point Plot Beispiel
+Postleitzahlenbereiche in Dresden
 \end_layout
 
 \end_inset
