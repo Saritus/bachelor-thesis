@@ -49,6 +49,8 @@ def load_csv(filename):
         # Load image
         from images import get_image
         image = get_image(row, "google")
+        from PIL import Image
+        image = image.resize((256, 256), Image.ANTIALIAS)
 
         # Convert image into numpy array
         from scipy.misc import fromimage
