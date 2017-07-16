@@ -1584,7 +1584,7 @@ Anwendung zum Suchen bestimmter Merkmale
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintAll"
-bibfiles "IEEEfull,bibtex/bachelor"
+bibfiles "bibtex/bachelor"
 options "plain"
 
 \end_inset
