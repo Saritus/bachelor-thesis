@@ -103,7 +103,7 @@ def load_model(file_architecture, file_weights=None):
 
 
 def main():
-    (Coordinates), (X_train, Y_train) = load_csv("nwt-data/Schulen_Hauser_Dresden.csv")
+    (Coordinates), (X_train, Y_train) = load_csv("nwt-data/Staedte_Deutschland.csv")
 
     import numpy
     avg = 0
