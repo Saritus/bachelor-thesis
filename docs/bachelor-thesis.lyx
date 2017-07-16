@@ -1357,7 +1357,7 @@ Das Erzeugen der Trainingsdaten ist in der Regel ein aufwändiger Prozess
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1465,11 +1465,12 @@ Training des Netzes
 \begin_layout Standard
 Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
  und die Ergebnisse mit der Trainingsvorlage verglichen.
- Der sich daraus ergebende Genauigkeitswert, auch Accuracy genannt, wird
- dann mit dem bisherigen Bestwert verglichen.
- Sollte die neue Accuracy besser sein als der bisherige Spitzenwert, so
- werden die Gewichte des Netzes gespeichert und der neue Bestwert wird sich
- gemerkt.dadurch soll ein Overfitting des Netzes vermieden werden.
+ Der sich daraus ergebende Genauigkeitswert wird dann mit dem bisherigen
+ Bestwert verglichen.
+ Sollte die neue Klassifizierung besser sein als der bisherige Spitzenwert,
+ so werden die Gewichte des Netzes gespeichert und der neue Bestwert wird
+ sich gemerkt.
+ Dadurch soll ein Overfitting des Netzes vermieden werden.
 \end_layout
 
 \begin_layout Section
