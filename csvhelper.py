@@ -68,7 +68,7 @@ def load_csv(filename):
         x = [
             # float(row['X_Coordinate'].replace(',', '.')),
             # float(row['Y_Coordinate'].replace(',', '.')),
-            float(hash(row['ZipCode'])),
+            float(hash(row['ORT'])),
             # float(hash(row['Street'])) % 100,
             # float(row['ZipCode']),
         ]
