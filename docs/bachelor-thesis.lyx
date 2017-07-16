@@ -1551,7 +1551,7 @@ key "weyand2016planet"
 \end_layout
 
 \begin_layout Standard
-Die Trainingsdaten sind 6300 Städte und Orte in Deutschland.
+Die Trainingsdaten sind 6337 Städte und Orte in Deutschland.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "StaedteDE"
