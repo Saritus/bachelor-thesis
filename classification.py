@@ -129,8 +129,8 @@ def main():
     # model = load_model("models/first_try.json", "models/first_try.h5")
 
     ## Some model and data processing constants
-    batch_size = 16
-    nb_epoch = 50
+    batch_size = 32
+    nb_epoch = 100
 
     checkpointer = ModelCheckpoint(filepath='models/cityDE.hdf5', verbose=1, save_best_only=True)
     history = model.fit(x=X_train, y=Y_train,
