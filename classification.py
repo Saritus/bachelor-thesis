@@ -42,13 +42,19 @@ def create_net(X_train, Y_train):
     model.add(Convolution2D(8, (3, 3), activation='relu'))
     model.add(ZeroPadding2D((1, 1)))
     model.add(Convolution2D(8, (3, 3), activation='relu'))
-    model.add(MaxPooling2D(pool_size=(4, 4), strides=(4, 4)))
+    model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
 
     model.add(ZeroPadding2D((1, 1)))
     model.add(Convolution2D(8, (3, 3), activation='relu'))
     model.add(ZeroPadding2D((1, 1)))
     model.add(Convolution2D(8, (3, 3), activation='relu'))
-    model.add(MaxPooling2D(pool_size=(4, 4), strides=(4, 4)))
+    model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
+
+    model.add(ZeroPadding2D((1, 1)))
+    model.add(Convolution2D(8, (3, 3), activation='relu'))
+    model.add(ZeroPadding2D((1, 1)))
+    model.add(Convolution2D(8, (3, 3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
 
     model.add(ZeroPadding2D((1, 1)))
     model.add(Convolution2D(8, (3, 3), activation='relu'))
@@ -56,13 +62,13 @@ def create_net(X_train, Y_train):
     model.add(Convolution2D(8, (3, 3), activation='relu'))
 
     model.add(Flatten())  # transform image to vector
-    model.add(Dense(64, activation='relu'))
-    model.add(Dense(32, activation='relu'))
-    model.add(Dense(Y_train.shape[1], activation='sigmoid'))
+    model.add(Dense(512, activation='relu'))
+    model.add(Dense(256, activation='relu'))
+    model.add(Dense(Y_train.shape[1], activation='linear'))
 
     import keras.optimizers
     SGD = keras.optimizers.SGD(lr=0.00005, momentum=0.0, decay=0.0, nesterov=False)
-    model.compile(loss='mean_squared_error', optimizer=SGD, metrics=['binary_accuracy'])
+    model.compile(loss='mean_absolute_error', optimizer=SGD, metrics=['mae'])
 
     return model
 
