@@ -1479,6 +1479,44 @@ key "weyand2016planet"
  dafür zusätzliche Metadaten für das Bild zu besitzen.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/pp_staedte_de.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pp_staedte_de"
+
+\end_inset
+
+Städte und Orte in Deutschland
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Postleitzahl
 \end_layout
