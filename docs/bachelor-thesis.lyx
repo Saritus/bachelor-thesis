@@ -1465,6 +1465,19 @@ Liste mit Adressen für bestimmtes Merkmal
 x-, y-Koordinaten
 \end_layout
 
+\begin_layout Standard
+In Anlehnung an das Projekt von PlaNet
+\begin_inset CommandInset citation
+LatexCommand cite
+key "weyand2016planet"
+
+\end_inset
+
+ besteht der erste Versuch daraus, die GPS-Koordinaten, das heißt sowohl
+ Längen-, als auch Breitengrad, eines Satellitenbildes zu bestimmen, ohne
+ dafür zusätzliche Metadaten für das Bild zu besitzen.
+\end_layout
+
 \begin_layout Subsection
 Postleitzahl
 \end_layout
