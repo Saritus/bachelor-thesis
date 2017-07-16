@@ -1353,6 +1353,44 @@ Das Erzeugen der Trainingsdaten ist in der Regel ein aufwändiger Prozess
  Auge zu erkennen.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/Satellite_image_example.jpg
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:satellite_image_example"
+
+\end_inset
+
+Beispiel eines Satellitenbildes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Künstliches neuronales Netz
 \end_layout
