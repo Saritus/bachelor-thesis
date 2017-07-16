@@ -72,9 +72,9 @@ def get_image(row, api, centermode="xy"):
     from PIL import Image
     # Google Maps
     if api == "google":
-        filepath = "images/google-{}/{}/{}.jpg"
-        address = "{}+{}+{}+{}".format(row['Street'], row['HouseNr'], row['ZipCode'].zfill(5), row['City'])
-        filepath = filepath.format(centermode, row['ZipCode'].zfill(5), address)
+        filepath = "images/google-{}/{}/{}-{}.jpg"
+        #address = "{}+{}+{}+{}".format(row['Street'], row['HouseNr'], row['ZipCode'].zfill(5), row['City'])
+        filepath = filepath.format(centermode, 'Citys', row['X_Coordinate'], row['Y_Coordinate'])
         pilImage = None
         while pilImage is None:
             try:
