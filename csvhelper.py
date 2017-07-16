@@ -59,10 +59,8 @@ def load_csv(filename):
 
         # Fill coordinates array
         coordinate = [
-            (row['Street']),
-            (row['HouseNr']),
-            (row['ZipCode']),
-            (row['City'])
+            float(row['X_Coordinate']),
+            float(row['Y_Coordinate'])
         ]
         Coordinates.extend([coordinate])
 
@@ -78,7 +76,8 @@ def load_csv(filename):
 
         # Fill output array
         y = [
-            (1 if row['Category'] == "Schule" else 0),
+            float(row['X_Coordinate']),
+            float(row['Y_Coordinate'])
         ]
         Y_train.extend([y])
 
