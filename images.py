@@ -29,16 +29,16 @@ def combine_images(imagepaths, gridsize):
 
 def download_image(filepath, row, size=(640, 640), zoom=20, maptype="satellite", imageformat="png", centermode="address"):
     ensure_dir(filepath)
-    x = row['X_Coordinate'].replace(',', '.')
-    y = row['Y_Coordinate'].replace(',', '.')
-    address = "{}+{}+{}+{}".format(row['Street'], row['HouseNr'], row['ZipCode'].zfill(5), row['City'])
     apikey = "AIzaSyC9d7-JkZseVB_YW9bdIAaFCbQRLTKGaNY"
 
     import urllib
     urlpath = "http://maps.google.com/maps/api/staticmap"
     if centermode == "xy":  # Latitude and Longitude
+        x = row['X_Coordinate'].replace(',', '.')
+        y = row['Y_Coordinate'].replace(',', '.')
         urlpath += "?center={},{}".format(y, x)
     elif centermode == "address":  # Address
+        address = "{}+{}+{}+{}".format(row['Street'], row['HouseNr'], row['ZipCode'].zfill(5), row['City'])
         urlpath += "?center={}".format(address)
     else:
         raise ValueError("Invalid centermode: {}. Use xy or address instead.".format(centermode))
