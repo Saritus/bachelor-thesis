@@ -121,8 +121,8 @@ def main():
     checkpointer = ModelCheckpoint(filepath='models/cityDE.hdf5', verbose=1, save_best_only=True)
     history = model.fit(x=X_train, y=Y_train,
                         batch_size=batch_size, epochs=nb_epoch,
-                        verbose=2, shuffle=True,
-                        validation_split=0.20, callbacks=[checkpointer])
+                        verbose=1, shuffle=True,
+                        validation_split=0.1, callbacks=[checkpointer])
 
     # save weights of net
     # save_model(model, "models/first_try.json", "models/first_try.h5")
