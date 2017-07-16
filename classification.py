@@ -33,37 +33,51 @@ def load_mnist():
 
 def create_net(X_train, Y_train):
     from keras.models import Sequential
-    from keras.layers import (Flatten, Dense, Convolution2D, MaxPooling2D, Merge, ZeroPadding2D)
+    from keras.layers import (Flatten, Dense, Convolution2D, MaxPooling2D, Merge, ZeroPadding2D, Dropout)
 
     # First define the image model
     model = Sequential()
-
     model.add(ZeroPadding2D((1, 1), input_shape=X_train[0].shape[1:]))
-    model.add(Convolution2D(8, (3, 3), activation='relu'))
+    model.add(Convolution2D(16, (3, 3), activation='relu'))
     model.add(ZeroPadding2D((1, 1)))
-    model.add(Convolution2D(8, (3, 3), activation='relu'))
-    model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
+    model.add(Convolution2D(16, (3, 3), activation='relu'))
+    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
 
     model.add(ZeroPadding2D((1, 1)))
-    model.add(Convolution2D(8, (3, 3), activation='relu'))
+    model.add(Convolution2D(32, (3, 3), activation='relu'))
     model.add(ZeroPadding2D((1, 1)))
-    model.add(Convolution2D(8, (3, 3), activation='relu'))
-    model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
+    model.add(Convolution2D(32, (3, 3), activation='relu'))
+    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
 
     model.add(ZeroPadding2D((1, 1)))
-    model.add(Convolution2D(8, (3, 3), activation='relu'))
+    model.add(Convolution2D(64, (3, 3), activation='relu'))
     model.add(ZeroPadding2D((1, 1)))
-    model.add(Convolution2D(8, (3, 3), activation='relu'))
-    model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
+    model.add(Convolution2D(64, (3, 3), activation='relu'))
+    model.add(ZeroPadding2D((1, 1)))
+    model.add(Convolution2D(64, (3, 3), activation='relu'))
+    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
 
     model.add(ZeroPadding2D((1, 1)))
-    model.add(Convolution2D(8, (3, 3), activation='relu'))
+    model.add(Convolution2D(128, (3, 3), activation='relu'))
     model.add(ZeroPadding2D((1, 1)))
-    model.add(Convolution2D(8, (3, 3), activation='relu'))
+    model.add(Convolution2D(128, (3, 3), activation='relu'))
+    model.add(ZeroPadding2D((1, 1)))
+    model.add(Convolution2D(128, (3, 3), activation='relu'))
+    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
 
-    model.add(Flatten())  # transform image to vector
-    model.add(Dense(512, activation='relu'))
-    model.add(Dense(256, activation='relu'))
+    #model.add(ZeroPadding2D((1, 1)))
+    #model.add(Convolution2D(512, (3, 3), activation='relu'))
+    #model.add(ZeroPadding2D((1, 1)))
+    #model.add(Convolution2D(512, (3, 3), activation='relu'))
+    #model.add(ZeroPadding2D((1, 1)))
+    #model.add(Convolution2D(512, (3, 3), activation='relu'))
+    #model.add(MaxPooling2D((2, 2), strides=(2, 2)))
+
+    model.add(Flatten())
+    model.add(Dense(1024, activation='relu'))
+    model.add(Dropout(0.5))
+    model.add(Dense(1024, activation='relu'))
+    model.add(Dropout(0.5))
     model.add(Dense(Y_train.shape[1], activation='linear'))
 
     import keras.optimizers
