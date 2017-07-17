@@ -96,19 +96,32 @@ def load_csv(filename):
 
 def main():
     # Reader
-    reader = csvReader("nwt-data/Gebaeude_Dresden_shuffle.csv")
+    reader = csvReader("nwt-data/Staedte_Deutschland_zufall.csv")
     fieldnames = reader.fieldnames
 
-    fieldnames.extend(['test'])
-    table = []
+    xpos = []
+    ypos = []
+
     for row in reader.table:
-        table.extend([row])
+        X_Coordinate = row['X_Coordinate']
+        X_float = float(X_Coordinate)
+        xpos.extend([X_float])
 
-    # Writer
-    writer = csvWriter("nwt-data/Output.csv", fieldnames)
-    writer.writerows(table)
+        Y_Coordinate = row['Y_Coordinate']
+        Y_float = float(Y_Coordinate)
+        ypos.extend([Y_float])
 
-    load_csv("nwt-data/Gebaeude_Dresden_shuffle.csv")
+        if Y_float < 45:
+            print row
+
+        if len(xpos) != len(ypos):
+            print row, len(xpos), len(ypos)
+
+    print len(xpos)
+    print len(ypos)
+
+    from visualize import point_plot
+    point_plot(xpos, ypos)
 
 
 if __name__ == "__main__":

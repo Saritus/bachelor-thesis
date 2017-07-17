@@ -709,7 +709,8 @@ Abgabetermin:
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+27.
+ Juli 2017
 \end_layout
 
 \end_inset
@@ -939,7 +940,13 @@ Keras
 \end_layout
 
 \begin_layout Section
-Technik
+Verwendete Technik
+\end_layout
+
+\begin_layout Standard
+Die Möglichkeiten der Technik sind vielzählig.
+ Von der Programmiersprache, über die verwendete Netzstruktur, die Bibliotheken
+ und Module, bis hin zu Interfacespezifika und Visualisierungen.
 \end_layout
 
 \begin_layout Subsection
@@ -1346,6 +1353,44 @@ Das Erzeugen der Trainingsdaten ist in der Regel ein aufwändiger Prozess
  Auge zu erkennen.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/Satellite_image_example.jpg
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:satellite_image_example"
+
+\end_inset
+
+Beispiel eines Satellitenbildes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Künstliches neuronales Netz
 \end_layout
@@ -1359,13 +1404,20 @@ Das neuronale Netz besteht es drei Teilen.
 \end_layout
 
 \begin_layout Standard
-Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
- und die Ergebnisse mit der Trainingsvorlage verglichen.
- Der sich daraus ergebende Genauigkeitswert, auch Accuracy genannt, wird
- dann mit dem bisherigen Bestwert verglichen.
- Sollte die neue Accuracy besser sein als der bisherige Spitzenwert, so
- werden die Gewichte des Netzes gespeichert und der neue Bestwert wird sich
- gemerkt.dadurch soll ein Overfitting des Netzes vermieden werden.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "simonyan2014very"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chollet2016building"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1423,6 +1475,36 @@ def main():
 
 \end_layout
 
+\begin_layout Subsection
+Training des Netzes
+\end_layout
+
+\begin_layout Standard
+Nachdem die Trainingsdaten geladen und das neuronale Netz erstellt wurden,
+ müssen die Gewichte des Netzes an das gewünschte Ziel angepasst werden.
+ Dies geschieht, indem ein Optimierer, in unserem Fall ein Stochastischer
+ Gradientenabstieg
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bottou2010large"
+
+\end_inset
+
+, in mehreren Epochen die Klassifizierung des Netzes an die Trainingsvorgabe
+ anpasst.
+\end_layout
+
+\begin_layout Standard
+Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
+ und die Ergebnisse mit der Trainingsvorlage verglichen.
+ Der sich daraus ergebende Genauigkeitswert wird dann mit dem bisherigen
+ Bestwert verglichen.
+ Sollte die neue Klassifizierung besser sein als der bisherige Spitzenwert,
+ so werden die Gewichte des Netzes gespeichert und der neue Bestwert wird
+ sich gemerkt.
+ Dadurch soll ein Overfitting des Netzes vermieden werden.
+\end_layout
+
 \begin_layout Section
 Experimente
 \end_layout
@@ -1435,7 +1517,7 @@ status collapsed
 Plot Point (siehe 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Point-Plot-Beispiel"
+reference "fig:pp_plz_dd"
 
 \end_inset
 
@@ -1452,7 +1534,31 @@ Liste mit Adressen für bestimmtes Merkmal
 \end_layout
 
 \begin_layout Subsection
-Postleitzahl
+x-, y-Koordinaten
+\end_layout
+
+\begin_layout Standard
+In Anlehnung an das Projekt von PlaNet
+\begin_inset CommandInset citation
+LatexCommand cite
+key "weyand2016planet"
+
+\end_inset
+
+ besteht der erste Versuch daraus, die GPS-Koordinaten, das heißt sowohl
+ Längen-, als auch Breitengrad, eines Satellitenbildes zu bestimmen, ohne
+ dafür zusätzliche Metadaten für das Bild zu besitzen.
+\end_layout
+
+\begin_layout Standard
+Die Trainingsdaten sind 6337 Städte und Orte in Deutschland.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "StaedteDE"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1464,7 +1570,7 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/point_plot.png
+	filename img/pp_staedte_de.png
 	lyxscale 50
 	width 100col%
 
@@ -1476,11 +1582,106 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Point-Plot-Beispiel"
+name "fig:pp_staedte_de"
 
 \end_inset
 
-Point Plot Beispiel
+Städte und Orte in Deutschland
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/staedte_result_boxplot.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:staedte_result_boxplot.png"
+
+\end_inset
+
+Abweichungen der Netzvorhersagen vom Vorgabewert
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Postleitzahl
+\end_layout
+
+\begin_layout Standard
+Im Gegensatz zu Längen- und Breitengrad, sind Postleitzahlen in Deutschland
+ nur bedingt geordnet.
+ Es gilt zwar das Prinzip, dass zwei zahlenmäßig nah beieinander liegende
+ Postleitzahlen sich häufig auch örtlich nah sind, jedoch ist diese Zuordnung
+ nicht konsistent.
+ Deswegen sollte es für ein Netz auch entsprechend schwerer sein, nur anhand
+ eines Satellitenbildes eines Hauses die Postleitzahlen von eben diesem
+ zu bestimmen.
+\end_layout
+
+\begin_layout Standard
+Die Trainingdaten bestehen aus 64390 Häusern in Dresden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/pp_plz_dd.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pp_plz_dd"
+
+\end_inset
+
+Postleitzahlenbereiche in Dresden
 \end_layout
 
 \end_inset
@@ -1506,8 +1707,17 @@ Das dritte Experiment wird die Klassifizierung von Häusern beinhalten.
  Dafür soll ein Netz trainiert werden, welches zwischen Wohnhaus und Schule
  unterscheiden kann.
  Als Datengrundlage wird hierfür eine Liste mit allen 204 Schulen in Dresden
- sowie 204 zufällig ausgewählte Wohnhäusern, ebenfalls aus dem Raum Dresden.
  
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SchulenDD"
+
+\end_inset
+
+, sowie 204 zufällig ausgewählte Wohnhäusern, ebenfalls aus dem Raum Dresden.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
@@ -1549,6 +1759,10 @@ Anwendung zum Suchen bestimmter Merkmale
 
 \end_layout
 
+\begin_layout Section
+Danksagung
+\end_layout
+
 \begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
@@ -1557,8 +1771,417 @@ Anwendung zum Suchen bestimmter Merkmale
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintAll"
-bibfiles "IEEEfull,bibtex/bachelor"
+bibfiles "bibtex/bachelor"
 options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="5">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X_train
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y_train
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X_valid
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y_valid
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Upper whisker
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.48
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.07
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.22
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.78
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3rd quartile
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.07
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.22
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.53
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Median
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.38
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.19
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.49
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.27
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1st quartile
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1.00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.99
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1.10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.80
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lower whisker
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-3.80
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-4.40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-3.81
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-3.02
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nr.
+ of data points
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5703
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5703
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+634
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+634
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ergebnisse des x-y-Koordinatenversuchs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
 
 \end_inset
 
