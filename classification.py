@@ -65,19 +65,19 @@ def create_net(X_train, Y_train):
     model.add(Convolution2D(128, (3, 3), activation='relu'))
     model.add(MaxPooling2D((2, 2), strides=(2, 2)))
 
-    #model.add(ZeroPadding2D((1, 1)))
-    #model.add(Convolution2D(512, (3, 3), activation='relu'))
-    #model.add(ZeroPadding2D((1, 1)))
-    #model.add(Convolution2D(512, (3, 3), activation='relu'))
-    #model.add(ZeroPadding2D((1, 1)))
-    #model.add(Convolution2D(512, (3, 3), activation='relu'))
-    #model.add(MaxPooling2D((2, 2), strides=(2, 2)))
+    # model.add(ZeroPadding2D((1, 1)))
+    # model.add(Convolution2D(512, (3, 3), activation='relu'))
+    # model.add(ZeroPadding2D((1, 1)))
+    # model.add(Convolution2D(512, (3, 3), activation='relu'))
+    # model.add(ZeroPadding2D((1, 1)))
+    # model.add(Convolution2D(512, (3, 3), activation='relu'))
+    # model.add(MaxPooling2D((2, 2), strides=(2, 2)))
 
     model.add(Flatten())
     model.add(Dense(1024, activation='relu'))
-    model.add(Dropout(0.5))
+    model.add(Dropout(0.1))
     model.add(Dense(1024, activation='relu'))
-    model.add(Dropout(0.5))
+    model.add(Dropout(0.1))
     model.add(Dense(Y_train.shape[1], activation='linear'))
 
     import keras.optimizers
