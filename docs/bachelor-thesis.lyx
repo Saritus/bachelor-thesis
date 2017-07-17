@@ -1599,6 +1599,44 @@ Städte und Orte in Deutschland
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/staedte_result_boxplot.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:staedte_result_boxplot.png"
+
+\end_inset
+
+Abweichungen der Netzvorhersagen vom Vorgabewert
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Postleitzahl
 \end_layout
