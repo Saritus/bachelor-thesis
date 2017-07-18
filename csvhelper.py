@@ -93,6 +93,8 @@ def load_csv(filename):
     Coordinates = numpy.asarray(Coordinates, dtype=numpy.str)
     X_meta = numpy.asarray(X_meta, dtype=numpy.float32)
     X_images = numpy.asarray(X_images, dtype=numpy.float32)
+    import keras
+    Y_train = keras.utils.to_categorical(Y_train)
     Y_train = numpy.asarray(Y_train, dtype=numpy.float32)
     X_train = [X_images]
 
