@@ -140,6 +140,19 @@ def main():
     #                    verbose=1, shuffle=True,
     #                    validation_split=0.1, callbacks=[checkpointer])
 
+    from keras.preprocessing.image import ImageDataGenerator
+    train_datagen = ImageDataGenerator(
+        rotation_range=10,
+        width_shift_range=0.1,
+        height_shift_range=0.1,
+        rescale=1. / 255,
+        shear_range=0.1,
+        zoom_range=0.2,
+        horizontal_flip=True,
+        vertical_flip=True,
+        fill_mode='reflect'
+    )
+
 
     prediction = model.predict(X_train)
     print Y_train[:10]
