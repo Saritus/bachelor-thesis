@@ -123,7 +123,7 @@ def load_model(file_architecture, file_weights=None):
 
 
 def main():
-    (Coordinates), (X_train, Y_train) = load_csv("nwt-data/Staedte_Deutschland.csv")
+    (Coordinates), (X_train, Y_train) = load_csv("nwt-data/Schulen Sachsen/schulen_sachsen_shuffle.csv")
 
     model = create_net(X_train, Y_train)
     # model = load_model("models/first_try.json", "models/first_try.h5")
