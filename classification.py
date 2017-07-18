@@ -161,6 +161,14 @@ def main():
         fill_mode='reflect'
     )
 
+    train_generator = train_datagen.flow_from_directory(
+        'images/google-address/SchoolsSA_train',
+        target_size=(256, 256),
+        batch_size=batch_size,
+        class_mode='categorical',
+        # save_to_dir='images/google-address/SchoolsSA_train_flow'
+    )
+
 
     prediction = model.predict(X_train)
     print Y_train[:10]
