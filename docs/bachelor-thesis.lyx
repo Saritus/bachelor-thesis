@@ -460,86 +460,6 @@ Medieninformatik
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Externer Betreuer:
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Ann-Christin Storms
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-New Web Technology GmbH
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
 <cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
@@ -598,6 +518,86 @@ Zweitgutachter:
 Prof.
  Dr.
  Hans-Joachim Böhme
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Externer Betreuer:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ann-Christin Storms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+New Web Technology GmbH
 \end_layout
 
 \end_inset
@@ -1117,6 +1117,44 @@ Gesamtplan
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/datenfluss_2.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Datenfluss"
+
+\end_inset
+
+Datenflussdiagramm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Das System zur Merkmalserkennung besteht aus drei Kernbausteinen.
  (siehe 
 \begin_inset CommandInset ref
@@ -1143,17 +1181,102 @@ Der Trainingsvorgabe, welche zum Trainieren des Netzes benutzt wird.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
+\begin_inset Float algorithm
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/datenfluss.PNG
-	lyxscale 50
-	width 100col%
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Load data
+\end_layout
+
+\begin_layout Plain Layout
+
+images, teach = load_csv("data.csv")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Create net
+\end_layout
+
+\begin_layout Plain Layout
+
+model = create_net(images, teach)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Create checkpointer
+\end_layout
+
+\begin_layout Plain Layout
+
+cp = ModelCheckpoint(
+\end_layout
+
+\begin_layout Plain Layout
+
+	filepath='model.hdf5'
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Train the net
+\end_layout
+
+\begin_layout Plain Layout
+
+model.fit(images, teach,
+\end_layout
+
+\begin_layout Plain Layout
+
+	batch_size=batchsize,
+\end_layout
+
+\begin_layout Plain Layout
+
+	epochs=epochs,
+\end_layout
+
+\begin_layout Plain Layout
+
+	validation_split=split,
+\end_layout
+
+\begin_layout Plain Layout
+
+	callbacks=[cp]
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
 
 \end_inset
 
@@ -1163,11 +1286,11 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Datenfluss"
+name "alg:classifier_main"
 
 \end_inset
 
-Datenflussdiagramm
+Hauptprozedur
 \end_layout
 
 \end_inset
@@ -1797,7 +1920,7 @@ begin{titlepage}
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "bibtex/bachelor"
-options "unsrt"
+options "IEEEtran"
 
 \end_inset
 
