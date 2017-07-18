@@ -82,7 +82,7 @@ def create_net(X_train, Y_train):
 
     import keras.optimizers
     SGD = keras.optimizers.SGD(lr=0.0001, momentum=0.0, decay=0.0, nesterov=False)
-    model.compile(loss='mean_absolute_error', optimizer=SGD, metrics=['mse'])
+    model.compile(loss='categorical_crossentropy', optimizer=SGD, metrics=['categorical_accuracy'])
 
     return model
 
