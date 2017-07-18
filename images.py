@@ -38,8 +38,8 @@ def download_image(filepath, row, size=(640, 640), zoom=20, maptype="satellite",
         y = row['Y_Coordinate'].replace(',', '.')
         urlpath += "?center={},{}".format(y, x)
     elif centermode == "address":  # Address
-        address = "{}+{}+{}+{}".format(row['Street'], row['HouseNr'], row['ZipCode'].zfill(5), row['City'])
-        urlpath += "?center={}".format(address)
+        # address = "{}+{}+{}+{}".format(row['Street'], row['HouseNr'], row['ZipCode'].zfill(5), row['City'])
+        urlpath += "?center={}".format(row['Name'])
     else:
         raise ValueError("Invalid centermode: {}. Use xy or address instead.".format(centermode))
     urlpath += "&size={}x{}".format(size[0], size[1])
