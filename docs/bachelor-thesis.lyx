@@ -910,6 +910,10 @@ Programmiersprache: Python
 Stand der Technik
 \end_layout
 
+\begin_layout Subsection
+PlaNet
+\end_layout
+
 \begin_layout Standard
 Im Projekt 
 \begin_inset Quotes gld
@@ -919,28 +923,41 @@ PlaNet - Photo Geolocation with Convolutional Neural Networks
 \begin_inset Quotes grd
 \end_inset
 
- konnte bereits gezeigt werden, dass ein Convolutional Neural Network in
- der Lage ist, den Aufnahmeort eines Fotos auf durchschnittlich 1200km genau
- zu bestimmen.
- 
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "weyand2016planet"
+
+\end_inset
+
+ wurde versucht, den Aufnahmeort eines Fotos lediglich anhand des Fotos
+ zu erkennen.
+ Dafür wurde die Weltkugel in mehrere Zellen eingeteilt und die Bilder jeweils
+ der Zelle zugeordnet, in der ihr tatsächlicher Aufnahmeort liegt.
+ Damit konnte in etwa 30% das korrekte Land erkannt werden und die Genauigkeitsr
+ate für Städte lag bei rund 10%.
+ Das reichte, um bisherige Modelle, welche noch auf handeingetragenen Merkmalen
+ basierten, mit einen signifikanten Abstand zu überbieten.
+ Außerdem war man in der Lage in einem Experiment beim Onlinespiel GeoGuessr
+ gegen erfahrene Menschen zu gewinnen.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-PlaNet - Photo Geolocation with Convolutional Neural Networks : https://arxiv.org
-/abs/1602.05314
+Das System wurde anschließend noch verbessert, indem das bestehende CNN
+ mit einem LSTM kombiniert wurde, um anstatt eines einzelnen Bildes ein
+ ganzes Bilderalbum zu klassifizieren.
 \end_layout
 
-\begin_layout Itemize
-CNN
+\begin_layout Subsection
+isprs - 2D Semantic Labeling
 \end_layout
 
-\begin_layout Itemize
-Keras
-\end_layout
+\begin_layout Standard
+Die Internationale Gesellschaft für Photogrammetrie und Fernerkundung hat
+ in ihrem 2D Semantic Labeling Wettbewerb
+\begin_inset CommandInset citation
+LatexCommand cite
+key "isprs2D"
 
 \end_inset
 
@@ -1588,11 +1605,7 @@ Ergebnisse der Klassifizierung des Netzes
 \end_layout
 
 \begin_layout Subsection
-Solaranlagen
-\end_layout
-
-\begin_layout Subsection
-Schulen
+Schulen - Wohnhäuser
 \end_layout
 
 \begin_layout Standard
@@ -1625,6 +1638,10 @@ Sachsen - https://schuldatenbank.sachsen.de/index.php?id=2
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Schularten
 \end_layout
 
 \begin_layout Section
