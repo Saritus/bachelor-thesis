@@ -1914,7 +1914,7 @@ Y_valid
 \begin_inset Text
 
 \begin_layout Plain Layout
-Upper whisker
+Maximum
 \end_layout
 
 \end_inset
@@ -1961,7 +1961,7 @@ Upper whisker
 \begin_inset Text
 
 \begin_layout Plain Layout
-3rd quartile
+Oberes Quartil
 \end_layout
 
 \end_inset
@@ -2055,7 +2055,7 @@ Median
 \begin_inset Text
 
 \begin_layout Plain Layout
-1st quartile
+Unteres Quartil
 \end_layout
 
 \end_inset
@@ -2102,7 +2102,7 @@ Median
 \begin_inset Text
 
 \begin_layout Plain Layout
-Lower whisker
+Minimum
 \end_layout
 
 \end_inset
@@ -2149,8 +2149,7 @@ Lower whisker
 \begin_inset Text
 
 \begin_layout Plain Layout
-Nr.
- of data points
+Anzahl Datenpunkte
 \end_layout
 
 \end_inset
