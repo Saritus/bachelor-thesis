@@ -1205,8 +1205,28 @@ reference "alg:google_maps_url"
 tellung.
  Anschließend die Zoom-Stufe, die Größe eines Objektes innerhalb eines Bildes
  angibt.
- Die offizielle Dokumentation gibt eine Tabelle für die Detailebenen an,
- die man basierend auf diesem Parameter erwarten kann.
+ Die offizielle Google Maps API Dokumentation
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{https://developers.google.com/maps/documentation/
+\end_layout
+
+\begin_layout Plain Layout
+
+javascript/tutorial
+\backslash
+#vergrerungsstufen}
+\end_layout
+
+\end_inset
+
+ gibt eine Tabelle für die Detailebenen an, die man basierend auf diesem
+ Parameter erwarten kann.
  Außerdem gibt es den Parameter des Kartentypen.
  Da es lediglich um die Informationsgewinnung aus Satellitenaufnahmen geht,
  ist hier immer 
