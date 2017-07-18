@@ -140,6 +140,10 @@ def main():
                         verbose=1, shuffle=True,
                         validation_split=0.1, callbacks=[checkpointer])
 
+    prediction = model.predict(X_train)
+    print Y_train[:10]
+    print prediction[:10]
+
     # save weights of net
     # save_model(model, "models/first_try.json", "models/first_try.h5")
 
