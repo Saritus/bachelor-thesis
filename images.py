@@ -68,13 +68,13 @@ def center_crop_image(path, new_width, new_height):
     return im.crop((left, top, right, bottom))
 
 
-def get_image(row, api, centermode="xy"):
+def get_image(row, api, centermode="address"):
     from PIL import Image
     # Google Maps
     if api == "google":
-        filepath = "images/google-{}/{}/{}-{}.jpg"
-        #address = "{}+{}+{}+{}".format(row['Street'], row['HouseNr'], row['ZipCode'].zfill(5), row['City'])
-        filepath = filepath.format(centermode, 'Citys', row['X_Coordinate'], row['Y_Coordinate'])
+        filepath = "images/google-{}/{}/{}/{}.jpg"
+        # address = "{}+{}+{}+{}".format(row['Street'], row['HouseNr'], row['ZipCode'].zfill(5), row['City'])
+        filepath = filepath.format(centermode, 'SchoolsSA', row['Schooltype'], row['Name'])
         pilImage = None
         while pilImage is None:
             try:
