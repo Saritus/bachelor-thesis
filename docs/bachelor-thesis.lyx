@@ -770,6 +770,14 @@ description "A multilayer perceptron (MLP) is a feedforward artificial neural ne
 \end_inset
 
 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CNN"
+description "Convolutional Neural Network\\\\Ein Convolutional Neural Network (CNN oder ConvNet), zu Deutsch etwa „faltendes neurales Netzwerk“, ist ein feedforward künstliches neuronales Netz. Es handelt sich um ein von biologischen Prozessen inspiriertes Konzept im Bereich des maschinellen Lernens (engl. machine learning). Convolutional Neural Networks finden Anwendung in zahlreichen, modernen Technologien der künstlichen Intelligenz, vornehmlich bei der maschinellen Verarbeitung von Bild- oder Audiodaten."
+
+\end_inset
+
+
 \begin_inset Newpage newpage
 \end_inset
 
