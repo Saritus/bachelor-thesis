@@ -911,6 +911,10 @@ Stand der Technik
 \end_layout
 
 \begin_layout Subsection
+IM2GPS
+\end_layout
+
+\begin_layout Subsection
 PlaNet
 \end_layout
 
@@ -949,19 +953,12 @@ Das System wurde anschließend noch verbessert, indem das bestehende CNN
 \end_layout
 
 \begin_layout Subsection
-isprs - 2D Semantic Labeling
+isprs
 \end_layout
 
 \begin_layout Standard
 Die Internationale Gesellschaft für Photogrammetrie und Fernerkundung hat
  in ihrem 2D Semantic Labeling Wettbewerb
-\begin_inset CommandInset citation
-LatexCommand cite
-key "isprs2D"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -1275,61 +1272,6 @@ key "simonyan2014very"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "chollet2016building"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-def main():
-\end_layout
-
-\begin_layout Plain Layout
-
-    # Load csv
-\end_layout
-
-\begin_layout Plain Layout
-
-    X_train, Y_train = load_csv("data.csv")
-\end_layout
-
-\begin_layout Plain Layout
-
-    # Create net
-\end_layout
-
-\begin_layout Plain Layout
-
-    model = create_net(X_train, Y_train)
-\end_layout
-
-\begin_layout Plain Layout
-
-    # Train net
-\end_layout
-
-\begin_layout Plain Layout
-
-    history = model.fit(x=X_train, y=Y_train)
-\end_layout
-
-\begin_layout Plain Layout
-
-	# Save net
-\end_layout
-
-\begin_layout Plain Layout
-
-    save_model(model, "structure.json", "weights.h5")
-\end_layout
 
 \end_inset
 
@@ -1693,7 +1635,6 @@ begin{titlepage}
 
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-btprint "btPrintAll"
 bibfiles "bibtex/bachelor"
 options "unsrt"
 
