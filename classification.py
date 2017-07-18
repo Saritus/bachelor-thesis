@@ -81,7 +81,7 @@ def create_net(X_train, Y_train):
     model.add(Dense(Y_train.shape[1], activation='softmax'))
 
     import keras.optimizers
-    SGD = keras.optimizers.SGD(lr=0.0001, momentum=0.0, decay=0.0, nesterov=False)
+    SGD = keras.optimizers.SGD(lr=0.0005, momentum=0.0, decay=0.0, nesterov=False)
     model.compile(loss='categorical_crossentropy', optimizer=SGD, metrics=['categorical_accuracy'])
 
     return model
