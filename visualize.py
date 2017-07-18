@@ -1,8 +1,8 @@
 def show_acc(history):
     # ACC VS VAL_ACC
     import matplotlib.pyplot as plt
-    plt.plot(history.history['binary_accuracy'])
-    plt.plot(history.history['val_binary_accuracy'])
+    plt.plot(history.history['categorical_accuracy'])
+    plt.plot(history.history['val_categorical_accuracy'])
     plt.title('model accuracy ACC VS VAL_ACC')
     plt.ylabel('accuracy')
     plt.xlabel('epoch')
