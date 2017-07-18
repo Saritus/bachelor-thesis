@@ -1534,31 +1534,30 @@ Liste mit Adressen für bestimmtes Merkmal
 \end_layout
 
 \begin_layout Subsection
-x-, y-Koordinaten
+GPS-Koordinaten
 \end_layout
 
 \begin_layout Standard
-In Anlehnung an das Projekt von PlaNet
-\begin_inset CommandInset citation
-LatexCommand cite
-key "weyand2016planet"
-
-\end_inset
-
- besteht der erste Versuch daraus, die GPS-Koordinaten, das heißt sowohl
- Längen-, als auch Breitengrad, eines Satellitenbildes zu bestimmen, ohne
- dafür zusätzliche Metadaten für das Bild zu besitzen.
-\end_layout
-
-\begin_layout Standard
-Die Trainingsdaten sind 6337 Städte und Orte in Deutschland.
+Der erste Versuch besteht daraus, die GPS-Koordinaten, das heißt sowohl
+ Längen-, als auch Breitengrad, eines Satellitenbildes zu bestimmen.
+ Dafür sollen keine zusätzliche Metadaten über das Bild bekannt sein.
+ Die verfügbaren Daten zum Trainieren des Netzes basieren dabei auf den
+ 6337 Einträgen der Datenbank "Geografische Längen- und Breitengrade deutscher
+ Städte und Gemeinden"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "StaedteDE"
 
 \end_inset
 
+, deren Verteilung in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pp_staedte_de"
 
+\end_inset
+
+ dargestellt ist.
 \end_layout
 
 \begin_layout Standard
@@ -1597,6 +1596,34 @@ Städte und Orte in Deutschland
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Bei einer Trainings-Validierungs-Teilung von 10% ergibt das 5703 Trainingsdaten
+ und 634 Validierungsdaten.
+\end_layout
+
+\begin_layout Standard
+Die mittleren absoluten Fehler der Trainings- und Validierungsdaten lagen
+ bei *2,6* und *1,5*.
+\end_layout
+
+\begin_layout Standard
+Die genauere Verteilung der Ergebnisse ist Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:staedte_result_boxplot.png"
+
+\end_inset
+
+ und Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tbl:table_staedte_boxplot"
+
+\end_inset
+
+ zu entnehmen.
 \end_layout
 
 \begin_layout Standard
@@ -2159,6 +2186,12 @@ Nr.
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tbl:table_staedte_boxplot"
+
+\end_inset
+
 Ergebnisse des x-y-Koordinatenversuchs
 \end_layout
 
