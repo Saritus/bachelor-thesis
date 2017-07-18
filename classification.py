@@ -143,9 +143,9 @@ def main():
     # save weights of net
     # save_model(model, "models/first_try.json", "models/first_try.h5")
 
-    # show_acc(history)
+    show_acc(history)
     show_loss(history)
-    show_prediction(model, X_train, Coordinates)
+    # show_prediction(model, X_train, Coordinates)
     # save_prediction(model, X_train, Coordinates, "result/prediction_test.pkl")
     # show_prediction_from_file("result/prediction_test.pkl")
 
