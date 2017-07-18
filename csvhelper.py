@@ -61,8 +61,8 @@ def load_csv(filename):
 
         # Fill coordinates array
         coordinate = [
-            float(row['X_Coordinate']),
-            float(row['Y_Coordinate'])
+            # float(row['X_Coordinate']),
+            # float(row['Y_Coordinate'])
         ]
         Coordinates.extend([coordinate])
 
@@ -70,16 +70,21 @@ def load_csv(filename):
         x = [
             # float(row['X_Coordinate'].replace(',', '.')),
             # float(row['Y_Coordinate'].replace(',', '.')),
-            float(hash(row['ORT'])),
+            # float(hash(row['ORT'])),
             # float(hash(row['Street'])) % 100,
             # float(row['ZipCode']),
         ]
         X_meta.extend([x])
 
+        schooltypes = {
+            "Grundschule": 0,
+            "Oberschule": 1,
+            "Gymnasium": 2
+        }
+
         # Fill output array
         y = [
-            float(row['X_Coordinate']),
-            float(row['Y_Coordinate'])
+            schooltypes[row['Schooltype']]
         ]
         Y_train.extend([y])
 
