@@ -129,8 +129,8 @@ def main():
     # model = load_model("models/first_try.json", "models/first_try.h5")
 
     ## Some model and data processing constants
-    batch_size = 32
-    nb_epoch = 100
+    batch_size = 64
+    nb_epoch = 15
 
     checkpointer = ModelCheckpoint(filepath='models/schoolsSA-epoch{epoch:02d}-acc{val_categorical_accuracy:.3f}.hdf5',
                                    verbose=1, monitor='val_categorical_accuracy',
