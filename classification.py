@@ -132,8 +132,9 @@ def main():
     batch_size = 32
     nb_epoch = 100
 
-    checkpointer = ModelCheckpoint(filepath='models/schoolsSA.hdf5', verbose=1,
-                                   monitor='val_categorical_accuracy', save_best_only=True)
+    checkpointer = ModelCheckpoint(filepath='models/schoolsSA-epoch{epoch:02d}-acc{val_categorical_accuracy:.3f}.hdf5',
+                                   verbose=1, monitor='val_categorical_accuracy',
+                                   save_best_only=True)
     history = model.fit(x=X_train, y=Y_train,
                         batch_size=batch_size, epochs=nb_epoch,
                         verbose=1, shuffle=True,
