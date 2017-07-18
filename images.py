@@ -82,7 +82,7 @@ def get_image(row, api, centermode="xy"):
                 pilImage = Image.open(filepath)
             except IOError:
                 # Download image from GoogleMaps API
-                download_image(filepath, row, centermode=centermode)
+                download_image(filepath, row, centermode=centermode, zoom=19)
         return pilImage
 
     # Bing Maps
