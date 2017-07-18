@@ -135,10 +135,11 @@ def main():
     checkpointer = ModelCheckpoint(filepath='models/schoolsSA-epoch{epoch:02d}-acc{val_categorical_accuracy:.3f}.hdf5',
                                    verbose=1, monitor='val_categorical_accuracy',
                                    save_best_only=True)
-    history = model.fit(x=X_train, y=Y_train,
-                        batch_size=batch_size, epochs=nb_epoch,
-                        verbose=1, shuffle=True,
-                        validation_split=0.1, callbacks=[checkpointer])
+    # history = model.fit(x=X_train, y=Y_train,
+    #                    batch_size=batch_size, epochs=nb_epoch,
+    #                    verbose=1, shuffle=True,
+    #                    validation_split=0.1, callbacks=[checkpointer])
+
 
     prediction = model.predict(X_train)
     print Y_train[:10]
