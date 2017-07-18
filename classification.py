@@ -177,6 +177,15 @@ def main():
         # save_to_dir='images/google-address/SchoolsSA_val_flow'
     )
 
+    # fine-tune the model
+    history = model.fit_generator(
+        train_generator,
+        samples_per_epoch=1024,
+        epochs=nb_epoch,
+        validation_data=validation_generator,
+        nb_val_samples=128,
+        callbacks=[checkpointer])
+
     prediction = model.predict(X_train)
     print Y_train[:10]
     print prediction[:10]
