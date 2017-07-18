@@ -78,7 +78,7 @@ def create_net(X_train, Y_train):
     model.add(Dropout(0.1))
     model.add(Dense(1024, activation='relu'))
     model.add(Dropout(0.1))
-    model.add(Dense(Y_train.shape[1], activation='linear'))
+    model.add(Dense(Y_train.shape[1], activation='softmax'))
 
     import keras.optimizers
     SGD = keras.optimizers.SGD(lr=0.0001, momentum=0.0, decay=0.0, nesterov=False)
