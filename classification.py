@@ -153,6 +153,14 @@ def main():
         fill_mode='reflect'
     )
 
+    test_datagen = ImageDataGenerator(
+        rescale=1. / 255,
+        zoom_range=0.1,
+        horizontal_flip=True,
+        vertical_flip=True,
+        fill_mode='reflect'
+    )
+
 
     prediction = model.predict(X_train)
     print Y_train[:10]
