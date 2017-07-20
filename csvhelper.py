@@ -78,8 +78,8 @@ def load_csv(filename):
 
         schooltypes = {
             "Grundschule": 0,
-            "Oberschule": 1,
-            "Gymnasium": 2
+            "Gymnasium": 1,
+            "Oberschule": 2
         }
 
         # Fill output array
