@@ -818,7 +818,16 @@ end{titlepage}
 \end_layout
 
 \begin_layout Abstract
-Inhalt der Arbeit
+Die stetig wachsende Menge an verfügbaren Trainingsdaten, sowie die ansteigende
+ Rechnerleistung verbessert die Ergebnisse, die mittels Deeplearning erreicht
+ werden können, immer mehr.
+ In dieser Arbeit wird ein System entwickelt, das sich basierend auf einer
+ Adressliste automatisiert alle benötigten Satellitenbilder herunterlädt,
+ ein an die Ein- und Ausgabedaten angepasstes künstliches neuronales Netz
+ erstellt und dieses anschließend für seine Aufgabe im Bereich der Klassifizieru
+ng beziehungsweise der Merkmalserkennung trainiert.
+ Die Qualität der Parameter des Netzes werden dabei stetig evaluiert durch
+ dem Netz bisher unbekannte Validierungsdaten.
 \end_layout
 
 \begin_layout Section
