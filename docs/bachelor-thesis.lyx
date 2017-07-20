@@ -989,9 +989,9 @@ ate für Städte lag bei rund 10%.
 \end_layout
 
 \begin_layout Standard
-Das System wurde anschließend noch verbessert, indem das bestehende CNN
- mit einem LSTM kombiniert wurde, um anstatt eines einzelnen Bildes ein
- ganzes Bilderalbum zu klassifizieren.
+Das System wurde anschließend noch verbessert, indem das bestehende Convolutiona
+l Neural Network mit einem Long short-term memory (LSTM) kombiniert wurde,
+ um anstatt eines einzelnen Bildes ein ganzes Bilderalbum zu klassifizieren.
 \end_layout
 
 \begin_layout Subsection
