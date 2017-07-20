@@ -867,65 +867,93 @@ Konkretisierung der Aufgabenstellung
 \end_layout
 
 \begin_layout Standard
-Das Ziel der Arbeit soll es sein, die Möglichkeiten und Grenzen der Merkmalserke
-nnung in Satelittenbildern zu erforschen.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Itemize
-Vorgabe der Daten von NWT
-\end_layout
-
-\begin_layout Itemize
-Liste mit zu erkennenden Merkmalen
-\end_layout
-
-\begin_layout Itemize
-Entscheidung, welche Merkmale machbar sind
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-zeitlich
-\end_layout
-
-\begin_layout Itemize
-logisch
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Programmiersprache: Python
-\end_layout
-
-\end_inset
-
-
+Ziel dieser Arbeit ist es, ein System zu entwickeln, mit dem Klassifikationen
+ und Merkmalserkennungen in Satellitenbildern mittels Deeplearning leicht
+ umzusetzen sind.
+ 
 \end_layout
 
 \begin_layout Section
-Stand der Technik
+Verwandte Arbeiten
 \end_layout
 
 \begin_layout Subsection
-ImageNet Classification
+ImageNet Large-Scale Visual Recognition Challenge
 \end_layout
 
 \begin_layout Standard
+Die ImageNet Large-Scale Visual Recognition Challenge (ILSVRC)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Russakovsky2015"
+
+\end_inset
+
+ ist wohl einer der bekanntesten Wettbewerbe im Bereich der automatisierten
+ Bildklassifizierung.
+ Ihr Aufbau ist dabei an die Pascal Visual Object Classes Challenge
+\begin_inset CommandInset citation
+LatexCommand cite
+key "everingham2010pascal"
+
+\end_inset
+
+ angelehnt.
+ Die Trainingsdaten bestehen aus Bilddaten und der Klasseninformation zu
+ einem Objekt, welches jeweils im Bild vorhanden ist.
+ Dies stammt alles aus der ImageNet-Datenbank
+\begin_inset CommandInset citation
+LatexCommand cite
+key "deng2009imagenet"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Mit SuperVision
 \begin_inset CommandInset citation
 LatexCommand cite
 key "NIPS2012_4824"
 
 \end_inset
 
-
+, einem Deep Convolutional Neural Network, gewannen Alex Krizhevsky, Ilya
+ Sutskever und Geoffrey E.
+ Hinton die ILSVRC-2012.
+ Ihr Netz beinhaltet fünf Konvolutionsschichten, manche gefolgt von einer
+ Max-pooling Schicht, und abschließend drei vollvernetzten Schichten mit
+ der finalen 1000-Neuronen Schicht, die das Ergebnis der Klassifizierungen
+ darstellt.
+ Damit konnte eine Top-5-Fehlerquote, die die relative Häufigkeit angibt,
+ in der das korrekte Ergebnis nicht in den ersten fünf Prädiktionen liegt,
+ von 16,4% erreicht werden.
+ Die Fehlerquote für das korrekte Erkennen der richtigen Klasse lag dabei
+ bei 38,1%.
 \end_layout
 
-\begin_layout Subsection
-IM2GPS
+\begin_layout Standard
+VGG16 und VGG19
+\begin_inset CommandInset citation
+LatexCommand cite
+key "simonyan2014very"
+
+\end_inset
+
+, die Gewinner des ILSVRC-2014 im Bereich 
+\begin_inset Quotes gld
+\end_inset
+
+Klassifikation und Lokalisation
+\begin_inset Quotes grd
+\end_inset
+
+ benutzten einen ähnlichen Aufbau von Konvolutions-, Max-pooling- und vollvernet
+zten Schichten, nur das sich die Tiefe des Netzes deutlich vergrößert hat.
+ Statt fünf besitzt das Netz nun 13 beziehungsweise 16 Konvolutionsschichten.
+ Damit konnte die Top-5-Fehlerquote auf 7,2% und die Top-1-Fehlerquote auf
+ 24,4% gesenkt werden.
 \end_layout
 
 \begin_layout Subsection
@@ -1043,7 +1071,14 @@ Keras - theano
 \end_layout
 
 \begin_layout Standard
-Als Deeplearning Framework wurde Keras verwendet.
+Als Deeplearning Framework wurde Keras
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chollet2015keras"
+
+\end_inset
+
+ verwendet.
  Es benötigt als Grundlage entweder 
 \begin_inset Formula $\mathtt{TensorFlow}$
 \end_inset
@@ -1184,7 +1219,7 @@ Der Trainingsvorgabe, welche zum Trainieren des Netzes benutzt wird.
 \begin_inset Float algorithm
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset listings
@@ -1513,6 +1548,24 @@ Künstliches neuronales Netz
 \end_layout
 
 \begin_layout Standard
+Die Grundstruktur des Netzes basiert auf den Vorgaben von SuperVision
+\begin_inset CommandInset citation
+LatexCommand cite
+key "NIPS2012_4824"
+
+\end_inset
+
+ und VGG16
+\begin_inset CommandInset citation
+LatexCommand cite
+key "simonyan2014very"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Das neuronale Netz besteht es drei Teilen.
  Einem CNN, welches die Satellitenbilder als Input-Daten bekommt und diese
  auswertet, einem MLP, welches zusätzliche Metadaten des Gebäudes bzw.
@@ -1521,13 +1574,7 @@ Das neuronale Netz besteht es drei Teilen.
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand cite
-key "simonyan2014very"
-
-\end_inset
-
-
+Building powerful image classification models using very little data
 \begin_inset CommandInset citation
 LatexCommand cite
 key "chollet2016building"
