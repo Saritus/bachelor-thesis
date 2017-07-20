@@ -1921,6 +1921,11 @@ Schularten
 Ergebnisse
 \end_layout
 
+\begin_layout Standard
+Das System ließ sich einfach, schnell und problemlos an die verschiedenen
+ Anforderungen der Experimente anpassen.
+\end_layout
+
 \begin_layout Section
 Ausblick
 \end_layout
@@ -1942,11 +1947,11 @@ Anwendung zum Suchen bestimmter Merkmale
 
 \end_layout
 
-\begin_layout Section
-Danksagung
-\end_layout
-
 \begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \begin_inset ERT
 status open
 
@@ -1957,10 +1962,6 @@ status open
 begin{titlepage}
 \end_layout
 
-\end_inset
-
-
-\begin_inset Newpage newpage
 \end_inset
 
 
@@ -1975,7 +1976,39 @@ options "IEEEtran"
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage}
+\end_layout
+
 \end_inset
 
 
