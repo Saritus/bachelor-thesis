@@ -1376,6 +1376,23 @@ Hauptprozedur
 \end_layout
 
 \begin_layout Subsection
+Trainingsdaten
+\end_layout
+
+\begin_layout Standard
+Trainingsdaten geben dem Netz den gewünschten Output vor und werden dementsprech
+end zu dessen Training verwendet.
+\end_layout
+
+\begin_layout Standard
+Das Erzeugen der Trainingsdaten ist in der Regel ein aufwändiger Prozess
+ und stark vom gewünschten zu erkennenden Merkmal abhängig.
+ Neben der großen Menge an Trainingsdaten, die zum Trainieren eines Netzes
+ benötigt werden, sind manche Merkmale nicht leicht mit dem menschlichen
+ Auge zu erkennen.
+\end_layout
+
+\begin_layout Subsection
 Satellitenbilder
 \end_layout
 
@@ -1564,23 +1581,6 @@ Beispiel eines Satellitenbildes
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsection
-Trainingsdaten
-\end_layout
-
-\begin_layout Standard
-Trainingsdaten geben dem Netz den gewünschten Output vor und werden dementsprech
-end zu dessen Training verwendet.
-\end_layout
-
-\begin_layout Standard
-Das Erzeugen der Trainingsdaten ist in der Regel ein aufwändiger Prozess
- und stark vom gewünschten zu erkennenden Merkmal abhängig.
- Neben der großen Menge an Trainingsdaten, die zum Trainieren eines Netzes
- benötigt werden, sind manche Merkmale nicht leicht mit dem menschlichen
- Auge zu erkennen.
 \end_layout
 
 \begin_layout Subsection
