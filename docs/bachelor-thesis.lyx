@@ -871,6 +871,13 @@ Ein Bild sagt mehr als tausend Worte
  
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Konkretisierung der Aufgabenstellung
 \end_layout
@@ -880,6 +887,13 @@ Ziel dieser Arbeit ist es, ein System zu entwickeln, mit dem Klassifikationen
  und Merkmalserkennungen in Satellitenbildern mittels Deeplearning leicht
  umzusetzen sind.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1010,6 +1024,13 @@ isprs
 \begin_layout Standard
 Die Internationale Gesellschaft für Photogrammetrie und Fernerkundung hat
  in ihrem 2D Semantic Labeling Wettbewerb
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1154,6 +1175,13 @@ Tk
 \begin_layout Standard
 Da Python keine eigene GUI besitzt, muss zum Programmieren eines Interfaces
  eine zusätzliche GUI-Bibliothek wie Tk verwendet werden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1368,8 +1396,11 @@ reference "alg:google_maps_url"
  Dies ist die Kerninformation und das sich später einzige ändernde Merkmal
  innerhalb einer Bilderreihe für einen Trainingsprozess.
  Dann die Größe des Bildes angegeben in Pixeln.
- Hierbei liegt das Maximum bei 640x640, deswegen wird dies auch die Standardeins
-tellung.
+ Hierbei liegt das Maximum bei 
+\begin_inset Formula $\mathsf{640x640}$
+\end_inset
+
+, deswegen wird dies auch die Standardeinstellung.
  Anschließend die Zoom-Stufe, die Größe eines Objektes innerhalb eines Bildes
  angibt.
  Die offizielle Google Maps API Dokumentation
@@ -1635,6 +1666,13 @@ Bewertung des Netzes
 
 \begin_layout Standard
 NOTE: mittlere absolute Fehler, binäre crossentropie etc.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1926,6 +1964,13 @@ Sachsen - https://schuldatenbank.sachsen.de/index.php?id=2
 Schularten
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Ergebnisse
 \end_layout
@@ -1933,6 +1978,13 @@ Ergebnisse
 \begin_layout Standard
 Das System ließ sich einfach, schnell und problemlos an die verschiedenen
  Anforderungen der Experimente anpassen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
