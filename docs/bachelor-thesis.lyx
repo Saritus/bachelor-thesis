@@ -821,13 +821,24 @@ end{titlepage}
 Die stetig wachsende Menge an verfügbaren Trainingsdaten, sowie die ansteigende
  Rechnerleistung verbessert die Ergebnisse, die mittels Deeplearning erreicht
  werden können, immer mehr.
- In dieser Arbeit wird ein System entwickelt, das sich basierend auf einer
+ Doch 
+\end_layout
+
+\begin_layout Abstract
+In dieser Arbeit wird ein System entwickelt, das sich basierend auf einer
  Adressliste automatisiert alle benötigten Satellitenbilder herunterlädt,
  ein an die Ein- und Ausgabedaten angepasstes künstliches neuronales Netz
  erstellt und dieses anschließend für seine Aufgabe im Bereich der Klassifizieru
 ng beziehungsweise der Merkmalserkennung trainiert.
  Die Qualität der Parameter des Netzes werden dabei stetig evaluiert durch
- dem Netz bisher unbekannte Validierungsdaten.
+ dem Netz bisher unbekannte Validierungsdaten und bei Verbesserungen für
+ eine spätere Verwendung in Anwendungen inklusive Netzarchitektur lokal
+ gespeichert.
+\end_layout
+
+\begin_layout Abstract
+Das soll die Verwendung von Deeplearning für Satellitenbilder erleichtern
+ und damit die Möglichkeiten für zukünftige Anwendungsfälle vereinfachen.
 \end_layout
 
 \begin_layout Section
@@ -1380,24 +1391,100 @@ Trainingsdaten
 \end_layout
 
 \begin_layout Standard
-Trainingsdaten geben dem Netz den gewünschten Output vor und werden dementsprech
-end zu dessen Training verwendet.
+Die Trainingsdaten geben dem künstlichen neuronalen Netz vor, welche Aufgabe
+ es zu erfüllen hat.
+ Dabei bestehen die Trainingsdaten aus zwei Teilen.
 \end_layout
 
 \begin_layout Standard
-Das Erzeugen der Trainingsdaten ist in der Regel ein aufwändiger Prozess
- und stark vom gewünschten zu erkennenden Merkmal abhängig.
- Neben der großen Menge an Trainingsdaten, die zum Trainieren eines Netzes
- benötigt werden, sind manche Merkmale nicht leicht mit dem menschlichen
- Auge zu erkennen.
+Den Satellitenbildern, die die Eingabedaten des Netzes sind und welche auch
+ für spätere Anwendungsfälle benötigt werden.
+ Deren genauere Erzeugung wird in Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satellitenbilder"
+
+\end_inset
+
+ erklärt.
+\end_layout
+
+\begin_layout Standard
+Der zweite Teil sind die Klasseninformationen der jeweiligen Bilder, welche
+ die gewünschten Ausgabedaten des Netzes sind.
+ Das Erzeugen der Klasseninformationen ist in der Regel ein aufwändiger
+ Prozess und stark vom gewünschten zu erkennenden Merkmal abhängig.
+ Es werden größere Mengen an Trainingsdaten benötigt, um ein Netz zu trainieren.
+ Und wenn es für die gewünschte Aufgabe keine bereits existierende Datenquelle
+ gibt, der man diese Menge an Informationen entnehmen kann, dann müssen
+ sie notfalls eben händisch erzeugt werden.
+ Dafür beinhaltet das System ein Interface, welches zeilenweise die Adressen
+ einer CSV-Datei benutzt, um aus ihnen Satellitenbildern ebenfalls basierend
+ auf Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satellitenbilder"
+
+\end_inset
+
+ zu erzeugen, und diese anzeigt.
+ Der Benutzer kann anschließend aus einer Auswahl an Klasseninformationen
+ die dem Bild zugehörige auswählen.
+ Seine Entscheidung wird danach zusammen mit der momentanen Adresse in einer
+ neuen CSV-Datei abgespeichert.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/data-generator-v3.jpg
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:train-data-generator"
+
+\end_inset
+
+Anwendung zum händischen Erzeugen von Trainingsdaten
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 Satellitenbilder
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satellitenbilder"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Die Satellitenbilder bilden die Grundlage der Input-Daten für das Netz.
+Die Satellitenbilder bilden die Grundlage der Eingabedaten für das Netz.
  Da eine eigenständige Erzeugung einen viel zu hohen Aufwand bedeuten würde,
  werden stattdessen Bilder verwendet, die mittels der Google Static Maps
  API erzeugt wurden.
@@ -1543,44 +1630,6 @@ Die mittels dieser URL erzeugten Bilder werden lokal gespeichert und basierend
  Dadurch könnten sie vor dem Trainingsprozess noch zugeschnitten oder auf
  eine andere Größe skaliert werden.
  Außerdem verhindert es ein mehrfaches Herunterladen des gleichen Bildes.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/Satellite_image_example.jpg
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:satellite_image_example"
-
-\end_inset
-
-Beispiel eines Satellitenbildes
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
