@@ -78,11 +78,13 @@ def create_net(X_train, Y_train):
     model.add(Dropout(0.1))
     model.add(Dense(1024, activation='relu'))
     model.add(Dropout(0.1))
-    model.add(Dense(Y_train.shape[1], activation='softmax'))
+    #model.add(Dense(Y_train.shape[1], activation='softmax'))
+    model.add(Dense(1, activation='linear'))
 
     import keras.optimizers
-    SGD = keras.optimizers.SGD(lr=0.0005, momentum=0.0, decay=0.0, nesterov=False)
-    model.compile(loss='categorical_crossentropy', optimizer=SGD, metrics=['categorical_accuracy'])
+    # SGD = keras.optimizers.SGD(lr=0.002, momentum=0.0, decay=0.0, nesterov=False)
+    Adam = keras.optimizers.Adam(lr=0.001)
+    model.compile(loss='mean_absolute_error', optimizer=Adam, metrics=['sparse_categorical_accuracy'])
 
     return model
 
@@ -129,11 +131,11 @@ def main():
     # model = load_model("models/first_try.json", "models/first_try.h5")
 
     ## Some model and data processing constants
-    batch_size = 64
-    nb_epoch = 15
+    batch_size = 32
+    nb_epoch = 10
 
-    checkpointer = ModelCheckpoint(filepath='models/schoolsSA-epoch{epoch:02d}-acc{val_categorical_accuracy:.3f}.hdf5',
-                                   verbose=1, monitor='val_categorical_accuracy',
+    checkpointer = ModelCheckpoint(filepath='models/schoolsSA-epoch{epoch:02d}-acc{sparse_categorical_accuracy:.3f}.hdf5',
+                                   verbose=1, monitor='sparse_categorical_accuracy',
                                    save_best_only=True)
     # history = model.fit(x=X_train, y=Y_train,
     #                    batch_size=batch_size, epochs=nb_epoch,
@@ -147,7 +149,7 @@ def main():
         height_shift_range=0.1,
         rescale=1. / 255,
         shear_range=0.1,
-        zoom_range=0.2,
+        zoom_range=0.1,
         horizontal_flip=True,
         vertical_flip=True,
         fill_mode='reflect'
@@ -165,7 +167,8 @@ def main():
         'images/google-address/SchoolsSA_train',
         target_size=(256, 256),
         batch_size=batch_size,
-        class_mode='categorical',
+        class_mode='sparse',
+        shuffle=True,
         # save_to_dir='images/google-address/SchoolsSA_train_flow'
     )
 
@@ -173,7 +176,8 @@ def main():
         'images/google-address/SchoolsSA_val',
         target_size=(256, 256),
         batch_size=batch_size,
-        class_mode='categorical',
+        class_mode='sparse',
+        shuffle=True,
         # save_to_dir='images/google-address/SchoolsSA_val_flow'
     )
 
@@ -182,9 +186,10 @@ def main():
         train_generator,
         samples_per_epoch=1024,
         epochs=nb_epoch,
-        validation_data=validation_generator,
-        nb_val_samples=128,
-        callbacks=[checkpointer])
+        # validation_data=validation_generator,
+        # nb_val_samples=64,
+        callbacks=[checkpointer]
+    )
 
     prediction = model.predict(X_train)
     print Y_train[:10]
