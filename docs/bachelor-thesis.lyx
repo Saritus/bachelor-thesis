@@ -1220,7 +1220,14 @@ Tkinter
 
 \begin_layout Standard
 Da Python keine eigene GUI besitzt, muss zum Programmieren eines Interfaces
- eine zusätzliche GUI-Bibliothek wie Tk verwendet werden.
+ eine zusätzliche GUI-Bibliothek wie Tkinter
+\begin_inset CommandInset citation
+LatexCommand cite
+key "grayson2000tkinter"
+
+\end_inset
+
+ verwendet werden.
 \end_layout
 
 \begin_layout Standard
