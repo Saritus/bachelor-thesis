@@ -2068,6 +2068,26 @@ Das System ließ sich einfach, schnell und problemlos an die verschiedenen
 \end_layout
 
 \begin_layout Standard
+Das letzte Experiment
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{https://schuldatenbank.sachsen.de/index.php?id=2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
 
