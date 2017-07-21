@@ -1699,6 +1699,18 @@ key "chollet2016building"
 
 \end_layout
 
+\begin_layout Standard
+Best Practices for Convolutional Neural Networks Applied to Visual Document
+ Analysis
+\begin_inset CommandInset citation
+LatexCommand cite
+key "simard2003best"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Training des Netzes
 \end_layout
