@@ -1194,11 +1194,7 @@ Nahezu alle Visualisierungen wurden mit matplotlib, einer Python Bibliothek
 \begin_inset Formula $\mathtt{wxWidgets}$
 \end_inset
 
- oder in unserem Fall 
-\begin_inset Formula $\mathtt{Tk}$
-\end_inset
-
- verwenden.
+ oder in unserem Fall Tkinter verwenden.
 \end_layout
 
 \begin_layout Standard
