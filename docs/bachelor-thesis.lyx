@@ -1857,8 +1857,8 @@ Deutsche Städte und Gemeinden
 \end_layout
 
 \begin_layout Standard
-Bei einer Trainings-Validierungs-Teilung von 10% ergibt das 5703 Trainingsdaten
- und 634 Validierungsdaten.
+Bei einer Trainings-Validierungs-Aufteilung von 10% ergibt dies eine Anzahl
+ von 5703 Trainingsdaten und 634 Validierungsdaten.
 \end_layout
 
 \begin_layout Standard
