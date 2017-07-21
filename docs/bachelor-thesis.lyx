@@ -897,7 +897,13 @@ Konkretisierung der Aufgabenstellung
 Ziel dieser Arbeit ist es, ein System zu entwickeln, mit dem Klassifikationen
  und Merkmalserkennungen in Satellitenbildern mittels Deeplearning leicht
  umzusetzen sind.
- 
+ Dabei sollte sich das System einfach und schnell an unterschiedliche Eingabefor
+mate der Daten anpassen lassen.
+\end_layout
+
+\begin_layout Standard
+Ebenso ist ein wichtiges Kriterium des Systems die leichte Integration in
+ zukünftige Anwendungen.
 \end_layout
 
 \begin_layout Standard
