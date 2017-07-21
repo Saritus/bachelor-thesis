@@ -2165,6 +2165,14 @@ Ausblick
 \end_layout
 
 \begin_layout Standard
+Die wohl größte Erweiterung für das erzeugte System wäre die Umsetzung einer
+ Anwendung, die ein trainiertes Netz automatisch als Grundlage für die Klassifiz
+ierung von Satellitenbildern nimmt.
+ Die Satellitenbilder könnten ebenfalls auf Bedarf mittels der Google Maps
+ API erzeugt werden und auf vom Nutzer eingegebenen Adressen basieren.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
