@@ -1147,6 +1147,7 @@ key "chollet2015keras"
 \end_inset
 
  verwendet.
+ Es benotigt als Grundlage entweder TensorFlow
 \begin_inset CommandInset citation
 LatexCommand cite
 key "abadi2016tensorflow"
@@ -2111,6 +2112,26 @@ Schularten
 \end_layout
 
 \begin_layout Standard
+Das letzte Experiment beinhaltet die Klassifizierung von Schulen in Sachsen
+ nach den drei Klassen Grundschule, Oberschule und Gymnasium.
+ Die dafür verwendeten Trainingsdaten basieren auf der offiziellen Sächsischen
+ Schuldatenbank
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{https://schuldatenbank.sachsen.de/index.php?id=2}
+\end_layout
+
+\end_inset
+
+, herausgegeben vom Sächsischen Staatsministerium für Kultus.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
 
@@ -2124,26 +2145,6 @@ Ergebnisse
 \begin_layout Standard
 Das System ließ sich einfach, schnell und problemlos an die verschiedenen
  Anforderungen der Experimente anpassen.
-\end_layout
-
-\begin_layout Standard
-Das letzte Experiment
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-footnote{https://schuldatenbank.sachsen.de/index.php?id=2}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
