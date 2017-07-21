@@ -1104,7 +1104,25 @@ elopment/a-developer-s-guide-to-the-pro-s-and-con-s-of-python.html
 \end_layout
 
 \begin_layout Subsection
-ConvNet
+Convolutional Neural Networks
+\end_layout
+
+\begin_layout Standard
+Wie SuperVision
+\begin_inset CommandInset citation
+LatexCommand cite
+key "NIPS2012_4824"
+
+\end_inset
+
+ und VGG16
+\begin_inset CommandInset citation
+LatexCommand cite
+key "simonyan2014very"
+
+\end_inset
+
+ zeigen konnten
 \end_layout
 
 \begin_layout Subsection
