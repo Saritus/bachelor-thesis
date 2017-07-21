@@ -1856,7 +1856,54 @@ Bei einer Trainings-Validierungs-Teilung von 10% ergibt das 5703 Trainingsdaten
 
 \begin_layout Standard
 Die mittleren absoluten Fehler der Trainings- und Validierungsdaten lagen
- bei *2,6* und *1,5*.
+ bei 2,602 und 1,534.
+ Der Verlauf dieses Fehlers während des Trainings des Netzes ist in Abbildung
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:staedte_model_loss"
+
+\end_inset
+
+ dargestellt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/history_citys_de.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:staedte_model_loss"
+
+\end_inset
+
+Mittlerer absoluter Fehler während der Trainingsepochen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
