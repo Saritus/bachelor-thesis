@@ -1762,6 +1762,10 @@ key "bottou2010large"
  anpasst.
 \end_layout
 
+\begin_layout Subsection
+Bewertung des Netzes
+\end_layout
+
 \begin_layout Standard
 Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
  und die Ergebnisse mit der Trainingsvorlage verglichen.
@@ -1773,12 +1777,44 @@ Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
  Dadurch soll ein Overfitting des Netzes vermieden werden.
 \end_layout
 
+\begin_layout Standard
+Die Methode, nach der der Genauigkeitswert berechnet wird, hängt dabei vom
+ Format der Ausgabedaten, und damit auch von der Aktivierungsart der letzten
+ Schicht des Netzes ab.
+ Wenn es sich um eine 
+\end_layout
+
 \begin_layout Subsection
-Bewertung des Netzes
+Visualisierung von Klassifizierungen
 \end_layout
 
 \begin_layout Standard
-NOTE: mittlere absolute Fehler, binäre crossentropie etc.
+Für die Darstellung der Ergebnisse der Klassifizierung des Netzes gibt es
+ verschiedene Möglichkeiten.
+\end_layout
+
+\begin_layout Standard
+Eine Variante ist die Darstellung basierend auf GPS-Koordinaten.
+ Dabei wird mit matplotlib, siehe Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:matplotlib"
+
+\end_inset
+
+, ein Streudiagramm erstellt.
+ Die x- und y-Werte bestehen dabei aus den Längen- und Breitengraden der
+ GPS-Koordinaten.
+ Die Ergebnisse der Klassifizierung werden dann in der Farbe der Punkte
+ kodiert.
+ Ein Beispiel dafür ist in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:plz_in_dd"
+
+\end_inset
+
+ dargestellt.
 \end_layout
 
 \begin_layout Standard
