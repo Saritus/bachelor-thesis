@@ -1120,16 +1120,24 @@ key "chollet2015keras"
 \end_inset
 
  verwendet.
- Es benötigt als Grundlage entweder 
-\begin_inset Formula $\mathtt{TensorFlow}$
+\begin_inset CommandInset citation
+LatexCommand cite
+key "abadi2016tensorflow"
+
 \end_inset
 
-, 
-\begin_inset Formula $\mathtt{CNTK}$
+, CNTK
+\begin_inset CommandInset citation
+LatexCommand cite
+key "seide2016cntk"
+
 \end_inset
 
- oder 
-\begin_inset Formula $\mathtt{Theano}$
+ oder Theano
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bergstra2011theano"
+
 \end_inset
 
 .
