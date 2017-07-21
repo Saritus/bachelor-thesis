@@ -1183,6 +1183,13 @@ key "bergstra2011theano"
 
 \begin_layout Subsection
 matplotlib
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:matplotlib"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
