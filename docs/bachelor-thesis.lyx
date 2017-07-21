@@ -2499,6 +2499,263 @@ Ergebnisse des x-y-Koordinatenversuchs
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def create_net(X_train, Y_train):
+\end_layout
+
+\begin_layout Plain Layout
+
+    from keras.models import Sequential
+\end_layout
+
+\begin_layout Plain Layout
+
+    from keras.layers import (Flatten, Dense, Convolution2D, MaxPooling2D,
+ ZeroPadding2D, Dropout)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    model = Sequential()
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1), input_shape=X_train[0].shape[1:]))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(16, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(16, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(32, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(32, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(64, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(64, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(64, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(128, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(128, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(128, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Flatten())
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Dense(1024, activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Dropout(0.1))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Dense(1024, activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Dropout(0.1))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Dense(Y_train.shape[1], activation='linear'))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    from keras.optimizers import SGD
+\end_layout
+
+\begin_layout Plain Layout
+
+    SGD = SGD(lr=0.0001, momentum=0.0, decay=0.0, nesterov=False)
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.compile(loss='mean_absolute_error', optimizer=SGD, metrics=['mse'])
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return model
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:google_maps_url-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
 \begin_inset ERT
 status open
 
