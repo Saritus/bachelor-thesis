@@ -1779,6 +1779,12 @@ NOTE: mittlere absolute Fehler, binäre crossentropie etc.
 Experimente
 \end_layout
 
+\begin_layout Standard
+Um das System zu testen, wurden mehrere Experimente mit verschiedenen Datengrund
+lagen für die Eingabedaten, sowie verschiedenen Formaten beziehungsweise
+ Typen von Ausgabedaten durchgeführt.
+\end_layout
+
 \begin_layout Subsection
 GPS-Koordinaten
 \end_layout
