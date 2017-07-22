@@ -862,7 +862,6 @@ ng beziehungsweise der Merkmalserkennung trainiert.
  dem Netz bisher unbekannte Validierungsdaten und bei Verbesserungen für
  eine spätere Verwendung in Anwendungen inklusive Netzarchitektur lokal
  gespeichert.
- 
 \end_layout
 
 \begin_layout Abstract
@@ -927,13 +926,17 @@ Konkretisierung der Aufgabenstellung
 Ziel dieser Arbeit ist es, ein System zu entwickeln, mit dem Klassifikationen
  und Merkmalserkennungen in Satellitenbildern mittels Deeplearning leicht
  umzusetzen sind.
- Dabei sollte sich das System einfach und schnell an unterschiedliche Eingabefor
-mate der Daten anpassen lassen.
+ Das Hauptkriterium dafür ist, dass sich das System schnell und einfach
+ an unterschiedliche Eingabeformate der Daten anpassen lassen kann.
+ Außerdem soll eine 
 \end_layout
 
 \begin_layout Standard
-Ebenso ist ein wichtiges Kriterium des Systems die leichte Integration in
- zukünftige Anwendungen.
+Größtmögliche Automatisierung
+\end_layout
+
+\begin_layout Standard
+Integration in zukünftige Anwendungen
 \end_layout
 
 \begin_layout Standard
