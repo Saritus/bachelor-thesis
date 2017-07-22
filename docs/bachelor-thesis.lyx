@@ -2010,14 +2010,7 @@ Künstliches neuronales Netz
 \end_layout
 
 \begin_layout Standard
-Die Grundstruktur des Netzes basiert auf den Vorgaben von SuperVision
-\begin_inset CommandInset citation
-LatexCommand cite
-key "NIPS2012_4824"
-
-\end_inset
-
- und VGG16
+Die Grundstruktur des Netzes basiert auf der Vorgaben von VGG16
 \begin_inset CommandInset citation
 LatexCommand cite
 key "simonyan2014very"
