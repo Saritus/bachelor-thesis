@@ -1001,7 +1001,7 @@ Multi-column Deep Neural Networks
 \end_layout
 
 \begin_layout Standard
-Eine Erweiterung der linearen neuronalen Netzwerke sind die mehrspaltigen
+Eine Alternative zum linearen neuronalen Netzwerk sind die mehrspaltigen
  neuronalen Netzwerke
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1010,6 +1010,20 @@ key "ciregan2012multicolumn"
 \end_inset
 
 .
+ Die Architektur besteht dabei aus mehreren herkömmlichen neuronalen Netzen,
+ welche parallel zueinander angeordnet sind.
+ Dabei ist anzumerken, dass diese mehreren Netze zunächst einzeln trainiert
+ werden und erst für die spätere Anwendung zusammengeschlossen werden.
+ 
+\end_layout
+
+\begin_layout Standard
+Auch dann noch verarbeiten die Teilnetze die Eingabedaten unabhängig voneinander.
+ Für das abschließende Ergebnis des mehrspaltigen Netzes bildet man den
+ Durchschnittswert der Einzelergebnisse der Teilnetze.
+ Dies erbrachte in den durchgeführten Experimenten eine relative Verbesserung
+ der Klassifizierungsgenauigkeit zwischen 26% und 72% im Vergleich zu den
+ bisher besten Ergebnissen.
 \end_layout
 
 \begin_layout Subsection
