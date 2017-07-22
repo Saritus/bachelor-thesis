@@ -3160,11 +3160,11 @@ def create_net(X_train, Y_train):
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "alg:google_maps_url-1"
+name "alg:create_net"
 
 \end_inset
 
-
+Funktion zum Erstellen des künstlichen neuronalen Netzes
 \end_layout
 
 \end_inset
