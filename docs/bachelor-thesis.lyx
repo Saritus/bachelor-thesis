@@ -997,6 +997,22 @@ zten Schichten, nur das sich die Tiefe des Netzes deutlich vergrößert hat.
 \end_layout
 
 \begin_layout Subsection
+Multi-column Deep Neural Networks
+\end_layout
+
+\begin_layout Standard
+Eine Erweiterung der linearen neuronalen Netzwerke sind die mehrspaltigen
+ neuronalen Netzwerke
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ciregan2012multicolumn"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
 PlaNet
 \end_layout
 
