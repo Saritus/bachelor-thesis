@@ -721,6 +721,38 @@ Abgabetermin:
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+onecolumn
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
@@ -814,6 +846,13 @@ description "Long short-term memory\\\\Long short-term memory (LSTM) bezeichnet 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -821,13 +860,9 @@ status open
 
 
 \backslash
-end{titlepage}
+twocolumn
 \end_layout
 
-\end_inset
-
-
-\begin_inset Newpage newpage
 \end_inset
 
 
