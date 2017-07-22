@@ -2502,7 +2502,12 @@ status open
 
 
 \backslash
-footnote{https://www.dresden.de/de/leben/schulen/schulen-in-dresden.php}
+footnote{https://www.dresden.de/de/leben/schulen/
+\end_layout
+
+\begin_layout Plain Layout
+
+schulen-in-dresden.php}
 \end_layout
 
 \end_inset
@@ -2526,7 +2531,7 @@ status open
 
 
 \backslash
-footnote{https://schuldatenbank.sachsen.de/index.php?id=2}
+footnote{https://schuldatenbank.sachsen.de/index.php}
 \end_layout
 
 \end_inset
