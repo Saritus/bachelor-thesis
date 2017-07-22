@@ -866,8 +866,9 @@ ng beziehungsweise der Merkmalserkennung trainiert.
 \end_layout
 
 \begin_layout Abstract
-Das soll die Verwendung von Deeplearning für Satellitenbilder erleichtern
- und damit die Möglichkeiten für zukünftige Anwendungsfälle vereinfachen.
+Abschließend wird das System in verschiedenen Experimenten für die Erkennung
+ von GPS-Koordinaten, Postleitzahlen und Schularten verwendet und deren
+ Ergebnisse ausgewertet.
 \end_layout
 
 \begin_layout Section
