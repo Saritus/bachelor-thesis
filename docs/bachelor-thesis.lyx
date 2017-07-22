@@ -798,6 +798,25 @@ description "Long short-term memory\\\\Long short-term memory (LSTM) bezeichnet 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList algorithm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -1188,7 +1207,7 @@ key "simonyan2014very"
  zeigen konnten, ist die Architektur eines Convolutional Neural Networks
  mit abschließenden vollvernetzten Schichten am besten geeignet, um Bilddaten
  auszuwerten.
- Und selbst die Multi-column Neural Networks
+ Und selbst die mehrspaltigen neuronalen Netze
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ciregan2012multicolumn"
@@ -2540,6 +2559,9 @@ Anwendung zum Suchen bestimmter Merkmale
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -2547,12 +2569,15 @@ status open
 
 
 \backslash
-begin{titlepage}
+onecolumn
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "bibtex/bachelor"
@@ -2561,39 +2586,10 @@ options "IEEEtran"
 \end_inset
 
 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{titlepage}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 \begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{titlepage}
-\end_layout
-
 \end_inset
 
 
@@ -3223,23 +3219,6 @@ Funktion zum Erstellen des künstlichen neuronalen Netzes
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{titlepage}
 \end_layout
 
 \end_inset
