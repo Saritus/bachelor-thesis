@@ -1055,8 +1055,26 @@ isprs
 \end_layout
 
 \begin_layout Standard
-Die Internationale Gesellschaft für Photogrammetrie und Fernerkundung hat
- in ihrem 2D Semantic Labeling Wettbewerb
+Die Internationale Gesellschaft für Photogrammetrie und Fernerkundung trägt
+ einen 2D Semantic Labeling Wettbewerb
+\begin_inset CommandInset citation
+LatexCommand cite
+key "isprs2D"
+
+\end_inset
+
+ für Luftaufnahmen aus.
+ Darin müssen anhand von Orthofotos, das heißt verzerrungsfreien und maßstabsget
+reuen Abbildung der Erdoberfläche, welche durch Luft- und Satellitenaufnahmen
+ erstellt wurden, sowie digitalen Höhenmodellen bestimmte Objekte und Kategorien
+ erkannt werden.
+ Bei diesen Kategorien handelt es sich um Flächenversiegelungen, also Straßen,
+ Parkplätze und ähnliches, Gebäude, niedrige Vegetation, Bäume, Fahrzeuge
+ und die gesonderte Klasse für Sonstiges, wozu Wasser oder andere Flächen
+ gehören, die sich den bisherigen Gruppen nicht zuordnen ließen.
+ Da es sich hier um die Klassifizierung größerer Bereiche handelt, werden
+ die Klasseninformationen farbkodiert in Bildern gespeichert, die der identische
+n lokalen Zuordnung entsprechen, wie die dazugehörigen Orthofotos.
 \end_layout
 
 \begin_layout Standard
