@@ -852,22 +852,6 @@ description "Long short-term memory\\\\Long short-term memory (LSTM) bezeichnet 
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-twocolumn
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Abstract
 Die stetig wachsende Menge an verfügbaren Trainingsdaten, sowie die ansteigende
  Rechnerleistung verbessert die Ergebnisse, die mittels Deeplearning erreicht
