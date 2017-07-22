@@ -1660,12 +1660,7 @@ status open
 
 
 \backslash
-footnote{https://developers.google.com/maps/
-\end_layout
-
-\begin_layout Plain Layout
-
-documentation/javascript/tutorial
+footnote{https://developers.google.com/maps/documentation/javascript/tutorial
 \backslash
 #vergrerungsstufen}
 \end_layout
@@ -2480,12 +2475,7 @@ status open
 
 
 \backslash
-footnote{https://www.dresden.de/de/leben/schulen/
-\end_layout
-
-\begin_layout Plain Layout
-
-schulen-in-dresden.php}
+footnote{https://www.dresden.de/de/leben/schulen/schulen-in-dresden.php}
 \end_layout
 
 \end_inset
@@ -2509,7 +2499,7 @@ status open
 
 
 \backslash
-footnote{https://schuldatenbank.sachsen.de/index.php}
+footnote{https://schuldatenbank.sachsen.de/index.php?id=2}
 \end_layout
 
 \end_inset
