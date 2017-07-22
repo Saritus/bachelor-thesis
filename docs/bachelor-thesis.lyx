@@ -16,7 +16,7 @@
 % Vordefiniertes Programmlisting
 \lstset{
 language = Python,
-basicstyle = \small\sffamily,
+basicstyle = \footnotesize,
 backgroundcolor = \color{pl_background},
 stringstyle = \color{pl_string},
 keywordstyle = \color{pl_keyword}\bfseries,
@@ -90,7 +90,7 @@ xleftmargin = 15pt}
 \papercolumns 2
 \papersides 1
 \paperpagestyle default
-\listings_params "breaklines=true,captionpos=b,frame={tb  //--> frame at the top and at the bottom of the listing},language=Python,basicstyle={\small}"
+\listings_params "breaklines=true,captionpos=b,frame={tb  //--> frame at the top and at the bottom of the listing},language=Python,basicstyle={\footnotesize}"
 \tracking_changes false
 \output_changes false
 \html_math_output 0
