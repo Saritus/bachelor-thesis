@@ -1688,6 +1688,290 @@ Die mittels dieser URL erzeugten Bilder werden lokal gespeichert und basierend
 Künstliche Datenmengenvergrößerung
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+from keras.preprocessing.image import ImageDataGenerator
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Bildveränderer der Trainingsdaten
+\end_layout
+
+\begin_layout Plain Layout
+
+datagen = ImageDataGenerator(
+\end_layout
+
+\begin_layout Plain Layout
+
+	rotation_range=10,
+\end_layout
+
+\begin_layout Plain Layout
+
+	width_shift_range=0.1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	height_shift_range=0.1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	rescale=1.
+ / 255,
+\end_layout
+
+\begin_layout Plain Layout
+
+	shear_range=0.1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	zoom_range=0.1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	horizontal_flip=True,
+\end_layout
+
+\begin_layout Plain Layout
+
+	vertical_flip=True,
+\end_layout
+
+\begin_layout Plain Layout
+
+	fill_mode='reflect'
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:image_data_generator"
+
+\end_inset
+
+ImageDataGenerator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Erzeugen der Trainingsdaten
+\end_layout
+
+\begin_layout Plain Layout
+
+generator = datagen.flow_from_directory(
+\end_layout
+
+\begin_layout Plain Layout
+
+	'data/train_data',
+\end_layout
+
+\begin_layout Plain Layout
+
+	target_size=(width, height),
+\end_layout
+
+\begin_layout Plain Layout
+
+	batch_size=batchsize,
+\end_layout
+
+\begin_layout Plain Layout
+
+	class_mode=classmode,
+\end_layout
+
+\begin_layout Plain Layout
+
+	shuffle=True
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:flow_from_directory"
+
+\end_inset
+
+flow_from_directory
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Trainieren des Netzes
+\end_layout
+
+\begin_layout Plain Layout
+
+history = model.fit_generator(
+\end_layout
+
+\begin_layout Plain Layout
+
+	generator,
+\end_layout
+
+\begin_layout Plain Layout
+
+	samples_per_epoch=samples,
+\end_layout
+
+\begin_layout Plain Layout
+
+	epochs=epochs,
+\end_layout
+
+\begin_layout Plain Layout
+
+	callbacks=[cp]
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:fit_generator"
+
+\end_inset
+
+fit_generator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Künstliches neuronales Netz
 \end_layout
