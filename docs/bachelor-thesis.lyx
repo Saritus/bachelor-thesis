@@ -1689,6 +1689,29 @@ Künstliche Datenmengenvergrößerung
 \end_layout
 
 \begin_layout Standard
+Sollte die Menge an Trainingsdaten für die gewünschte Aufgabe des Netzes
+ zu klein sein, ist das Risiko eines Overfittings und der damit einhergehenden
+ schlechten Genauigkeitsrate für die Validierungsdaten sehr hoch.
+\end_layout
+
+\begin_layout Standard
+Eine sehr einfache Variante um die Menge der Trainingsdaten künstlich zu
+ erhöhen, ist das geringe Verändern der Satellitenbilder an sich bei gleichbleib
+ender Klasseninformation.
+ Die genaue Abwandlung eines Bildes ist dabei zufällig, aber durch gewisse
+ Rahmenbedingungen eingeschränkt.
+ Wie in Algorithmus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:image_data_generator"
+
+\end_inset
+
+ gezeigt, ist dabei eine Vielzahl von Operationen, wie das Spiegeln, Drehen,
+ Verschieben, Strecken oder Vergrößern des Bildes möglich.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float algorithm
 wide false
 sideways false
@@ -1701,15 +1724,6 @@ status open
 
 \begin_layout Plain Layout
 
-# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
 from keras.preprocessing.image import ImageDataGenerator
 \end_layout
 
@@ -1719,7 +1733,7 @@ from keras.preprocessing.image import ImageDataGenerator
 
 \begin_layout Plain Layout
 
-# Bildveränderer der Trainingsdaten
+# Verändern der Bilddaten
 \end_layout
 
 \begin_layout Plain Layout
@@ -1798,34 +1812,34 @@ ImageDataGenerator
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+Die Bilddaten werden hierbei aber nicht mehr über eine externen Datei geladen,
+ die sämtliche Adressen der Trainingsdaten enthält, sondern direkt in Form
+ von Bilddateien aus einem Ordner, wie in Algorithmus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:flow_from_directory"
+
+\end_inset
+
+ zu erkennen.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float algorithm
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset listings
 inline false
 status open
-
-\begin_layout Plain Layout
-
-# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -1893,83 +1907,38 @@ flow_from_directory
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# Trainieren des Netzes
-\end_layout
-
-\begin_layout Plain Layout
-
-history = model.fit_generator(
-\end_layout
-
-\begin_layout Plain Layout
-
-	generator,
-\end_layout
-
-\begin_layout Plain Layout
-
-	samples_per_epoch=samples,
-\end_layout
-
-\begin_layout Plain Layout
-
-	epochs=epochs,
-\end_layout
-
-\begin_layout Plain Layout
-
-	callbacks=[cp]
-\end_layout
-
-\begin_layout Plain Layout
-
-)
-\end_layout
+Für das Erzeugen der Bilddateien ist dafür aber immer noch eine seperate
+ Adressdatei notwendig und erfolgt wie in Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satellitenbilder"
 
 \end_inset
 
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "alg:fit_generator"
-
-\end_inset
-
-fit_generator
+ beschrieben.
+ Die Klasseninformation werden nun in Form von Unterordnern übermittelt.
+ Jeder Ordner steht dabei für eine eigenständige Klasse.
+ Deshalb ist diese Methode auch nur für Versuche mit klaren Klassenzuordnungen
+ anwendbar.
 \end_layout
 
+\begin_layout Standard
+Diese Variante der Datenmengenvergrößerung wurde auch in 
+\begin_inset Quotes gld
+\end_inset
+
+Building powerful image classification models using very little data
+\begin_inset Quotes grd
 \end_inset
 
 
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chollet2016building"
 
 \end_inset
 
-
+ verwendet.
 \end_layout
 
 \begin_layout Subsection
@@ -2003,10 +1972,11 @@ Das neuronale Netz besteht es drei Teilen.
 \end_layout
 
 \begin_layout Standard
-Building powerful image classification models using very little data
+Best Practices for Convolutional Neural Networks Applied to Visual Document
+ Analysis
 \begin_inset CommandInset citation
 LatexCommand cite
-key "chollet2016building"
+key "simard2003best"
 
 \end_inset
 
@@ -2014,11 +1984,10 @@ key "chollet2016building"
 \end_layout
 
 \begin_layout Standard
-Best Practices for Convolutional Neural Networks Applied to Visual Document
- Analysis
+Dropout: a simple way to prevent neural networks from overfitting
 \begin_inset CommandInset citation
 LatexCommand cite
-key "simard2003best"
+key "srivastava2014dropout"
 
 \end_inset
 
