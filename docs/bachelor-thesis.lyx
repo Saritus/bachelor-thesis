@@ -2360,337 +2360,6 @@ Abweichungen der Netzvorhersagen vom Vorgabewert
 
 \end_layout
 
-\begin_layout Subsection
-Postleitzahl
-\end_layout
-
-\begin_layout Standard
-Im Gegensatz zu Längen- und Breitengrad, sind Postleitzahlen in Deutschland
- nur bedingt geordnet.
- Es gilt zwar das Prinzip, dass zwei zahlenmäßig nah beieinander liegende
- Postleitzahlen sich häufig auch örtlich nah sind, jedoch ist diese Zuordnung
- nicht konsistent.
- Deswegen sollte es für ein Netz auch entsprechend schwerer sein, nur anhand
- eines Satellitenbildes eines Hauses die Postleitzahlen von eben diesem
- zu bestimmen.
-\end_layout
-
-\begin_layout Standard
-Die Trainingsdaten bestehen aus 64390 Häusern in Dresden, deren räumliche
- Anordnung sowie Zuordnung zu einer Postleitzahl in Abbildung 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:plz_in_dd"
-
-\end_inset
-
- dargestellt ist.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/plz_teach.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:plz_in_dd"
-
-\end_inset
-
-Postleitzahlenbereiche in Dresden
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/plz_prediction.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:prediction_plz_in_dd"
-
-\end_inset
-
-Ergebnisse der Klassifizierung des Netzes
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="2">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename img/plz_teach.png
-	lyxscale 50
-	width 50col%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename img/plz_prediction.png
-	lyxscale 50
-	width 50col%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-(a)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-(b)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:point-plot"
-
-\end_inset
-
-Ergebnisse der Klassifizierung des Netzes
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Schulen - Wohnhäuser
-\end_layout
-
-\begin_layout Standard
-Das dritte Experiment wird die Klassifizierung von Häusern beinhalten.
- Dafür soll ein Netz trainiert werden, welches zwischen Wohnhaus und Schule
- unterscheiden kann.
- Als Datengrundlage wird hierfür eine Liste mit allen 204 Schulen in Dresden
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-footnote{https://www.dresden.de/de/leben/schulen/schulen-in-dresden.php}
-\end_layout
-
-\end_inset
-
-, sowie 204 zufällig ausgewählte Wohnhäusern, ebenfalls aus dem Raum Dresden.
-\end_layout
-
-\begin_layout Subsection
-Schularten
-\end_layout
-
-\begin_layout Standard
-Das letzte Experiment beinhaltet die Klassifizierung von Schulen in Sachsen
- nach den drei Klassen Grundschule, Oberschule und Gymnasium.
- Die dafür verwendeten Trainingsdaten basieren auf der offiziellen Sächsischen
- Schuldatenbank
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-footnote{https://schuldatenbank.sachsen.de/index.php?id=2}
-\end_layout
-
-\end_inset
-
-, herausgegeben vom Sächsischen Staatsministerium für Kultus.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Ergebnisse
-\end_layout
-
-\begin_layout Standard
-Das System ließ sich einfach, schnell und problemlos an die verschiedenen
- Anforderungen der Experimente anpassen.
-\end_layout
-
-\begin_layout Section
-Ausblick
-\end_layout
-
-\begin_layout Standard
-Die wohl größte Erweiterung für das erzeugte System wäre die Umsetzung einer
- Anwendung, die ein trainiertes Netz automatisch als Grundlage für die Klassifiz
-ierung von Satellitenbildern nimmt.
- Die Satellitenbilder könnten ebenfalls auf Bedarf mittels der Google Maps
- API erzeugt werden und auf vom Nutzer eingegebenen Adressen basieren.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Itemize
-Verbesserung der API
-\end_layout
-
-\begin_layout Itemize
-Anwendung zum Suchen bestimmter Merkmale
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-onecolumn
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-bibfiles "bibtex/bachelor"
-options "IEEEtran"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 \begin_inset Float table
 wide false
@@ -3061,6 +2730,350 @@ Ergebnisse des x-y-Koordinatenversuchs
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Postleitzahl
+\end_layout
+
+\begin_layout Standard
+Im Gegensatz zu Längen- und Breitengrad, sind Postleitzahlen in Deutschland
+ nur bedingt geordnet.
+ Es gilt zwar das Prinzip, dass zwei zahlenmäßig nah beieinander liegende
+ Postleitzahlen sich häufig auch örtlich nah sind, jedoch ist diese Zuordnung
+ nicht konsistent.
+ Deswegen sollte es für ein Netz auch entsprechend schwerer sein, nur anhand
+ eines Satellitenbildes eines Hauses die Postleitzahlen von eben diesem
+ zu bestimmen.
+\end_layout
+
+\begin_layout Standard
+Die Trainingsdaten bestehen aus 64390 Häusern in Dresden, deren räumliche
+ Anordnung sowie Zuordnung zu einer Postleitzahl in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:plz_in_dd"
+
+\end_inset
+
+ dargestellt ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/plz_teach.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:plz_in_dd"
+
+\end_inset
+
+Postleitzahlenbereiche in Dresden
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/plz_prediction.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:prediction_plz_in_dd"
+
+\end_inset
+
+Ergebnisse der Klassifizierung des Netzes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/plz_teach.png
+	lyxscale 50
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/plz_prediction.png
+	lyxscale 50
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(a) Postleitzahlenbereiche in Dresden
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(b) Ergebnisse der Klassifizierung des Netzes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:point-plot"
+
+\end_inset
+
+Trainingsdaten und Ergebnisse der Merkmalserkennung für Postleitzahlen in
+ Dresden
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Schulen - Wohnhäuser
+\end_layout
+
+\begin_layout Standard
+Das dritte Experiment wird die Klassifizierung von Häusern beinhalten.
+ Dafür soll ein Netz trainiert werden, welches zwischen Wohnhaus und Schule
+ unterscheiden kann.
+ Als Datengrundlage wird hierfür eine Liste mit allen 204 Schulen in Dresden
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{https://www.dresden.de/de/leben/schulen/schulen-in-dresden.php}
+\end_layout
+
+\end_inset
+
+, sowie 204 zufällig ausgewählte Wohnhäusern, ebenfalls aus dem Raum Dresden.
+\end_layout
+
+\begin_layout Subsection
+Schularten
+\end_layout
+
+\begin_layout Standard
+Das letzte Experiment beinhaltet die Klassifizierung von Schulen in Sachsen
+ nach den drei Klassen Grundschule, Oberschule und Gymnasium.
+ Die dafür verwendeten Trainingsdaten basieren auf der offiziellen Sächsischen
+ Schuldatenbank
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{https://schuldatenbank.sachsen.de/index.php?id=2}
+\end_layout
+
+\end_inset
+
+, herausgegeben vom Sächsischen Staatsministerium für Kultus.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Ergebnisse
+\end_layout
+
+\begin_layout Standard
+Das System ließ sich einfach, schnell und problemlos an die verschiedenen
+ Anforderungen der Experimente anpassen.
+\end_layout
+
+\begin_layout Standard
+Da sowohl Eingabe-, als auch Ausgabedaten in Form einer Datei in das System
+ gegeben werden, muss lediglich das Format
+\end_layout
+
+\begin_layout Standard
+Ein trainiertes Netz lässt sich leicht in eine externe Anwendung intergrieren,
+ da sowohl die Architektur, als auch die Gewichte des Netzes in einer seperaten
+ Datei gespeichert wurden.
+ Das System an sich ist für diese Integration also nicht mehr notwendig.
+\end_layout
+
+\begin_layout Section
+Ausblick
+\end_layout
+
+\begin_layout Standard
+Die wohl größte Erweiterung für das erzeugte System wäre die Umsetzung einer
+ Anwendung, die ein trainiertes Netz automatisch als Grundlage für die Klassifiz
+ierung von Satellitenbildern nimmt.
+ Die Satellitenbilder könnten ebenfalls auf Bedarf mittels der Google Maps
+ API erzeugt werden und auf vom Nutzer eingegebenen Adressen basieren.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+Verbesserung der API
+\end_layout
+
+\begin_layout Itemize
+Anwendung zum Suchen bestimmter Merkmale
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+onecolumn
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "bibtex/bachelor"
+options "IEEEtran"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
