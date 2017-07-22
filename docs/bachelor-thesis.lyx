@@ -853,15 +853,8 @@ description "Long short-term memory\\\\Long short-term memory (LSTM) bezeichnet 
 \end_layout
 
 \begin_layout Abstract
-Die stetig wachsende Menge an verfügbaren Trainingsdaten, sowie die ansteigende
- Rechnerleistung verbessert die Ergebnisse, die mittels Deeplearning erreicht
- werden können, immer mehr.
- Doch 
-\end_layout
-
-\begin_layout Abstract
 In dieser Arbeit wird ein System entwickelt, das sich basierend auf einer
- Adressliste automatisiert alle benötigten Satellitenbilder herunterlädt,
+ Adressliste automatisiert alle dazugehörigen Satellitenbilder herunterlädt,
  ein an die Ein- und Ausgabedaten angepasstes künstliches neuronales Netz
  erstellt und dieses anschließend für seine Aufgabe im Bereich der Klassifizieru
 ng beziehungsweise der Merkmalserkennung trainiert.
@@ -869,6 +862,7 @@ ng beziehungsweise der Merkmalserkennung trainiert.
  dem Netz bisher unbekannte Validierungsdaten und bei Verbesserungen für
  eine spätere Verwendung in Anwendungen inklusive Netzarchitektur lokal
  gespeichert.
+ 
 \end_layout
 
 \begin_layout Abstract
@@ -878,6 +872,13 @@ Das soll die Verwendung von Deeplearning für Satellitenbilder erleichtern
 
 \begin_layout Section
 Einleitung und Motivation
+\end_layout
+
+\begin_layout Standard
+Die stetig wachsende Menge an verfügbaren Trainingsdaten, sowie die ansteigende
+ Rechnerleistung verbessert die Ergebnisse, die mittels Deeplearning erreicht
+ werden können, immer mehr.
+ Doch 
 \end_layout
 
 \begin_layout Standard
