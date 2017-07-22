@@ -1834,7 +1834,7 @@ reference "alg:flow_from_directory"
 \begin_inset Float algorithm
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset listings
