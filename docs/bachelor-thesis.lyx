@@ -3217,6 +3217,26 @@ options "bibtotoc,IEEEtran"
 
 \end_layout
 
+\begin_layout Section*
+Anhang
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{Anhang}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float algorithm
 wide false
