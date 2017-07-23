@@ -847,6 +847,14 @@ description "Programmiergerüst, welches einen Entwicklungsrahmen für Softwaree
 \end_inset
 
 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Pooling-Schicht"
+description "Schichtart, bei der die Ausgabemenge kleiner als die Eingabemenge ist, indem überflüssige Informationen verworfen werden. "
+
+\end_inset
+
+
 \begin_inset Newpage newpage
 \end_inset
 
