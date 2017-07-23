@@ -1763,7 +1763,7 @@ name "alg:google_maps_url"
 
 \end_inset
 
-Erzeugen der URL für die Google Maps API
+Erzeugen der URL für die Google Static Maps API
 \end_layout
 
 \end_inset
@@ -3025,28 +3025,54 @@ Ausblick
 \end_layout
 
 \begin_layout Standard
-Die wohl größte Erweiterung für das erzeugte System wäre die Umsetzung einer
- Anwendung, die ein trainiertes Netz automatisch als Grundlage für die Klassifiz
-ierung von Satellitenbildern nimmt.
- Die Satellitenbilder könnten ebenfalls auf Bedarf mittels der Google Maps
- API erzeugt werden und auf vom Nutzer eingegebenen Adressen basieren.
+Die wohl größte Verbesserung für das erzeugte System wäre die Umsetzung
+ einer Anwendung, die ein trainiertes Netz automatisch als Grundlage für
+ die Klassifizierung von Satellitenbildern nimmt.
+ Die Satellitenbilder könnten ebenfalls auf Bedarf mittels der Google Static
+ Maps API erzeugt werden und auf vom Nutzer eingegebenen Adressen basieren.
+ Dadurch wäre der Schritt einer Integration in eine seperate Anwendung nicht
+ mehr notwendig und ein trainiertes Netz könnte direkt nach Abschluss des
+ Trainingsvorgangs verwendet werden.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Itemize
-Verbesserung der API
-\end_layout
-
-\begin_layout Itemize
-Anwendung zum Suchen bestimmter Merkmale
-\end_layout
+Eine andere Erweiterung wäre das Trainieren eines Netzes mit einer großen
+ Anzahl an Klassen, ähnlich dem Konzept von VGG16
+\begin_inset CommandInset citation
+LatexCommand cite
+key "simonyan2014very"
 
 \end_inset
 
+ mit den Gewichten für ImageNet
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Russakovsky2015"
 
+\end_inset
+
+.
+ An dieses Netz könnten dann weitere Schichten angehangen werden, die das
+ tatsächliche Format der gewünschten Ausgabedaten für ein Klassifizierungsproble
+m beinhalten, entsprechend dem Ansatz, welcher in 
+\begin_inset Quotes gld
+\end_inset
+
+Building powerful image classification models using very little data
+\begin_inset Quotes grd
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chollet2016building"
+
+\end_inset
+
+ verwendet wird.
+ Da dadurch ein Großteil des Netzes nicht zufällig initialisiert wird, sondern
+ bereits vortrainierte Gewichte besitzt, ließe sich die Dauer des Trainingsvorga
+ngs enorm verkürzen.
 \end_layout
 
 \begin_layout Standard
