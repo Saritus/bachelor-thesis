@@ -3185,6 +3185,48 @@ key "chollet2016building"
 \end_layout
 
 \begin_layout Standard
+Ein Problem, welches sich in den Abschnitten 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Schule-oder-Wohnhaus"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Schularten"
+
+\end_inset
+
+ ergeben hat, ist die fehlende Möglichkeit der Darstellung der Trainingsdaten
+ sowie der Ergebnisse in Form eines Streudiagramms, sollte die Datengrundlage
+ keine GPS-Koordinaten beinhalten.
+ Dieses Problem könnte man mithilfe der Google Maps Geocoding API
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{https://developers.google.com/maps/documentation/geocoding/start}
+\end_layout
+
+\end_inset
+
+ lösen, indem man über die Adresse, oder im Fall von Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Schularten"
+
+\end_inset
+
+ über den Schulnamen, die Längen- und Breitengrade für jedes Element abfragt
+ und in der jeweiligen Zeile der CSV-Datei einfügt.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
