@@ -815,6 +815,14 @@ description "Long short-term memory\\\\Long short-term memory (LSTM) bezeichnet 
 \end_inset
 
 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CSV-Datei"
+description "Comma Seperated Values"
+
+\end_inset
+
+
 \begin_inset Newpage newpage
 \end_inset
 
