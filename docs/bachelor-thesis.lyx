@@ -2264,9 +2264,20 @@ Experimente
 \end_layout
 
 \begin_layout Standard
-Um das System zu testen, wurden mehrere Experimente mit verschiedenen Datengrund
-lagen für die Eingabedaten, sowie verschiedenen Formaten beziehungsweise
- Typen von Ausgabedaten durchgeführt.
+Um die in Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Konkretisierung-der-Aufgabenstel"
+
+\end_inset
+
+ geforderten Kriterien für das System zu testen, wurden verschiedene Experimente
+ durchgeführt.
+ Diese unterscheiden sich in ihren Datengrundlagen für die Trainingsdaten,
+ in der Form der Datengrundlagen, sowie im Format beziehungsweise Typ der
+ Ausgabedaten.
+ Ebenso werden darin die verschiedenen Arten der Ergebnisvisualisierung
+ verwendet.
 \end_layout
 
 \begin_layout Subsection
