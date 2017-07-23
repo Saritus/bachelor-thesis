@@ -2245,7 +2245,7 @@ reference "sub:matplotlib"
  Ein Beispiel dafür ist in Abbildung 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:plz_in_dd"
+reference "fig:prediction_plz_in_dd"
 
 \end_inset
 
