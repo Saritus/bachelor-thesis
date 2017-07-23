@@ -3799,7 +3799,7 @@ Name
 \uwave off
 \noun off
 \color none
-Adresse
+Straße
 \end_layout
 
 \end_inset
@@ -3841,7 +3841,7 @@ Stadtteil
 \uwave off
 \noun off
 \color none
-Typ
+Schultyp
 \end_layout
 
 \end_inset
@@ -7565,7 +7565,7 @@ Oberschule
 \uwave off
 \noun off
 \color none
-Adolph-Diesterweg-Gymnasium - Allgemeinbildendes Gymnasium, Vogtland-Kolleg
+Adolph-Diesterweg-Gymnasium
 \end_layout
 
 \end_inset
