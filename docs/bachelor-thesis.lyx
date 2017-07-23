@@ -1308,7 +1308,8 @@ key "chollet2015keras"
 \end_inset
 
  verwendet.
- Es benotigt als Grundlage entweder TensorFlow
+ Im Gegensatz zu anderen Frameworks besitzt es die Möglichkeit als Grundlage
+ entweder TensorFlow
 \begin_inset CommandInset citation
 LatexCommand cite
 key "abadi2016tensorflow"
@@ -1329,11 +1330,10 @@ key "bergstra2011theano"
 
 \end_inset
 
-.
- Dadurch ist die Installation aufwändiger als bei Bibliotheken, die keine
- zusätzlichen Voraussetzungen besitzen, jedoch erlaubt es aber auch die
- Implementierung und damit die Vorteile von allen dreien zu benutzen.
- 
+ zu verwenden.
+ Dies erlaubt es, die Implementierungen und damit auch die Vorteile aller
+ drei zu nutzen.
+ Zudem erhöht es die Reichweite verwendbarer Computersysteme
 \end_layout
 
 \begin_layout Subsection
