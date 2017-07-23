@@ -3060,6 +3060,22 @@ footnote{https://schuldatenbank.sachsen.de/index.php?id=2}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+twocolumn
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Ergebnisse
 \end_layout
@@ -3082,6 +3098,13 @@ ang in einer seperaten Datei.
  verwendet werden.
  Das Kriterium der leichten Integration in externe Anwendungen wurde damit
  erfüllt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
