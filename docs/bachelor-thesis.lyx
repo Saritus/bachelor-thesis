@@ -3034,7 +3034,11 @@ Schule oder Wohnhaus
 Das dritte Experiment wird die Klassifizierung von Häusern beinhalten.
  Dafür soll ein Netz trainiert werden, welches zwischen Wohnhaus und Schule
  unterscheiden kann.
- Als Datengrundlage wird hierfür eine Liste mit 204 Schulen in Dresden
+\end_layout
+
+\begin_layout Standard
+Die Datengrundlage für die Schulen besteht aus einer Liste mit 204 Einträgen,
+ veröffentlicht unter der Sektion Schulen in Dresden
 \begin_inset ERT
 status open
 
@@ -3047,7 +3051,18 @@ footnote{https://www.dresden.de/de/leben/schulen/schulen-in-dresden.php}
 
 \end_inset
 
-, sowie 204 zufällig ausgewählte Wohnhäusern, ebenfalls aus dem Raum Dresden.
+ vom Amt für Presse- und Öffentlichkeitsarbeit der Landeshauptstadt Dresden.
+ Ein Auszug daraus befindet sich in Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tbl:table_schools_dresden"
+
+\end_inset
+
+.
+ Um die Trainingsdaten in beiden Klassen möglichst vergleichbar zu halten,
+ enthält die Liste der Wohnhäuser ebenfalls 204 Einträge von zufällig aus
+ dem Raum Dresden ausgewählten Adressen.
 \end_layout
 
 \begin_layout Subsection
