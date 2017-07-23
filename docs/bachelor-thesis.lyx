@@ -918,10 +918,7 @@ ng beziehungsweise der Merkmalserkennung trainiert.
  dem Netz bisher unbekannte Validierungsdaten und bei Verbesserungen für
  eine spätere Verwendung in Anwendungen inklusive Netzarchitektur lokal
  gespeichert.
-\end_layout
-
-\begin_layout Abstract
-Abschließend wird das System in verschiedenen Experimenten für die Erkennung
+ Abschließend wird das System in verschiedenen Experimenten für die Erkennung
  von GPS-Koordinaten, Postleitzahlen und Schularten verwendet und deren
  Ergebnisse ausgewertet.
 \end_layout
@@ -931,47 +928,42 @@ Einleitung und Motivation
 \end_layout
 
 \begin_layout Standard
-Die stetig wachsende Menge an verfügbaren Trainingsdaten, sowie die ansteigende
- Rechnerleistung verbessert die Ergebnisse, die mittels Deeplearning erreicht
- werden können, immer mehr.
- Doch 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Itemize
-Bildanalyse mittels Deeplearning
-\end_layout
-
-\begin_layout Itemize
-Marketing
-\end_layout
-
-\begin_layout Itemize
-Datenanreicherung
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Quotes gld
 \end_inset
 
-Ein Bild sagt mehr als tausend Worte
+Deeplearning bezeichnet Computermodelle, welche aus mehreren Verarbeitungsschich
+ten bestehen und lernen, Daten auf verschieden Abstraktionsstufen darzustellen.
+ Dieses Konzept brachte dramatische Verbesserungen in der Spracherkennung,
+ der visuellen Objekterkennung und in anderen Fachgebieten, wie der Genomik.
+ Deeplearning erkennt hochkomplexe Strukturen in große Datensätzen, indem
+ es mittels dem Backpropagation-Lernalgorithmus erkennt, wie eine Maschine
+ seine internen Parameter für die Abbildung der Schichten basierend auf
+ den jeweils vorhergegangenen Schichten verändern muss.
+ Convolutional Neural Networks erzielten Durchbrüche in der Verarbeitung
+ von Bildern, Videos, Sprach- und anderen Audioaufnahmen, während rekurrente
+ neuronales Netze eher sequentielle Daten wie Text oder Sprache beleuchten.
 \begin_inset Quotes grd
 \end_inset
 
-.
- Doch gilt dies für alle Bilder? Und was sind das für Worte? Mit dem Aufkommen
- von Deeplearning und der hochwertige Möglichkeiten der Bildanalyse eines
- Convolutional Neural Networks ist die Wissenschaft der Feature-Detection
- in den letzten Jahren weit vorangeschritten.
- 
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lecun2015deeplearning"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dieser Erfolg von Deeplearning wird vorangetrieben durch die ansteigende
+ Rechnerleistung, welche die benötigte Zeit für den Trainingsvorgang verkürzt
+ und größere Netzstrukturen benutzbar macht, sowie der stetig wachsenden
+ Menge an verfügbaren Trainingsdaten.
+ Ein Bereich der Bildverarbeitung, der sich bei zweiterem in den letzten
+ Jahren enorm verbessert hat, ist die Auswertung von Satellitenbildern.
+ Die Anzahl an Quellen für frei verfügbare qualitativ hochwertige Satellitenaufn
+ahmen hat stark zugenommen.
 \end_layout
 
 \begin_layout Section
@@ -991,15 +983,11 @@ Ziel dieser Arbeit ist es, ein System zu entwickeln, mit dem Klassifikationen
  umzusetzen sind.
  Das Hauptkriterium dafür ist, dass sich das System schnell und einfach
  an unterschiedliche Eingabeformate der Daten anpassen lassen kann.
- Außerdem soll eine 
-\end_layout
-
-\begin_layout Standard
-Größtmögliche Automatisierung
-\end_layout
-
-\begin_layout Standard
-Integration in seperate Anwendungen
+ Außerdem soll eine größtmögliche Automatisierung angestrebt werden, was
+ bedeutet, dass der Aufwand bei der Benutzung des Systems minimal zu halten
+ ist.
+ Ebenso sollten die Resultate beziehungsweise das trainierte Netz sich mühelos
+ in andere Anwendungen integrieren lassen.
 \end_layout
 
 \begin_layout Standard
