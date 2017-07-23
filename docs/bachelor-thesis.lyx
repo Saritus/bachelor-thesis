@@ -1703,54 +1703,6 @@ reference "sub:Satellitenbilder"
  neuen CSV-Datei abgespeichert.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/data-generator-v4.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:train-data-generator"
-
-\end_inset
-
-Anwendung zum händischen Erzeugen von Trainingsdaten
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-5.1
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Satellitenbilder
 \begin_inset CommandInset label
@@ -2182,7 +2134,18 @@ key "simonyan2014very"
 
 \end_inset
 
+.
+\end_layout
 
+\begin_layout Standard
+Die Funktion zum Erstellen des Netzes befindet sich in Algorithmus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:create_net"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2377,54 +2340,6 @@ reference "fig:staedte_model_loss"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/history_citys_de.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:staedte_model_loss"
-
-\end_inset
-
-Mittlerer absoluter Fehler während der Trainingsepochen
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-6.1
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Die genauere Verteilung der Ergebnisse ist Abbildung 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2440,54 +2355,6 @@ reference "tbl:table_staedte_boxplot"
 \end_inset
 
  zu entnehmen.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/staedte_result_boxplot.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:staedte_result_boxplot.png"
-
-\end_inset
-
-Abweichungen der Netzvorhersagen vom Vorgabewert
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-6.1
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2892,199 +2759,15 @@ reference "fig:plz_in_dd"
  dargestellt ist.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="2">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename img/plz_teach.png
-	lyxscale 50
-	width 50col%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename img/plz_prediction.png
-	lyxscale 50
-	width 50col%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-(a) Postleitzahlenbereiche in Dresden
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-(b) Ergebnisse der Klassifizierung des Netzes
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:point-plot"
-
-\end_inset
-
-Trainingsdaten und Ergebnisse der Merkmalserkennung für Postleitzahlen in
- Dresden
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/plz_teach.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:plz_in_dd"
-
-\end_inset
-
-Postleitzahlenbereiche in Dresden
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-6.2
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/plz_prediction.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:prediction_plz_in_dd"
-
-\end_inset
-
-Ergebnisse der Klassifizierung des Netzes
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-6.2
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Schule oder Wohnhaus
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Schule-oder-Wohnhaus"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3124,6 +2807,13 @@ reference "tbl:table_schools_dresden"
 
 \begin_layout Subsection
 Schularten
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Schularten"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3400,7 +3090,7 @@ status open
 
 
 \backslash
-twocolumn
+onecolumn
 \end_layout
 
 \end_inset
@@ -3430,13 +3120,6 @@ ang in einer seperaten Datei.
  verwendet werden.
  Das Kriterium der leichten Integration in externe Anwendungen wurde damit
  erfüllt.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -3555,6 +3238,54 @@ status open
 
 \backslash
 addcontentsline{toc}{section}{Anhang}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/data-generator-v4.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:train-data-generator"
+
+\end_inset
+
+Anwendung zum händischen Erzeugen von Trainingsdaten
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+5.1
 \end_layout
 
 \end_inset
@@ -3869,6 +3600,198 @@ status open
 
 \begin_layout Plain Layout
 6.1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/history_citys_de.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:staedte_model_loss"
+
+\end_inset
+
+Mittlerer absoluter Fehler während der Trainingsepochen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+6.1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/staedte_result_boxplot.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:staedte_result_boxplot.png"
+
+\end_inset
+
+Abweichungen der Netzvorhersagen vom Vorgabewert
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+6.1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/plz_teach.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:plz_in_dd"
+
+\end_inset
+
+Postleitzahlenbereiche in Dresden
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+6.2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/plz_prediction.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:prediction_plz_in_dd"
+
+\end_inset
+
+Ergebnisse der Klassifizierung des Netzes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+6.2
 \end_layout
 
 \end_inset
