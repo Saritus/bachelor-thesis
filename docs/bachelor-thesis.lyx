@@ -3750,7 +3750,7 @@ Funktion zum Erstellen des künstlichen neuronalen Netzes
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -3820,8 +3820,7 @@ Schultyp
 \uwave off
 \noun off
 \color none
-1.
- Grundschule Großenhain
+ABC Grundschule Neschwitz
 \end_layout
 
 \end_inset
@@ -3865,53 +3864,8 @@ Grundschule
 \uwave off
 \noun off
 \color none
-1.
- Grundschule Riesa Käthe Kollwitz
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-Grundschule
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-1.
- Oberschule Großenhain Am Kupferberg
+Achatschule St.
+ Egidien-Oberschule mit Berufsorientierung
 \end_layout
 
 \end_inset
@@ -3955,8 +3909,95 @@ Oberschule
 \uwave off
 \noun off
 \color none
-1.
- Oberschule Kamenz
+Adam-Friedrich-Oeser-Schule - Grundschule der Stadt Leipzig
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Adam-Ries-Schule-Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Adolf-Traugott-von-Gersdorf- Oberschule
 \end_layout
 
 \end_inset
@@ -4000,8 +4041,183 @@ Oberschule
 \uwave off
 \noun off
 \color none
-1.
- Oberschule Meißen, Triebischtalschule
+Adolph-Diesterweg-Gymnasium - Allgemeinbildendes Gymnasium, Vogtland-Kolleg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Afra-Grundschule Meißen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+AHFGrundschule Leipzig
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Aktive Schule Dresden
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Aktive Schule Dresden Oberschule des epharisto e.V.
 \end_layout
 
 \end_inset
@@ -4045,8 +4261,7 @@ Oberschule
 \uwave off
 \noun off
 \color none
-10.
- Grundschule Dresden
+Aktive Schule Leipzig e.V.
 \end_layout
 
 \end_inset
@@ -4090,8 +4305,7 @@ Grundschule
 \uwave off
 \noun off
 \color none
-100.
- Schule - Grundschule der Stadt Leipzig
+Albert-Einstein-Grundschule
 \end_layout
 
 \end_inset
@@ -4135,8 +4349,51 @@ Grundschule
 \uwave off
 \noun off
 \color none
-101.
- Oberschule Johannes Gutenberg
+Albert-Schweitzer-Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Albert-Schweitzer-Oberschule
 \end_layout
 
 \end_inset
@@ -4180,8 +4437,51 @@ Oberschule
 \uwave off
 \noun off
 \color none
-102.
- Grundschule Dresden Johanna
+Alexander-von-Humboldt-Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Alfred-Kästner-Schule - Grundschule der Stadt Leipzig
 \end_layout
 
 \end_inset
@@ -4225,8 +4525,7 @@ Grundschule
 \uwave off
 \noun off
 \color none
-103.
- Grundschule Dresden Unterm Regenbogen
+Altstädter Schule - Grundschule
 \end_layout
 
 \end_inset
@@ -4270,53 +4569,7 @@ Grundschule
 \uwave off
 \noun off
 \color none
-106.
- Grundschule Dresden
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-Grundschule
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-107.
- Oberschule Dresden
+Altstadtschule Stollberg, Oberschule
 \end_layout
 
 \end_inset
@@ -4360,98 +4613,7 @@ Oberschule
 \uwave off
 \noun off
 \color none
-108.
- Grundschule Dresden Sonnenblumenschule
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-Grundschule
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-113.
- Grundschule Dresden Canaletto
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-Grundschule
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-116.
- Oberschule Dresden
+Andert-Oberschule Ebersbach
 \end_layout
 
 \end_inset
@@ -4495,8 +4657,7 @@ Oberschule
 \uwave off
 \noun off
 \color none
-117.
- Grundschule Dresden Ludwig Reichenbach
+Anna-Magdalena-Bach-Schule -
 \end_layout
 
 \end_inset
@@ -4540,8 +4701,7 @@ Grundschule
 \uwave off
 \noun off
 \color none
-12.
- Grundschule Dresden
+Annenschule -Grundschule
 \end_layout
 
 \end_inset
@@ -4585,98 +4745,7 @@ Grundschule
 \uwave off
 \noun off
 \color none
-120.
- Grundschule Dresden Am Geberbach
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-Grundschule
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-120.
- Schule - Grundschule der Stadt Leipzig
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-Grundschule
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-121.
- Oberschule Dresden Johann Georg Palitzsch
+Annenschule, Oberschule
 \end_layout
 
 \end_inset
@@ -4720,8 +4789,51 @@ Oberschule
 \uwave off
 \noun off
 \color none
-122.
- Grundschule Dresden Am Palitzschhof
+Anton-Philipp-Reclam-Schule - Gymnasium des
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Anton-Semjonowitsch-Makarenko-Grundschule
 \end_layout
 
 \end_inset
@@ -4765,8 +4877,7 @@ Grundschule
 \uwave off
 \noun off
 \color none
-125.
- Schule - Oberschule der Stadt Leipzig
+Apollonia-von-Wiedebach-Schule - Oberschule der Stadt Leipzig
 \end_layout
 
 \end_inset
@@ -4810,8 +4921,7 @@ Oberschule
 \uwave off
 \noun off
 \color none
-128.
- Oberschule Carola von Wasa
+Arthur-Kießling-Oberschule Königsbrück
 \end_layout
 
 \end_inset
@@ -4855,98 +4965,7 @@ Oberschule
 \uwave off
 \noun off
 \color none
-129.
- Grundschule Dresden
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-Grundschule
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-135.
- Grundschule Dresden
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-Grundschule
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-138.
- Oberschule Dresden
+Artur-Becker-Oberschule Delitzsch
 \end_layout
 
 \end_inset
@@ -4990,8 +5009,7 @@ Oberschule
 \uwave off
 \noun off
 \color none
-139.
- Grundschule Dresden
+Astrid-Lindgren-Grundschule
 \end_layout
 
 \end_inset
@@ -5035,8 +5053,7 @@ Grundschule
 \uwave off
 \noun off
 \color none
-14.
- Grundschule Dresden Im Schweizer Viertel
+Astrid-Lindgren-Grundschule Heidenau
 \end_layout
 
 \end_inset
@@ -5080,8 +5097,7 @@ Grundschule
 \uwave off
 \noun off
 \color none
-144.
- Grundschule Dresden
+Astrid-Lindgren-Schule - Grundschule der Stadt Leipzig
 \end_layout
 
 \end_inset
@@ -5125,8 +5141,7 @@ Grundschule
 \uwave off
 \noun off
 \color none
-15.
- Grundschule Dresden
+August Moritz Böttcher Grundschule
 \end_layout
 
 \end_inset
@@ -5170,8 +5185,7 @@ Grundschule
 \uwave off
 \noun off
 \color none
-157.
- Schule - Grundschule der Stadt Leipzig
+August-Bebel-Schule - Grundschule der Stadt Leipzig
 \end_layout
 
 \end_inset
@@ -5215,8 +5229,51 @@ Grundschule
 \uwave off
 \noun off
 \color none
-16.
- Grundschule Dresden Josephine
+Augustum-Annen-Gymnasium Görlitz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Basaltus-Grundschule Stolpen
 \end_layout
 
 \end_inset
@@ -5260,53 +5317,7 @@ Grundschule
 \uwave off
 \noun off
 \color none
-16.
- Schule - Oberschule der Stadt Leipzig
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-Oberschule
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-172.
- Schule - Grundschule der Stadt Leipzig
+Baumgartengrundschule
 \end_layout
 
 \end_inset
@@ -5350,8 +5361,7 @@ Grundschule
 \uwave off
 \noun off
 \color none
-19.
- Grundschule Dresden
+Bebelschule-Grundschule
 \end_layout
 
 \end_inset
@@ -5395,8 +5405,7 @@ Grundschule
 \uwave off
 \noun off
 \color none
-2.
- Grundschule Am Storchenbrunnen Riesa
+Benjamin-Geißler-Grundschule Liebstadt
 \end_layout
 
 \end_inset
@@ -5440,8 +5449,8 @@ Grundschule
 \uwave off
 \noun off
 \color none
-2.
- Grundschule Großenhain Bobersberg
+Bergschule St.
+ Egidien Grundschule
 \end_layout
 
 \end_inset
@@ -5463,51 +5472,6 @@ Grundschule
 \noun off
 \color none
 Grundschule
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-2.
- Oberschule Am Schacht Großenhain
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-Oberschule
 \end_layout
 
 \end_inset
@@ -5530,8 +5494,7 @@ Oberschule
 \uwave off
 \noun off
 \color none
-2.
- Oberschule Kamenz
+Bernhard-von-Cotta-Gymnasium
 \end_layout
 
 \end_inset
@@ -5552,7 +5515,7 @@ Oberschule
 \uwave off
 \noun off
 \color none
-Oberschule
+Gymnasium
 \end_layout
 
 \end_inset
