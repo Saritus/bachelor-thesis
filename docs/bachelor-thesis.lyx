@@ -3072,6 +3072,245 @@ footnote{https://schuldatenbank.sachsen.de/index.php?id=2}
 \end_inset
 
 , herausgegeben vom Sächsischen Staatsministerium für Kultus.
+ Ein Auszug daraus ist in Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tbl:table_schools_saxony"
+
+\end_inset
+
+ zu sehen.
+ Da hier weder GPS-Koordinaten noch Adressen vorhanden sind, wird stattdessen
+ der Name der Schule als Zentrum des Satellitenbildes in der Google Static
+ Maps API
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GoogleMaps"
+
+\end_inset
+
+ verwendet.
+\end_layout
+
+\begin_layout Standard
+Die Klasseninformationen werden in Form eines Kategorievektors in das Netz
+ gegeben.
+ Dafür werden zunächst alle möglichen Klassen mit Null beginnend durchnummeriert.
+ Anschließend werden die Kategorievektoren erstellt, wobei die Nummer der
+ Klasse die Stelle angibt, in der im Vektor eine 1 eingetragen wird.
+ An allen anderen Positionen befindet sich eine 0.
+ Für dieses Experiment lautet die Zuordnung der Vektoren wie in Tabelle
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tbl:table_categorical"
+
+\end_inset
+
+ abgebildet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Klasse
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Nummer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vektor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(\begin{array}{ccc}
+1 & 0 & 0\end{array})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(\begin{array}{ccc}
+0 & 1 & 0\end{array})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(\begin{array}{ccc}
+0 & 0 & 1\end{array})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tbl:table_categorical"
+
+\end_inset
+
+Zuordnung der Klassen zu ihren Kategorievektoren
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Ausgabeschicht des Netzes enthält drei Neuronen mit einer Softmax-Aktivierun
+gsfunktion.
+ Das heißt, die Summe der Aktivierungen der Neuronen beträgt 1, genau wie
+ in den vorgegebenen Kategorievektoren.
 \end_layout
 
 \begin_layout Standard
