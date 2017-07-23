@@ -3006,15 +3006,18 @@ Das System ließ sich einfach, schnell und problemlos an die verschiedenen
 \end_layout
 
 \begin_layout Standard
-Da sowohl Eingabe-, als auch Ausgabedaten in Form einer Datei in das System
- gegeben werden, muss lediglich das Format
+Da sowohl Eingabe-, als auch Ausgabedaten in Form einer CSV-Datei in das
+ System gegeben werden, muss das System lediglich an das Format der Ausgabedaten
+ angepasst werden.
 \end_layout
 
 \begin_layout Standard
-Ein trainiertes Netz lässt sich leicht in eine externe Anwendung intergrieren,
- da sowohl die Architektur, als auch die Gewichte des Netzes in einer seperaten
- Datei gespeichert wurden.
- Das System an sich ist für diese Integration also nicht mehr notwendig.
+Die Architektur und die Gewichte des Netzes befinden sich nach dem Trainingsvorg
+ang in einer seperaten Datei.
+ Dadurch kann das Netz unabhängig vom Rest des Systems in einer Anwendung
+ verwendet werden.
+ Das Kriterium der leichten Integration in externe Anwendungen wurde damit
+ erfüllt.
 \end_layout
 
 \begin_layout Section
