@@ -1164,8 +1164,15 @@ ate für Städte lag bei rund 10%.
 
 \begin_layout Standard
 Das System wurde anschließend noch verbessert, indem das bestehende Convolutiona
-l Neural Network mit einem Long short-term memory (LSTM) kombiniert wurde,
- um anstatt eines einzelnen Bildes ein ganzes Bilderalbum zu klassifizieren.
+l Neural Network mit einem Long short-term memory (LSTM)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hochreiter1997lstm"
+
+\end_inset
+
+ kombiniert wurde, um anstatt eines einzelnen Bildes ein ganzes Bilderalbum
+ zu klassifizieren.
 \end_layout
 
 \begin_layout Subsection
