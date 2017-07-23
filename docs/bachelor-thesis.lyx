@@ -1171,6 +1171,22 @@ n lokalen Zuordnung entsprechen, wie die dazugehörigen Orthofotos.
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+twocolumn
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Verwendete Technik
 \end_layout
@@ -1373,6 +1389,22 @@ key "grayson2000tkinter"
 
 \begin_layout Standard
 \begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+onecolumn
+\end_layout
+
 \end_inset
 
 
