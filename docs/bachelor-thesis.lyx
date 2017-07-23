@@ -1423,6 +1423,12 @@ Gesamtplan
 \end_layout
 
 \begin_layout Standard
+Die wohl wichtigste Eigenschaft des Systems soll die Modularität sein.
+ Das bedeutet, dass ein Verändern oder Austauschen einer Komponente möglich
+ ist, ohne andere Komponenten dafür zu verändern.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
