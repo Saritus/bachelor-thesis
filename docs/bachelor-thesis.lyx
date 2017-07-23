@@ -1068,7 +1068,7 @@ key "NIPS2012_4824"
  Hinton die ILSVRC-2012.
  Ihr Netz beinhaltet fünf Konvolutionsschichten, manche gefolgt von einer
  Max-pooling Schicht, und abschließend drei vollvernetzten Schichten mit
- der finalen 1000-Neuronen Schicht, die das Ergebnis der Klassifizierungen
+ der finalen 1000-Neuronen-Schicht, die das Ergebnis der Klassifizierungen
  darstellt.
  Damit konnte eine Top-5-Fehlerquote, die die relative Häufigkeit angibt,
  in der das korrekte Ergebnis nicht in den ersten fünf Prädiktionen liegt,
@@ -1912,8 +1912,8 @@ Sollte die Menge an Trainingsdaten für die gewünschte Aufgabe des Netzes
 
 \begin_layout Standard
 Eine sehr einfache Variante um die Menge der Trainingsdaten künstlich zu
- erhöhen, ist das geringe Verändern der Satellitenbilder an sich bei gleichbleib
-ender Klasseninformation.
+ erhöhen, ist das geringfügige Verändern der Satellitenbilder bei gleichbleibend
+er Klasseninformation.
  Die genaue Abwandlung eines Bildes ist dabei zufällig, aber durch gewisse
  Rahmenbedingungen eingeschränkt.
  Wie in Algorithmus 
@@ -2905,82 +2905,6 @@ status collapsed
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename img/plz_teach.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:plz_in_dd"
-
-\end_inset
-
-Postleitzahlenbereiche in Dresden
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/plz_prediction.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:prediction_plz_in_dd"
-
-\end_inset
-
-Ergebnisse der Klassifizierung des Netzes
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="2">
 <features rotate="0" tabularvalignment="middle">
@@ -3056,6 +2980,82 @@ name "fig:point-plot"
 
 Trainingsdaten und Ergebnisse der Merkmalserkennung für Postleitzahlen in
  Dresden
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/plz_teach.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:plz_in_dd"
+
+\end_inset
+
+Postleitzahlenbereiche in Dresden
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/plz_prediction.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:prediction_plz_in_dd"
+
+\end_inset
+
+Ergebnisse der Klassifizierung des Netzes
 \end_layout
 
 \end_inset
