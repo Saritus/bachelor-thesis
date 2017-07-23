@@ -1202,18 +1202,18 @@ Python
 \end_layout
 
 \begin_layout Standard
-Die verwendete Programmiersprache ist Python.
-\end_layout
-
-\begin_layout Standard
-Python besitzt viele Vorteile gegenüber anderen Programmiersprachen.
- Es ist leicht zu lesen, wodurch man die Logik und den Ablauf eines Programmes
+Als Programmiersprache wurde Python verwendet, da sie viele Vorteile gegenüber
+ anderen Programmiersprachen besitzt.
+ Sie ist leicht zu lesen, wodurch man die Logik und den Ablauf eines Programmes
  schneller erkennt.
  Es ist unabhängig vom Betriebssystem und die große Anzahl an open-source
  Bibliotheken ermöglicht eine leichte Umsetzung zu nahezu jeder Problematik.
- Außerdem besitzt Python die größte Anzahl an Deeplearning-Bibliotheken,
- und wird auch von großen Unternehmen und Einrichtungen in diesem Bereich
- unterstützt und vorangetrieben, wie TensorFlow
+\end_layout
+
+\begin_layout Standard
+Außerdem besitzt Python die größte Anzahl an Deeplearning-Bibliotheken,
+ und wird von großen Unternehmen und Einrichtungen in diesem Bereich unterstützt
+ und vorangetrieben, wie unter anderem TensorFlow
 \begin_inset CommandInset citation
 LatexCommand cite
 key "abadi2016tensorflow"
@@ -1235,6 +1235,14 @@ key "chetlur2014cudnn"
 \end_inset
 
  von NVIDIA.
+\end_layout
+
+\begin_layout Standard
+Der primäre Nachteil von Python ist wohl der Geschwindigkeitsunterschied
+ im Vergleich zu kompilierenden Sprachen wie C oder C++.
+ Da in Python aber bereits Deeplearning-Implementierungen existieren, die
+ Grafikkarten zum berechnen verwenden können, sollte dieser Makel nur eine
+ untergeordnete Rolle spielen.
 \end_layout
 
 \begin_layout Standard
