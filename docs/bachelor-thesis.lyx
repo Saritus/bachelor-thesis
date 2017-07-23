@@ -2402,6 +2402,16 @@ Mittlerer absoluter Fehler während der Trainingsepochen
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+6.1
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2453,6 +2463,16 @@ Abweichungen der Netzvorhersagen vom Vorgabewert
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+6.1
 \end_layout
 
 \end_inset
@@ -2993,6 +3013,16 @@ Postleitzahlenbereiche in Dresden
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+6.2
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3026,6 +3056,16 @@ Ergebnisse der Klassifizierung des Netzes
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+6.2
 \end_layout
 
 \end_inset
