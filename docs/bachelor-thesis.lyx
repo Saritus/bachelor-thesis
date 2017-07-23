@@ -860,6 +860,22 @@ description "Comma Seperated Values"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+twocolumn
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Abstract
 In dieser Arbeit wird ein System entwickelt, das sich basierend auf einer
  Adressliste automatisiert alle dazugehörigen Satellitenbilder herunterlädt,
@@ -949,6 +965,22 @@ Integration in zukünftige Anwendungen
 
 \begin_layout Standard
 \begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+onecolumn
+\end_layout
+
 \end_inset
 
 
