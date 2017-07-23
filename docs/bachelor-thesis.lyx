@@ -786,7 +786,7 @@ set_width "auto"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "API"
-description "Eine Programmierschnittstelle, genauer Schnittstelle zur Anwendungsprogrammierung, häufig nur kurz API genannt (englisch application programming interface, wörtlich ‚Anwendungs­programmier­schnittstelle‘), ist ein Programmteil, der von einem Softwaresystem anderen Programmen zur Anbindung an das System zur Verfügung gestellt wird."
+description "Application programming interface"
 
 \end_inset
 
@@ -794,7 +794,7 @@ description "Eine Programmierschnittstelle, genauer Schnittstelle zur Anwendungs
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "MLP"
-description "A multilayer perceptron (MLP) is a feedforward artificial neural network model that maps sets of input data onto a set of appropriate outputs. An MLP consists of multiple layers of nodes in a directed graph, with each layer fully connected to the next one. Except for the input nodes, each node is a neuron (or processing element) with a nonlinear activation function. MLP utilizes a supervised learning technique called backpropagation for training the network. MLP is a modification of the standard linear perceptron and can distinguish data that is not linearly separable."
+description "Multilayer perceptron"
 
 \end_inset
 
@@ -802,7 +802,7 @@ description "A multilayer perceptron (MLP) is a feedforward artificial neural ne
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "CNN"
-description "Convolutional Neural Network\\\\Ein Convolutional Neural Network (CNN oder ConvNet), zu Deutsch etwa „faltendes neurales Netzwerk“, ist ein feedforward künstliches neuronales Netz. Es handelt sich um ein von biologischen Prozessen inspiriertes Konzept im Bereich des maschinellen Lernens (engl. machine learning). Convolutional Neural Networks finden Anwendung in zahlreichen, modernen Technologien der künstlichen Intelligenz, vornehmlich bei der maschinellen Verarbeitung von Bild- oder Audiodaten."
+description "Convolutional Neural Network"
 
 \end_inset
 
@@ -810,15 +810,39 @@ description "Convolutional Neural Network\\\\Ein Convolutional Neural Network (C
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "LSTM"
-description "Long short-term memory\\\\Long short-term memory (LSTM) bezeichnet im maschinellen Lernen einen Typ von rekurrenten neuronalen Netzen. Sie wurden 1997 von Sepp Hochreiter und Jürgen Schmidhuber in einer Veröffentlichung vorgestellt. Im Gegensatz zu traditionellen rekurrenten Netzen können LSTMs längere zeitlich verzögerte Effekte z. B. für Klassifizierungsaufgaben berücksichtigen und effektiv trainiert werden."
+description "Long short-term memory"
 
 \end_inset
 
 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
-symbol "CSV-Datei"
-description "Comma Seperated Values"
+symbol "CSV"
+description "Comma-separated values\\\\Textformat, in dem einzelne Daten einer Zeile durch Kommata und Semikola getrennt sind. Es ist als Austauschformat geeignet."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "GPS"
+description "Global Positioning System"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "URL"
+description "Uniform Resource Locator\\\\Adresse einer Webseite oder einer Datei im Internet"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Framework"
+description "Programmiergerüst, welches einen Entwicklungsrahmen für Softwareentwickler bereit stellt."
 
 \end_inset
 
