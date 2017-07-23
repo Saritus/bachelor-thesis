@@ -3497,8 +3497,8 @@ key "chollet2016building"
 
  verwendet wird.
  Da dadurch ein Großteil des Netzes nicht zufällig initialisiert wird, sondern
- bereits vortrainierte Gewichte besitzt, ließe sich die Dauer des Trainingsvorga
-ngs enorm verkürzen.
+ bereits vortrainierte Gewichte besitzt, ließe sich die Dauer zukünftiger
+ Trainingsvorgänge enorm verkürzen.
 \end_layout
 
 \begin_layout Standard
