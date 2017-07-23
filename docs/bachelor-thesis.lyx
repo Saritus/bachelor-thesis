@@ -1722,7 +1722,14 @@ name "sub:Satellitenbilder"
 Die Satellitenbilder bilden die Grundlage der Eingabedaten für das Netz.
  Da eine eigenständige Erzeugung einen viel zu hohen Aufwand bedeuten würde,
  werden stattdessen Bilder verwendet, die mittels der Google Static Maps
- API erzeugt wurden.
+ API
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GoogleMaps"
+
+\end_inset
+
+ erzeugt wurden.
  Dafür wird eine URL mittels Algorithmus 
 \begin_inset CommandInset ref
 LatexCommand ref
