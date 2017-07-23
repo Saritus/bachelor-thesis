@@ -3376,7 +3376,14 @@ Die wohl größte Verbesserung für das erzeugte System wäre die Umsetzung
  einer Anwendung, die ein trainiertes Netz automatisch als Grundlage für
  die Klassifizierung von Satellitenbildern nimmt.
  Die Satellitenbilder könnten ebenfalls auf Bedarf mittels der Google Static
- Maps API erzeugt werden und auf vom Nutzer eingegebenen Adressen basieren.
+ Maps API
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GoogleMaps"
+
+\end_inset
+
+ erzeugt werden und auf vom Nutzer eingegebenen Adressen basieren.
  Dadurch wäre der Schritt einer Integration in eine seperate Anwendung nicht
  mehr notwendig und ein trainiertes Netz könnte direkt nach Abschluss des
  Trainingsvorgangs verwendet werden.
