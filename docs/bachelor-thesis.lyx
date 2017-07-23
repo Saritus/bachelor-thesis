@@ -2341,8 +2341,8 @@ Bei einer Trainings-Validierungs-Aufteilung von 10% ergibt dies eine Anzahl
 \begin_layout Standard
 Die mittleren absoluten Fehler der Trainings- und Validierungsdaten lagen
  bei 2,602 und 1,534.
- Der Verlauf dieses Fehlers während des Trainings des Netzes ist in Abbildung
- 
+ Der Verlauf dieses Fehlers während der Trainingsphase des Netzes ist in
+ Abbildung 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:staedte_model_loss"
