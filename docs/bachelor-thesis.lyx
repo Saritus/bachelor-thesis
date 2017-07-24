@@ -863,6 +863,14 @@ description "Prozess, in dem ein neuronalen Netz die Klassifizierung der Trainin
 \end_inset
 
 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Batchsize"
+description "Anzahl an Bildern, die für eine Anpassung der Gewichte des Netzes genutzt werden."
+
+\end_inset
+
+
 \begin_inset Newpage newpage
 \end_inset
 
