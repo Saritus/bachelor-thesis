@@ -1460,7 +1460,7 @@ status open
 
 
 \backslash
-onecolumn
+twocolumn
 \end_layout
 
 \end_inset
@@ -2247,27 +2247,31 @@ Training des Netzes
 \begin_layout Standard
 Nachdem nun die Trainingsdaten geladen und das neuronale Netz erstellt wurde,
  müssen die Gewichte des Netzes an das gewünschte Ziel angepasst werden.
- Dies geschieht, indem ein Optimierer, in unserem Fall ein Stochastischer
- Gradientenabstieg
+ Dafür wird eine vorher festgelegt Anzahl, auch Batchsize genannt, an Satelliten
+bildern aus den Trainingsdaten genommen und vom Netz klassifiziert.
+ Da sämtliche Berechnungen für den Trainingsprozess auf der Grafikkarte
+ stattfinden sollen und der Grafikkartenspeicher durch die Größe der Bilddaten
+ schnell ausgereizt ist, muss die Batchsize relativ klein gehalten werden.
+ Die Ergebnisse der Klassifizierung werden nun mit den Trainingsvorgaben
+ verglichen.
+ Basierend auf diesen Abweichungen werden anschließend die Gewichte des
+ Netzes angepasst.
+ Bei einer niedrigen Batchsize ist ein Stochastischer Gradientenabstieg
 \begin_inset CommandInset citation
 LatexCommand cite
 key "bottou2010large"
 
 \end_inset
 
-, in mehreren Epochen die Klassifizierung des Netzes an die Trainingsvorgabe
- anpasst.
+ dafür am besten geeignet.
+ Anschließend werden die nächsten Bilder genommen und der Anpassungvorgang
+ beginnt von vorne.
+ Man spricht von einer Trainingsepoche, wenn einmal alle Trainingsdaten
+ verwendet wurden.
 \end_layout
 
 \begin_layout Subsection
 Bewertung des Netzes
-\end_layout
-
-\begin_layout Standard
-Die Methode, nach der der Genauigkeitswert berechnet wird, hängt dabei vom
- Format der Ausgabedaten, und damit auch von der Aktivierungsart der letzten
- Schicht des Netzes ab.
- Wenn es sich um eine 
 \end_layout
 
 \begin_layout Standard
@@ -2279,6 +2283,13 @@ Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
  so werden die Gewichte des Netzes gespeichert und der neue Bestwert wird
  sich gemerkt.
  Dadurch soll eine Überanpassung des Netzes vermieden werden.
+\end_layout
+
+\begin_layout Standard
+Die Methode, nach der dieser Genauigkeitswert berechnet wird, hängt dabei
+ vom Format der Ausgabedaten, und damit auch von der Aktivierungsart der
+ letzten Schicht des Netzes ab.
+ Wenn es sich um eine 
 \end_layout
 
 \begin_layout Subsection
