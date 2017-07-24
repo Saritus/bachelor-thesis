@@ -1325,7 +1325,7 @@ key "grayson2000tkinter"
  verwendet, da es in jeder Standardinstallation von Python enthalten ist.
  Dadurch werden für die Ausführung keine Zusatzmodule benötigt.
  Außerdem bietet es die Möglichkeit, die Anwendung auf unterschiedlichen
- Plattformen auszuführen ohne dafür den Quellcode anpassen zu müssen.
+ Plattformen auszuführen, ohne dafür den Quellcode anpassen zu müssen.
 \end_layout
 
 \begin_layout Standard
@@ -2380,6 +2380,13 @@ onecolumn
 
 \begin_layout Section
 Experimente
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Experimente"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3207,38 +3214,43 @@ onecolumn
 Ergebnisse
 \end_layout
 
-\begin_layout Itemize
-System schnell und einfach an unterschiedliche Eingabeformate der Daten
- anpassen lassen kann.
-\end_layout
-
 \begin_layout Standard
 Da sowohl Eingabe-, als auch Ausgabedaten in Form einer CSV-Datei in das
  System gegeben werden, muss das System lediglich an das Format der Ausgabedaten
  angepasst werden.
- Eine 
-\end_layout
-
-\begin_layout Itemize
-größtmögliche Automatisierung
-\end_layout
-
-\begin_layout Standard
-qwe
-\end_layout
-
-\begin_layout Itemize
-Resultate beziehungsweise das trainierte Netz sich mühelos in andere Anwendungen
- integrieren lassen.
-\end_layout
-
-\begin_layout Standard
-Die Architektur und die Gewichte des Netzes befinden sich nach dem Trainingsvorg
-ang in einer seperaten Datei.
+ Der Aufwand für das Wechseln der Datengrundlage oder des Klassifikationsziels
+ ist damit gering gehalten.
+ Die benötigten Satellitenbilder werden automatisch basierend auf der Datengrund
+lage heruntergeladen und das Netz passt seine Eingabeschicht selbstständig
+ an die Größe der Trainingsdaten an.
+ Dies sind die Kernpunkte für das Einhalten des Ziels der größtmöglichen
+ Automatisierung.
+ Außerdem befindet sich die Architektur und die Gewichte des Netzes nach
+ dem Trainingsvorgang in einer seperaten Datei.
  Dadurch kann das Netz unabhängig vom Rest des Systems in einer Anwendung
  verwendet werden.
  Das Kriterium der leichten Integration in externe Anwendungen wurde damit
  erfüllt.
+\end_layout
+
+\begin_layout Standard
+Insgesamt erfüllt das System alle in Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Konkretisierung-der-Aufgabenstel"
+
+\end_inset
+
+ geforderten Kriterien in gewissen Maßen und konnte deren Umsetzung sowie
+ seine Funktionsfähigkeit in den verschiedenen Experimenten von Abschnitt
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Experimente"
+
+\end_inset
+
+ zeigen.
 \end_layout
 
 \begin_layout Section
