@@ -809,14 +809,6 @@ description "Convolutional Neural Network"
 
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
-symbol "LSTM"
-description "Long short-term memory"
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
 symbol "CSV"
 description "Comma-separated values\\\\Textformat, in dem einzelne Daten einer Zeile durch Kommata oder Semikola getrennt sind."
 
