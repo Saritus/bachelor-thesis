@@ -818,7 +818,7 @@ description "Long short-term memory"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "CSV"
-description "Comma-separated values\\\\Textformat, in dem einzelne Daten einer Zeile durch Kommata und Semikola getrennt sind. Es ist als Austauschformat geeignet."
+description "Comma-separated values\\\\Textformat, in dem einzelne Daten einer Zeile durch Kommata oder Semikola getrennt sind."
 
 \end_inset
 
@@ -851,6 +851,14 @@ description "Programmiergerüst, welches einen Entwicklungsrahmen für Softwaree
 LatexCommand nomenclature
 symbol "Pooling-Schicht"
 description "Schichtart, bei der die Ausgabemenge kleiner als die Eingabemenge ist, indem überflüssige Informationen verworfen werden. "
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Überanpassung"
+description "Prozess, in dem ein neuronalen Netz die Klassifizierung der Trainingsdaten auswendig lernt, anstatt zu verallgemeinern."
 
 \end_inset
 
