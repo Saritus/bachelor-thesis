@@ -2302,10 +2302,7 @@ Visualisierung von Klassifizierungen
 \begin_layout Standard
 Für die Darstellung der Ergebnisse der Klassifizierung des Netzes gibt es
  verschiedene Möglichkeiten.
-\end_layout
-
-\begin_layout Standard
-Eine Variante ist die Darstellung basierend auf GPS-Koordinaten.
+ Eine Variante ist die Darstellung basierend auf GPS-Koordinaten.
  Dabei wird mit matplotlib, siehe Abschnitt 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2326,6 +2323,13 @@ reference "fig:prediction_plz_in_dd"
 \end_inset
 
  dargestellt.
+\end_layout
+
+\begin_layout Standard
+Alternativ lassen sich die Satellitenbilder direkt mit dem korrekten Vorgabewert
+e sowie dem Ergebnis der Klassifizierung in einem eigenen Interface anzeigen.
+ Dabei könnte besonders Wert auf Falschklassifizierungen gelegt werden,
+ da an ihnen die Probleme des Netzes am besten erkennbar sind.
 \end_layout
 
 \begin_layout Standard
