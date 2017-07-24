@@ -786,15 +786,7 @@ set_width "auto"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "API"
-description "Application programming interface"
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "MLP"
-description "Multilayer perceptron"
+description "Application programming interface\\\\Programmierschnittstelle zum Anbinden eines externen Systems an ein Programm."
 
 \end_inset
 
@@ -802,7 +794,7 @@ description "Multilayer perceptron"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "CNN"
-description "Convolutional Neural Network"
+description "Convolutional Neural Network\\\\Netzstruktur eines künstlichen neuronalen Netzes, bestehend aus einer Aneinanderreihung von Konvolutionsschichten"
 
 \end_inset
 
@@ -811,14 +803,6 @@ description "Convolutional Neural Network"
 LatexCommand nomenclature
 symbol "CSV"
 description "Comma-separated values\\\\Textformat, in dem einzelne Daten einer Zeile durch Kommata oder Semikola getrennt sind."
-
-\end_inset
-
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "GPS"
-description "Global Positioning System"
 
 \end_inset
 
@@ -859,6 +843,14 @@ description "Prozess, in dem ein neuronalen Netz die Klassifizierung der Trainin
 LatexCommand nomenclature
 symbol "Batchsize"
 description "Anzahl an Bildern, die für eine Anpassung der Gewichte des Netzes genutzt werden."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Konvolutionsschicht"
+description "Schichtart, bei der die Ausgabedaten durch eine Faltung der Eingabedaten erzeugt wird."
 
 \end_inset
 
