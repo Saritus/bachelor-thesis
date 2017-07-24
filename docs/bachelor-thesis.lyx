@@ -1868,9 +1868,13 @@ Erzeugen der URL für die Google Static Maps API
 \begin_layout Standard
 Die mittels dieser URL erzeugten Bilder werden lokal gespeichert und basierend
  auf ihren Parametern benannt.
- Dadurch könnten sie vor dem Trainingsprozess noch zugeschnitten oder auf
- eine andere Größe skaliert werden.
- Außerdem verhindert es ein mehrfaches Herunterladen des gleichen Bildes.
+ Dies verhindert ein mehrfaches Herunterladen des gleichen Bildes.
+ Zusätzlich können die Bilder dadurch vor dem Trainingsprozess noch zugeschnitte
+n oder auf eine andere Größe skaliert werden.
+ Außerdem erleichtert es die Umwandlung der Bilder in drei 2D-Arrays für
+ den Rot-, Grün- und Blaukanal.
+ Das ist notwendig, da das Netz keine Farbbilder als Eingabe akzeptieren
+ kann.
 \end_layout
 
 \begin_layout Subsection
