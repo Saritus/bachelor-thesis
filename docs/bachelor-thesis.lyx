@@ -2256,6 +2256,13 @@ Bewertung des Netzes
 \end_layout
 
 \begin_layout Standard
+Die Methode, nach der der Genauigkeitswert berechnet wird, hängt dabei vom
+ Format der Ausgabedaten, und damit auch von der Aktivierungsart der letzten
+ Schicht des Netzes ab.
+ Wenn es sich um eine 
+\end_layout
+
+\begin_layout Standard
 Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
  und die Ergebnisse mit der Trainingsvorlage verglichen.
  Der sich daraus ergebende Genauigkeitswert wird dann mit dem bisherigen
@@ -2264,13 +2271,6 @@ Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
  so werden die Gewichte des Netzes gespeichert und der neue Bestwert wird
  sich gemerkt.
  Dadurch soll eine Überanpassung des Netzes vermieden werden.
-\end_layout
-
-\begin_layout Standard
-Die Methode, nach der der Genauigkeitswert berechnet wird, hängt dabei vom
- Format der Ausgabedaten, und damit auch von der Aktivierungsart der letzten
- Schicht des Netzes ab.
- Wenn es sich um eine 
 \end_layout
 
 \begin_layout Subsection
