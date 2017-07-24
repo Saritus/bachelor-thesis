@@ -935,8 +935,8 @@ ng beziehungsweise der Merkmalserkennung trainiert.
  eine spätere Verwendung in Anwendungen inklusive Netzarchitektur lokal
  gespeichert.
  Abschließend wird das System in verschiedenen Experimenten für die Erkennung
- von GPS-Koordinaten, Postleitzahlen und Schularten verwendet und deren
- Ergebnisse ausgewertet.
+ von geographischen Koordinaten, Postleitzahlen und Schularten verwendet
+ und deren Ergebnisse ausgewertet.
 \end_layout
 
 \begin_layout Section
@@ -1773,7 +1773,8 @@ reference "alg:google_maps_url"
 \end_inset
 
  erzeugt, die die Einstellungen des zu erzeugenden Bildes beinhaltet.
- Zum einen der Mittelpunkt in Form einer Adresse oder einer GPS-Koordinate.
+ Zum einen der Mittelpunkt in Form einer Adresse oder einer geographischen
+ Koordinate.
  Dies ist die Kerninformation und das sich später einzige ändernde Merkmal
  innerhalb einer Bilderreihe für einen Trainingsprozess.
  Dann die Größe des Bildes angegeben in Pixeln.
@@ -2327,7 +2328,7 @@ Visualisierung von Klassifizierungen
 \begin_layout Standard
 Für die Darstellung der Ergebnisse der Klassifizierung des Netzes gibt es
  verschiedene Möglichkeiten.
- Eine Variante ist die Darstellung basierend auf GPS-Koordinaten.
+ Eine Variante ist die Darstellung basierend auf geographischen Koordinaten.
  Dabei wird mit matplotlib, siehe Abschnitt 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2337,7 +2338,7 @@ reference "sub:matplotlib"
 
 , ein Streudiagramm erstellt.
  Die x- und y-Werte bestehen dabei aus den Längen- und Breitengraden der
- GPS-Koordinaten.
+ Koordinaten.
  Die Ergebnisse der Klassifizierung werden dann in der Farbe der Punkte
  kodiert.
  Ein Beispiel dafür ist in Abbildung 
@@ -2409,12 +2410,12 @@ reference "sec:Konkretisierung-der-Aufgabenstel"
 \end_layout
 
 \begin_layout Subsection
-GPS-Koordinaten
+Geographische Koordinaten
 \end_layout
 
 \begin_layout Standard
-Der erste Versuch besteht daraus, die GPS-Koordinaten, das heißt sowohl
- Längen-, als auch Breitengrad, eines Satellitenbildes zu bestimmen.
+Der erste Versuch besteht daraus, die geographischen Koordinaten, das heißt
+ sowohl Längen-, als auch Breitengrad, eines Satellitenbildes zu bestimmen.
  Dafür sollen keine zusätzliche Metadaten über das Bild bekannt sein.
  Die verfügbaren Daten zum Trainieren des Netzes basieren dabei auf den
  6337 Einträgen der Datenbank "Geografische Längen- und Breitengrade deutscher
@@ -2963,9 +2964,9 @@ reference "tbl:table_schools_saxony"
 \end_inset
 
  zu sehen.
- Da hier weder GPS-Koordinaten noch Adressen vorhanden sind, wird stattdessen
- der Name der Schule als Zentrum des Satellitenbildes in der Google Static
- Maps API
+ Da hier weder geographische Koordinaten noch Adressen vorhanden sind, wird
+ stattdessen der Name der Schule als Zentrum des Satellitenbildes in der
+ Google Static Maps API
 \begin_inset CommandInset citation
 LatexCommand cite
 key "GoogleMaps"
@@ -3334,7 +3335,7 @@ reference "sub:Schularten"
 
  ergeben hat, ist die fehlende Möglichkeit der Darstellung der Trainingsdaten
  sowie der Ergebnisse in Form eines Streudiagramms, sollte die Datengrundlage
- keine GPS-Koordinaten beinhalten.
+ keine geographischen Koordinaten beinhalten.
  Dieses Problem könnte man mithilfe der Google Maps Geocoding API
 \begin_inset ERT
 status open
