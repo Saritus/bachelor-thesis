@@ -1229,7 +1229,7 @@ status open
 
 
 \backslash
-twocolumn
+onecolumn
 \end_layout
 
 \end_inset
@@ -1343,6 +1343,7 @@ key "ciregan2012multicolumn"
 \end_inset
 
  haben diese Grundstruktur intern beibehalten.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -1460,7 +1461,7 @@ status open
 
 
 \backslash
-twocolumn
+onecolumn
 \end_layout
 
 \end_inset
@@ -2334,6 +2335,22 @@ e sowie dem Ergebnis der Klassifizierung in einem eigenen Interface anzeigen.
 
 \begin_layout Standard
 \begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+onecolumn
+\end_layout
+
 \end_inset
 
 
