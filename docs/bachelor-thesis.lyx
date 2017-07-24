@@ -1436,19 +1436,8 @@ name "sub:matplotlib"
 Nahezu alle Visualisierungen wurden mit matplotlib, einer Python Bibliothek
  für graphische Darstellungen, gemacht.
  Damit lassen sich nicht nur Grafiken erzeugen, direkt anzeigen oder abspeichern
-, sondern auch in anderen GUI-Bibliotheken wie 
-\begin_inset Formula $\mathtt{GTK+}$
-\end_inset
-
-, 
-\begin_inset Formula $\mathtt{Qt}$
-\end_inset
-
-, 
-\begin_inset Formula $\mathtt{wxWidgets}$
-\end_inset
-
- oder in unserem Fall Tkinter verwenden.
+, sondern auch in anderen GUI-Bibliotheken wie GTK+, Qt, wxWidgets oder
+ in unserem Fall Tkinter verwenden.
 \end_layout
 
 \begin_layout Standard
