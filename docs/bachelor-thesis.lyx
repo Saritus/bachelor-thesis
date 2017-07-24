@@ -2237,12 +2237,6 @@ Training des Netzes
 \end_layout
 
 \begin_layout Standard
-Da das Netz keine Farbbilder als Eingabe akzeptieren kann, müssen die Bilder
- vorher in drei 2D-Arrays für den Rot-, Grün- und Blaukanal umgewandelt
- werden.
-\end_layout
-
-\begin_layout Standard
 Nachdem nun die Trainingsdaten geladen und das neuronale Netz erstellt wurde,
  müssen die Gewichte des Netzes an das gewünschte Ziel angepasst werden.
  Dies geschieht, indem ein Optimierer, in unserem Fall ein Stochastischer
