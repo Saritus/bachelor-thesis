@@ -9316,6 +9316,22 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{gobble}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
 Thesen
 \end_layout
@@ -9332,12 +9348,45 @@ Selbständigkeitserklärung
 \end_layout
 
 \begin_layout Standard
-Ich versichere, dass ich die Bachelorarbeit selbständig verfasst und keine
- anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
+\noindent
+\begin_inset VSpace 3cm
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Unterschift
+Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig und ohne
+ fremde Hilfe verfasst und keine anderen Hilfsmittel als angegeben verwendet
+ habe.
+ Insbesondere versichere ich, dass ich alle wörtlichen und sinngemäßen Übernahme
+n aus anderen Werken als solche kenntlich gemacht habe.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dresden, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
