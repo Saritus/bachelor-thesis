@@ -9340,7 +9340,29 @@ pagenumbering{gobble}
 \end_layout
 
 \begin_layout Section*
-Thesen
+Thesen zur Bachelorarbeit
+\end_layout
+
+\begin_layout Standard
+Für die automatisierte Merkmalserkennung im Bereich der Bildverarbeitung
+ findet Deeplearning zunehmend Anwendung.
+ Über die genaue Netzstruktur für verschiedene Arten von Bilddaten gibt
+ es eine Reihe von Arbeiten, doch der Aufbau und Ablauf des restlichen System
+ unterscheidet sich dabei voneinander.
+ Die vorliegende Arbeit verfolgt deshalb das Ziel, ein allgemeingültiges
+ System zu entwickeln, mit dem die Erstellung eines künstlichen neuronalen
+ Netzes sowie dessen Trainingsvorgang für Merkmalserkennungen in Satellitenbilde
+r durchgeführt werden kann.
+\end_layout
+
+\begin_layout Enumerate
+Merkmalserkennung mittels Deeplearning befindet sich in den letzten Jahren
+ in stetem Wachstum.
+\end_layout
+
+\begin_layout Enumerate
+Es gibt bisher kein einheitliches System zur Entwicklung von Klassifizierungen
+ von Satellitenaufnahmen.
 \end_layout
 
 \begin_layout Standard
