@@ -1879,7 +1879,7 @@ Künstliche Datenmengenvergrößerung
 
 \begin_layout Standard
 Sollte die Menge an Trainingsdaten für die gewünschte Aufgabe des Netzes
- zu klein sein, ist das Risiko eines Overfittings und der damit einhergehenden
+ zu klein sein, ist das Risiko einer Überanpassung und der damit einhergehenden
  schlechten Genauigkeitsrate für die Validierungsdaten sehr hoch.
 \end_layout
 
@@ -2166,7 +2166,7 @@ key "srivastava2014dropout"
  angewendet.
  Damit werden nach jeder Trainingsepoche ein vorher eingetragener Prozentsatz
  der Vernetzungen entfernt beziehungsweise auf eine Stärke von 0 zurückgesetzt.
- Dies soll das Risiko eines Overfittings weiter verringern.
+ Dies soll das Risiko einer Überanpassung weiter verringern.
 \end_layout
 
 \begin_layout Standard
@@ -2265,7 +2265,7 @@ Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
  Sollte die neue Klassifizierung besser sein als der bisherige Spitzenwert,
  so werden die Gewichte des Netzes gespeichert und der neue Bestwert wird
  sich gemerkt.
- Dadurch soll ein Overfitting des Netzes vermieden werden.
+ Dadurch soll eine Überanpassung des Netzes vermieden werden.
 \end_layout
 
 \begin_layout Standard
