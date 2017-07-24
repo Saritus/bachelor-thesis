@@ -3149,15 +3149,29 @@ onecolumn
 Ergebnisse
 \end_layout
 
-\begin_layout Standard
-Das System ließ sich einfach, schnell und problemlos an die verschiedenen
- Anforderungen der Experimente anpassen.
+\begin_layout Itemize
+System schnell und einfach an unterschiedliche Eingabeformate der Daten
+ anpassen lassen kann.
 \end_layout
 
 \begin_layout Standard
 Da sowohl Eingabe-, als auch Ausgabedaten in Form einer CSV-Datei in das
  System gegeben werden, muss das System lediglich an das Format der Ausgabedaten
  angepasst werden.
+ Eine 
+\end_layout
+
+\begin_layout Itemize
+größtmögliche Automatisierung
+\end_layout
+
+\begin_layout Standard
+qwe
+\end_layout
+
+\begin_layout Itemize
+Resultate beziehungsweise das trainierte Netz sich mühelos in andere Anwendungen
+ integrieren lassen.
 \end_layout
 
 \begin_layout Standard
