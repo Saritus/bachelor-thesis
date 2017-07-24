@@ -1465,24 +1465,61 @@ Systemplan
 \end_layout
 
 \begin_layout Standard
-Das System soll nach dem Konzept der Modularität
+Das System soll nach dem Konzept des Baukastenprinzips entworfen werden
+ beziehungsweise die Anforderungen für Modularität
 \begin_inset CommandInset citation
 LatexCommand cite
 key "meyer1988object"
 
 \end_inset
 
- entworfen werden.
+ erfüllen.
+ 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Die wohl wichtigste Eigenschaft des Systems soll die Modularität sein.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Das bedeutet, dass ein Verändern oder Austauschen einer Komponente möglich
  ist, ohne andere Komponenten dafür zu verändern.
  
+\end_layout
+
+\begin_layout Plain Layout
+Das System zur Merkmalserkennung besteht aus drei Kernbausteinen.
+ (siehe 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Datenfluss"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Den Satellitenbildern, die als Informationsgrundlage und Input-Daten für
+ den Klassifizierer genutzt werden
+\end_layout
+
+\begin_layout Itemize
+Dem künstlichen neuronalen Netz, welches die Input-Daten analysiert und
+ klassifiziert
+\end_layout
+
+\begin_layout Itemize
+Der Trainingsvorgabe, welche zum Trainieren des Netzes benutzt wird.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1521,32 +1558,6 @@ Datenflussdiagramm des Systems
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Das System zur Merkmalserkennung besteht aus drei Kernbausteinen.
- (siehe 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:Datenfluss"
-
-\end_inset
-
-)
-\end_layout
-
-\begin_layout Itemize
-Den Satellitenbildern, die als Informationsgrundlage und Input-Daten für
- den Klassifizierer genutzt werden
-\end_layout
-
-\begin_layout Itemize
-Dem künstlichen neuronalen Netz, welches die Input-Daten analysiert und
- klassifiziert
-\end_layout
-
-\begin_layout Itemize
-Der Trainingsvorgabe, welche zum Trainieren des Netzes benutzt wird.
 \end_layout
 
 \begin_layout Standard
