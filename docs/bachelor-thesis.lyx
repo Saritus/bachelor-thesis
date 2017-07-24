@@ -49,7 +49,7 @@ xleftmargin = 15pt}
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement h
+\float_placement H
 \paperfontsize 12
 \spacing single
 \use_hyperref false
