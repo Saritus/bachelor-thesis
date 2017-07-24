@@ -3116,13 +3116,6 @@ Zuordnung der Klassen zu ihren Kategorievektoren
 \end_layout
 
 \begin_layout Standard
-Die Ausgabeschicht des Netzes enthält drei Neuronen mit einer Softmax-Aktivierun
-gsfunktion.
- Das heißt, die Summe der Aktivierungen der Neuronen beträgt 1, genau wie
- in den vorgegebenen Kategorievektoren.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
