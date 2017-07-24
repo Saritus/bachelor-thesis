@@ -3309,7 +3309,7 @@ options "bibtotoc,IEEEtran"
 \end_layout
 
 \begin_layout Section*
-Anhang
+Anlagen
 \end_layout
 
 \begin_layout Standard
@@ -3320,7 +3320,7 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{Anhang}
+addcontentsline{toc}{section}{Anlagen}
 \end_layout
 
 \end_inset
