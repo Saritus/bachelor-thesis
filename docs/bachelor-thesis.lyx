@@ -1308,6 +1308,45 @@ elopment/a-developer-s-guide-to-the-pro-s-and-con-s-of-python.html
 \end_layout
 
 \begin_layout Subsection
+Tkinter
+\end_layout
+
+\begin_layout Standard
+Python besitzt kein eigenes Interface.
+ Deshalb muss zum Programmieren einer grafischen Anwendung eine zusätzliche
+ GUI-Bibliothek genommen werden.
+ Hierfür wurde Tkinter
+\begin_inset CommandInset citation
+LatexCommand cite
+key "grayson2000tkinter"
+
+\end_inset
+
+ verwendet, da es in jeder Standardinstallation von Python enthalten ist.
+ Dadurch werden für die Ausführung keine Zusatzmodule benötigt.
+ Außerdem bietet es die Möglichkeit, die Anwendung auf unterschiedlichen
+ Plattformen auszuführen ohne dafür den Quellcode anpassen zu müssen.
+\end_layout
+
+\begin_layout Standard
+Da Tkinter ein Schichtenkonzept verwendet und auf Tk
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{http://www.tkdocs.com/}
+\end_layout
+
+\end_inset
+
+ basiert, ist auch hier wieder einmal ein Nachteil die Problematik der Geschwind
+igkeit im Gegensatz zu nativen GUI-Bibliotheken.
+\end_layout
+
+\begin_layout Subsection
 Convolutional Neural Networks
 \end_layout
 
@@ -1422,22 +1461,6 @@ https://www.dataquest.io/blog/python-data-visualization-libraries/
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsection
-Tkinter
-\end_layout
-
-\begin_layout Standard
-Da Python keine eigene GUI besitzt, muss zum Programmieren eines Interfaces
- eine zusätzliche GUI-Bibliothek wie Tkinter
-\begin_inset CommandInset citation
-LatexCommand cite
-key "grayson2000tkinter"
-
-\end_inset
-
- verwendet werden.
 \end_layout
 
 \begin_layout Standard
