@@ -1384,7 +1384,7 @@ Keras
 \end_layout
 
 \begin_layout Standard
-Als Deeplearning Framework wurde Keras
+Als Deeplearning Framework wurde die Python Bibliotheken namens Keras
 \begin_inset CommandInset citation
 LatexCommand cite
 key "chollet2015keras"
@@ -1417,7 +1417,8 @@ key "bergstra2011theano"
  zu verwenden.
  Dies erlaubt es, die Implementierungen und damit auch die Vorteile aller
  drei zu nutzen.
- Zudem erhöht es die Reichweite verwendbarer Computersysteme
+ Außerdem ist Keras inzwischen als erste High-Level API in TensorFlow enthalten,
+ was wiederum den Installationsaufwand verringert.
 \end_layout
 
 \begin_layout Subsection
