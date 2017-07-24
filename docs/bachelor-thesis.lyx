@@ -2188,6 +2188,8 @@ reference "alg:create_net"
 \end_inset
 
 .
+ Die Größe der Eingabeschicht wird automatisch durch die Größe der Bilder
+ in den Trainingsdaten bestimmt.
 \end_layout
 
 \begin_layout Standard
