@@ -2127,18 +2127,17 @@ Erstellen des künstlichen neuronalen Netzes
 \end_layout
 
 \begin_layout Standard
-Die Grundstruktur des Netzes basiert auf der Vorgaben von VGG16
+Die Grundstruktur des Netzes ist angelehnt an die Vorgaben von VGG16
 \begin_inset CommandInset citation
 LatexCommand cite
 key "simonyan2014very"
 
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-Die Funktion zum Erstellen des Netzes befindet sich in Algorithmus 
+ und besteht aus zehn Konvolutionsschichten, vier Max-pooling Schichten
+ sowie drei vollvernetzten Schichten inklusive der abschließenden Schicht
+ für die Repräsentation der Ausgabedaten.
+ Die Funktion zum Erstellen des Netzes befindet sich in Algorithmus 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "alg:create_net"
@@ -2149,19 +2148,47 @@ reference "alg:create_net"
 \end_layout
 
 \begin_layout Standard
-Das neuronale Netz besteht es drei Teilen.
- Einem CNN, welches die Satellitenbilder als Input-Daten bekommt und diese
- auswertet, einem MLP, welches zusätzliche Metadaten des Gebäudes bzw.
- Grundstückes als Input-Daten bekommt, und einem MLP, welches die Output-Daten
- des CNN und des MLP als Input-Daten bekommt.
+Für die vollvernetzten Schichten wird das Prinzip des Dropout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "srivastava2014dropout"
+
+\end_inset
+
+ angewendet.
+ Damit werden nach jeder Trainingsepoche ein vorher eingetragener Prozentsatz
+ der Vernetzungen entfernt beziehungsweise auf eine Stärke von 0 zurückgesetzt.
+ Dies soll das Risiko eines Overfittings weiter verringern.
 \end_layout
 
 \begin_layout Standard
-Best Practices for Convolutional Neural Networks Applied to Visual Document
- Analysis
-\begin_inset CommandInset citation
-LatexCommand cite
-key "simard2003best"
+Die Ausgabeschicht des Netzes muss sowohl in der Anzahl der Neuronen als
+ auch in der Aktivierungsfunktion an das Format der Ausgabedaten angepasst
+ werden.
+ So beinhaltet bei einem Klassifizierungsproblem diese Schicht so viele
+ Neuronen, wie es zu unterscheidende Klassen gibt.
+ Außerdem wählt man die Softmax-Aktivierungsfunktion, siehe 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:softmax"
+
+\end_inset
+
+.
+ Das heißt, die Summe der Aktivierungen der Neuronen beträgt 1.
+ Das Netz entscheidet also seine Klassenzuordnung darüber, welches Neuron
+ am stärksten aktiviert wird.
+ Die Stärke der Aktivierung sagt zudem aus, wie sicher sich das Netz bei
+ dieser Entscheidung ist.
+\end_layout
+
+\begin_layout Standard
+
+\size large
+\begin_inset Formula 
+\begin{equation}
+softmax_{i}(x)=\frac{e^{x_{i}}}{\sum_{k=1}^{K}e^{x_{i}}}\label{eq:softmax}
+\end{equation}
 
 \end_inset
 
@@ -2169,10 +2196,24 @@ key "simard2003best"
 \end_layout
 
 \begin_layout Standard
-Dropout: a simple way to prevent neural networks from overfitting
-\begin_inset CommandInset citation
-LatexCommand cite
-key "srivastava2014dropout"
+Bei einem Zwei-Klassen-Problem nutzt man lediglich ein Neuron mit einer
+ Sigmoidfunktion, siehe 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:sigmoid"
+
+\end_inset
+
+, für die Aktivierung als Ausgabeschicht.
+\end_layout
+
+\begin_layout Standard
+
+\size large
+\begin_inset Formula 
+\begin{equation}
+sig(x)=\frac{1}{1+e^{-x}}\label{eq:sigmoid}
+\end{equation}
 
 \end_inset
 
