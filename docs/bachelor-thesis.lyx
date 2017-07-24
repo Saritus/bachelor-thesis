@@ -2289,7 +2289,10 @@ Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
 Die Methode, nach der dieser Genauigkeitswert berechnet wird, hängt dabei
  vom Format der Ausgabedaten, und damit auch von der Aktivierungsart der
  letzten Schicht des Netzes ab.
- Wenn es sich um eine 
+ Bei Mehrklassenproblemen nimmt man die Häufigkeit, in der das Netz die
+ richtige Klasse erkannt hat.
+ Bei linearen Problemen hingegen werden der mittlere absolute Fehler oder
+ der mittlere quadratischer Fehler verwendet.
 \end_layout
 
 \begin_layout Subsection
