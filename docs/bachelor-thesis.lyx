@@ -2347,6 +2347,32 @@ sig(x)=\frac{1}{1+e^{-x}}\label{eq:sigmoid}
 
 \end_layout
 
+\begin_layout Standard
+Für eine Regression wird ebenso eine Ausgabeschicht mit einem Neuronen verwendet.
+ Aber da das gewünschte Format der Ausgabedaten ein Zahlenwert ist, handelt
+ es sich hier bei der Aktivierung um eine identische Abbildung, siehe 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:identity"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\size large
+\begin_inset Formula 
+\begin{equation}
+id(x)=x\label{eq:identity}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Training des Netzes
 \end_layout
