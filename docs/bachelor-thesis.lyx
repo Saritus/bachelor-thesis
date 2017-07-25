@@ -1126,6 +1126,13 @@ Auch dann noch verarbeiten die Teilnetze die Eingabedaten unabhängig voneinande
  bisher besten Ergebnissen.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 PlaNet
 \end_layout
@@ -1361,6 +1368,13 @@ key "ciregan2012multicolumn"
 
  haben diese Grundstruktur intern beibehalten.
  Deshalb besitzt das Standardnetz des Systems einen ähnlichen Aufbau.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
