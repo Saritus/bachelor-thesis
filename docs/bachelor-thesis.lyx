@@ -1808,8 +1808,8 @@ reference "fig:train-data-generator"
 
 \end_inset
 
- zu sehen ist, undzeilenweise die Adressen einer CSV-Datei benutzt, um aus
- ihnen Satellitenbildern ebenfalls basierend auf Abschnitt 
+ zu sehen ist, und zeilenweise die Adressen einer CSV-Datei benutzt, um
+ aus ihnen Satellitenbildern ebenfalls basierend auf Abschnitt 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:Satellitenbilder"
