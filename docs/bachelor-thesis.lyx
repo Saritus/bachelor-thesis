@@ -2956,14 +2956,26 @@ Postleitzahl
 \end_layout
 
 \begin_layout Standard
-Im Gegensatz zu Längen- und Breitengrad, sind Postleitzahlen in Deutschland
+Beim zweiten Versuch geht es um die Erkennung der Postleitzahl eines Satellitenb
+ildes.
+ Dies könnte als Mehrklassenproblem, wenn jeder Postleitzahl eine eigene
+ Klasse zugeordnet wird, oder als Regression, wenn man die Postleitzahlen
+ als tatsächlichen Zahlenwert betrachtet, durchgeführt werden.
+ 
+\end_layout
+
+\begin_layout Standard
+Im Gegensatz zu Längen- und Breitengrad, sind die Postleitzahlen in Deutschland
  nur bedingt geordnet.
  Es gilt zwar das Prinzip, dass zwei zahlenmäßig nah beieinander liegende
- Postleitzahlen sich häufig auch örtlich nah sind, jedoch ist diese Zuordnung
- nicht konsistent.
+ Postleitzahlen sich häufig auch örtlich nah sind, weswegen Regression eher
+ der Realität entspricht , als ein Mehrklassenproblem.
+ Jedoch ist diese Zuordnung nicht konsistent.
  Deswegen sollte es für ein Netz auch entsprechend schwerer sein, nur anhand
  eines Satellitenbildes eines Hauses die Postleitzahlen von eben diesem
  zu bestimmen.
+ Außerdem kann es bei einer Regression zu Ergebnissen kommen, die als Postleitza
+hlen nicht existieren.
 \end_layout
 
 \begin_layout Standard
@@ -2976,6 +2988,14 @@ reference "fig:plz_in_dd"
 \end_inset
 
  dargestellt ist.
+ Die Ergebnisse der Regression befinden sich in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:prediction_plz_in_dd"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -4049,7 +4069,7 @@ name "fig:prediction_plz_in_dd"
 
 \end_inset
 
-Ergebnisse der Klassifizierung des Netzes
+Ergebnisse der Regression des Netzes
 \end_layout
 
 \end_inset
