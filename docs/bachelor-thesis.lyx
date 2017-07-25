@@ -1994,6 +1994,14 @@ Sollte die Menge an Trainingsdaten für die gewünschte Aufgabe des Netzes
 Eine sehr einfache Variante um die Menge der Trainingsdaten künstlich zu
  erhöhen, ist das geringfügige Verändern der Satellitenbilder bei gleichbleibend
 er Klasseninformation.
+ Diese Grundidee der Datenmengenvergrößerung wurde auch in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chollet2016building"
+
+\end_inset
+
+ verwendet.
  Die genaue Abwandlung eines Bildes ist dabei zufällig, aber durch gewisse
  Rahmenbedingungen eingeschränkt.
  Wie in Algorithmus 
@@ -2100,7 +2108,7 @@ name "alg:image_data_generator"
 
 \end_inset
 
-ImageDataGenerator
+Einstellungen für die Veränderung der Bilddaten
 \end_layout
 
 \end_inset
@@ -2189,7 +2197,7 @@ name "alg:flow_from_directory"
 
 \end_inset
 
-flow_from_directory
+Laden der Bilddaten aus einem Ordner
 \end_layout
 
 \end_inset
@@ -2203,7 +2211,7 @@ flow_from_directory
 \end_layout
 
 \begin_layout Standard
-Für das Erzeugen der Bilddateien ist dafür aber immer noch eine seperate
+Für das Erzeugen der Bilddateien ist dafür aber immer noch eine separate
  Adressdatei notwendig und erfolgt wie in Abschnitt 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2216,25 +2224,6 @@ reference "sub:Satellitenbilder"
  Jeder Ordner steht dabei für eine eigenständige Klasse.
  Deshalb ist diese Methode auch nur für Versuche mit klaren Klassenzuordnungen
  anwendbar.
-\end_layout
-
-\begin_layout Standard
-Diese Variante der Datenmengenvergrößerung wurde auch in 
-\begin_inset Quotes gld
-\end_inset
-
-Building powerful image classification models using very little data
-\begin_inset Quotes grd
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand cite
-key "chollet2016building"
-
-\end_inset
-
- verwendet.
 \end_layout
 
 \begin_layout Subsection
@@ -2387,7 +2376,7 @@ key "bottou2010large"
 \end_inset
 
  dafür am besten geeignet.
- Anschließend werden die nächsten Bilder genommen und der Anpassungvorgang
+ Anschließend werden die nächsten Bilder genommen und der Anpassungsvorgang
  beginnt von vorne.
  Man spricht von einer Trainingsepoche, wenn einmal alle Trainingsdaten
  verwendet wurden.
@@ -2514,6 +2503,7 @@ Geographische Koordinaten
 Der erste Versuch besteht daraus, die geographischen Koordinaten, das heißt
  sowohl Längen-, als auch Breitengrad, eines Satellitenbildes zu bestimmen.
  Dafür sollen keine zusätzliche Metadaten über das Bild bekannt sein.
+ Da die Ausgabedaten Zahlenwerte sind, handelt es sich hier um eine Regression.
  Die verfügbaren Daten zum Trainieren des Netzes basieren dabei auf den
  6337 Einträgen der Datenbank "Geografische Längen- und Breitengrade deutscher
  Städte und Gemeinden"
@@ -2537,10 +2527,7 @@ reference "fig:pp_staedte_de"
 \end_inset
 
  dargestellt ist.
-\end_layout
-
-\begin_layout Standard
-Bei einer Trainings-Validierungs-Aufteilung von 10% ergibt dies eine Anzahl
+ Bei einer Trainings-Validierungs-Aufteilung von 10% ergibt dies eine Anzahl
  von 5703 Trainingsdaten und 634 Validierungsdaten.
 \end_layout
 
@@ -2556,10 +2543,7 @@ reference "fig:staedte_model_loss"
 \end_inset
 
  dargestellt.
-\end_layout
-
-\begin_layout Standard
-Die genauere Verteilung der Ergebnisse ist Abbildung 
+ Die genauere Verteilung der Ergebnisse ist Abbildung 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:staedte_result_boxplot.png"
@@ -2938,7 +2922,7 @@ name "tbl:table_staedte_boxplot"
 
 \end_inset
 
-Abweichungen der Netzklassikationen vom Vorgabewert
+Abweichungen der Regression des Netzes vom Vorgabewert
 \end_layout
 
 \end_inset
@@ -2946,6 +2930,13 @@ Abweichungen der Netzklassikationen vom Vorgabewert
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -3346,7 +3337,7 @@ lage heruntergeladen und das Netz passt seine Eingabeschicht selbstständig
  Dies sind die Kernpunkte für das Einhalten des Ziels der größtmöglichen
  Automatisierung.
  Außerdem befindet sich die Architektur und die Gewichte des Netzes nach
- dem Trainingsvorgang in einer seperaten Datei.
+ dem Trainingsvorgang in einer separaten Datei.
  Dadurch kann das Netz unabhängig vom Rest des Systems in einer Anwendung
  verwendet werden.
  Das Kriterium der leichten Integration in externe Anwendungen wurde damit
@@ -3390,14 +3381,14 @@ key "GoogleMaps"
 \end_inset
 
  erzeugt werden und auf vom Nutzer eingegebenen Adressen basieren.
- Dadurch wäre der Schritt einer Integration in eine seperate Anwendung nicht
+ Dadurch wäre der Schritt einer Integration in eine separate Anwendung nicht
  mehr notwendig und ein trainiertes Netz könnte direkt nach Abschluss des
  Trainingsvorgangs verwendet werden.
 \end_layout
 
 \begin_layout Standard
 Eine andere Erweiterung wäre das Trainieren eines Netzes mit einer großen
- Anzahl an Klassen, ähnlich dem Konzept von VGG16
+ Anzahl an Klassen, ähnlich dem Konzept von 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "simonyan2014very"
@@ -3415,14 +3406,6 @@ key "Russakovsky2015"
  An dieses Netz könnten dann weitere Schichten angehangen werden, die das
  tatsächliche Format der gewünschten Ausgabedaten für ein Klassifizierungsproble
 m beinhalten, entsprechend dem Ansatz, welcher in 
-\begin_inset Quotes gld
-\end_inset
-
-Building powerful image classification models using very little data
-\begin_inset Quotes grd
-\end_inset
-
-
 \begin_inset CommandInset citation
 LatexCommand cite
 key "chollet2016building"
