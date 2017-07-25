@@ -163,6 +163,25 @@ Neuronale Netze können Informationen aus Satellitenbildern ableiten, welche
  selbst mit dem menschlichen Auge nicht erkennbar sind.
 \end_layout
 
+\begin_layout Enumerate
+Für die Verarbeitung von Satellitenbildern eignet sich am besten die Netzstruktu
+r eines Convolutional Neural Networks.
+\end_layout
+
+\begin_layout Enumerate
+Je stärker die Automatisierung des Systems, desto einfacher wird seine Benutzung.
+\end_layout
+
+\begin_layout Enumerate
+Eine Erleichterung des Erstellungsprozesses von trainierten neuronalen Netzen
+ wird ihre Anwendungshäufigkeit erhöhen und ihre Ergebnisqualität verbessern.
+\end_layout
+
+\begin_layout Enumerate
+Viele Bereiche könnten durch die Möglichkeit der Verarbeitung von Satellitenaufn
+ahmen profitieren.
+\end_layout
+
 \begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
