@@ -1480,7 +1480,7 @@ Systemplan
 
 \begin_layout Standard
 Das System soll nach dem Konzept des Baukastenprinzips entworfen werden
- beziehungsweise die Anforderungen für Modularität
+ beziehungsweise die Anforderungen für Modularität aus 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "meyer1988object"
@@ -1488,7 +1488,79 @@ key "meyer1988object"
 \end_inset
 
  erfüllen.
+ Das bedeutet, das sich die verschiedenen Komponenten verändern lassen,
+ ohne dafür den Rest des Systems verändern zu müssen.
+\end_layout
+
+\begin_layout Standard
+Die erste Komponente ist die Datengrundlage, welche in Form einer CSV-Datei
+ in das System gegeben wird.
+ Sie gibt indirekt vor, welche Eingabedaten für den Trainings- und Validierungsp
+rozess verwendet werden.
+\end_layout
+
+\begin_layout Standard
+Die zweite Komponente ist die Menge der Satellitenbilder an sich.
  
+\end_layout
+
+\begin_layout Standard
+Bei der dritten Komponente handelt es sich um die Trainingsvorgaben.
+ Sie sind eineindeutig einem Satellitenbild zuzuordnen.
+ bestimmen die gewünschten Ausgabedaten des Netzes.
+ Entspringen ebenfalls der Datengrundlage.
+\end_layout
+
+\begin_layout Standard
+Die letzte Komponente ist das künstliche neuronale Netz, welches für die
+ Klassifizierungen zuständig ist und trainiert werden soll.
+\end_layout
+
+\begin_layout Standard
+Der Datenfluss ist in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Datenfluss"
+
+\end_inset
+
+ abgebildet.
+\end_layout
+
+\begin_layout Standard
+Die Ablaufplan des Systems in Algorithmus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:classifier_main"
+
+\end_inset
+
+ dargestellt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Datengrundlage
+\end_layout
+
+\begin_layout Plain Layout
+Satellitenbilder
+\end_layout
+
+\begin_layout Plain Layout
+Trainingsvorgabe
+\end_layout
+
+\begin_layout Plain Layout
+künstlichen neuronalen Netz
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
