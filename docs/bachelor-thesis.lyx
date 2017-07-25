@@ -87,7 +87,7 @@ xleftmargin = 15pt}
 \paragraph_separation indent
 \paragraph_indentation default
 \quotes_language german
-\papercolumns 2
+\papercolumns 1
 \papersides 1
 \paperpagestyle default
 \listings_params "breaklines=true,captionpos=b,frame={tb  //--> frame at the top and at the bottom of the listing},language=Python,basicstyle={\footnotesize}"
@@ -266,7 +266,7 @@ Merkmalserkennung von Gebäuden und Grundstücken in Satellitenbildern mittels
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="21" columns="2">
+<lyxtabular version="3" rows="19" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="left" valignment="top">
@@ -645,58 +645,6 @@ New Web Technology GmbH
 \begin_inset Text
 
 \begin_layout Plain Layout
-Letzte Änderung:
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-today
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 Abgabetermin:
 \end_layout
 
@@ -729,22 +677,6 @@ status open
 
 \backslash
 end{titlepage}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-onecolumn
 \end_layout
 
 \end_inset
@@ -892,22 +824,6 @@ description "Schichtart, bei der die Ausgabedaten durch eine Faltung der Eingabe
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-onecolumn
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Abstract
 In dieser Arbeit wird ein System entwickelt, das sich basierend auf einer
  Adressliste automatisiert alle dazugehörigen Satellitenbilder herunterlädt,
@@ -932,7 +848,7 @@ Einleitung und Motivation
 \end_inset
 
 Deeplearning bezeichnet Computermodelle, welche aus mehreren Verarbeitungsschich
-ten bestehen und lernen, Daten auf verschieden Abstraktionsstufen darzustellen.
+ten bestehen und lernen, Daten auf verschiedenen Abstraktionsstufen darzustellen.
  Dieses Konzept brachte dramatische Verbesserungen in der Spracherkennung,
  der visuellen Objekterkennung und in anderen Fachgebieten, wie der Genomik.
  Deeplearning erkennt hochkomplexe Strukturen in große Datensätzen, indem
@@ -997,22 +913,6 @@ Ziel dieser Arbeit ist es, ein System zu entwickeln, mit dem Klassifikationen
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-onecolumn
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Verwandte Arbeiten
 \end_layout
@@ -1031,7 +931,7 @@ key "Russakovsky2015"
 
  ist wohl einer der bekanntesten Wettbewerbe im Bereich der automatisierten
  Bildklassifizierung.
- Ihr Aufbau ist dabei an die Pascal Visual Object Classes Challenge
+ Sein Aufbau ist dabei an die Pascal Visual Object Classes Challenge
 \begin_inset CommandInset citation
 LatexCommand cite
 key "everingham2010pascal"
@@ -1153,9 +1053,9 @@ key "weyand2016planet"
 
 \end_inset
 
- wurde versucht, den Aufnahmeort eines Fotos lediglich anhand des Fotos
+ wurde versucht, den Aufnahmeort eines Fotos lediglich anhand des Bildes
  zu erkennen.
- Dafür wurde die Weltkugel in mehrere Zellen eingeteilt und die Bilder jeweils
+ Dafür wurde die Weltkugel in mehrere Zellen eingeteilt und die Fotos jeweils
  der Zelle zugeordnet, in der ihr tatsächlicher Aufnahmeort liegt.
  Damit konnte in etwa 30% das korrekte Land erkannt werden und die Genauigkeitsr
 ate für Städte lag bei rund 10%.
@@ -1196,10 +1096,10 @@ key "isprs2D"
 reuen Abbildung der Erdoberfläche, welche durch Luft- und Satellitenaufnahmen
  erstellt wurden, sowie digitalen Höhenmodellen bestimmte Objekte und Kategorien
  erkannt werden.
- Bei diesen Kategorien handelt es sich um Flächenversiegelungen, also Straßen,
- Parkplätze und ähnliches, Gebäude, niedrige Vegetation, Bäume, Fahrzeuge
- und die gesonderte Klasse für Sonstiges, wozu Wasser oder andere Flächen
- gehören, die sich den bisherigen Gruppen nicht zuordnen ließen.
+ Bei diesen Kategorien handelt es sich um Flächenversiegelungen wie Straßen
+ oder Parkplätze, Gebäude, niedrige Vegetation, Bäume, Fahrzeuge und die
+ gesonderte Klasse für Sonstiges, wozu Wasser oder andere Flächen gehören,
+ die sich den bisherigen Gruppen nicht zuordnen ließen.
  Da es sich hier um die Klassifizierung größerer Bereiche handelt, werden
  die Klasseninformationen farbkodiert in Bildern gespeichert, die der identische
 n lokalen Zuordnung entsprechen, wie die dazugehörigen Orthofotos.
@@ -1207,22 +1107,6 @@ n lokalen Zuordnung entsprechen, wie die dazugehörigen Orthofotos.
 
 \begin_layout Standard
 \begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-onecolumn
-\end_layout
-
 \end_inset
 
 
@@ -1453,22 +1337,6 @@ https://www.dataquest.io/blog/python-data-visualization-libraries/
 
 \begin_layout Standard
 \begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-onecolumn
-\end_layout
-
 \end_inset
 
 
@@ -2451,22 +2319,6 @@ e sowie dem Ergebnis der Klassifizierung in einem eigenen Interface anzeigen.
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-onecolumn
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Experimente
 \begin_inset CommandInset label
@@ -3007,8 +2859,8 @@ Das dritte Experiment wird die Klassifizierung von Häusern beinhalten.
 \end_layout
 
 \begin_layout Standard
-Die Datengrundlage für die Schulen besteht aus einer Liste mit 204 Einträgen,
- veröffentlicht unter der Sektion Schulen in Dresden
+Die Datengrundlage für die Schulen besteht aus einer abrufbaren Liste mit
+ 204 Einträgen, veröffentlicht unter der Sektion Schulen in Dresden
 \begin_inset ERT
 status open
 
@@ -3300,22 +3152,6 @@ Zuordnung der Klassen zu ihren Kategorievektoren
 
 \begin_layout Standard
 \begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-onecolumn
-\end_layout
-
 \end_inset
 
 
