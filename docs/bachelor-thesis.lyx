@@ -1490,48 +1490,10 @@ key "meyer1988object"
  erfüllen.
  Das bedeutet, das sich die verschiedenen Komponenten verändern lassen,
  ohne dafür den Rest des Systems verändern zu müssen.
-\end_layout
-
-\begin_layout Standard
-Die erste Komponente ist die Datengrundlage, welche in Form einer CSV-Datei
- in das System gegeben wird.
- Sie gibt indirekt vor, welche Eingabedaten für den Trainings- und Validierungsp
-rozess verwendet werden.
-\end_layout
-
-\begin_layout Standard
-Die zweite Komponente ist die Menge der Satellitenbilder an sich.
- 
-\end_layout
-
-\begin_layout Standard
-Bei der dritten Komponente handelt es sich um die Trainingsvorgaben.
- Sie sind eineindeutig einem Satellitenbild zuzuordnen.
- bestimmen die gewünschten Ausgabedaten des Netzes.
- Entspringen ebenfalls der Datengrundlage.
-\end_layout
-
-\begin_layout Standard
-Die letzte Komponente ist das künstliche neuronale Netz, welches für die
- Klassifizierungen zuständig ist und trainiert werden soll.
-\end_layout
-
-\begin_layout Standard
-Der Datenfluss ist in Abbildung 
+ Der Datenfluss zwischen den Modulen ist in Abbildung 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Datenfluss"
-
-\end_inset
-
- abgebildet.
-\end_layout
-
-\begin_layout Standard
-Die Ablaufplan des Systems in Algorithmus 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "alg:classifier_main"
 
 \end_inset
 
@@ -1539,8 +1501,74 @@ reference "alg:classifier_main"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset Float figure
+wide false
+sideways false
 status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/datenfluss_4.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Datenfluss"
+
+\end_inset
+
+Datenflussdiagramm des Systems
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die erste Komponente ist die Datengrundlage, welche in Form einer CSV-Datei
+ in das System gegeben wird.
+ Sie kann geographische Koordinaten, Adressen oder andere Beschreibungen
+ der gewünschten Eingabedaten enthalten, welche für den Trainings- und Validieru
+ngsprozess verwendet werden.
+ Die zweite Komponente besteht aus den Satellitenbildern beziehungsweise
+ dem Werkzeug zum Erzeugen der Satellitenbilder basierend auf der Datengrundlage.
+ Bei der dritten Komponente handelt es sich um die Trainingsvorgaben.
+ Sie bestehen aus den Klassenzuordnungen der Satellitenbilder und sind ebenfalls
+ in der Datengrundlage enthalten.
+ Sie repräsentieren die gewünschten Ausgabedaten des Netzes.
+ Die letzte Komponente ist das künstliche neuronale Netz, welches für die
+ Klassifizierungen zuständig ist und trainiert werden soll.
+ Es bekommt die Trainingsdaten bestehend aus Satellitenbildern und Klasseninform
+ationen und passt mittels eines Optimierers seine Gewichte so an, dass die
+ Klassifizierung des Netzes möglichst mit der richtige Klassenzuordnung
+ übereinstimmt.
+ Dieser Hauptablaufplan des Systems befindet sich in Algorithmus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:classifier_main"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Plain Layout
 Datengrundlage
@@ -1565,7 +1593,7 @@ künstlichen neuronalen Netz
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Die wohl wichtigste Eigenschaft des Systems soll die Modularität sein.
@@ -1601,44 +1629,6 @@ Dem künstlichen neuronalen Netz, welches die Input-Daten analysiert und
 
 \begin_layout Itemize
 Der Trainingsvorgabe, welche zum Trainieren des Netzes benutzt wird.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/datenfluss_3.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Datenfluss"
-
-\end_inset
-
-Datenflussdiagramm des Systems
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -9462,8 +9452,8 @@ Thesen zur Bachelorarbeit
 Für die automatisierte Merkmalserkennung im Bereich der Bildverarbeitung
  findet Deeplearning zunehmend Anwendung.
  Über die genaue Netzstruktur für verschiedene Arten von Bilddaten gibt
- es eine Reihe von Arbeiten, doch der Aufbau und Ablauf des restlichen System
- unterscheidet sich dabei voneinander.
+ es eine Reihe von Arbeiten, doch im Aufbau und Ablauf des restlichen System
+ unterscheiden sie sich dabei voneinander.
  Die vorliegende Arbeit verfolgt deshalb das Ziel, ein allgemeingültiges
  System zu entwickeln, mit dem die Erstellung eines künstlichen neuronalen
  Netzes sowie dessen Trainingsvorgang für Merkmalserkennungen in Satellitenbilde
