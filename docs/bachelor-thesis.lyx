@@ -3382,7 +3382,7 @@ onecolumn
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "bibtex/bachelor"
-options "bibtotoc,IEEEtran"
+options "bibtotoc,alpha"
 
 \end_inset
 
