@@ -1,3 +1,6 @@
+![Hochschule für Technik und Wirtschaft][htwdd-logo]
+![New Web Technology GmbH][nwt-logo]
+
 # Projektbericht
 
 "Erstellen eines allgemeinen anpassbaren Systems zur Erzeugung von neuronalen Netzen für die Erkennung vordefinierter Merkmale in Satellitenbildern"
@@ -20,3 +23,6 @@ New Web Technology GmbH
 2. Aufgabenanalyse
 3. Projektumsetzung
 4. Fazit
+
+[htwdd-logo]: img/htw-dresden.png
+[nwt-logo]: img/nwt-logo2.png
