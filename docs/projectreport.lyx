@@ -121,7 +121,7 @@ begin{titlepage}
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
+<lyxtabular version="3" rows="5" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top">
@@ -199,6 +199,52 @@ Fakultät Informatik/Mathematik
 \end_inset
 </cell>
 </row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/nwt-logo2.png
+	height 1.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
 </lyxtabular>
 
 \end_inset
@@ -254,8 +300,8 @@ Thema:
 
 \series bold
 \size larger
-Merkmalserkennung von Gebäuden und Grundstücken in Satellitenbildern mittels
- Deeplearning
+Erstellen eines allgemeinen anpassbaren Systems zur Erzeugung von neuronalen
+ Netzen für die Erkennung vordefinierter Merkmale in Satellitenbildern
 \end_layout
 
 \begin_layout Standard
@@ -268,7 +314,7 @@ Merkmalserkennung von Gebäuden und Grundstücken in Satellitenbildern mittels
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="19" columns="2">
+<lyxtabular version="3" rows="11" columns="2">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="left" valignment="top">
@@ -359,26 +405,6 @@ Matrikelnummer: 37612
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
@@ -413,26 +439,6 @@ Studiengang:
 
 \begin_layout Plain Layout
 Medieninformatik
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -505,68 +511,6 @@ Prof.
 \begin_inset Text
 
 \begin_layout Plain Layout
-Zweitgutachter:
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Prof.
- Dr.
- Hans-Joachim Böhme
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 Externer Betreuer:
 \end_layout
 
@@ -597,67 +541,6 @@ Ann-Christin Storms
 
 \begin_layout Plain Layout
 New Web Technology GmbH
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Abgabetermin:
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-27.
- Juli 2017
 \end_layout
 
 \end_inset
@@ -710,15 +593,146 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Section
-Einleitung und Motivation
+Einleitung
 \end_layout
 
 \begin_layout Section
-Verwandte Arbeiten
+Problemstellung
+\end_layout
+
+\begin_layout Section
+Projektumsetzung
+\end_layout
+
+\begin_layout Subsection
+Adressdatei analysieren und laden als CSV
+\end_layout
+
+\begin_layout Subsection
+Visualisierung von 2D-Karten-Daten
+\end_layout
+
+\begin_layout Subsection
+Erste Keras-Versuche
+\end_layout
+
+\begin_layout Subsection
+Bilder laden von Google Maps
+\end_layout
+
+\begin_layout Subsection
+Neuronales Netz mit Bild- und Meta-Input
+\end_layout
+
+\begin_layout Subsection
+Visualisierung von Trainings-Statistiken
+\end_layout
+
+\begin_layout Subsection
+Speichern und Laden von trainierten Netzen
+\end_layout
+
+\begin_layout Subsection
+Anpassen der Bilddaten nach Bedarf vor dem Trainingsprozess
+\end_layout
+
+\begin_layout Subsection
+Interface für handisches Erzeugen von Merkmalsdaten
+\end_layout
+
+\begin_layout Subsection
+Eigene CSV-Reader und CSV-Writer Class
+\end_layout
+
+\begin_layout Subsection
+GPS-Koordinaten oder Adressen als Positionseingabe
+\end_layout
+
+\begin_layout Subsection
+Zusammenfügen von Bildausschnitten zu Gesamtbild
+\end_layout
+
+\begin_layout Subsection
+Speichern und Laden von Trainingsdaten in SQL
+\end_layout
+
+\begin_layout Subsection
+Benutze vollständigen Bilddatensatz von Infopunks
+\end_layout
+
+\begin_layout Subsection
+Eigener Konverter für CSV-2-SQL und SQL-2-CSV
+\end_layout
+
+\begin_layout Subsection
+Erstellen eines Callbacks für die Keras-Trainingfunktion
 \end_layout
 
 \begin_layout Section
 Fazit
+\end_layout
+
+\begin_layout Part
+Notizen
+\end_layout
+
+\begin_layout Standard
+Bei meiner Arbeit ging es um das Erstellen eines allgemeinen Systems zur
+ Erzeugung eines neuronalen Netzes, welches vordefinierte Merkmale in Satelliten
+bildern erkennen soll.
+\end_layout
+
+\begin_layout Standard
+Um die Anforderungen der „leichten Anpassbarkeit“ zu erfüllen, wurde das
+ System ähnlich dem Baukastenprinzip in 4 Blöcke aufgeteilt.
+\end_layout
+
+\begin_layout Itemize
+Bilddaten (Satellitenbilder)
+\end_layout
+
+\begin_layout Itemize
+Trainingsdaten (gewünschte Merkmale)
+\end_layout
+
+\begin_layout Itemize
+Neuronales Netz
+\end_layout
+
+\begin_layout Itemize
+Ergebnisvisualisierung
+\end_layout
+
+\begin_layout Standard
+Für die Bilddaten habe ich zwei Eingabemöglichkeiten eingebaut.
+ Zum einen kann ein vollständiger Bilddatensatz verwendet werden, zum anderen
+ reicht auch eine Liste von Adressen.
+ Dafür habe ich einen Downloader entwickelt, der für jeden Eintrag der Liste
+ das entsprechende Satellitenbild von einem vorher ausgewählten Satellitenbildan
+bieter herunterlädt.
+ Der Standard-Anbieter ist dabei Google Maps.
+\end_layout
+
+\begin_layout Standard
+Für die Trainingsdaten wurde von mir ein Interface entwickelt, welches einem
+ Nutzer Satellitenbilder anzeigt und dieser entsprechende Merkmale dazu
+ eintragen kann.
+ Die eingetragenen Zuordnungen werden dann in einer Tabelle gespeichert.
+\end_layout
+
+\begin_layout Standard
+Das neuronale Netz wurde erstellt mit einem Deeplearning-Framework namens
+ Keras.
+ Für die Struktur des Netzes habe ich mir verschiedene andere Anwendungsfälle
+ von neuronalen Netzen angeschaut.
+ Mit den darauf basierenden Vor- und Nachteilen habe ich dann eine an unser
+ Problem angepasste Struktur entwickelt.
+\end_layout
+
+\begin_layout Standard
+Da die Form der Ergebnisse von den gewünschten Merkmalen abhängig ist, habe
+ ich mehrere Standard-Ergebnisvisualisierungen gebaut, welche dann nach
+ Bedarf entsprechend an- und abgeschaltet werden können.
 \end_layout
 
 \end_body
