@@ -20,7 +20,7 @@ New Web Technology GmbH
 # Inhaltsverzeichnis
 
 1. Einleitung
-2. Aufgabenanalyse
+2. Problemstellung
 3. Projektumsetzung
 4. Fazit
 
