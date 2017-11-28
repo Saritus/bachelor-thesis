@@ -1,0 +1,9264 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+%\usepackage{multicol}
+
+%Farben fuer Programmlisting
+\usepackage{listings,xcolor}
+\definecolor{pl_background}{rgb}{0.95,0.95,0.95}
+\definecolor{pl_comment}{rgb}{0.12, 0.38, 0.18 }
+\definecolor{pl_ifelse}{rgb}{0.74,0.74,.29}
+\definecolor{pl_keyword}{rgb}{0.37, 0.08, 0.25}
+\definecolor{pl_string}{rgb}{0.06, 0.10, 0.98}
+% Vordefiniertes Programmlisting
+\lstset{
+language = Python,
+basicstyle = \footnotesize,
+backgroundcolor = \color{pl_background},
+stringstyle = \color{pl_string},
+keywordstyle = \color{pl_keyword}\bfseries,
+commentstyle = \color{pl_comment}\itshape,
+frame = lrbt,
+numbers = left,
+showstringspaces = false,
+breaklines = true,
+tabsize=4,
+xleftmargin = 15pt}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language german
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\listings_params "breaklines=true,captionpos=b,frame={tb  //--> frame at the top and at the bottom of the listing},language=Python,basicstyle={\footnotesize}"
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell multirow="3" alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/htw-logo.png
+	lyxscale 25
+	height 1.5cm
+
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hochschule für Technik und Wirtschaft Dresden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size larger
+Fakultät Informatik/Mathematik
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\size huge
+Bachelorarbeit
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\size larger
+Thema:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\size larger
+Merkmalserkennung von Gebäuden und Grundstücken in Satellitenbildern mittels
+ Deeplearning
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="19" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vorgelegt von:
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sebastian Mischke
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dorfstraße 8, 01257 Dresden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+geb.
+ am 09.11.1995 in Dresden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Matrikelnummer: 37612
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Studiengang:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medieninformatik
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Betreuender Prüfer:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Prof.
+ Dr.
+ Marco Block-Berlitz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zweitgutachter:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Prof.
+ Dr.
+ Hans-Joachim Böhme
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Externer Betreuer:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ann-Christin Storms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+New Web Technology GmbH
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Abgabetermin:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+27.
+ Juli 2017
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "API"
+description "Application programming interface\\\\Programmierschnittstelle zum Anbinden eines externen Systems an ein Programm."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CNN"
+description "Convolutional Neural Network\\\\Netzstruktur eines künstlichen neuronalen Netzes, bestehend aus einer Aneinanderreihung von Konvolutionsschichten"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CSV"
+description "Comma-separated values\\\\Textformat, in dem einzelne Daten einer Zeile durch Kommata oder Semikola getrennt sind."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "URL"
+description "Uniform Resource Locator\\\\Adresse einer Webseite oder einer Datei im Internet"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Framework"
+description "Programmiergerüst, welches einen Entwicklungsrahmen für Softwareentwickler bereit stellt."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Pooling-Schicht"
+description "Schichtart, bei der die Ausgabemenge kleiner als die Eingabemenge ist, indem überflüssige Informationen verworfen werden. "
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Überanpassung"
+description "Prozess, in dem ein neuronalen Netz die Klassifizierung der Trainingsdaten auswendig lernt, anstatt zu verallgemeinern."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Batchsize"
+description "Anzahl an Bildern, die für eine Anpassung der Gewichte des Netzes genutzt werden."
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Konvolutionsschicht"
+description "Schichtart, bei der die Ausgabedaten durch eine Faltung der Eingabedaten erzeugt wird."
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList algorithm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+In dieser Arbeit wird ein System entwickelt, das sich basierend auf einer
+ Adressliste automatisiert alle dazugehörigen Satellitenbilder herunterlädt,
+ ein an die Ein- und Ausgabedaten angepasstes künstliches neuronales Netz
+ erstellt und dieses anschließend für seine Aufgabe im Bereich der Klassifizieru
+ng beziehungsweise der Merkmalserkennung trainiert.
+ Die Qualität der Parameter des Netzes werden dabei stetig evaluiert durch
+ dem Netz bisher unbekannte Validierungsdaten und bei Verbesserungen für
+ eine spätere Verwendung in Anwendungen inklusive Netzarchitektur lokal
+ gespeichert.
+ Abschließend wird das System in verschiedenen Experimenten für die Erkennung
+ von geographischen Koordinaten, Postleitzahlen und Schularten verwendet
+ und deren Ergebnisse ausgewertet.
+\end_layout
+
+\begin_layout Section
+Einleitung und Motivation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes gld
+\end_inset
+
+Deeplearning bezeichnet Computermodelle, welche aus mehreren Verarbeitungsschich
+ten bestehen und lernen, Daten auf verschiedenen Abstraktionsstufen darzustellen.
+ Dieses Konzept brachte dramatische Verbesserungen in der Spracherkennung,
+ der visuellen Objekterkennung und in anderen Fachgebieten, wie der Genomik.
+ Deeplearning erkennt hochkomplexe Strukturen in große Datensätzen, indem
+ es mittels dem Backpropagation-Lernalgorithmus erkennt, wie eine Maschine
+ seine internen Parameter für die Abbildung der Schichten basierend auf
+ den jeweils vorhergegangenen Schichten verändern muss.
+ Convolutional Neural Networks erzielten Durchbrüche in der Verarbeitung
+ von Bildern, Videos, Sprach- und anderen Audioaufnahmen, während rekurrente
+ neuronales Netze eher sequentielle Daten wie Text oder Sprache beleuchten.
+\begin_inset Quotes grd
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lecun2015deeplearning"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dieser Erfolg von Deeplearning wird vorangetrieben durch die ansteigende
+ Rechnerleistung, welche die benötigte Zeit für den Trainingsvorgang verkürzt
+ und größere Netzstrukturen benutzbar macht, sowie der stetig wachsenden
+ Menge an verfügbaren Trainingsdaten.
+ Ein Bereich der Bildverarbeitung, der sich bei zweiterem in den letzten
+ Jahren enorm verbessert hat, ist die Auswertung von Satellitenbildern.
+ Die Anzahl an Quellen für frei verfügbare qualitativ hochwertige Satellitenaufn
+ahmen hat stark zugenommen.
+\end_layout
+
+\begin_layout Section
+Konkretisierung der Aufgabenstellung
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Konkretisierung-der-Aufgabenstel"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ziel dieser Arbeit ist es, ein System zu entwickeln, mit dem Klassifikationen
+ und Merkmalserkennungen in Satellitenbildern mittels Deeplearning leicht
+ umzusetzen sind.
+ Das Hauptkriterium dafür ist, dass sich das System schnell und einfach
+ an unterschiedliche Eingabeformate der Daten anpassen lassen kann.
+ Außerdem soll eine größtmögliche Automatisierung angestrebt werden, was
+ bedeutet, dass der Aufwand bei der Benutzung des Systems minimal zu halten
+ ist.
+ Ebenso sollten die Resultate beziehungsweise das trainierte Netz sich mühelos
+ in andere Anwendungen integrieren lassen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Verwandte Arbeiten
+\end_layout
+
+\begin_layout Subsection
+ImageNet Large-Scale Visual Recognition Challenge
+\end_layout
+
+\begin_layout Standard
+Die ImageNet Large-Scale Visual Recognition Challenge (ILSVRC)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Russakovsky2015"
+
+\end_inset
+
+ ist wohl einer der bekanntesten Wettbewerbe im Bereich der automatisierten
+ Bildklassifizierung.
+ Sein Aufbau ist dabei an die Pascal Visual Object Classes Challenge
+\begin_inset CommandInset citation
+LatexCommand cite
+key "everingham2010pascal"
+
+\end_inset
+
+ angelehnt.
+ Die Trainingsdaten bestehen aus Bilddaten und der Klasseninformation zu
+ einem Objekt, welches jeweils im Bild vorhanden ist.
+ Dies stammt alles aus der ImageNet-Datenbank
+\begin_inset CommandInset citation
+LatexCommand cite
+key "deng2009imagenet"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Mit SuperVision
+\begin_inset CommandInset citation
+LatexCommand cite
+key "NIPS2012_4824"
+
+\end_inset
+
+, einem Deep Convolutional Neural Network, gewannen Alex Krizhevsky, Ilya
+ Sutskever und Geoffrey E.
+ Hinton die ILSVRC-2012.
+ Ihr Netz beinhaltet fünf Konvolutionsschichten, manche gefolgt von einer
+ Max-pooling Schicht, und abschließend drei vollvernetzten Schichten mit
+ der finalen 1000-Neuronen-Schicht, die das Ergebnis der Klassifizierungen
+ darstellt.
+ Damit konnte eine Top-5-Fehlerquote, die die relative Häufigkeit angibt,
+ in der das korrekte Ergebnis nicht in den ersten fünf Prädiktionen liegt,
+ von 16,4% erreicht werden.
+ Die Fehlerquote für das korrekte Erkennen der richtigen Klasse lag dabei
+ bei 38,1%.
+\end_layout
+
+\begin_layout Standard
+VGG16 und VGG19
+\begin_inset CommandInset citation
+LatexCommand cite
+key "simonyan2014very"
+
+\end_inset
+
+, die Gewinner des ILSVRC-2014 im Bereich 
+\begin_inset Quotes gld
+\end_inset
+
+Klassifikation und Lokalisation
+\begin_inset Quotes grd
+\end_inset
+
+ benutzten einen ähnlichen Aufbau von Konvolutions-, Max-pooling- und vollvernet
+zten Schichten, nur das sich die Tiefe des Netzes deutlich vergrößert hat.
+ Statt fünf besitzt das Netz nun 13 beziehungsweise 16 Konvolutionsschichten.
+ Damit konnte die Top-5-Fehlerquote auf 7,2% und die Top-1-Fehlerquote auf
+ 24,4% gesenkt werden.
+\end_layout
+
+\begin_layout Subsection
+Multi-column Deep Neural Networks
+\end_layout
+
+\begin_layout Standard
+Eine Alternative zum linearen neuronalen Netzwerk sind die mehrspaltigen
+ neuronalen Netzwerke
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ciregan2012multicolumn"
+
+\end_inset
+
+.
+ Die Architektur besteht dabei aus mehreren herkömmlichen neuronalen Netzen,
+ welche parallel zueinander angeordnet sind.
+ Dabei ist anzumerken, dass diese mehreren Netze zunächst einzeln trainiert
+ werden und erst für die spätere Anwendung zusammengeschlossen werden.
+ 
+\end_layout
+
+\begin_layout Standard
+Auch dann noch verarbeiten die Teilnetze die Eingabedaten unabhängig voneinander.
+ Für das abschließende Ergebnis des mehrspaltigen Netzes bildet man den
+ Durchschnittswert der Einzelergebnisse der Teilnetze.
+ Dies erbrachte in den durchgeführten Experimenten eine relative Verbesserung
+ der Klassifizierungsgenauigkeit zwischen 26% und 72% im Vergleich zu den
+ bisher besten Ergebnissen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+PlaNet
+\end_layout
+
+\begin_layout Standard
+Im Projekt 
+\begin_inset Quotes gld
+\end_inset
+
+PlaNet - Photo Geolocation with Convolutional Neural Networks
+\begin_inset Quotes grd
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "weyand2016planet"
+
+\end_inset
+
+ wurde versucht, den Aufnahmeort eines Fotos lediglich anhand des Bildes
+ zu erkennen.
+ Dafür wurde die Weltkugel in mehrere Zellen eingeteilt und die Fotos jeweils
+ der Zelle zugeordnet, in der ihr tatsächlicher Aufnahmeort liegt.
+ Damit konnte in etwa 30% das korrekte Land erkannt werden und die Genauigkeitsr
+ate für Städte lag bei rund 10%.
+ Das reichte, um bisherige Modelle, welche noch auf handeingetragenen Merkmalen
+ basierten, mit einen signifikanten Abstand zu überbieten.
+ Außerdem war man in der Lage in einem Experiment beim Onlinespiel GeoGuessr
+ gegen erfahrene Menschen zu gewinnen.
+\end_layout
+
+\begin_layout Standard
+Das System wurde anschließend noch verbessert, indem das bestehende Convolutiona
+l Neural Network mit einem Long short-term memory (LSTM)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hochreiter1997lstm"
+
+\end_inset
+
+ kombiniert wurde, um anstatt eines einzelnen Bildes ein ganzes Bilderalbum
+ zu klassifizieren.
+\end_layout
+
+\begin_layout Subsection
+isprs 2D Semantic Labeling Contest
+\end_layout
+
+\begin_layout Standard
+Die Internationale Gesellschaft für Photogrammetrie und Fernerkundung trägt
+ einen 2D Semantic Labeling Wettbewerb
+\begin_inset CommandInset citation
+LatexCommand cite
+key "isprs2D"
+
+\end_inset
+
+ für Luftaufnahmen aus.
+ Darin müssen anhand von Orthofotos, das heißt verzerrungsfreien und maßstabsget
+reuen Abbildung der Erdoberfläche, welche durch Luft- und Satellitenaufnahmen
+ erstellt wurden, sowie digitalen Höhenmodellen bestimmte Objekte und Kategorien
+ erkannt werden.
+ Bei diesen Kategorien handelt es sich um Flächenversiegelungen wie Straßen
+ oder Parkplätze, Gebäude, niedrige Vegetation, Bäume, Fahrzeuge und die
+ gesonderte Klasse für Sonstiges, wozu Wasser oder andere Flächen gehören,
+ die sich den bisherigen Gruppen nicht zuordnen ließen.
+ Da es sich hier um die Klassifizierung größerer Bereiche handelt, werden
+ die Klasseninformationen farbkodiert in Bildern gespeichert, die der identische
+n lokalen Zuordnung entsprechen, wie die dazugehörigen Orthofotos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Verwendete Technik
+\end_layout
+
+\begin_layout Subsection
+Python
+\end_layout
+
+\begin_layout Standard
+Als Programmiersprache wurde Python verwendet, da sie viele Vorteile gegenüber
+ anderen Programmiersprachen besitzt.
+ Sie ist leicht zu lesen, wodurch man die Logik und den Ablauf eines Programmes
+ schneller erkennt.
+ Es ist unabhängig vom Betriebssystem und die große Anzahl an open-source
+ Bibliotheken ermöglicht eine leichte Umsetzung zu nahezu jeder Problematik.
+\end_layout
+
+\begin_layout Standard
+Außerdem besitzt Python die größte Anzahl an Deeplearning-Bibliotheken,
+ und wird von großen Unternehmen und Einrichtungen in diesem Bereich unterstützt
+ und vorangetrieben, wie unter anderem TensorFlow
+\begin_inset CommandInset citation
+LatexCommand cite
+key "abadi2016tensorflow"
+
+\end_inset
+
+ von Google, CNTK
+\begin_inset CommandInset citation
+LatexCommand cite
+key "seide2016cntk"
+
+\end_inset
+
+ von Microsoft oder cuDNN
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chetlur2014cudnn"
+
+\end_inset
+
+ von NVIDIA.
+\end_layout
+
+\begin_layout Standard
+Der primäre Nachteil von Python ist wohl der Geschwindigkeitsunterschied
+ im Vergleich zu kompilierenden Sprachen wie C oder C++.
+ Da in Python aber bereits Deeplearning-Implementierungen existieren, die
+ Grafikkarten zum berechnen verwenden können, sollte dieser Makel nur eine
+ untergeordnete Rolle spielen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Quellen:
+\end_layout
+
+\begin_layout Plain Layout
+pros and cons of Python - http://www.infoworld.com/article/2887974/application-dev
+elopment/a-developer-s-guide-to-the-pro-s-and-con-s-of-python.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Tkinter
+\end_layout
+
+\begin_layout Standard
+Python besitzt kein eigenes Interface.
+ Deshalb muss zum Programmieren einer grafischen Anwendung eine zusätzliche
+ GUI-Bibliothek genommen werden.
+ Hierfür wurde Tkinter
+\begin_inset CommandInset citation
+LatexCommand cite
+key "grayson2000tkinter"
+
+\end_inset
+
+ verwendet, da es in jeder Standardinstallation von Python enthalten ist.
+ Dadurch werden für die Ausführung keine Zusatzmodule benötigt.
+ Außerdem bietet es die Möglichkeit, die Anwendung auf unterschiedlichen
+ Plattformen auszuführen, ohne dafür den Quellcode anpassen zu müssen.
+\end_layout
+
+\begin_layout Standard
+Da Tkinter ein Schichtenkonzept verwendet und auf Tk
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{http://www.tkdocs.com/}
+\end_layout
+
+\end_inset
+
+ basiert, ist auch hier wieder einmal ein Nachteil die Problematik der Geschwind
+igkeit im Gegensatz zu nativen GUI-Bibliotheken.
+\end_layout
+
+\begin_layout Subsection
+Convolutional Neural Networks
+\end_layout
+
+\begin_layout Standard
+Wie SuperVision
+\begin_inset CommandInset citation
+LatexCommand cite
+key "NIPS2012_4824"
+
+\end_inset
+
+ und VGG16
+\begin_inset CommandInset citation
+LatexCommand cite
+key "simonyan2014very"
+
+\end_inset
+
+ zeigen konnten, ist die Architektur eines Convolutional Neural Networks
+ mit abschließenden vollvernetzten Schichten am besten geeignet, um Bilddaten
+ auszuwerten.
+ Und selbst die mehrspaltigen neuronalen Netze
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ciregan2012multicolumn"
+
+\end_inset
+
+ haben diese Grundstruktur intern beibehalten.
+ Deshalb besitzt das Standardnetz des Systems einen ähnlichen Aufbau.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Keras
+\end_layout
+
+\begin_layout Standard
+Als Deeplearning Framework wurde die Python Bibliotheken namens Keras
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chollet2015keras"
+
+\end_inset
+
+ verwendet.
+ Im Gegensatz zu anderen Frameworks besitzt es die Möglichkeit als Grundlage
+ entweder TensorFlow
+\begin_inset CommandInset citation
+LatexCommand cite
+key "abadi2016tensorflow"
+
+\end_inset
+
+, CNTK
+\begin_inset CommandInset citation
+LatexCommand cite
+key "seide2016cntk"
+
+\end_inset
+
+ oder Theano
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bergstra2011theano"
+
+\end_inset
+
+ zu verwenden.
+ Dies erlaubt es, die Implementierungen und damit auch die Vorteile aller
+ drei zu nutzen.
+ Außerdem ist Keras inzwischen als erste High-Level API in TensorFlow enthalten,
+ was wiederum den Installationsaufwand verringert.
+\end_layout
+
+\begin_layout Subsection
+matplotlib
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:matplotlib"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nahezu alle Visualisierungen wurden mit matplotlib, einer Python Bibliothek
+ für graphische Darstellungen, gemacht.
+ Damit lassen sich nicht nur Grafiken erzeugen, direkt anzeigen oder abspeichern
+, sondern auch in anderen GUI-Bibliotheken wie GTK+, Qt, wxWidgets oder
+ in unserem Fall Tkinter verwenden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+https://www.dataquest.io/blog/python-data-visualization-libraries/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Systemplan
+\end_layout
+
+\begin_layout Standard
+Das System soll nach dem Konzept des Baukastenprinzips entworfen werden
+ beziehungsweise die Anforderungen für Modularität aus 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "meyer1988object"
+
+\end_inset
+
+ erfüllen.
+ Das bedeutet, das sich die verschiedenen Komponenten verändern lassen,
+ ohne dafür den Rest des Systems verändern zu müssen.
+ Der Datenfluss zwischen den Modulen ist in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Datenfluss"
+
+\end_inset
+
+ dargestellt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/datenfluss_4.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Datenfluss"
+
+\end_inset
+
+Datenflussdiagramm des Systems
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die erste Komponente ist die Datengrundlage, welche in Form einer CSV-Datei
+ in das System gegeben wird.
+ Sie kann geographische Koordinaten, Adressen oder andere Beschreibungen
+ der gewünschten Eingabedaten enthalten, welche für den Trainings- und Validieru
+ngsprozess verwendet werden.
+ Die zweite Komponente besteht aus den Satellitenbildern beziehungsweise
+ dem Werkzeug zum Erzeugen der Satellitenbilder basierend auf der Datengrundlage.
+ Bei der dritten Komponente handelt es sich um die Trainingsvorgaben.
+ Sie bestehen aus den Klassenzuordnungen der Satellitenbilder und sind ebenfalls
+ in der Datengrundlage enthalten.
+ Sie repräsentieren die gewünschten Ausgabedaten des Netzes.
+ Die letzte Komponente ist das künstliche neuronale Netz, welches für die
+ Klassifizierungen zuständig ist und trainiert werden soll.
+ Es bekommt die Trainingsdaten bestehend aus Satellitenbildern und Klasseninform
+ationen und passt mittels eines Optimierers seine Gewichte so an, dass die
+ Klassifizierung des Netzes möglichst mit der richtige Klassenzuordnung
+ übereinstimmt.
+ Dieser Hauptablaufplan des Systems befindet sich in Algorithmus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:classifier_main"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Datengrundlage
+\end_layout
+
+\begin_layout Plain Layout
+Satellitenbilder
+\end_layout
+
+\begin_layout Plain Layout
+Trainingsvorgabe
+\end_layout
+
+\begin_layout Plain Layout
+künstlichen neuronalen Netz
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Die wohl wichtigste Eigenschaft des Systems soll die Modularität sein.
+\end_layout
+
+\begin_layout Plain Layout
+Das bedeutet, dass ein Verändern oder Austauschen einer Komponente möglich
+ ist, ohne andere Komponenten dafür zu verändern.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Das System zur Merkmalserkennung besteht aus drei Kernbausteinen.
+ (siehe 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Datenfluss"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Den Satellitenbildern, die als Informationsgrundlage und Input-Daten für
+ den Klassifizierer genutzt werden
+\end_layout
+
+\begin_layout Itemize
+Dem künstlichen neuronalen Netz, welches die Input-Daten analysiert und
+ klassifiziert
+\end_layout
+
+\begin_layout Itemize
+Der Trainingsvorgabe, welche zum Trainieren des Netzes benutzt wird.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Load data
+\end_layout
+
+\begin_layout Plain Layout
+
+images, teach = load_csv("data.csv")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Create net
+\end_layout
+
+\begin_layout Plain Layout
+
+model = create_net(images, teach)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Create checkpointer
+\end_layout
+
+\begin_layout Plain Layout
+
+cp = ModelCheckpoint(
+\end_layout
+
+\begin_layout Plain Layout
+
+	filepath='model.hdf5'
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Train the net
+\end_layout
+
+\begin_layout Plain Layout
+
+model.fit(images, teach,
+\end_layout
+
+\begin_layout Plain Layout
+
+	batch_size=batchsize,
+\end_layout
+
+\begin_layout Plain Layout
+
+	epochs=epochs,
+\end_layout
+
+\begin_layout Plain Layout
+
+	validation_split=split,
+\end_layout
+
+\begin_layout Plain Layout
+
+	callbacks=[cp]
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:classifier_main"
+
+\end_inset
+
+Hauptprozedur des Systems
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Trainingsdaten
+\end_layout
+
+\begin_layout Standard
+Die Trainingsdaten geben dem künstlichen neuronalen Netz vor, welche Aufgabe
+ es zu erfüllen hat.
+ Dabei bestehen die Trainingsdaten aus zwei Teilen.
+\end_layout
+
+\begin_layout Standard
+Den Satellitenbildern, die die Eingabedaten des Netzes sind und welche auch
+ für spätere Anwendungsfälle benötigt werden.
+ Deren genauere Erzeugung wird in Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satellitenbilder"
+
+\end_inset
+
+ erklärt.
+\end_layout
+
+\begin_layout Standard
+Der zweite Teil sind die Klasseninformationen der jeweiligen Bilder, welche
+ die gewünschten Ausgabedaten des Netzes sind.
+ Das Erzeugen der Klasseninformationen ist in der Regel ein aufwändiger
+ Prozess und stark vom gewünschten zu erkennenden Merkmal abhängig.
+ Es werden größere Mengen an Trainingsdaten benötigt, um ein Netz zu trainieren.
+ Und wenn es für die gewünschte Aufgabe keine bereits existierende Datenquelle
+ gibt, der man diese Menge an Informationen entnehmen kann, dann müssen
+ sie notfalls eben händisch erzeugt werden.
+ Dafür beinhaltet das System ein Interface, welches in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:train-data-generator"
+
+\end_inset
+
+ zu sehen ist, und zeilenweise die Adressen einer CSV-Datei benutzt, um
+ aus ihnen Satellitenbildern ebenfalls basierend auf Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satellitenbilder"
+
+\end_inset
+
+ zu erzeugen, und diese anzeigt.
+ Der Benutzer kann anschließend aus einer Auswahl an Klasseninformationen
+ die dem Bild zugehörige auswählen.
+ Seine Entscheidung wird danach zusammen mit der momentanen Adresse in einer
+ neuen CSV-Datei abgespeichert.
+\end_layout
+
+\begin_layout Subsection
+Satellitenbilder
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satellitenbilder"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Satellitenbilder bilden die Grundlage der Eingabedaten für das Netz.
+ Da eine eigenständige Erzeugung einen viel zu hohen Aufwand bedeuten würde,
+ werden stattdessen Bilder verwendet, die mittels der Google Static Maps
+ API
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GoogleMaps"
+
+\end_inset
+
+ erzeugt wurden.
+ Dafür wird eine URL mittels Algorithmus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:google_maps_url"
+
+\end_inset
+
+ erzeugt, die die Einstellungen des zu erzeugenden Bildes beinhaltet.
+ Zum einen der Mittelpunkt in Form einer Adresse oder einer geographischen
+ Koordinate.
+ Dies ist die Kerninformation und das sich später einzige ändernde Merkmal
+ innerhalb einer Bilderreihe für einen Trainingsprozess.
+ Dann die Größe des Bildes angegeben in Pixeln.
+ Hierbei liegt das Maximum bei 
+\begin_inset Formula $\mathsf{640x640}$
+\end_inset
+
+, deswegen wird dies auch die Standardeinstellung.
+ Anschließend die Zoom-Stufe, die Größe eines Objektes innerhalb eines Bildes
+ angibt.
+ Die offizielle Google Maps API Dokumentation
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{https://developers.google.com/maps/documentation/javascript/tutorial
+\backslash
+#vergrerungsstufen}
+\end_layout
+
+\end_inset
+
+ gibt eine Tabelle für die Detailebenen an, die man basierend auf diesem
+ Parameter erwarten kann.
+ Außerdem gibt es den Parameter des Kartentypen.
+ Da es lediglich um die Informationsgewinnung aus Satellitenaufnahmen geht,
+ ist hier immer 
+\begin_inset Formula $\mathsf{satellite}$
+\end_inset
+
+ ausgewählt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+url = "http://maps.google.com/maps/api/staticmap"
+\end_layout
+
+\begin_layout Plain Layout
+
+if centermode == "xy":
+\end_layout
+
+\begin_layout Plain Layout
+
+	# Latitude and Longitude
+\end_layout
+
+\begin_layout Plain Layout
+
+	url += "?center=" + y + "," + x
+\end_layout
+
+\begin_layout Plain Layout
+
+elif centermode == "address":
+\end_layout
+
+\begin_layout Plain Layout
+
+	# Address
+\end_layout
+
+\begin_layout Plain Layout
+
+	url += "?center=" + address
+\end_layout
+
+\begin_layout Plain Layout
+
+url += "&size=" + w + "x" + h
+\end_layout
+
+\begin_layout Plain Layout
+
+url += "&zoom=" + zoom
+\end_layout
+
+\begin_layout Plain Layout
+
+url += "&maptype=" + maptype
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:google_maps_url"
+
+\end_inset
+
+Erzeugen der URL für die Google Static Maps API
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die mittels dieser URL erzeugten Bilder werden lokal gespeichert und basierend
+ auf ihren Parametern benannt.
+ Dies verhindert ein mehrfaches Herunterladen des gleichen Bildes.
+ Zusätzlich können die Bilder dadurch vor dem Trainingsprozess noch zugeschnitte
+n oder auf eine andere Größe skaliert werden.
+ Außerdem erleichtert es die Umwandlung der Bilder in drei 2D-Arrays für
+ den Rot-, Grün- und Blaukanal.
+ Das ist notwendig, da das Netz keine Farbbilder als Eingabe akzeptieren
+ kann.
+\end_layout
+
+\begin_layout Subsection
+Künstliche Datenmengenvergrößerung
+\end_layout
+
+\begin_layout Standard
+Sollte die Menge an Trainingsdaten für die gewünschte Aufgabe des Netzes
+ zu klein sein, ist das Risiko einer Überanpassung und der damit einhergehenden
+ schlechten Genauigkeitsrate für die Validierungsdaten sehr hoch.
+\end_layout
+
+\begin_layout Standard
+Eine sehr einfache Variante um die Menge der Trainingsdaten künstlich zu
+ erhöhen, ist das geringfügige Verändern der Satellitenbilder bei gleichbleibend
+er Klasseninformation.
+ Diese Grundidee der Datenmengenvergrößerung wurde auch in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chollet2016building"
+
+\end_inset
+
+ verwendet.
+ Die genaue Abwandlung eines Bildes ist dabei zufällig, aber durch gewisse
+ Rahmenbedingungen eingeschränkt.
+ Wie in Algorithmus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:image_data_generator"
+
+\end_inset
+
+ gezeigt, ist dabei eine Vielzahl von Operationen, wie das Spiegeln, Drehen,
+ Verschieben, Strecken oder Vergrößern des Bildes möglich.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+from keras.preprocessing.image import ImageDataGenerator
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Verändern der Bilddaten
+\end_layout
+
+\begin_layout Plain Layout
+
+datagen = ImageDataGenerator(
+\end_layout
+
+\begin_layout Plain Layout
+
+	rotation_range=10,
+\end_layout
+
+\begin_layout Plain Layout
+
+	width_shift_range=0.1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	height_shift_range=0.1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	rescale=1.
+ / 255,
+\end_layout
+
+\begin_layout Plain Layout
+
+	shear_range=0.1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	zoom_range=0.1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	horizontal_flip=True,
+\end_layout
+
+\begin_layout Plain Layout
+
+	vertical_flip=True,
+\end_layout
+
+\begin_layout Plain Layout
+
+	fill_mode='reflect'
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:image_data_generator"
+
+\end_inset
+
+Einstellungen für die Veränderung der Bilddaten
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Bilddaten werden hierbei aber nicht mehr über eine externen Datei geladen,
+ die sämtliche Adressen der Trainingsdaten enthält, sondern direkt in Form
+ von Bilddateien aus einem Ordner, wie in Algorithmus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:flow_from_directory"
+
+\end_inset
+
+ zu erkennen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Erzeugen der Trainingsdaten
+\end_layout
+
+\begin_layout Plain Layout
+
+generator = datagen.flow_from_directory(
+\end_layout
+
+\begin_layout Plain Layout
+
+	'data/train_data',
+\end_layout
+
+\begin_layout Plain Layout
+
+	target_size=(width, height),
+\end_layout
+
+\begin_layout Plain Layout
+
+	batch_size=batchsize,
+\end_layout
+
+\begin_layout Plain Layout
+
+	class_mode=classmode,
+\end_layout
+
+\begin_layout Plain Layout
+
+	shuffle=True
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:flow_from_directory"
+
+\end_inset
+
+Laden der Bilddaten aus einem Ordner
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Für das Erzeugen der Bilddateien ist dafür aber immer noch eine separate
+ Adressdatei notwendig und erfolgt wie in Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satellitenbilder"
+
+\end_inset
+
+ beschrieben.
+ Die Klasseninformation werden nun in Form von Unterordnern übermittelt.
+ Jeder Ordner steht dabei für eine eigenständige Klasse.
+ Deshalb ist diese Methode auch nur für Versuche mit klaren Klassenzuordnungen
+ anwendbar.
+\end_layout
+
+\begin_layout Subsection
+Erstellen des künstlichen neuronalen Netzes
+\end_layout
+
+\begin_layout Standard
+Die Grundstruktur des Netzes ist angelehnt an die Vorgaben von VGG16
+\begin_inset CommandInset citation
+LatexCommand cite
+key "simonyan2014very"
+
+\end_inset
+
+ und besteht aus zehn Konvolutionsschichten, vier Max-pooling Schichten
+ sowie drei vollvernetzten Schichten inklusive der abschließenden Schicht
+ für die Repräsentation der Ausgabedaten.
+ Die Funktion zum Erstellen des Netzes befindet sich in Algorithmus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:create_net"
+
+\end_inset
+
+.
+ Die Größe der Eingabeschicht wird automatisch durch die Größe der Bilder
+ in den Trainingsdaten bestimmt.
+\end_layout
+
+\begin_layout Standard
+Für die vollvernetzten Schichten wird das Prinzip des Dropout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "srivastava2014dropout"
+
+\end_inset
+
+ angewendet.
+ Damit werden nach jeder Trainingsepoche ein vorher eingetragener Prozentsatz
+ der Vernetzungen entfernt beziehungsweise auf eine Stärke von 0 zurückgesetzt.
+ Dies soll das Risiko einer Überanpassung weiter verringern.
+\end_layout
+
+\begin_layout Standard
+Die Ausgabeschicht des Netzes muss sowohl in der Anzahl der Neuronen als
+ auch in der Aktivierungsfunktion an das Format der Ausgabedaten angepasst
+ werden.
+ So beinhaltet bei einem Klassifizierungsproblem diese Schicht so viele
+ Neuronen, wie es zu unterscheidende Klassen gibt.
+ Außerdem wählt man die Softmax-Aktivierungsfunktion, siehe 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:softmax"
+
+\end_inset
+
+.
+ Das heißt, die Summe der Aktivierungen der Neuronen beträgt 1.
+ Das Netz entscheidet also seine Klassenzuordnung darüber, welches Neuron
+ am stärksten aktiviert wird.
+ Die Stärke der Aktivierung sagt zudem aus, wie sicher sich das Netz bei
+ dieser Entscheidung ist.
+\end_layout
+
+\begin_layout Standard
+
+\size large
+\begin_inset Formula 
+\begin{equation}
+softmax_{i}(x)=\frac{e^{x_{i}}}{\sum_{k=1}^{K}e^{x_{i}}}\label{eq:softmax}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bei einem Zwei-Klassen-Problem nutzt man lediglich ein Neuron mit einer
+ Sigmoidfunktion, siehe 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:sigmoid"
+
+\end_inset
+
+, für die Aktivierung als Ausgabeschicht.
+\end_layout
+
+\begin_layout Standard
+
+\size large
+\begin_inset Formula 
+\begin{equation}
+sig(x)=\frac{1}{1+e^{-x}}\label{eq:sigmoid}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Für eine Regression wird ebenso eine Ausgabeschicht mit einem Neuronen verwendet.
+ Aber da das gewünschte Format der Ausgabedaten ein Zahlenwert ist, handelt
+ es sich hier bei der Aktivierung um eine identische Abbildung, siehe 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:identity"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\size large
+\begin_inset Formula 
+\begin{equation}
+id(x)=x\label{eq:identity}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Training des Netzes
+\end_layout
+
+\begin_layout Standard
+Nachdem nun die Trainingsdaten geladen und das neuronale Netz erstellt wurde,
+ müssen die Gewichte des Netzes an das gewünschte Ziel angepasst werden.
+ Dafür wird eine vorher festgelegt Anzahl, auch Batchsize genannt, an Satelliten
+bildern aus den Trainingsdaten genommen und vom Netz klassifiziert.
+ Da sämtliche Berechnungen für den Trainingsprozess auf der Grafikkarte
+ stattfinden sollen und der Grafikkartenspeicher durch die Größe der Bilddaten
+ schnell ausgereizt ist, muss die Batchsize relativ klein gehalten werden.
+ Die Ergebnisse der Klassifizierung werden nun mit den Trainingsvorgaben
+ verglichen.
+ Basierend auf diesen Abweichungen werden anschließend die Gewichte des
+ Netzes angepasst.
+ Bei einer niedrigen Batchsize ist ein Stochastischer Gradientenabstieg
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bottou2010large"
+
+\end_inset
+
+ dafür am besten geeignet.
+ Anschließend werden die nächsten Bilder genommen und der Anpassungsvorgang
+ beginnt von vorne.
+ Man spricht von einer Trainingsepoche, wenn einmal alle Trainingsdaten
+ verwendet wurden.
+\end_layout
+
+\begin_layout Subsection
+Bewertung des Netzes
+\end_layout
+
+\begin_layout Standard
+Nach jeder Trainingsepoche werden die Validierungsdaten vom Netz klassifiziert
+ und die Ergebnisse mit der Trainingsvorlage verglichen.
+ Der sich daraus ergebende Genauigkeitswert wird dann mit dem bisherigen
+ Bestwert verglichen.
+ Sollte die neue Klassifizierung besser sein als der bisherige Spitzenwert,
+ so werden die Gewichte des Netzes gespeichert und der neue Bestwert wird
+ sich gemerkt.
+ Dadurch soll eine Überanpassung des Netzes vermieden werden.
+\end_layout
+
+\begin_layout Standard
+Die Methode, nach der dieser Genauigkeitswert berechnet wird, hängt dabei
+ vom Format der Ausgabedaten, und damit auch von der Aktivierungsart der
+ letzten Schicht des Netzes ab.
+ Bei Mehrklassenproblemen nimmt man die Häufigkeit, in der das Netz die
+ richtige Klasse erkannt hat.
+ Bei linearen Problemen hingegen werden der mittlere absolute Fehler oder
+ der mittlere quadratischer Fehler verwendet.
+\end_layout
+
+\begin_layout Subsection
+Visualisierung von Klassifizierungen
+\end_layout
+
+\begin_layout Standard
+Für die Darstellung der Ergebnisse der Klassifizierung des Netzes gibt es
+ verschiedene Möglichkeiten.
+ Eine Variante ist die Darstellung basierend auf geographischen Koordinaten.
+ Dabei wird mit matplotlib, siehe Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:matplotlib"
+
+\end_inset
+
+, ein Streudiagramm erstellt.
+ Die x- und y-Werte bestehen dabei aus den Längen- und Breitengraden der
+ Koordinaten.
+ Die Ergebnisse der Klassifizierung werden dann in der Farbe der Punkte
+ kodiert.
+ Ein Beispiel dafür ist in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:prediction_plz_in_dd"
+
+\end_inset
+
+ dargestellt.
+\end_layout
+
+\begin_layout Standard
+Alternativ lassen sich die Satellitenbilder direkt mit dem korrekten Vorgabewert
+e sowie dem Ergebnis der Klassifizierung in einem eigenen Interface anzeigen.
+ Dabei könnte besonders Wert auf Falschklassifizierungen gelegt werden,
+ da an ihnen die Probleme des Netzes am besten erkennbar sind.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Experimente
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Experimente"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Um die in Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Konkretisierung-der-Aufgabenstel"
+
+\end_inset
+
+ geforderten Kriterien für das System zu testen, wurden verschiedene Experimente
+ durchgeführt.
+ Diese unterscheiden sich in ihren Datengrundlagen für die Trainingsdaten,
+ in der Form der Datengrundlagen, sowie im Format beziehungsweise Typ der
+ Ausgabedaten.
+ Ebenso werden darin die verschiedenen Arten der Ergebnisvisualisierung
+ verwendet.
+\end_layout
+
+\begin_layout Subsection
+Geographische Koordinaten
+\end_layout
+
+\begin_layout Standard
+Der erste Versuch besteht daraus, die geographischen Koordinaten, das heißt
+ sowohl Längen-, als auch Breitengrad, eines Satellitenbildes zu bestimmen.
+ Dafür sollen keine zusätzliche Metadaten über das Bild bekannt sein.
+ Da die Ausgabedaten Zahlenwerte sind, handelt es sich hier um eine Regression.
+ Die verfügbaren Daten zum Trainieren des Netzes basieren dabei auf den
+ 6337 Einträgen der Datenbank "Geografische Längen- und Breitengrade deutscher
+ Städte und Gemeinden"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{http://www.fwiegleb.de/geodat.htm}
+\end_layout
+
+\end_inset
+
+, deren Verteilung in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pp_staedte_de"
+
+\end_inset
+
+ dargestellt ist.
+ Bei einer Trainings-Validierungs-Aufteilung von 10% ergibt dies eine Anzahl
+ von 5703 Trainingsdaten und 634 Validierungsdaten.
+\end_layout
+
+\begin_layout Standard
+Die mittleren absoluten Fehler der Trainings- und Validierungsdaten lagen
+ bei 2,602 und 1,534.
+ Der Verlauf dieses Fehlers während der Trainingsphase des Netzes ist in
+ Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:staedte_model_loss"
+
+\end_inset
+
+ dargestellt.
+ Die genauere Verteilung der Ergebnisse ist Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:staedte_result_boxplot.png"
+
+\end_inset
+
+ und Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tbl:table_staedte_boxplot"
+
+\end_inset
+
+ zu entnehmen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="5">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X_train
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y_train
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X_valid
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y_valid
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.48
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.07
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.22
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.78
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Oberes Quartil
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.07
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.22
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.53
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Median
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.38
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.19
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.49
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.27
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Unteres Quartil
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1.00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.99
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1.10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.80
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Minimum
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-3.80
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-4.40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-3.81
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-3.02
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anzahl Datenpunkte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5703
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5703
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+634
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+634
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tbl:table_staedte_boxplot"
+
+\end_inset
+
+Abweichungen der Regression des Netzes vom Vorgabewert
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Postleitzahl
+\end_layout
+
+\begin_layout Standard
+Beim zweiten Versuch geht es um die Erkennung der Postleitzahl eines Satellitenb
+ildes.
+ Dies könnte als Mehrklassenproblem, wenn jeder Postleitzahl eine eigene
+ Klasse zugeordnet wird, oder als Regression, wenn man die Postleitzahlen
+ als tatsächlichen Zahlenwert betrachtet, durchgeführt werden.
+ 
+\end_layout
+
+\begin_layout Standard
+Im Gegensatz zu Längen- und Breitengrad, sind die Postleitzahlen in Deutschland
+ nur bedingt geordnet.
+ Es gilt zwar das Prinzip, dass zwei zahlenmäßig nah beieinander liegende
+ Postleitzahlen sich häufig auch örtlich nah sind, weswegen Regression eher
+ der Realität entspricht , als ein Mehrklassenproblem.
+ Jedoch ist diese Zuordnung nicht konsistent.
+ Deswegen sollte es für ein Netz auch entsprechend schwerer sein, nur anhand
+ eines Satellitenbildes eines Hauses die Postleitzahlen von eben diesem
+ zu bestimmen.
+ Außerdem kann es bei einer Regression zu Ergebnissen kommen, die als Postleitza
+hlen nicht existieren.
+\end_layout
+
+\begin_layout Standard
+Die Trainingsdaten bestehen aus 64390 Häusern in Dresden, deren räumliche
+ Anordnung sowie Zuordnung zu einer Postleitzahl in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:plz_in_dd"
+
+\end_inset
+
+ dargestellt ist.
+ Die Ergebnisse der Regression befinden sich in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:prediction_plz_in_dd"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Schule oder Wohnhaus
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Schule-oder-Wohnhaus"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das dritte Experiment wird die Klassifizierung von Häusern beinhalten.
+ Dafür soll ein Netz trainiert werden, welches zwischen Wohnhaus und Schule
+ unterscheiden kann.
+\end_layout
+
+\begin_layout Standard
+Die Datengrundlage für die Schulen besteht aus einer abrufbaren Liste mit
+ 204 Einträgen, veröffentlicht unter der Sektion Schulen in Dresden
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{https://www.dresden.de/de/leben/schulen/schulen-in-dresden.php}
+\end_layout
+
+\end_inset
+
+ vom Amt für Presse- und Öffentlichkeitsarbeit der Landeshauptstadt Dresden.
+ Ein Auszug daraus befindet sich in Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tbl:table_schools_dresden"
+
+\end_inset
+
+.
+ Um die Trainingsdaten in beiden Klassen möglichst vergleichbar zu halten,
+ enthält die Liste der Wohnhäuser ebenfalls 204 Einträge von zufällig aus
+ dem Raum Dresden ausgewählten Adressen.
+\end_layout
+
+\begin_layout Subsection
+Schularten
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Schularten"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das letzte Experiment beinhaltet die Klassifizierung von Schulen in Sachsen
+ nach den drei Klassen Grundschule, Oberschule und Gymnasium.
+ Die dafür verwendeten Trainingsdaten basieren auf der offiziellen Sächsischen
+ Schuldatenbank
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{https://schuldatenbank.sachsen.de/index.php?id=2}
+\end_layout
+
+\end_inset
+
+, herausgegeben vom Sächsischen Staatsministerium für Kultus.
+ Ein Auszug daraus ist in Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tbl:table_schools_saxony"
+
+\end_inset
+
+ zu sehen.
+ Da hier weder geographische Koordinaten noch Adressen vorhanden sind, wird
+ stattdessen der Name der Schule als Zentrum des Satellitenbildes in der
+ Google Static Maps API
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GoogleMaps"
+
+\end_inset
+
+ verwendet.
+\end_layout
+
+\begin_layout Standard
+Die Klasseninformationen werden in Form eines Kategorievektors in das Netz
+ gegeben.
+ Dafür werden zunächst alle möglichen Klassen mit Null beginnend durchnummeriert.
+ Anschließend werden die Kategorievektoren erstellt, wobei die Nummer der
+ Klasse die Stelle angibt, in der im Vektor eine 1 eingetragen wird.
+ An allen anderen Positionen befindet sich eine 0.
+ Für dieses Experiment lautet die Zuordnung der Vektoren wie in Tabelle
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tbl:table_categorical"
+
+\end_inset
+
+ abgebildet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Klasse
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Nummer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vektor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(\begin{array}{ccc}
+1 & 0 & 0\end{array})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(\begin{array}{ccc}
+0 & 1 & 0\end{array})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(\begin{array}{ccc}
+0 & 0 & 1\end{array})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tbl:table_categorical"
+
+\end_inset
+
+Zuordnung der Klassen zu ihren Kategorievektoren
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Ergebnisse
+\end_layout
+
+\begin_layout Standard
+Da sowohl Eingabe-, als auch Ausgabedaten in Form einer CSV-Datei in das
+ System gegeben werden, muss das System lediglich an das Format der Ausgabedaten
+ angepasst werden.
+ Der Aufwand für das Wechseln der Datengrundlage oder des Klassifikationsziels
+ ist damit gering gehalten.
+ Die benötigten Satellitenbilder werden automatisch basierend auf der Datengrund
+lage heruntergeladen und das Netz passt seine Eingabeschicht selbstständig
+ an die Größe der Trainingsdaten an.
+ Dies sind die Kernpunkte für das Einhalten des Ziels der größtmöglichen
+ Automatisierung.
+ Außerdem befindet sich die Architektur und die Gewichte des Netzes nach
+ dem Trainingsvorgang in einer separaten Datei.
+ Dadurch kann das Netz unabhängig vom Rest des Systems in einer Anwendung
+ verwendet werden.
+ Das Kriterium der leichten Integration in externe Anwendungen wurde damit
+ erfüllt.
+\end_layout
+
+\begin_layout Standard
+Insgesamt erfüllt das System alle in Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Konkretisierung-der-Aufgabenstel"
+
+\end_inset
+
+ geforderten Kriterien in gewissen Maßen und konnte deren Umsetzung sowie
+ seine Funktionsfähigkeit in den verschiedenen Experimenten von Abschnitt
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Experimente"
+
+\end_inset
+
+ zeigen.
+\end_layout
+
+\begin_layout Section
+Ausblick
+\end_layout
+
+\begin_layout Standard
+Die wohl größte Verbesserung für das erzeugte System wäre die Umsetzung
+ einer Anwendung, die ein trainiertes Netz automatisch als Grundlage für
+ die Klassifizierung von Satellitenbildern nimmt.
+ Die Satellitenbilder könnten ebenfalls auf Bedarf mittels der Google Static
+ Maps API
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GoogleMaps"
+
+\end_inset
+
+ erzeugt werden und auf vom Nutzer eingegebenen Adressen basieren.
+ Dadurch wäre der Schritt einer Integration in eine separate Anwendung nicht
+ mehr notwendig und ein trainiertes Netz könnte direkt nach Abschluss des
+ Trainingsvorgangs verwendet werden.
+\end_layout
+
+\begin_layout Standard
+Eine andere Erweiterung wäre das Trainieren eines Netzes mit einer großen
+ Anzahl an Klassen, ähnlich dem Konzept von 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "simonyan2014very"
+
+\end_inset
+
+ mit den Gewichten für ImageNet
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Russakovsky2015"
+
+\end_inset
+
+.
+ An dieses Netz könnten dann weitere Schichten angehangen werden, die das
+ tatsächliche Format der gewünschten Ausgabedaten für ein Klassifizierungsproble
+m beinhalten, entsprechend dem Ansatz, welcher in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chollet2016building"
+
+\end_inset
+
+ verwendet wird.
+ Da dadurch ein Großteil des Netzes nicht zufällig initialisiert wird, sondern
+ bereits vortrainierte Gewichte besitzt, ließe sich die Dauer zukünftiger
+ Trainingsvorgänge enorm verkürzen.
+\end_layout
+
+\begin_layout Standard
+Ein Problem, welches sich in den Abschnitten 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Schule-oder-Wohnhaus"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Schularten"
+
+\end_inset
+
+ ergeben hat, ist die fehlende Möglichkeit der Darstellung der Trainingsdaten
+ sowie der Ergebnisse in Form eines Streudiagramms, sollte die Datengrundlage
+ keine geographischen Koordinaten beinhalten.
+ Dieses Problem könnte man mithilfe der Google Maps Geocoding API
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{https://developers.google.com/maps/documentation/geocoding/start}
+\end_layout
+
+\end_inset
+
+ lösen, indem man über die Adresse, oder im Fall von Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Schularten"
+
+\end_inset
+
+ über den Schulnamen, die Längen- und Breitengrade für jedes Element abfragt
+ und in der jeweiligen Zeile der CSV-Datei einfügt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+onecolumn
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "bibtex/bachelor"
+options "bibtotoc,alpha"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Anlagen
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{Anlagen}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/data-generator-v4.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:train-data-generator"
+
+\end_inset
+
+Anwendung zum händischen Erzeugen von Trainingsdaten
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+5.1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def create_net(X_train, Y_train):
+\end_layout
+
+\begin_layout Plain Layout
+
+    from keras.models import Sequential
+\end_layout
+
+\begin_layout Plain Layout
+
+    from keras.layers import (Flatten, Dense, Convolution2D, MaxPooling2D,
+ ZeroPadding2D, Dropout)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    model = Sequential()
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1), input_shape=X_train[0].shape[1:]))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(16, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(16, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(32, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(32, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(64, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(64, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(64, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(128, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(128, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(ZeroPadding2D((1, 1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Convolution2D(128, (3, 3), activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Flatten())
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Dense(1024, activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Dropout(0.1))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Dense(1024, activation='relu'))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Dropout(0.1))
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.add(Dense(Y_train.shape[1], activation='linear'))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    from keras.optimizers import SGD
+\end_layout
+
+\begin_layout Plain Layout
+
+    SGD = SGD(lr=0.0001, momentum=0.0, decay=0.0, nesterov=False)
+\end_layout
+
+\begin_layout Plain Layout
+
+    model.compile(loss='mean_absolute_error', optimizer=SGD, metrics=['mse'])
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return model
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:create_net"
+
+\end_inset
+
+Funktion zum Erstellen des künstlichen neuronalen Netzes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+5.4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/pp_staedte_de.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pp_staedte_de"
+
+\end_inset
+
+Deutsche Städte und Gemeinden
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+6.1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/history_citys_de.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:staedte_model_loss"
+
+\end_inset
+
+Mittlerer absoluter Fehler während der Trainingsepochen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+6.1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/staedte_result_boxplot.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:staedte_result_boxplot.png"
+
+\end_inset
+
+Abweichungen der Netzvorhersagen vom Vorgabewert
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+6.1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/plz_teach.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:plz_in_dd"
+
+\end_inset
+
+Postleitzahlenbereiche in Dresden
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+6.2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/plz_prediction.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:prediction_plz_in_dd"
+
+\end_inset
+
+Ergebnisse der Regression des Netzes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+6.2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="40" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Straße
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Stadtteil
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Schultyp
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+10.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Struvestraße 11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Seevorstadt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+10.
+ Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Messering 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Friedrichstadt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+101.
+ Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Pfotenhauerstraße 42
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Johannstadt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+102.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Pfotenhauerstraße 40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Johannstadt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+103.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Hohnsteiner Straße 8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Radeberger Vorstadt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+106.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Großenhainer Straße 187
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Pieschen/Trachau
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+107.
+ Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Hepkestraße 26
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Striesen/Gruna
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+108.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Hepkestraße 28
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gruna
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+113.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Georg-Nerlich-Straße 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Johannstadt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+116.
+ Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Feuerbachstraße 5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Leubnitz-Neuostra
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+117.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Reichenbachstraße 12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Südvorstadt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+12.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Hebbelstraße 20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Cotta
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+120.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Trattendorfer Straße 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Prohlis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+121.
+ Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gamigstraße 28
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Prohlis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+122.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gamigstraße 30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Prohlis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+128.
+ Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Rudolf-Bergander-Ring 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Strehlen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+129.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Otto-Dix-Ring 57
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Strehlen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+135.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Amalie-Dietrich-Platz 10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gorbitz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+138.
+ Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Omsewitzer Ring 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gorbitz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+139.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Omsewitzer Ring 4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gorbitz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+14.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Schweizer Straße 7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Südvorstadt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+144.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Micktner Straße 10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Pieschen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+15.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Görlitzer Straße 8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Äußere Neustadt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+16.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Josephinenstraße 6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Wilsdruffer/Seevorstadt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+19.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Am Jägerpark 5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Radeberger Vorstadt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+25.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Pohlandstraße 40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Striesen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+25.
+ Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Pohlandstraße 40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Striesen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+26.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Osterbergstraße 22
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Pieschen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+30.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Hechtstraße 55
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Leipziger Vorstadt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+30.
+ Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Unterer Kreuzweg 4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Innere Neustadt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+32.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Hofmannstraße 34
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Blasewitz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+32.
+ Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Hofmannstraße 34
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Blasewitz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+33.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Marienberger Straße 5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Seidnitz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+35.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Bünaustraße 12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Löbtau
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+35.
+ Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Clara-Zetkin-Straße 20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Löbtau
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+36.
+ Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Emil-Ueberall-Straße 34
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Löbtau
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+37.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Stollestraße 43
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Löbtau
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+39.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Schleiermacherstraße 8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Plauen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+4.
+ Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Löwenstraße 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Innere Neustadt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tbl:table_schools_dresden"
+
+\end_inset
+
+Auszug aus Schulen in Dresden
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+6.3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="40" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Schultyp
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ABC Grundschule Neschwitz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Achatschule St.
+ Egidien-Oberschule mit Berufsorientierung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Adam-Friedrich-Oeser-Schule - Grundschule der Stadt Leipzig
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Adam-Ries-Schule-Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Adolf-Traugott-von-Gersdorf- Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Adolph-Diesterweg-Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Afra-Grundschule Meißen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+AHFGrundschule Leipzig
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Aktive Schule Dresden
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Aktive Schule Dresden Oberschule des epharisto e.V.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Aktive Schule Leipzig e.V.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Albert-Einstein-Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Albert-Schweitzer-Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Albert-Schweitzer-Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Alexander-von-Humboldt-Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Alfred-Kästner-Schule - Grundschule der Stadt Leipzig
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Altstädter Schule - Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Altstadtschule Stollberg, Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Andert-Oberschule Ebersbach
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Anna-Magdalena-Bach-Schule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Annenschule -Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Annenschule, Oberschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Anton-Philipp-Reclam-Schule - Gymnasium des
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Anton-Semjonowitsch-Makarenko-Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Apollonia-von-Wiedebach-Schule - Oberschule der Stadt Leipzig
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Arthur-Kießling-Oberschule Königsbrück
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Artur-Becker-Oberschule Delitzsch
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Oberschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Astrid-Lindgren-Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Astrid-Lindgren-Grundschule Heidenau
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Astrid-Lindgren-Schule - Grundschule der Stadt Leipzig
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+August Moritz Böttcher Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+August-Bebel-Schule - Grundschule der Stadt Leipzig
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Augustum-Annen-Gymnasium Görlitz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Basaltus-Grundschule Stolpen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Baumgartengrundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Bebelschule-Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Benjamin-Geißler-Grundschule Liebstadt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Bergschule St.
+ Egidien Grundschule
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grundschule
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Bernhard-von-Cotta-Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Gymnasium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tbl:table_schools_saxony"
+
+\end_inset
+
+Auszug aus der Sächsischen Schuldatenbank
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+6.4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
