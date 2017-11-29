@@ -300,8 +300,8 @@ Thema:
 
 \series bold
 \size larger
-Erstellen eines allgemeinen anpassbaren Systems zur Erzeugung von neuronalen
- Netzen für die Erkennung vordefinierter Merkmale in Satellitenbildern
+Erstellen eines anpassbaren Systems zur Erzeugung von neuronalen Netzen
+ für die Erkennung vordefinierter Merkmale in Satellitenbildern
 \end_layout
 
 \begin_layout Standard
@@ -645,11 +645,59 @@ twocolumn
 \end_layout
 
 \begin_layout Section
-Einleitung
+**Einleitung
+\end_layout
+
+\begin_layout Itemize
+Zeitraum
+\end_layout
+
+\begin_layout Itemize
+Unternehmen, Standort
+\end_layout
+
+\begin_layout Itemize
+Abteilung
+\end_layout
+
+\begin_layout Itemize
+Tätigkeitsbereich
+\end_layout
+
+\begin_layout Itemize
+Sehr knapp aufgaben aufzählen
+\end_layout
+
+\begin_layout Itemize
+Warum dieses Unternehmen?
+\end_layout
+
+\begin_layout Itemize
+Wie bist du auf dieses Unternehmen gekommen?
 \end_layout
 
 \begin_layout Section
-Problemstellung
+**Problemstellung
+\end_layout
+
+\begin_layout Itemize
+Adressliste von Häusern, welche zu klassifizieren sind
+\end_layout
+
+\begin_layout Itemize
+Leichte Anpassung der Adressliste
+\end_layout
+
+\begin_layout Itemize
+Leichte Anpassung der gewünschten zu erkennenden Merkmale
+\end_layout
+
+\begin_layout Itemize
+Leichte Anpassung der Netzstruktur
+\end_layout
+
+\begin_layout Itemize
+Gute Ergebnisvisualisierung
 \end_layout
 
 \begin_layout Section
@@ -657,58 +705,206 @@ Projektumsetzung
 \end_layout
 
 \begin_layout Subsection
-Adressdatei analysieren und laden als CSV
+**Adressdatei analysieren und laden als CSV
 \end_layout
 
-\begin_layout Standard
-Das Austauschformat der Adressliste ist CSV.
+\begin_layout Itemize
+Austauschformat der Adressliste ist CSV
 \end_layout
 
+\begin_layout Itemize
+Einträge
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Haus-ID
+\end_layout
+
+\begin_layout Itemize
+Straße
+\end_layout
+
+\begin_layout Itemize
+Hausnummer
+\end_layout
+
+\begin_layout Itemize
+Postleitzahl
+\end_layout
+
+\begin_layout Itemize
+Stadt
+\end_layout
+
+\begin_layout Itemize
+X-Koordinate
+\end_layout
+
+\begin_layout Itemize
+Y-Koordinate
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
+Visualisierung der Daten
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Visualisierung von 2D-Karten-Daten
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Um einen besseren Überblick über die vorliegende Adressliste zu bekommen,
- soll diese ähnlicher eine 2D-Karte visualisiert werden.
+ sollte diese ähnlich einer 2D-Karte visualisiert werden.
+ Hierzu wurden für jeden Eintrag die geographischen Koordinaten aus der
+ Adressliste ausgelesen und separat in einer zweiten Liste gespeichert.
+ Diese zweite Liste wird anschließend genutzt, um mit der Python-Visualisierungs
+-Bibliothek "matplotlib" ein Streudiagramm zu erstellen.
 \end_layout
 
 \begin_layout Subsection
+Deeplearning Framework
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Suchen eines Deeplearning-Frameworks
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Da das Erstellen eines eigenen Deeplearning-Frameworks zu aufwändig wäre,
- soll eine bereits existierende Implementierung verwendet werden.
+Da der Aufwand zur Erstellung eines eigenen Deeplearning-Frameworks zu hoch
+ ist, soll ein bereits existierendes Framework verwendet werden.
+ Deshalb wurde zuerst eine Liste von möglichen Frameworks sowie deren Vor-
+ und Nachteile zusammengestellt.
+ Nach anschließendem Abgleich mit den gegebenen Anforderungen, fiehl die
+ Wahl auf das Framework „Keras”.
 \end_layout
 
 \begin_layout Subsection
+Einarbeitung in Keras
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Erste Keras-Versuche
 \end_layout
 
-\begin_layout Subsection
-Bilder laden von Google Maps
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Es ist nicht immer möglich, einen vollständigen Bilddatensatz für eine Liste
- von Häusern zu besitzen.
- Zudem ist des Erlangen eines solchen Datensatzes aus externen Quellen teilweise
- sehr zeitaufwändig und möglicherweise sogar kostspielig.
+Um Erfahrung mit der Verwendung von 
+\begin_inset Quotes gld
+\end_inset
+
+Keras
+\begin_inset Quotes grd
+\end_inset
+
+ zu sammeln, wurde für die Einarbeitung zunächst mit der Erstellung eines
+ einfachen neuronalen Netzes begonnen.
+ Dieses sollte anhand der geographischen Koordinaten die Postleitzahl eines
+ Hauses erkennen.
+ Die dafür benötigten Informationen gingen aus der Adressliste hervor.
+\end_layout
+
+\begin_layout Standard
+Nach dem Training des Netzes wurde der komplette Eingabedatensatz vom Netz
+ klassifiziert und die Ergebnisse zusammen mit den Eingabedaten in einer
+ neuen Liste gespeichert.
+ Die Visualisierung dieser Liste geschah anschließend wieder als Streudiagramm.
+ Die Klassifierungsergebnisse wurden dabei jeweils verschiedenen Farbwert
+ zugeordnet.
 \end_layout
 
 \begin_layout Subsection
+Satellitenbilder laden
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Bilder laden von Google Maps
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es ist nicht immer möglich, auf einen vollständigen Bilddatensatz von Häusern
+ zugreifen zu können.
+ Deshalb sollte eine eigene Lösung entwickelt werden, um das benötigte Bildmater
+ial zu erzeugen.
+ Hierfür wurden verschiedene Online-Kartendienste miteinander verglichen,
+ die Entscheidung fiehl auf Google Maps.
+ Nach der Einarbeitung in die API von Google Maps, erfolgte die Implementierung
+ einer Funktion, mit deren Hilfe die benötigten Informationen korrekt einsetzt
+ werden können.
+ Die Funktion für jeden Eintrag der Adressliste ausgeführt um die geladenen
+ Bilder für die spätere Verwendung lokal zu speichern.
+\end_layout
+
+\begin_layout Subsection
+Neuronales Netz
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Neuronales Netz mit Bild- und Meta-Input
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Neben dem Satellitenbild können zu Häusern noch zusätzliche Meta-Daten existiere
+n.
+ Diese bieten die Möglichkeit der Verbesserung der Ergebnisgenauigkeit des
+ Netzes.
+ Deshalb muss die Netzstruktur besonders an das Eingabeformat der Daten
+ angepasst werden.
+ Dazu wird das Netz aus mehreren Teilnetzen zusammengesetzt.
+ Dies ermöglicht mehrere Eingabeschichten und damit die Nutzung verschiedener
+ Eingabeformate.
+ Das erste Teilnetz soll die Bilddaten analysieren, weshalb es die typischen
+ Struktur eines Convolutional Neural Network, bestehend aus Faltungsschichten
+ am Anfang und vollvernetzte Schichten am Ende, erhält.
+ Das zweite Teilnetz soll die Meta-Daten analysieren und besteht somit ausschlie
+ßlich aus vollvernetzte Schichten.
+ Das abschließende Teilnetz soll die beiden Eingabe-Netze verbinden und
+ basierend auf deren Ergebnissen die Ausgabeschicht berechnen.
+\end_layout
+
 \begin_layout Subsection
-Visualisierung von Trainings-Statistiken
+Trainingsprozess
 \end_layout
 
 \begin_layout Standard
 Um den Ablauf des Trainingsprozesses des Netzes besser analysieren zu können,
- müssen verschiedene Visualisierungen der Trainingsstatistiken zur Verfügung
- gestellt werden.
+ ist eine Visualisierungen der Trainingsstatistiken, wie zum Beispiel die
+ Klassifizierungsgenauigkeit, notwendig.
+ Dafür werden die benötigten Informationen bereits während des Trainingsprozesse
+s gespeichert.
+ Im Anschlass daran werden alle auf diese Weise erfassten Daten in eine
+ eigens dafür angefertigte Funktion gegeben, welche daraus abermals mit
+ Hilfe von matplotlib ein Kurvendiagramm über die Trainingsepochen erstellt.
 \end_layout
 
 \begin_layout Subsection
@@ -717,22 +913,114 @@ Speichern und Laden von trainierten Netzen
 
 \begin_layout Standard
 Der Trainingsvorgang eines neuronalen Netzes ist sehr zeitaufwändig.
+ Um also trainierte Netze zu verwenden oder einen Trainingsprozess unterbrechen
+ und fortsetzen zu können, muss das Speichern und Laden eines Netzes möglich
+ sein.
+ Dafür werden die Struktur des Netzes und die Gewichte aller Schichten in
+ zwei separaten Dateien gespeichert.
+ Dies ermöglicht es, ein vollständiges trainiertes Netz zu laden, aber auch,
+ eine Netzstruktur für einen anderen Trainingsprozess wiederzuverwenden.
 \end_layout
 
 \begin_layout Subsection
+Anpassen der Bilddaten
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Anpassen der Bilddaten nach Bedarf vor dem Trainingsprozess
 \end_layout
 
-\begin_layout Subsection
-Interface für handisches Erzeugen von Merkmalsdaten
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-In den Trainingsdaten muss für jedes Haus 
+Die vorliegenden Bilddaten entsprechen nicht immer den Anforderungen des
+ Trainingsprozesses.
+ Deshalb soll es möglich sein, die Bilder vor Beginn des Trainingsprozesses
+ zu bearbeiten.
+ Dazu wurde eine Funktion erstellt, welche ein lokal vorliegendes Bild lädt
+ und nach besonderen Parametern editiert.
+ So kann ein Bild skaliert, beschnitten oder in seinem Seitenverhältnis
+ geändert werden.
+ Das Speichern des Ergebnisbildes zur Wiederverwendung ist möglich, aber
+ sehr speicheraufwändig, da aus jeder Parameterkombination ein neues Bild
+ hervorgeht.
+ Darum wird das Ergebnisbild direkt in den Trainingsprozess gegeben, wodurch
+ ein langfristiges Speichern nicht notwendig ist.
 \end_layout
 
 \begin_layout Subsection
-Eigene CSV-Reader und CSV-Writer Class
+Erzeugen von Trainingsvorgaben
+\end_layout
+
+\begin_layout Standard
+Innerhalb der Trainingsdaten müssen die gewünschten Merkmale für jedes Haus
+ als Trainingsvorgabe vorliegen.
+ Sollte es sich dabei um Merkmale handeln, zu denen noch keine Trainingsvorgaben
+ vorliegen, müssen diese händisch erzeugt werden.
+ Dafür wurde eine eigenständige Anwendung entwickelt, welche dem Nutzer
+ das Erzeugen der Trainingsvorgaben erleichtert.
+ Um bereits implementierte Funktionen wiederverwenden zu können, wurde die
+ Anwendung in Python mit dem GUI-Toolkit 
+\begin_inset Quotes gld
+\end_inset
+
+Tk
+\begin_inset Quotes grd
+\end_inset
+
+ umgesetzt.
+\end_layout
+
+\begin_layout Standard
+In der Anwendung wird ein Satellitenbild, sowie eine Liste von möglichen
+ Merkmalen angezeigt.
+ Der Nutzer kann die Merkmale auswählen, die für das gesamte Bild beziehungsweis
+e das gezeigte Haus im Bild zutreffen.
+ Diese Zuordnung wird dann in einer CSV-Datei gespeichert.
+ Ist der Nutzer mit der Merkmalszuordnung für ein Bild fertig, wird der
+ nächste Adresslisteneintrag gezeigt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/data-generator-v4.png
+	lyxscale 50
+	width 90col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Interface"
+
+\end_inset
+
+Interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -740,7 +1028,20 @@ GPS-Koordinaten oder Adressen als Positionseingabe
 \end_layout
 
 \begin_layout Standard
-Eine Liste von Häusern mit ihren geographischen Koordinaten ist
+Da es von Vorteil wäre, wenn die Liste von Häusern nicht zwingend deren
+ geographischen Koordinaten enthalten muss, soll es nun noch zusätzlich
+ die Möglichkeit geben, stattdessen die Adressen der Häuser zu benutzen.
+ Dafür müssen die Adresstücke, welche in der Adressliste in Straße, Hausnummer,
+ Postleitzahl und Stadt aufgeteilt sind, zusammengesetzt und in ein Format
+ gebracht werden, welches von der Google Maps API genutzt werden kann.
+ Dadurch können alle folgenden Schritte unabhängig von der Art der Positionsanga
+be wie bisher erfolgen.
+\end_layout
+
+\begin_layout Standard
+Sollten sich in der Adressliste sowohl Koordinaten als auch die Adresse
+ der Häuser befinden, so kann der Funktion, welche die Bilder herunterlädt,
+ die zu benutzende Positionsangabe als Parameter übergeben werden.
 \end_layout
 
 \begin_layout Subsection
@@ -748,93 +1049,92 @@ Zusammenfügen von Bildausschnitten zu Gesamtbild
 \end_layout
 
 \begin_layout Standard
-Der vollständige Bilddatensatz besteht aus Bildern, die nur eine kleine
- Fläche abdecken.
- Dies könnte Problematisch bei der Analyse von größeren Häusern oder Grundstücke
-n werden.
+Teilweise besteht der Bilddatensatz aus Bildern, die nur eine kleine Fläche
+ abdecken.
+ Dies könnte bei der Analyse von größeren Häusern oder Grundstücken ein
+ Problem darstellen.
+ Außerdem erhält das Netz in diesem Fall keine Informationen über die nähere
+ Umgebung, wodurch Ungenauigkeiten hinsichtlich der Klassifizierungsquote
+ zustande kommen können.
+ Deshalb wurde eine Funktion implementiert, welche Satellitenbilder zusammensetz
+t, um damit ein Bild zu erzeugen, welches eine größere Oberfläche zeigt.
+ Das Ursprungsbild, welches direkt die Hausadresse oder -koordinate beinhaltet,
+ befindet sich dabei im Zentrum, damit das zu betrachtende Haus immer mittig
+ im Ergebnisbild liegt.
 \end_layout
 
 \begin_layout Subsection
 Speichern und Laden von Trainingsdaten in SQL
 \end_layout
 
-\begin_layout Subsection
-Benutze vollständigen Bilddatensatz von Infopunks
+\begin_layout Standard
+Da sich das Speichern von Adresslisten inklusive der zugehörigen Meta-Daten
+ als CSV-Datei langfristig betrachtet als unpraktisch erweisen könnte, sollen
+ die benötigten Informationen aus einer SQL-Datenbank geladen werden.
+ Dafür wurde eine Klasse erstellt, welche SQL-Tabellen und CSV-Dateien ineinande
+r konvertieren kann.
+ Somit bleibt die Option bestehen, CSV-Dateien weiterhin als Dateneingabe
+ für das Netz zu verwenden.
 \end_layout
 
-\begin_layout Subsection
-Eigener Konverter für CSV-2-SQL und SQL-2-CSV
-\end_layout
-
-\begin_layout Subsection
-Erstellen eines Callbacks für die Keras-Trainingfunktion
+\begin_layout Standard
+Zudem können die Klassifizierungsergebnisse des Netzes, welche bisher ebenfalls
+ in Form einer CSV-Datei erzeugt wurden, in der Datenbank gespeichert werden.
+ Wird die Arbeit mit mehrerer Computern gleichzeitig durchgeführt, können
+ so verschiedene Bilder parallel klassifiziert und in der Datenbank zusammengefü
+hrt werden.
 \end_layout
 
 \begin_layout Section
-Fazit
-\end_layout
-
-\begin_layout Part
-Notizen
-\end_layout
-
-\begin_layout Standard
-Bei meiner Arbeit ging es um das Erstellen eines allgemeinen Systems zur
- Erzeugung eines neuronalen Netzes, welches vordefinierte Merkmale in Satelliten
-bildern erkennen soll.
-\end_layout
-
-\begin_layout Standard
-Um die Anforderungen der „leichten Anpassbarkeit“ zu erfüllen, wurde das
- System ähnlich dem Baukastenprinzip in 4 Blöcke aufgeteilt.
+**Fazit
 \end_layout
 
 \begin_layout Itemize
-Bilddaten (Satellitenbilder)
+Was hat dir an deinem Praktikum besonders gut gefallen? Was hat dich an
+ der Arbeit vielleicht sogar überrascht?
 \end_layout
 
 \begin_layout Itemize
-Trainingsdaten (gewünschte Merkmale)
+Was könnte in Zukunft an diesem Praktikum (z.
+ B.
+ am Ablauf, an der Betreuung, an der Organisation) noch verbessert werden?
 \end_layout
 
 \begin_layout Itemize
-Neuronales Netz
+Was hast du während des Praktikums neu gelernt und was wusstest du schon?
 \end_layout
 
 \begin_layout Itemize
-Ergebnisvisualisierung
+War die Arbeit eher anspruchsvoll für dich oder hast du dich oft gelangweilt?
 \end_layout
 
-\begin_layout Standard
-Für die Bilddaten habe ich zwei Eingabemöglichkeiten eingebaut.
- Zum einen kann ein vollständiger Bilddatensatz verwendet werden, zum anderen
- reicht auch eine Liste von Adressen.
- Dafür habe ich einen Downloader entwickelt, der für jeden Eintrag der Liste
- das entsprechende Satellitenbild von einem vorher ausgewählten Satellitenbildan
-bieter herunterlädt.
- Der Standard-Anbieter ist dabei Google Maps.
+\begin_layout Itemize
+Welche Stärken und Schwächen konntest du an dir selbst entdecken?
 \end_layout
 
-\begin_layout Standard
-Für die Trainingsdaten wurde von mir ein Interface entwickelt, welches einem
- Nutzer Satellitenbilder anzeigt und dieser entsprechende Merkmale dazu
- eintragen kann.
- Die eingetragenen Zuordnungen werden dann in einer Tabelle gespeichert.
+\begin_layout Itemize
+Welche Auswirkungen hat das Praktikum auf deine spätere Berufs- oder Studienwahl
+?
 \end_layout
 
-\begin_layout Standard
-Das neuronale Netz wurde erstellt mit einem Deeplearning-Framework namens
- Keras.
- Für die Struktur des Netzes habe ich mir verschiedene andere Anwendungsfälle
- von neuronalen Netzen angeschaut.
- Mit den darauf basierenden Vor- und Nachteilen habe ich dann eine an unser
- Problem angepasste Struktur entwickelt.
+\begin_layout Itemize
+Welche Chancen siehst du für dich persönlich und im Allgemeinen in diesem
+ Berufsfeld?
 \end_layout
 
-\begin_layout Standard
-Da die Form der Ergebnisse von den gewünschten Merkmalen abhängig ist, habe
- ich mehrere Standard-Ergebnisvisualisierungen gebaut, welche dann nach
- Bedarf entsprechend an- und abgeschaltet werden können.
+\begin_layout Itemize
+Wo kannst du deine neu gewonnen Interessen in Zukunft eventuell noch weiter
+ vertiefen?
+\end_layout
+
+\begin_layout Itemize
+Würdest du das Praktikum weiterempfehlen und wenn ja, an was für eine Person
+ mit welchen Eigenschaften?
+\end_layout
+
+\begin_layout Itemize
+Inwieweit decken sich deine Erfahrungen mit dem, was du vor Beginn des Praktikum
+s erwartet oder erhofft hast?
 \end_layout
 
 \end_body
