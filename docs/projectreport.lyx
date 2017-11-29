@@ -660,8 +660,26 @@ Projektumsetzung
 Adressdatei analysieren und laden als CSV
 \end_layout
 
+\begin_layout Standard
+Das Austauschformat der Adressliste ist CSV.
+\end_layout
+
 \begin_layout Subsection
 Visualisierung von 2D-Karten-Daten
+\end_layout
+
+\begin_layout Standard
+Um einen besseren Überblick über die vorliegende Adressliste zu bekommen,
+ soll diese ähnlicher eine 2D-Karte visualisiert werden.
+\end_layout
+
+\begin_layout Subsection
+Suchen eines Deeplearning-Frameworks
+\end_layout
+
+\begin_layout Standard
+Da das Erstellen eines eigenen Deeplearning-Frameworks zu aufwändig wäre,
+ soll eine bereits existierende Implementierung verwendet werden.
 \end_layout
 
 \begin_layout Subsection
