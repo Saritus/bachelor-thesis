@@ -89,7 +89,7 @@ xleftmargin = 15pt}
 \paragraph_separation indent
 \paragraph_indentation default
 \quotes_language german
-\papercolumns 1
+\papercolumns 2
 \papersides 1
 \paperpagestyle default
 \listings_params "breaklines=true,captionpos=b,frame={tb  //--> frame at the top and at the bottom of the listing},language=Python,basicstyle={\footnotesize}"
@@ -314,7 +314,7 @@ Erstellen eines allgemeinen anpassbaren Systems zur Erzeugung von neuronalen
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="11" columns="2">
+<lyxtabular version="3" rows="12" columns="2">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="left" valignment="top">
@@ -500,6 +500,26 @@ Prof.
 \begin_inset Text
 
 \begin_layout Plain Layout
+HTW Dresden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -570,6 +590,22 @@ end{titlepage}
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+onecolumn
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
@@ -579,6 +615,22 @@ end{titlepage}
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+twocolumn
+\end_layout
 
 \end_inset
 
@@ -620,6 +672,13 @@ Erste Keras-Versuche
 Bilder laden von Google Maps
 \end_layout
 
+\begin_layout Standard
+Es ist nicht immer möglich, einen vollständigen Bilddatensatz für eine Liste
+ von Häusern zu besitzen.
+ Zudem ist des Erlangen eines solchen Datensatzes aus externen Quellen teilweise
+ sehr zeitaufwändig und möglicherweise sogar kostspielig.
+\end_layout
+
 \begin_layout Subsection
 Neuronales Netz mit Bild- und Meta-Input
 \end_layout
@@ -628,8 +687,18 @@ Neuronales Netz mit Bild- und Meta-Input
 Visualisierung von Trainings-Statistiken
 \end_layout
 
+\begin_layout Standard
+Um den Ablauf des Trainingsprozesses des Netzes besser analysieren zu können,
+ müssen verschiedene Visualisierungen der Trainingsstatistiken zur Verfügung
+ gestellt werden.
+\end_layout
+
 \begin_layout Subsection
 Speichern und Laden von trainierten Netzen
+\end_layout
+
+\begin_layout Standard
+Der Trainingsvorgang eines neuronalen Netzes ist sehr zeitaufwändig.
 \end_layout
 
 \begin_layout Subsection
@@ -640,6 +709,10 @@ Anpassen der Bilddaten nach Bedarf vor dem Trainingsprozess
 Interface für handisches Erzeugen von Merkmalsdaten
 \end_layout
 
+\begin_layout Standard
+In den Trainingsdaten muss für jedes Haus 
+\end_layout
+
 \begin_layout Subsection
 Eigene CSV-Reader und CSV-Writer Class
 \end_layout
@@ -648,8 +721,19 @@ Eigene CSV-Reader und CSV-Writer Class
 GPS-Koordinaten oder Adressen als Positionseingabe
 \end_layout
 
+\begin_layout Standard
+Eine Liste von Häusern mit ihren geographischen Koordinaten ist
+\end_layout
+
 \begin_layout Subsection
 Zusammenfügen von Bildausschnitten zu Gesamtbild
+\end_layout
+
+\begin_layout Standard
+Der vollständige Bilddatensatz besteht aus Bildern, die nur eine kleine
+ Fläche abdecken.
+ Dies könnte Problematisch bei der Analyse von größeren Häusern oder Grundstücke
+n werden.
 \end_layout
 
 \begin_layout Subsection
