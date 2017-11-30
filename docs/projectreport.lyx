@@ -777,47 +777,46 @@ Projektumsetzung
 \end_layout
 
 \begin_layout Subsection
-**Adressdatei analysieren und laden als CSV
+*Programmiersprache
 \end_layout
 
-\begin_layout Itemize
-Austauschformat der Adressliste ist CSV
+\begin_layout Standard
+Eine der ersten Entscheidungen vor dem Beginn eines Softwareprojektes ist
+ die Wahl der Programmiersprache.
+ Dafür waren zwei Kernpunkte zu betrachten.
+ Zum einen sollte es möglich sein, das System in der Firma zu verwenden,
+ weswegen eine Sprache genutzt werden sollte, die firmenintern bereits Verwendun
+g findet.
+ Zum anderen sollte die Sprache geeignet für die Programmierung von Deeplearning
+-Anwendungen sein.
+ Ein zusätzlicher Pluspunkt wäre es, wenn ich bereits Erfahrung mit der
+ zu verwendenden Sprache habe, was die Einarbeitungszeit verkürzen würde.
+ Unter Betrachtung dieser Punkte fiel die Wahl letztendlich auf die Programmiers
+prache 
+\begin_inset Quotes gld
+\end_inset
+
+Python
+\begin_inset Quotes grd
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Itemize
-Einträge
+\begin_layout Subsection
+*Adressdatei laden
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Haus-ID
+\begin_layout Standard
+Die Adressliste liegt in Form einer CSV-Datei vor und beinhaltet neben einer
+ Haus-ID, welche firmenintern für die eindeutige Zuordnung der Häuser verwendet
+ wird, noch die Adresse mit Straße, Hausnummer, Postleitzahl und Stadt,
+ sowie die geographischen Koordinaten mit Längen- und Breitengrad.
+ Als erstes wird nun also eine Funktion benötigt, welche diese CSV-Datei
+ einliest und in ein Python-internes Format umwandelt, damit die darin enthalten
+en Informationen im System verwendet werden kann.
 \end_layout
 
-\begin_layout Itemize
-Straße
-\end_layout
-
-\begin_layout Itemize
-Hausnummer
-\end_layout
-
-\begin_layout Itemize
-Postleitzahl
-\end_layout
-
-\begin_layout Itemize
-Stadt
-\end_layout
-
-\begin_layout Itemize
-X-Koordinate
-\end_layout
-
-\begin_layout Itemize
-Y-Koordinate
-\end_layout
-
-\end_deeper
 \begin_layout Subsection
 Visualisierung der Daten
 \begin_inset Note Note
@@ -860,7 +859,7 @@ Da der Aufwand zur Erstellung eines eigenen Deeplearning-Frameworks zu hoch
  ist, soll ein bereits existierendes Framework verwendet werden.
  Deshalb wurde zuerst eine Liste von möglichen Frameworks sowie deren Vor-
  und Nachteile zusammengestellt.
- Nach anschließendem Abgleich mit den gegebenen Anforderungen, fiehl die
+ Nach anschließendem Abgleich mit den gegebenen Anforderungen, fiel die
  Wahl auf das Framework „Keras”.
 \end_layout
 
@@ -1117,7 +1116,7 @@ Sollten sich in der Adressliste sowohl Koordinaten als auch die Adresse
 \end_layout
 
 \begin_layout Subsection
-Zusammenfügen von Bildausschnitten zu Gesamtbild
+Zusammenfügen von Bildern
 \end_layout
 
 \begin_layout Standard
