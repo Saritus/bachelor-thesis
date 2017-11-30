@@ -777,30 +777,22 @@ Projektumsetzung
 \end_layout
 
 \begin_layout Subsection
-*Programmiersprache
+Programmiersprache
 \end_layout
 
 \begin_layout Standard
-Eine der ersten Entscheidungen vor dem Beginn eines Softwareprojektes ist
- die Wahl der Programmiersprache.
+Eine fundamentale Entscheidungen vor dem Beginn eines Softwareprojektes
+ ist die Wahl einer geeigneten Programmiersprache.
  Dafür waren zwei Kernpunkte zu betrachten.
- Zum einen sollte es möglich sein, das System in der Firma zu verwenden,
- weswegen eine Sprache genutzt werden sollte, die firmenintern bereits Verwendun
-g findet.
- Zum anderen sollte die Sprache geeignet für die Programmierung von Deeplearning
--Anwendungen sein.
- Ein zusätzlicher Pluspunkt wäre es, wenn ich bereits Erfahrung mit der
- zu verwendenden Sprache habe, was die Einarbeitungszeit verkürzen würde.
- Unter Betrachtung dieser Punkte fiel die Wahl letztendlich auf die Programmiers
-prache 
-\begin_inset Quotes gld
-\end_inset
-
-Python
-\begin_inset Quotes grd
-\end_inset
-
-.
+ Zum einen sollte eine Sprache Verwendung finden, die bereits firmenintern
+ genutzt wird, um die neue Software reibungslos in das bestehende Firmensystem
+ einzufügen.
+ Zum anderen muss die Sprache für die Programmierung von Deeplearning-Anwendunge
+n nutzbar sein.
+ Ein zusätzlicher Pluspunkt wäre es, wenn bereits Erfahrung mit der zu verwenden
+den Sprache vorliegt, da so die Einarbeitungszeit verkürzt würde.
+ Unter Betrachtung dieser Punkte fiehl die Wahl letztendlich auf die Programmier
+sprache „Python”.
 \end_layout
 
 \begin_layout Subsection
@@ -815,7 +807,8 @@ Die Adressliste liegt in Form einer CSV-Datei vor und beinhaltet neben einer
  Als erstes wird nun die Funktionalität benötigt, CSV-Datei einzulesen und
  in ein Python-internes Format umzuwandeln, damit die darin enthaltenen
  Informationen im System verwendet werden können.
- Dazu wurde eine eigenständige Klasse implementiert, 
+ Dazu wurde eine eigenständige Klasse implementiert, die sowohl CSV-Dateien
+ lesen, als auch zweidimensionale Arrays 
 \end_layout
 
 \begin_layout Subsection
