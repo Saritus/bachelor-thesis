@@ -804,7 +804,7 @@ Python
 \end_layout
 
 \begin_layout Subsection
-*Adressdatei laden
+Adressdatei laden
 \end_layout
 
 \begin_layout Standard
@@ -812,12 +812,11 @@ Die Adressliste liegt in Form einer CSV-Datei vor und beinhaltet neben einer
  Haus-ID, welche firmenintern für die eindeutige Zuordnung der Häuser verwendet
  wird, noch die Adresse mit Straße, Hausnummer, Postleitzahl und Stadt,
  sowie die geographischen Koordinaten mit Längen- und Breitengrad.
- Als erstes wird nun die Funktionalität benötigt, CSV-Datei einzulesen und
- in ein Python-internes Format umzuwandeln, damit die darin enthaltenen
- Informationen im System verwendet werden können.
+ Zuerst ist die Funktionalität notwendig, CSV-Datei einzulesen und in ein
+ Python-internes Format umzuwandeln, damit die darin enthaltenen Informationen
+ im System verwendet werden können.
  Dazu wurde eine eigenständige Klasse implementiert, die sowohl CSV-Dateien
- lesen, als auch ein zweidimensionale Arrays in eine CSV-Datei schreiben
- kann.
+ lesen, als auch zweidimensionale Arrays in eine CSV-Datei schreiben kann.
 \end_layout
 
 \begin_layout Subsection
