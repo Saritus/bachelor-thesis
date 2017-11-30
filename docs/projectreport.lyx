@@ -791,12 +791,20 @@ Eine fundamentale Entscheidungen vor dem Beginn eines Softwareprojektes
 n nutzbar sein.
  Ein zusätzlicher Pluspunkt wäre es, wenn bereits Erfahrung mit der zu verwenden
 den Sprache vorliegt, da so die Einarbeitungszeit verkürzt würde.
- Unter Betrachtung dieser Punkte fiehl die Wahl letztendlich auf die Programmier
-sprache „Python”.
+ Unter Betrachtung dieser Punkte fiel die Wahl letztendlich auf die Programmiers
+prache 
+\begin_inset Quotes gld
+\end_inset
+
+Python
+\begin_inset Quotes grd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
-**Adressdatei laden
+*Adressdatei laden
 \end_layout
 
 \begin_layout Standard
@@ -808,7 +816,8 @@ Die Adressliste liegt in Form einer CSV-Datei vor und beinhaltet neben einer
  in ein Python-internes Format umzuwandeln, damit die darin enthaltenen
  Informationen im System verwendet werden können.
  Dazu wurde eine eigenständige Klasse implementiert, die sowohl CSV-Dateien
- lesen, als auch zweidimensionale Arrays 
+ lesen, als auch ein zweidimensionale Arrays in eine CSV-Datei schreiben
+ kann.
 \end_layout
 
 \begin_layout Subsection
@@ -831,7 +840,15 @@ Um einen besseren Überblick über die vorliegende Adressliste zu bekommen,
  Hierzu wurden für jeden Eintrag die geographischen Koordinaten aus der
  Adressliste ausgelesen und separat in einer zweiten Liste gespeichert.
  Diese zweite Liste wird anschließend genutzt, um mit der Python-Visualisierungs
--Bibliothek "matplotlib" ein Streudiagramm zu erstellen.
+-Bibliothek 
+\begin_inset Quotes gld
+\end_inset
+
+matplotlib
+\begin_inset Quotes grd
+\end_inset
+
+ ein Streudiagramm zu erstellen.
 \end_layout
 
 \begin_layout Subsection
@@ -892,7 +909,7 @@ Nach dem Training des Netzes wurde der komplette Eingabedatensatz vom Netz
  klassifiziert und die Ergebnisse zusammen mit den Eingabedaten in einer
  neuen Liste gespeichert.
  Die Visualisierung dieser Liste geschah anschließend wieder als Streudiagramm.
- Die Klassifierungsergebnisse wurden dabei jeweils verschiedenen Farbwert
+ Die Klassifizierungsergebnisse wurden dabei jeweils verschiedenen Farbwert
  zugeordnet.
 \end_layout
 
@@ -916,7 +933,7 @@ Es ist nicht immer möglich, auf einen vollständigen Bilddatensatz von Häusern
  Deshalb sollte eine eigene Lösung entwickelt werden, um das benötigte Bildmater
 ial zu erzeugen.
  Hierfür wurden verschiedene Online-Kartendienste miteinander verglichen,
- die Entscheidung fiehl auf Google Maps.
+ die Entscheidung fiel auf Google Maps.
  Nach der Einarbeitung in die API von Google Maps, erfolgte die Implementierung
  einer Funktion, mit deren Hilfe die benötigten Informationen korrekt einsetzt
  werden können.
@@ -967,7 +984,7 @@ Um den Ablauf des Trainingsprozesses des Netzes besser analysieren zu können,
  Klassifizierungsgenauigkeit, notwendig.
  Dafür werden die benötigten Informationen bereits während des Trainingsprozesse
 s gespeichert.
- Im Anschlass daran werden alle auf diese Weise erfassten Daten in eine
+ Im Anschluss daran werden alle auf diese Weise erfassten Daten in eine
  eigens dafür angefertigte Funktion gegeben, welche daraus abermals mit
  Hilfe von matplotlib ein Kurvendiagramm über die Trainingsepochen erstellt.
 \end_layout
