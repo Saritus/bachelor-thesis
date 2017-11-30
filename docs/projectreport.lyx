@@ -648,7 +648,7 @@ twocolumn
 **Einleitung
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -666,7 +666,7 @@ Vom 01.03.
  bis 31.05.2017
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -683,7 +683,7 @@ Unternehmen, Standort
 New Web Technology GmbH in Langenfeld
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -696,7 +696,7 @@ Abteilung
 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -709,7 +709,7 @@ Tätigkeitsbereich
 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -722,7 +722,7 @@ Sehr knapp Aufgaben aufzählen
 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -735,7 +735,7 @@ Warum dieses Unternehmen?
 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -749,27 +749,41 @@ Wie bist du auf dieses Unternehmen gekommen?
 \end_layout
 
 \begin_layout Section
-**Problemstellung
+*Problemstellung
 \end_layout
 
-\begin_layout Itemize
-Adressliste von Häusern, welche zu klassifizieren sind
+\begin_layout Standard
+Die Kernaufgabe des Projektes war es, ein System zu entwickeln, welches
+ neuronale Netze erstellt und trainiert.
+ Bei den Eingabedaten des Netzes soll es sich um Satelittenbilder von Häusern
+ handeln.
+ Basierend auf diesen Bildern soll das Netz dann Merkmale des Hauses erkennen
+ können.
+ Von welchen Häusern das Netz die Merkmale erkennen soll, soll in Form einer
+ Adressliste vorgegeben werden.
 \end_layout
 
-\begin_layout Itemize
-Leichte Anpassung der Adressliste
+\begin_layout Standard
+Bei der Erstellung des Systems soll besonders darauf geachtet werden, dass
+ die einzelnen Komponenten leicht angepasst werden können.
+ Da die zu klassifizierenden Häuser über eine Liste in das System gegeben
+ werden, ist ein hinzufügen und entfernen eben dieser bereits möglich, allerding
+s sollen auch die Informationen, die zu den Häusern gehören, verändert werden
+ können.
+ Die gewünschten Merkmale, die das System erkennen soll, müssen ohne Probleme
+ in ihrer Form veränderbar sein.
+ Die Netzstruktur soll anpassbar sein, sich in seiner Ein- und Ausgabeschicht
+ aber automatisch an das Format der Ein- und Ausgabedaten anpassen, um den
+ Anpassungsaufwand zu reduzieren.
+ Außerdem soll es verschiedene Ergebnisvisualisierungen geben, welche je
+ nach Merkmalsart zu- und abgeschaltet werden können.
 \end_layout
 
-\begin_layout Itemize
-Leichte Anpassung der gewünschten zu erkennenden Merkmale
-\end_layout
-
-\begin_layout Itemize
-Leichte Anpassung der Netzstruktur
-\end_layout
-
-\begin_layout Itemize
-Gute Ergebnisvisualisierung
+\begin_layout Standard
+Das System soll vollständig implementiert werden und als Grundlage für eine
+ spätere Anwendung nutzbar sein.
+ Das Implementieren eines Interfaces, mit dem ein Nutzer mit dem System
+ interagieren kann, soll keine Rolle spielen.
 \end_layout
 
 \begin_layout Section
