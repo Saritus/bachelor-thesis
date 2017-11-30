@@ -629,7 +629,7 @@ status open
 
 
 \backslash
-twocolumn
+onecolumn
 \end_layout
 
 \end_inset
@@ -645,111 +645,30 @@ twocolumn
 \end_layout
 
 \begin_layout Section
-**Einleitung
+Einleitung
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Zeitraum
-\end_layout
-
+Im Rahmen des Praxisprojektes des Studiengangs 
+\begin_inset Quotes gld
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Vom 01.03.
- bis 31.05.2017
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Unternehmen, Standort
-\end_layout
-
+Bachelor Medieninformatik
+\begin_inset Quotes grd
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-New Web Technology GmbH in Langenfeld
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Abteilung
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Tätigkeitsbereich
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Sehr knapp Aufgaben aufzählen
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Warum dieses Unternehmen?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Wie bist du auf dieses Unternehmen gekommen?
-\end_layout
-
-\end_inset
-
-
+ an der HTW Dresden wurde vom 01.03.
+ bis 31.05.2017 bei der Firma New Web Technology GmbH in Langenfeld eine Anwendung
+ zur Satellitenbildanalyse mittels Deeplearning erstellt.
+ Zuerst wurde ein Konzept basierend auf den Anforderungen der Firma angefertigt.
+ Anschließend begann der Entwicklungsprozess bei welchem das System sukzessive
+ um neue Funktionen erweitert wurde.
+ Ziel des Projektes ist die Umsetzung eines Frameworks zur Extraktion von
+ marketing-relevanten Informationen aus geographischen Daten.
 \end_layout
 
 \begin_layout Section
-*Problemstellung
+Problemstellung
 \end_layout
 
 \begin_layout Standard
@@ -1182,6 +1101,64 @@ hrt werden.
 **Fazit
 \end_layout
 
+\begin_layout Standard
+Während meines Praxisprojektes wurde ein Systems zur Erzeugung von neuronalen
+ Netzen für die Analyse von Satellitenbildern entwickelt.
+ Dabei erfüllt es alle mit der Firma erarbeiteten Vorgaben und ist bereit
+ für eine Integration in das firmeninterne System.
+\end_layout
+
+\begin_layout Standard
+Aufgrund der Modularität und der daraus folgenden Anpassungsfähigkeit des
+ Systems wäre es auch in nicht-marketing spezifischen Anwendungen einsetzbar.
+ So wäre im Bereich der Stadtplanung 
+\end_layout
+
+\begin_layout Standard
+Beispiele dafür sind die Stadtplanung, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+Entwicklungsprozess
+\end_layout
+
+\begin_layout Itemize
+Ergebnis (2 Sätze)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bereit für Integration in firmeninternes System
+\end_layout
+
+\begin_layout Itemize
+Adaptiv weil Modularität
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ausblick
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Benutzbar in anderen nicht-marketing Bereichen
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
 \begin_layout Itemize
 Was hat dir an deinem Praktikum besonders gut gefallen? Was hat dich an
  der Arbeit vielleicht sogar überrascht?
@@ -1228,6 +1205,11 @@ Würdest du das Praktikum weiterempfehlen und wenn ja, an was für eine Person
 \begin_layout Itemize
 Inwieweit decken sich deine Erfahrungen mit dem, was du vor Beginn des Praktikum
 s erwartet oder erhofft hast?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
