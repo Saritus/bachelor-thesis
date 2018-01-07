@@ -1131,7 +1131,7 @@ Interface
 \end_layout
 
 \begin_layout Subsection
-GPS-Koordinaten oder Adressen als Positionseingabe
+GPS-Koordinaten oder Adressen
 \end_layout
 
 \begin_layout Standard
@@ -1171,7 +1171,7 @@ t, um damit ein Bild zu erzeugen, welches eine größere Oberfläche zeigt.
 \end_layout
 
 \begin_layout Subsection
-Speichern und Laden von Trainingsdaten in SQL
+Trainingsdaten in SQL-Datenbanken
 \end_layout
 
 \begin_layout Standard
