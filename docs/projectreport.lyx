@@ -838,16 +838,6 @@ Die Adressliste liegt in Form einer CSV-Datei vor und beinhaltet neben einer
 
 \begin_layout Subsection
 Visualisierung der Daten
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Visualisierung von 2D-Karten-Daten
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -869,16 +859,6 @@ matplotlib
 
 \begin_layout Subsection
 Deeplearning Framework
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Suchen eines Deeplearning-Frameworks
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -892,16 +872,6 @@ Da der Aufwand zur Erstellung eines eigenen Deeplearning-Frameworks zu hoch
 
 \begin_layout Subsection
 Einarbeitung in Keras
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Erste Keras-Versuche
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -931,16 +901,6 @@ Nach dem Training des Netzes wurde der komplette Eingabedatensatz vom Netz
 
 \begin_layout Subsection
 Satellitenbilder laden
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Bilder laden von Google Maps
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -959,16 +919,6 @@ ial zu erzeugen.
 
 \begin_layout Subsection
 Neuronales Netz
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Neuronales Netz mit Bild- und Meta-Input
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1022,16 +972,6 @@ Der Trainingsvorgang eines neuronalen Netzes ist sehr zeitaufwändig.
 
 \begin_layout Subsection
 Anpassen der Bilddaten
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Anpassen der Bilddaten nach Bedarf vor dem Trainingsprozess
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1081,53 +1021,6 @@ e das gezeigte Haus im Bild zutreffen.
  Diese Zuordnung wird dann in einer CSV-Datei gespeichert.
  Ist der Nutzer mit der Merkmalszuordnung für ein Bild fertig, wird der
  nächste Adresslisteneintrag gezeigt.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/data-generator-v4.png
-	lyxscale 50
-	width 90col%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Interface"
-
-\end_inset
-
-Interface
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -1211,100 +1104,6 @@ Aufgrund der Modularität und der daraus folgenden Anpassungsfähigkeit des
 malen die Darstellung des Ist-Zustandes einer Stadt verbessern und vereinfachen.
  Außerdem können die zu erkennenden Merkmale unabhängig von Häusern sein,
  wodurch auch ein Einsatz in der Landschaftsanalyse möglich wäre.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Itemize
-Entwicklungsprozess
-\end_layout
-
-\begin_layout Itemize
-Ergebnis (2 Sätze)
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Bereit für Integration in firmeninternes System
-\end_layout
-
-\begin_layout Itemize
-Adaptiv weil Modularität
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Ausblick
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Benutzbar in anderen nicht-marketing Bereichen
-\end_layout
-
-\end_deeper
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Itemize
-Was hat dir an deinem Praktikum besonders gut gefallen? Was hat dich an
- der Arbeit vielleicht sogar überrascht?
-\end_layout
-
-\begin_layout Itemize
-Was könnte in Zukunft an diesem Praktikum (z.
- B.
- am Ablauf, an der Betreuung, an der Organisation) noch verbessert werden?
-\end_layout
-
-\begin_layout Itemize
-Was hast du während des Praktikums neu gelernt und was wusstest du schon?
-\end_layout
-
-\begin_layout Itemize
-War die Arbeit eher anspruchsvoll für dich oder hast du dich oft gelangweilt?
-\end_layout
-
-\begin_layout Itemize
-Welche Stärken und Schwächen konntest du an dir selbst entdecken?
-\end_layout
-
-\begin_layout Itemize
-Welche Auswirkungen hat das Praktikum auf deine spätere Berufs- oder Studienwahl
-?
-\end_layout
-
-\begin_layout Itemize
-Welche Chancen siehst du für dich persönlich und im Allgemeinen in diesem
- Berufsfeld?
-\end_layout
-
-\begin_layout Itemize
-Wo kannst du deine neu gewonnen Interessen in Zukunft eventuell noch weiter
- vertiefen?
-\end_layout
-
-\begin_layout Itemize
-Würdest du das Praktikum weiterempfehlen und wenn ja, an was für eine Person
- mit welchen Eigenschaften?
-\end_layout
-
-\begin_layout Itemize
-Inwieweit decken sich deine Erfahrungen mit dem, was du vor Beginn des Praktikum
-s erwartet oder erhofft hast?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_body
