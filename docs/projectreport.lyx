@@ -1206,10 +1206,10 @@ Während des Praxisprojektes wurde ein Systems zur Erzeugung von neuronalen
 
 \begin_layout Standard
 Aufgrund der Modularität und der daraus folgenden Anpassungsfähigkeit des
- Systems wäre es auch in nicht-marketing spezifischen Anwendungen einsetzbar.
+ Systems wäre es auch in nicht-marketingspezifischen Anwendungen einsetzbar.
  So könnte im Bereich der Stadtplanung die automatische Erkennung von Häusermerk
 malen die Darstellung des Ist-Zustandes einer Stadt verbessern und vereinfachen.
- Außerdem können die zu erkennenden Merkmale auch häuser-unabhängig sein,
+ Außerdem können die zu erkennenden Merkmale unabhängig von Häusern sein,
  wodurch auch ein Einsatz in der Landschaftsanalyse möglich wäre.
 \end_layout
 
