@@ -25,3 +25,6 @@ forms/
 *.lyx#
 *.pyc
 *.xlsx
+
+# PowerPoint
+~$*.ppt*
