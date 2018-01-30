@@ -1,0 +1,22 @@
+- Visualisierung 
+Für die Visualisierung der Klassifizierungen des Netzes wurden verschiedene Darstellungsvarianten vorbereitet, wie ein farbcodiertes, auf geografischen Koordinaten basierendes Streudiagramm oder eine Kastengrafik zur Illustration der Klassenfehlerquote, welche auf Bedarf ausgewählt werden können.
+
+- Datengrundlage
+Die Datengrundlage ist die Bedingung zum Trainieren eines neuronalen Netzes und besteht aus 
+
+- Satellitenbilder
+Die Satellitenbilder sind die Eingabedaten für das neuronale Netz.
+Basierend auf der Adressliste werden die entsprechenden Bilder aus einer Online-Satellitenaufnahmen-API heruntergeladen und zur späteren Verwendung lokal gespeichert.
+
+- Klasseninformationen
+
+
+- Optimierer
+Der Optimierer passt die internen Parameter des neuronalen Netzes an die vorgegebenen Klasseninformationen an.
+
+
+- Klassifizierung
+
+
+- Künstliches neuronales Netz
+Da es sich bei den Eingabedaten um Bilder handelt, wird als Standardnetz ein typisches Convolutional Neural Network bestehend aus einer Reihe von Konvolutionsschichten sowie abschließenden vollvernetzten Schichten verwendet.
