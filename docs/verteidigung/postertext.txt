@@ -10,7 +10,6 @@ Die Satellitenbilder sind die Eingabedaten für das neuronale Netz.
 Basierend auf der Adressliste werden die entsprechenden Bilder aus einer Online-Satellitenaufnahmen-API heruntergeladen und zur späteren Verwendung lokal gespeichert.
 
 - Klasseninformationen
-
 Die Klasseninformationen sind den Eingabebildern zugeordnet und liefern die gewünschten Ausgabewerte des neuronalen Netzes bei der Eingabe des jeweiligen Bildes.
 
 - Optimierer
@@ -18,7 +17,8 @@ Der Optimierer passt die internen Parameter des neuronalen Netzes an die vorgege
 
 
 - Klassifizierung
-
+Die Klassifizierung ist die Menge aller Ausgabedaten des neuronalen Netzes.
 
 - Künstliches neuronales Netz
 Da es sich bei den Eingabedaten um Bilder handelt, wird als Standardnetz ein typisches Convolutional Neural Network bestehend aus einer Reihe von Konvolutionsschichten sowie abschließenden vollvernetzten Schichten verwendet.
+Dabei passen sich die Eingabe- und Ausgabeschicht in ihrer Größe automatisch an die Satellitenbilder sowie die Anzahl der Klassen an.
