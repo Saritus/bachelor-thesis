@@ -2,23 +2,20 @@
 Für die Visualisierung der Klassifizierungen des Netzes wurden verschiedene Darstellungsvarianten vorbereitet, wie ein farbcodiertes, auf geografischen Koordinaten basierendes Streudiagramm oder eine Kastengrafik zur Illustration der Klassenfehlerquote, welche auf Bedarf ausgewählt werden können.
 
 - Datengrundlage
-Die Datengrundlage ist die Bedingung zum Trainieren eines neuronalen Netzes und besteht aus 
-Wenn in der Datengrundlage für die gewünschte Aufgabe keine Klasseninformationen für die Bilder existieren, dann können diese mittels einer eigenständigen Benutzeroberfläche manuell erzeugt werden.
+Die Datengrundlage ist die Bedingung zum Trainieren eines neuronalen Netzes und besteht aus einer Adressliste von Häusern beziehungsweise Grundstücken sowie deren zugehörige Klasseninformation. Wenn in der Datengrundlage für die gewünschte Aufgabe keine Klasseninformationen für die Bilder existieren, dann können diese mittels einer eigenständigen Benutzeroberfläche manuell hinzugefügt werden.
 
 - Satellitenbilder
-Die Satellitenbilder sind die Eingabedaten für das neuronale Netz.
-Basierend auf der Adressliste werden die entsprechenden Bilder aus einer Online-Satellitenaufnahmen-API heruntergeladen und zur späteren Verwendung lokal gespeichert.
+Die Satellitenbilder sind die Eingabedaten für das neuronale Netz. Basierend auf der Adressliste werden sie online mittels der Google Maps API heruntergeladen und zur späteren Verwendung lokal gespeichert. So können sie vor der Eingabe in das Netz noch editiert werden.
 
 - Klasseninformationen
 Die Klasseninformationen sind den Eingabebildern zugeordnet und liefern die gewünschten Ausgabewerte des neuronalen Netzes bei der Eingabe des jeweiligen Bildes.
 
 - Optimierer
-Der Optimierer passt die internen Parameter des neuronalen Netzes an die vorgegebenen Klasseninformationen an.
+Der Optimierer passt die internen Parameter des neuronalen Netzes an die vorgegebenen Klasseninformationen an. Der Optimierungsalgorithmus ist dabei frei auswählbar und anpassbar.
 
 
 - Klassifizierung
-Die Klassifizierung ist die Menge aller Ausgabedaten des neuronalen Netzes.
+Die Klassifizierung ist die Menge aller Ausgabedaten des neuronalen Netzes. Sie spiegelt das Ergebnis des neuronalen Netzes und somit auch des Gesamtsystems wieder.
 
 - Künstliches neuronales Netz
-Da es sich bei den Eingabedaten um Bilder handelt, wird als Standardnetz ein typisches Convolutional Neural Network bestehend aus einer Reihe von Konvolutionsschichten sowie abschließenden vollvernetzten Schichten verwendet.
-Dabei passen sich die Eingabe- und Ausgabeschicht in ihrer Größe automatisch an die Satellitenbilder sowie die Anzahl der Klassen an.
+Bei den Eingabedaten handelt es sich um Bilder. Deshalb besitzt das künstliches neuronales Netz standardmäßig eine sich in anderen Arbeiten bewährte Struktur aus einer anfänglichen Reihe an Konvolutionschichten, gefolgt von vollvernetzten Schichten. Dabei passen sich die Eingabe- und Ausgabeschicht in ihrer Größe automatisch an die Satellitenbilder sowie die Anzahl der Klassen an.
