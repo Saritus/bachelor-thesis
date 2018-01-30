@@ -3,6 +3,7 @@ Für die Visualisierung der Klassifizierungen des Netzes wurden verschiedene Dar
 
 - Datengrundlage
 Die Datengrundlage ist die Bedingung zum Trainieren eines neuronalen Netzes und besteht aus 
+Wenn in der Datengrundlage für die gewünschte Aufgabe keine Klasseninformationen für die Bilder existieren, dann können diese mittels einer eigenständigen Benutzeroberfläche manuell erzeugt werden.
 
 - Satellitenbilder
 Die Satellitenbilder sind die Eingabedaten für das neuronale Netz.
@@ -10,6 +11,7 @@ Basierend auf der Adressliste werden die entsprechenden Bilder aus einer Online-
 
 - Klasseninformationen
 
+Die Klasseninformationen sind den Eingabebildern zugeordnet und liefern die gewünschten Ausgabewerte des neuronalen Netzes bei der Eingabe des jeweiligen Bildes.
 
 - Optimierer
 Der Optimierer passt die internen Parameter des neuronalen Netzes an die vorgegebenen Klasseninformationen an.
