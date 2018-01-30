@@ -18,4 +18,4 @@ Der Optimierer passt die internen Parameter des neuronalen Netzes an die vorgege
 Die Klassifizierung ist die Menge aller Ausgabedaten des neuronalen Netzes. Sie spiegelt das Ergebnis des neuronalen Netzes und somit auch des Gesamtsystems wieder.
 
 - Künstliches neuronales Netz
-Bei den Eingabedaten handelt es sich um Bilder. Deshalb besitzt das künstliches neuronales Netz standardmäßig eine sich in anderen Arbeiten bewährte Struktur aus einer anfänglichen Reihe an Konvolutionschichten, gefolgt von vollvernetzten Schichten. Dabei passen sich die Eingabe- und Ausgabeschicht in ihrer Größe automatisch an die Satellitenbilder sowie die Anzahl der Klassen an.
+Bei den Eingabedaten handelt es sich um Bilder. Deshalb besitzt das künstliches neuronales Netz standardmäßig eine sich in anderen Arbeiten bewährte Struktur aus einer anfänglichen Reihe an Konvolutionschichten, gefolgt von vollvernetzten Schichten. Dabei passt sich die Eingabe- und Ausgabeschicht in ihrer Größe automatisch an die Satellitenbilder sowie die Anzahl der Klassen an.
